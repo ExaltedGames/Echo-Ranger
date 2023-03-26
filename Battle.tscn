@@ -4,3 +4,48 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w30jk")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 11.0
+offset_bottom = 11.0
+
+[node name="MoveList" type="VBoxContainer" parent="UI"]
+layout_direction = 1
+layout_mode = 2
+offset_left = 383.0
+offset_top = 490.0
+offset_right = 507.0
+offset_bottom = 556.0
+scale = Vector2(3, 2)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="TopMoves" type="BoxContainer" parent="UI/MoveList"]
+layout_mode = 2
+
+[node name="Move1" type="Button" parent="UI/MoveList/TopMoves"]
+layout_mode = 2
+text = "Move1"
+
+[node name="Move2" type="Button" parent="UI/MoveList/TopMoves"]
+layout_mode = 2
+text = "Move2"
+
+[node name="BottomMoves" type="BoxContainer" parent="UI/MoveList"]
+layout_mode = 2
+
+[node name="Move3" type="Button" parent="UI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move3"
+
+[node name="Move4" type="Button" parent="UI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move4"
+
+[node name="Battler" type="Node" parent="."]
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Battler"]
+
+[node name="Podium" type="Sprite2D" parent="Battler"]
