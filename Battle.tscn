@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d17i0yg0j3kol"]
+[gd_scene load_steps=3 format=3 uid="uid://d17i0yg0j3kol"]
 
 [ext_resource type="Script" path="res://Battle.cs" id="1_w30jk"]
+[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Battler.tscn" id="2_1nxov"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w30jk")
@@ -44,8 +45,28 @@ text = "Move3"
 layout_mode = 2
 text = "Move4"
 
-[node name="Battler" type="Node" parent="."]
+[node name="Infobox" type="TextEdit" parent="UI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 486.0
+offset_right = 377.0
+offset_bottom = 637.0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 0
+text = "Move information goes here."
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
 
-[node name="BattlerSprite" type="AnimatedSprite2D" parent="Battler"]
+[node name="Battler" parent="." instance=ExtResource("2_1nxov")]
+position = Vector2(300, 300)
+scale = Vector2(2, 2)
 
-[node name="Podium" type="Sprite2D" parent="Battler"]
+[node name="Opponent" parent="." instance=ExtResource("2_1nxov")]
+position = Vector2(900, 300)
+scale = Vector2(1.5, 1.5)
