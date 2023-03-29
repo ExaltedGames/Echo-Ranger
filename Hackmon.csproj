@@ -3,4 +3,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Hackmon.sln" />
+    <Content Include="HackmonInternals\HackmonInternals.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="HackmonInternals\HackmonInternals.csproj" />
+  </ItemGroup>
 </Project>
