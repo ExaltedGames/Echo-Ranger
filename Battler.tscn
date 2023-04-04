@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dw1lrstaeowqs"]
+[gd_scene load_steps=7 format=3 uid="uid://dw1lrstaeowqs"]
 
 [ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_5rkm7"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="1_re52c"]
+[ext_resource type="Texture2D" uid="uid://bmuqiunqbj8uw" path="res://Assets/BattleSprites/Gnarlic.png" id="3_lqe13"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tvt8p"]
 animations = [{
@@ -36,12 +37,40 @@ sprite_frames = SubResource("SpriteFrames_tvt8p")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -92.0
-offset_top = 56.0
+offset_top = 64.0
 offset_right = 92.0
-offset_bottom = 89.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/background = SubResource("StyleBoxLine_2tl1r")
 theme_override_styles/fill = SubResource("StyleBoxLine_rrxsb")
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="Name" type="RichTextLabel" parent="."]
+offset_left = -92.0
+offset_top = 47.0
+offset_right = 92.0
+offset_bottom = 72.0
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="Ailments" type="HBoxContainer" parent="."]
+offset_left = -92.0
+offset_top = 74.0
+offset_right = 92.0
+offset_bottom = 87.0
+size_flags_stretch_ratio = 8.96
+
+[node name="Poison" type="Panel" parent="Ailments"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(10, 5)
+layout_mode = 2
+tooltip_text = "Poisoned."
+
+[node name="Sprite2D" type="Sprite2D" parent="Ailments/Poison"]
+position = Vector2(5, 6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_lqe13")
