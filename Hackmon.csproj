@@ -6,9 +6,11 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="Hackmon.sln" />
-    <Content Include="HackmonInternals\HackmonInternals.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="HackmonInternals\HackmonInternals.csproj" />
+    <Compile Remove="HackmonInternals\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="HackmonInternals\**" />
   </ItemGroup>
 </Project>

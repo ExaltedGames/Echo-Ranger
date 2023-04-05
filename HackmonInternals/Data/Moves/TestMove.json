@@ -1,0 +1,8 @@
+﻿{
+  "MoveType": "Basic",
+  "Name": "Test Move",
+  "Damage": 100,
+  "StaminaCost": 20,
+  "UserStatuses" : [],
+  "TargetStatuses": []
+}
