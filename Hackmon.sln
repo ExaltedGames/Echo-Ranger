@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackmon", "Hackmon.csproj", "{5B147EEE-A4DD-4529-8330-D5140173EB2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackmon", "HackmonFrontend\Hackmon.csproj", "{5B147EEE-A4DD-4529-8330-D5140173EB2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackmonInternals", "HackmonInternals\HackmonInternals.csproj", "{0638B56B-822E-4C89-A837-C35B22775FD6}"
 EndProject

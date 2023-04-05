@@ -18,3 +18,4 @@ config/icon="res://Assets/ProjectIcon.png"
 [dotnet]
 
 project/assembly_name="Hackmon"
+project/solution_directory="../"
