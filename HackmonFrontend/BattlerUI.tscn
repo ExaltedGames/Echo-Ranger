@@ -1,0 +1,138 @@
+[gd_scene load_steps=10 format=3 uid="uid://dw1lrstaeowqs"]
+
+[ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_5rkm7"]
+[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="1_re52c"]
+[ext_resource type="Texture2D" uid="uid://dab5uugs4xhwe" path="res://Assets/ProjectIcon.png" id="3_ewoaq"]
+[ext_resource type="Texture2D" uid="uid://w1awcpcwxinq" path="res://Assets/BattleSprites/Vroomba.png" id="4_0kljj"]
+[ext_resource type="Texture2D" uid="uid://cj8tnoupprmrf" path="res://Assets/BattleSprites/Verma.png" id="5_0fe1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2tl1r"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rrxsb"]
+color = Color(0, 0.878431, 0, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 10
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5n0sp"]
+
+[node name="BattlerUI" type="Panel"]
+offset_left = -92.0
+offset_top = -99.0
+offset_right = 83.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nm5n3")
+
+[node name="Status" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="Status"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="HealthBar" type="ProgressBar" parent="Status"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxLine_2tl1r")
+theme_override_styles/fill = SubResource("StyleBoxLine_rrxsb")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Ailments" type="HBoxContainer" parent="Status"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 8.96
+
+[node name="TextureRect" type="TextureRect" parent="Status/Ailments"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("1_5rkm7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Status/Ailments"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("1_re52c")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Status/Ailments"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("3_ewoaq")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Status/Ailments"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("4_0kljj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Status/Ailments"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("5_0fe1i")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Status/Ailments"]
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Status/Ailments"]
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Status/Ailments"]
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
