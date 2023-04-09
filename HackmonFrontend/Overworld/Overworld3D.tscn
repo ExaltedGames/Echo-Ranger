@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2ni4y6r2snf6"]
+
+[ext_resource type="PackedScene" uid="uid://slugp4apjem4" path="res://Overworld/OverworldPlane.tscn" id="1_1023c"]
+
+[node name="Overworld" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.901734, 0.43229, 0, -0.43229, 0.901734, -0.0385749, 3.786, 6.84844)
+
+[node name="OverworldPlane" parent="." instance=ExtResource("1_1023c")]
