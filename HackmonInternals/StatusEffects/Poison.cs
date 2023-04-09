@@ -2,5 +2,5 @@
 
 public class Poison : Status
 {
-    public override string Name { get; set; }
+    public override string Name { get; set; } = "Poison";
 }
