@@ -14,5 +14,6 @@ public class Hackmon
     public Stat SpAttack { get; set; }
     public Stat Defense { get; set; }
     public Stat SpDefense { get; set; }
-    public List<Status> StatusList { get; set; }
+    public List<string> LearnableMoves { get; set; } 
+    public List<string> KnownMoves { get; set; }
 }

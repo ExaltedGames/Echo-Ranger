@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hackmon", "HackmonFrontend\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackmonInternals", "HackmonInternals\HackmonInternals.csproj", "{0638B56B-822E-4C89-A837-C35B22775FD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternalTests", "InternalTests\InternalTests.csproj", "{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,11 @@ Global
 		{0638B56B-822E-4C89-A837-C35B22775FD6}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
 		{0638B56B-822E-4C89-A837-C35B22775FD6}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
 		{0638B56B-822E-4C89-A837-C35B22775FD6}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0F22B66-FB30-46F7-AFDF-CB3F8B8F1C40}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

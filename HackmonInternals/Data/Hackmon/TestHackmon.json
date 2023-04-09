@@ -1,0 +1,26 @@
+﻿{
+  "PrimaryType": "Basic",
+  "Family": "Construct",
+  "MaxHp": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 1
+  },
+  "Attack": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 1
+  },
+  "SpAttack": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 1
+  },
+  "Defense": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 1
+  },
+  "SpDefense": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 1
+  },
+  "LearnableMoves": ["TestMove"],
+  "KnownMoves": ["TestMove"]
+}

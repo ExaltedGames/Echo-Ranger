@@ -2,7 +2,8 @@
   "MoveType": "Basic",
   "Name": "Test Move",
   "Damage": 100,
+  "AttackType": "Physical",
   "StaminaCost": 20,
   "UserStatuses" : [],
-  "TargetStatuses": []
+  "TargetStatuses": ["Poison"]
 }
