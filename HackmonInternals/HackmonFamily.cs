@@ -2,10 +2,10 @@
 
 public enum HackmonFamily
 {
-   Construct
-   Piscine
-   Beast
-   Avian
-   Reptile
+   Construct,
+   Piscine,
+   Beast,
+   Avian,
+   Reptile,
    Arthropod
 }
