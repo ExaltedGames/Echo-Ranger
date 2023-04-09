@@ -1,0 +1,10 @@
+{
+    "MoveType": "Basic",
+    "Name": "Bash",
+    "Description": "The user strikes it's opponent with it's body.",
+    "Damage": 20,
+    "AttackType": "Physical",
+    "StaminaCost": 5,
+    "UserStatuses" : [],
+    "TargetStatuses": []
+  }

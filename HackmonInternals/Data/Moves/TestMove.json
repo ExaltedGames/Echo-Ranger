@@ -1,6 +1,7 @@
 ﻿{
   "MoveType": "Basic",
   "Name": "Test Move",
+  "Description": "This is a test move.",
   "Damage": 100,
   "AttackType": "Physical",
   "StaminaCost": 20,
