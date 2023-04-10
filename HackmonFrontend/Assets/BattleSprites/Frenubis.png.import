@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clle7203kr2to"
-path="res://.godot/imported/Jarina.png-20e243379ed808e484a1dc5ae27f3bbf.ctex"
+uid="uid://ccdwd3b87twn"
+path="res://.godot/imported/Frenubis.png-da5238f555b00452387e793fe97d85a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Jarina.png"
-dest_files=["res://.godot/imported/Jarina.png-20e243379ed808e484a1dc5ae27f3bbf.ctex"]
+source_file="res://Assets/BattleSprites/Frenubis.png"
+dest_files=["res://.godot/imported/Frenubis.png-da5238f555b00452387e793fe97d85a1.ctex"]
 
 [params]
 
