@@ -1,0 +1,10 @@
+{
+    "MoveType": "Chem",
+    "Name": "Poisonous Cloud",
+    "Description": "The user releases a cloud of poison around itself, afflicting all targets with poison.",
+    "Damage": 0,
+    "AttackType": "Special",
+    "StaminaCost": 50,
+    "UserStatuses" : [],
+    "TargetStatuses": ["Poison"]
+  }

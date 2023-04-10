@@ -2,9 +2,9 @@
     "MoveType": "Fire",
     "Name": "Brand",
     "Description": "The user superheats it's body before colliding with it's opponent.",
-    "Damage": 25,
+    "Damage": 40,
     "AttackType": "Physical",
-    "StaminaCost": 10,
+    "StaminaCost": 20,
     "UserStatuses" : [],
     "TargetStatuses": []
   }

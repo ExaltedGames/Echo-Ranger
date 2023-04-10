@@ -1,0 +1,10 @@
+{
+    "MoveType": "Wind",
+    "Name": "Gust",
+    "Description": "The user launches a burst of wind to pummel it's opponent.",
+    "Damage": 25,
+    "AttackType": "Special",
+    "StaminaCost": 10,
+    "UserStatuses" : [],
+    "TargetStatuses": []
+  }
