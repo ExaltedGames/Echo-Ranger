@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://do5qgqqiqcgj6"]
+
+[ext_resource type="Script" path="res://Overworld/Player/OverworldPlayer.cs" id="1_2n4da"]
+[ext_resource type="SpriteFrames" uid="uid://c1wtlpax3ewhj" path="res://Assets/Overworld/Player/OverworldPlayer.tres" id="1_e6ag0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keb2w"]
+size = Vector2(8, 5)
+
+[node name="OverworldPlayer" type="CharacterBody2D"]
+script = ExtResource("1_2n4da")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -9)
+sprite_frames = ExtResource("1_e6ag0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_keb2w")

@@ -1,8 +1,4 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using HackmonInternals.StatusEffects;
-
-namespace HackmonInternals;
+﻿namespace HackmonInternals;
 
 public class Hackmon
 {
