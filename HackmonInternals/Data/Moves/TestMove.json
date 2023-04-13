@@ -4,6 +4,7 @@
   "Description": "This is a test move.",
   "Damage": 100,
   "AttackType": "Physical",
+  "Target": "Single",
   "StaminaCost": 20,
   "UserStatuses" : [],
   "TargetStatuses": ["Poison"]

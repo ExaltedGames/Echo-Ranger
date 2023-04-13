@@ -4,7 +4,8 @@
     "Description": "Raking part of it's body across a surface, the user generates charge before slashing it's foe. Raises Special Attack.",
     "Damage": 25,
     "AttackType": "Physical",
+    "Target": "Single",
     "StaminaCost": 25,
-    "UserStatuses" : [],
+    "UserStatuses" : ["SpAttackUp"],
     "TargetStatuses": []
   }
