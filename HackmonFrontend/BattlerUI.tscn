@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dw1lrstaeowqs"]
 
-[ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_5rkm7"]
+[ext_resource type="Texture2D" uid="uid://be63tlirxsbg7" path="res://Assets/UI/PoisonIcon.svg" id="1_aomqb"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="1_re52c"]
 [ext_resource type="Texture2D" uid="uid://dab5uugs4xhwe" path="res://Assets/ProjectIcon.png" id="3_ewoaq"]
 [ext_resource type="Texture2D" uid="uid://w1awcpcwxinq" path="res://Assets/BattleSprites/Vroomba.png" id="4_0kljj"]
@@ -74,18 +74,23 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -15.0
+offset_right = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_stretch_ratio = 8.96
 
-[node name="TextureRect" type="TextureRect" parent="Status/Ailments"]
+[node name="Poison" type="TextureRect" parent="Status/Ailments"]
 layout_mode = 2
 tooltip_text = "Poisoned."
-texture = ExtResource("1_5rkm7")
+texture = ExtResource("1_aomqb")
 expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="Status/Ailments"]
+visible = false
 layout_mode = 2
 tooltip_text = "Poisoned."
 texture = ExtResource("1_re52c")
@@ -93,6 +98,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect3" type="TextureRect" parent="Status/Ailments"]
+visible = false
 layout_mode = 2
 tooltip_text = "Poisoned."
 texture = ExtResource("3_ewoaq")
@@ -100,6 +106,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect4" type="TextureRect" parent="Status/Ailments"]
+visible = false
 layout_mode = 2
 tooltip_text = "Poisoned."
 texture = ExtResource("4_0kljj")
@@ -107,6 +114,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect5" type="TextureRect" parent="Status/Ailments"]
+visible = false
 layout_mode = 2
 tooltip_text = "Poisoned."
 texture = ExtResource("5_0fe1i")
@@ -114,6 +122,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect6" type="TextureRect" parent="Status/Ailments"]
+visible = false
 modulate = Color(0.917647, 0.113725, 0, 1)
 layout_mode = 2
 tooltip_text = "Poisoned."
@@ -122,6 +131,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect7" type="TextureRect" parent="Status/Ailments"]
+visible = false
 modulate = Color(0.917647, 0.113725, 0, 1)
 layout_mode = 2
 tooltip_text = "Poisoned."
@@ -130,6 +140,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="TextureRect8" type="TextureRect" parent="Status/Ailments"]
+visible = false
 modulate = Color(0.917647, 0.113725, 0, 1)
 layout_mode = 2
 tooltip_text = "Poisoned."

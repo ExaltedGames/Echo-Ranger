@@ -93,15 +93,15 @@ middle_mouse_paste_enabled = false
 [node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
 offset_left = 111.0
-offset_top = 283.0
+offset_top = 292.0
 offset_right = 286.0
-offset_bottom = 369.0
+offset_bottom = 378.0
 scale = Vector2(2, 2)
 
 [node name="OpponentUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
 offset_left = 684.0
-offset_top = 187.0
+offset_top = 196.0
 offset_right = 859.0
-offset_bottom = 273.0
+offset_bottom = 282.0
 scale = Vector2(2, 2)
