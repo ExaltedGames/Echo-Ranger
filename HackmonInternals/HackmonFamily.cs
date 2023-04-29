@@ -3,7 +3,7 @@
 public enum HackmonFamily
 {
    Construct,
-   Piscine,
+   Aquatic,
    Beast,
    Avian,
    Reptile,

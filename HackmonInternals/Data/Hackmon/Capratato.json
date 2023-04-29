@@ -1,0 +1,26 @@
+﻿{
+  "PrimaryType": "Basic",
+  "Family": "Beast",
+  "MaxHp": {
+    "BaseValue": 200,
+    "GrowthPerLevel": 2
+  },
+  "Attack": {
+    "BaseValue": 50,
+    "GrowthPerLevel": 2
+  },
+  "SpAttack": {
+    "BaseValue": 50,
+    "GrowthPerLevel": 1
+  },
+  "Defense": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "SpDefense": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "LearnableMoves": ["Bash","Pebbles"],
+  "KnownMoves": ["Bash"]
+}
