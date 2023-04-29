@@ -1,11 +1,12 @@
 {
-    "MoveType": "Wind",
-    "Name": "Gust",
-    "Description": "The user launches a burst of wind to pummel it's opponent.",
-    "Damage": 25,
-    "AttackType": "Special",
-    "Target": "Single",
-    "StaminaCost": 10,
-    "UserStatuses" : [],
-    "TargetStatuses": []
-  }
+  "ID": 3,
+  "MoveType": "Wind",
+  "Name": "Gust",
+  "Description": "The user launches a burst of wind to pummel it's opponent.",
+  "Damage": 25,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 10,
+  "UserStatuses" : [],
+  "TargetStatuses": []
+}

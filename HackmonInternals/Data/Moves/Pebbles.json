@@ -1,11 +1,12 @@
 {
-    "MoveType": "Earth",
-    "Name": "Pebble",
-    "Description": "The user launches several pellets of stone at it's opponent.",
-    "Damage": 25,
-    "AttackType": "Special",
-    "Target": "Single",
-    "StaminaCost": 10,
-    "UserStatuses" : [],
-    "TargetStatuses": []
-  }
+  "ID": 4,
+  "MoveType": "Earth",
+  "Name": "Pebble",
+  "Description": "The user launches several pellets of stone at it's opponent.",
+  "Damage": 25,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 10,
+  "UserStatuses" : [],
+  "TargetStatuses": []
+}

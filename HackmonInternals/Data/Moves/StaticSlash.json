@@ -1,11 +1,12 @@
 {
-    "MoveType": "Jolt",
-    "Name": "Static Slash",
-    "Description": "Raking part of it's body across a surface, the user generates charge before slashing it's foe. Raises Special Attack.",
-    "Damage": 25,
-    "AttackType": "Physical",
-    "Target": "Single",
-    "StaminaCost": 25,
-    "UserStatuses" : ["SpAttackUp"],
-    "TargetStatuses": []
-  }
+  "ID": 8,
+  "MoveType": "Jolt",
+  "Name": "Static Slash",
+  "Description": "Raking part of it's body across a surface, the user generates charge before slashing it's foe. Raises Special Attack.",
+  "Damage": 25,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 25,
+  "UserStatuses" : ["SpAttackUp"],
+  "TargetStatuses": []
+}

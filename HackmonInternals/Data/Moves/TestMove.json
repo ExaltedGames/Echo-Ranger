@@ -1,4 +1,5 @@
 ﻿{
+  "ID": 0,
   "MoveType": "Basic",
   "Name": "Test Move",
   "Description": "This is a test move.",

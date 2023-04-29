@@ -1,11 +1,12 @@
 {
-    "MoveType": "Water",
-    "Name": "Spout",
-    "Description": "The user sprays it's opponent with a concentrated burst of water.",
-    "Damage": 25,
-    "AttackType": "Special",
-    "Target": "Single",
-    "StaminaCost": 10,
-    "UserStatuses" : [],
-    "TargetStatuses": []
-  }
+  "ID": 7,
+  "MoveType": "Water",
+  "Name": "Spout",
+  "Description": "The user sprays it's opponent with a concentrated burst of water.",
+  "Damage": 25,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 10,
+  "UserStatuses" : [],
+  "TargetStatuses": []
+}
