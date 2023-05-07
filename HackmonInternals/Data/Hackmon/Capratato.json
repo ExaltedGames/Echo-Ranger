@@ -21,6 +21,6 @@
     "BaseValue": 25,
     "GrowthPerLevel": 1
   },
-  "LearnableMoves": ["Bash","Pebbles"],
-  "KnownMoves": ["Bash"]
+  "LearnableMoves": ["1","4"],
+  "KnownMoves": ["1"]
 }
