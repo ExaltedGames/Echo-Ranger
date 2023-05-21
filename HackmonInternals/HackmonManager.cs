@@ -7,7 +7,7 @@ namespace HackmonInternals;
 public static class HackmonManager
 {
     public static List<HackmonMove> MoveRegistry = new();
-    public static List<Hackmon> HackmonRegistry = new();
+    public static List<HackmonData> HackmonRegistry = new();
 
     private static JsonSerializerOptions _jsonOpts = new JsonSerializerOptions
     {
@@ -40,7 +40,7 @@ public static class HackmonManager
                 }
             }
         }
-        HackmonRegistry = LoadData<Hackmon>("Hackmon");
+        HackmonRegistry = LoadData<HackmonData>("Hackmon");
     }
 
     private static Status? ResolveStatusName(string statusName)
