@@ -1,15 +1,22 @@
-﻿using System.Text.Json;
+﻿using System.Reflection;
+using System.Text.Json;
 using System.Text.Json.Serialization;
+using HackmonInternals.Battle;
+using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 
 namespace HackmonInternals;
 
 public static class HackmonManager
 {
-    public static List<HackmonMove> MoveRegistry = new();
-    public static List<HackmonData> HackmonRegistry = new();
+    public static BattleManager BattleManager { get; private set; }
+    
+    public static Dictionary<int, HackmonMove> MoveRegistry { get; private set; } = new();
+    
+    // TODO: Make hackmon use IDs too
+    public static List<HackmonData> HackmonRegistry { get; private set; } = new();
 
-    private static JsonSerializerOptions _jsonOpts = new JsonSerializerOptions
+    private static readonly JsonSerializerOptions _jsonOpts = new()
     {
         Converters =
         {
@@ -19,34 +26,38 @@ public static class HackmonManager
 
     public static void LoadAllData()
     {
-        MoveRegistry = LoadData<HackmonMove>("Moves");
-        foreach (HackmonMove move in MoveRegistry)
+        var moves = LoadData<HackmonMove>("Moves");
+        foreach (var move in moves)
         {
-            foreach (string statusName in move.TargetStatuses)
+            foreach (var statusName in move.TargetStatuses)
             {
-                Status? status = ResolveStatusName(statusName);
+                var status = ResolveStatusName(statusName);
                 if (status != null)
                 {
                     move.TargetStatusList.Add(status);
                 }
             }
 
-            foreach (string statusName in move.UserStatuses)
+            foreach (var statusName in move.UserStatuses)
             {
-                Status? status = ResolveStatusName(statusName);
+                var status = ResolveStatusName(statusName);
                 if (status != null)
                 {
                     move.UserStatusList.Add(status);
                 }
             }
+            
+            MoveRegistry.Add(move.ID, move);
         }
+        
         HackmonRegistry = LoadData<HackmonData>("Hackmon");
     }
 
     private static Status? ResolveStatusName(string statusName)
     {
-        Status? resolvedStatus =
-            Activator.CreateInstance("HackmonInternals", $"HackmonInternals.StatusEffects.{statusName}")
+        var assembly = Assembly.GetExecutingAssembly();
+        var resolvedStatus =
+            Activator.CreateInstance(null!, $"{typeof(Status).Namespace}.{statusName}")
                 ?.Unwrap() as Status;
 
         return resolvedStatus;
@@ -54,16 +65,16 @@ public static class HackmonManager
 
     private static List<T> LoadData<T>(string dir)
     {
-        string dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Data/{dir}");
+        var dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Data/{dir}");
         List<T> loadedData = new();
 
-        foreach (string file in Directory.EnumerateFiles(dataPath))
+        foreach (var file in Directory.EnumerateFiles(dataPath))
         {
-            string json = File.ReadAllText(file);
+            var json = File.ReadAllText(file);
 
             try
             {
-                T? parsedItem = JsonSerializer.Deserialize<T>(json, _jsonOpts);
+                var parsedItem = JsonSerializer.Deserialize<T>(json, _jsonOpts);
                 if (parsedItem != null) loadedData.Add(parsedItem);
             }
             catch (Exception e)

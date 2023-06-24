@@ -1,6 +1,7 @@
 using Godot;
-using System;
-using HackmonInternals;
+using HackmonInternals.Models;
+
+namespace HackmonFrontend;
 
 public partial class GameManager : Node
 {

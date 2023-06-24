@@ -7,6 +7,8 @@
   "AttackType": "Special",
   "Target": "Multi",
   "StaminaCost": 50,
-  "UserStatuses" : [],
-  "TargetStatuses": ["Poison"]
+  "UserStatuses": [],
+  "TargetStatuses": [
+    "Poison"
+  ]
 }

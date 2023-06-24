@@ -1,4 +1,4 @@
-﻿namespace HackmonInternals;
+﻿namespace HackmonInternals.Enums;
 
 public enum HackmonFamily
 {

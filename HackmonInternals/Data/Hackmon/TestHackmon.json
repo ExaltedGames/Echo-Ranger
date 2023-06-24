@@ -21,5 +21,7 @@
     "BaseValue": 1,
     "GrowthPerLevel": 1
   },
-  "LearnableMoves": [0]
+  "LearnableMoves": [
+    0
+  ]
 }

@@ -1,4 +1,4 @@
-﻿namespace HackmonInternals;
+﻿namespace HackmonInternals.Models;
 
 public class Modifier
 {

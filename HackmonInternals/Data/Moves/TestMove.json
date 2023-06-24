@@ -7,6 +7,8 @@
   "AttackType": "Physical",
   "Target": "Single",
   "StaminaCost": 20,
-  "UserStatuses" : [],
-  "TargetStatuses": ["Poison"]
+  "UserStatuses": [],
+  "TargetStatuses": [
+    "Poison"
+  ]
 }

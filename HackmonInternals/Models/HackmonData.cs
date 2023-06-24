@@ -1,8 +1,6 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using HackmonInternals.StatusEffects;
+﻿using HackmonInternals.Enums;
 
-namespace HackmonInternals;
+namespace HackmonInternals.Models;
 
 public class HackmonData
 {

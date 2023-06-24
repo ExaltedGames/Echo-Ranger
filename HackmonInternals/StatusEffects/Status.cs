@@ -1,4 +1,6 @@
-﻿namespace HackmonInternals.StatusEffects;
+﻿using HackmonInternals.Models;
+
+namespace HackmonInternals.StatusEffects;
 
 public abstract class Status
 {

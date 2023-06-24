@@ -1,4 +1,4 @@
-﻿namespace HackmonInternals;
+﻿namespace HackmonInternals.Models;
 
 public class HackmonInstance
 {
@@ -6,6 +6,8 @@ public class HackmonInstance
    public int Level { get; set; }
    
    public int Hp { get; set; }
+
+   public bool IsDead => Hp <= 0;
 
    public int Attack => staticData.Attack.BaseValue + (int)MathF.Round(staticData.Attack.GrowthPerLevel * Level);
 
