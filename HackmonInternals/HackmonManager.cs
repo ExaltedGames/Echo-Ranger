@@ -9,8 +9,6 @@ namespace HackmonInternals;
 
 public static class HackmonManager
 {
-    public static BattleManager BattleManager { get; private set; }
-    
     public static Dictionary<int, HackmonMove> MoveRegistry { get; private set; } = new();
     
     // TODO: Make hackmon use IDs too
@@ -51,6 +49,11 @@ public static class HackmonManager
         }
         
         HackmonRegistry = LoadData<HackmonData>("Hackmon");
+    }
+
+    public static BattleManager StartBattle(TrainerData playerData, TrainerData enemyData)
+    {
+        return new BattleManager(playerData, enemyData);
     }
 
     private static Status? ResolveStatusName(string statusName)

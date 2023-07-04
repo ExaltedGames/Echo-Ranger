@@ -23,6 +23,9 @@ public class BattleManager
 
     public int? AlivePlayerHackmon => PlayerParty?.Count(h => !h.IsDead);
 
+    public HackmonInstance CurrentPlayerMon { get; }
+    public HackmonInstance CurrentEnemyMon { get; }
+
     public BattlePhase CurrentPhase;
 
     public BattleManager(TrainerData playerData, TrainerData enemyData, InputNegotiator? inputNegotiator = null)
@@ -32,6 +35,8 @@ public class BattleManager
         EnemyData = enemyData;
         InputNegotiator = inputNegotiator ?? new TestNegotiator();
         CurrentPhase = (BattlePhase)1; // Select first phase sans unknown state
+        CurrentPlayerMon = PlayerParty[0];
+        CurrentEnemyMon = EnemyParty[0];
     }
 
     public virtual void ProgressPhase()
@@ -39,40 +44,54 @@ public class BattleManager
         switch (CurrentPhase)
         {
             case BattlePhase.PreBattle:
-                break;
+                // Handle setup, make sure status/debuff/buff arrays are as they should be.
+                PreBattle();
+               break;
             case BattlePhase.PreTurn:
+                // Honestly not sure
                 break;
             case BattlePhase.TurnStart:
+                // Handle debuffs/buffs ticking down
                 StartTurn();
                 break;
             case BattlePhase.WaitingForInputs:
+                // wait for player input 
                 if (!InputNegotiator.InputsReady)
                 {
                     Console.WriteLine("Inputs aren't ready yet!");
                     return;
                 }
-
                 var inputs = InputNegotiator.GetAllInputs();
                 Console.WriteLine(inputs);
                 break;
             case BattlePhase.TurnCommencing:
+                // frontend displays selected attacks, swaps would happen here.
                 break;
             case BattlePhase.HandleOutcome:
+                // play animations of attacks, show damage
                 break;
             case BattlePhase.TurnEnd:
+                // handle EOT ongoing effects, debuffs, etc
                 EndTurn();
                 break;
             case BattlePhase.PostTurn:
+                // not sure honestly.
                 break;
             case BattlePhase.PostBattle:
+                // prize money, etc, victory/defeat screen
                 return;
-            
             case BattlePhase.Unknown:
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
 
-        CurrentPhase++;
+    protected virtual void PreBattle()
+    {
+        EventQueue.Enqueue(new MonEnteredBattle(this, CurrentEnemyMon));
+        EventQueue.Enqueue(new MonEnteredBattle(this, CurrentPlayerMon));
+
+        CurrentPhase = BattlePhase.PreTurn;
     }
 
     protected virtual void StartTurn()
