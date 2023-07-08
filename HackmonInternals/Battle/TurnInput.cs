@@ -1,6 +1,6 @@
 namespace HackmonInternals.Battle;
 
-public class TurnInputs
+public class TurnInput
 {
     
 }

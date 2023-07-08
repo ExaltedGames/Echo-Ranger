@@ -4,7 +4,7 @@ public abstract class InputNegotiator
 {
     public abstract bool InputsReady { get; protected set; }
     
-    public abstract TurnInputs GetAllInputs();
+    public abstract List<TurnInput> GetAllInputs();
 
     public virtual void PlayerAInput()
     {

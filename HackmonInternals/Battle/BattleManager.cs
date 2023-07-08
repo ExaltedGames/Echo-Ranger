@@ -1,4 +1,5 @@
-﻿using HackmonInternals.Battle.Negotiators;
+﻿using HackmonInternals.Battle.Inputs;
+using HackmonInternals.Battle.Negotiators;
 using HackmonInternals.Enums;
 using HackmonInternals.Events.Battle;
 using HackmonInternals.Models;
@@ -8,7 +9,7 @@ namespace HackmonInternals.Battle;
 public class BattleManager
 {
     public Queue<BattleEvent> EventQueue { get; }
-    
+
     public InputNegotiator InputNegotiator { get; set; }
 
     public TrainerData EnemyData { get; }
@@ -23,8 +24,8 @@ public class BattleManager
 
     public int? AlivePlayerHackmon => PlayerParty?.Count(h => !h.IsDead);
 
-    public HackmonInstance CurrentPlayerMon { get; }
-    public HackmonInstance CurrentEnemyMon { get; }
+    public HackmonInstance CurrentPlayerMon { get; private set; }
+    public HackmonInstance CurrentEnemyMon { get; private set; }
 
     public BattlePhase CurrentPhase;
 
@@ -34,7 +35,7 @@ public class BattleManager
         PlayerData = playerData;
         EnemyData = enemyData;
         InputNegotiator = inputNegotiator ?? new TestNegotiator();
-        CurrentPhase = (BattlePhase)1; // Select first phase sans unknown state
+        CurrentPhase = (BattlePhase) 1; // Select first phase sans unknown state
         CurrentPlayerMon = PlayerParty[0];
         CurrentEnemyMon = EnemyParty[0];
     }
@@ -45,24 +46,18 @@ public class BattleManager
         {
             case BattlePhase.PreBattle:
                 // Handle setup, make sure status/debuff/buff arrays are as they should be.
-                PreBattle();
-               break;
+                CurrentPhase = PreBattle();
+                break;
             case BattlePhase.PreTurn:
                 // Honestly not sure
                 break;
             case BattlePhase.TurnStart:
                 // Handle debuffs/buffs ticking down
-                StartTurn();
+                CurrentPhase = StartTurn();
                 break;
             case BattlePhase.WaitingForInputs:
                 // wait for player input 
-                if (!InputNegotiator.InputsReady)
-                {
-                    Console.WriteLine("Inputs aren't ready yet!");
-                    return;
-                }
-                var inputs = InputNegotiator.GetAllInputs();
-                Console.WriteLine(inputs);
+
                 break;
             case BattlePhase.TurnCommencing:
                 // frontend displays selected attacks, swaps would happen here.
@@ -72,7 +67,7 @@ public class BattleManager
                 break;
             case BattlePhase.TurnEnd:
                 // handle EOT ongoing effects, debuffs, etc
-                EndTurn();
+                CurrentPhase = EndTurn();
                 break;
             case BattlePhase.PostTurn:
                 // not sure honestly.
@@ -86,22 +81,118 @@ public class BattleManager
         }
     }
 
-    protected virtual void PreBattle()
+    // Each phase handler is a single method that returns the next phase entered.
+
+    protected virtual BattlePhase PreBattle()
     {
         EventQueue.Enqueue(new MonEnteredBattle(this, CurrentEnemyMon));
         EventQueue.Enqueue(new MonEnteredBattle(this, CurrentPlayerMon));
 
-        CurrentPhase = BattlePhase.PreTurn;
+        return BattlePhase.TurnStart;
     }
 
-    protected virtual void StartTurn()
+    protected virtual BattlePhase StartTurn()
     {
         EventQueue.Enqueue(new TurnStart(this));
+
+        return BattlePhase.WaitingForInputs;
     }
 
-    protected virtual void EndTurn()
+    protected virtual BattlePhase WaitForInputs()
+    {
+        if (!InputNegotiator.InputsReady)
+        {
+            Console.WriteLine("Inputs aren't ready yet!");
+            return BattlePhase.WaitingForInputs;
+        }
+
+        var inputs = InputNegotiator.GetAllInputs();
+        Console.WriteLine(inputs);
+
+        return BattlePhase.TurnCommencing;
+    }
+
+    private List<BattleEvent> ResolveMove(HackmonInstance user, HackmonInstance target, int moveId)
+    {
+        if (!user.KnownMoves.Contains(moveId)) throw new Exception("Attempted to use a move not known to the user.");
+
+        List<BattleEvent> events = new();
+        HackmonMove usingMove = HackmonManager.MoveRegistry[moveId];
+
+        // TODO: Resolve move, create a BattleEvent to represent each step in the resolution process, return events in order.
+
+        return events;
+    }
+
+    private List<BattleEvent> ResolveItem(HackmonInstance target, int itemID)
+    {
+        //TODO: implement items
+        List<BattleEvent> events = new();
+
+        return events;
+    }
+    
+
+    protected virtual BattlePhase CommenceTurn()
+    {
+        if (!InputNegotiator.InputsReady)
+        {
+            throw new Exception("Invalid State Reached.");
+        }
+
+        var inputs = InputNegotiator.GetAllInputs();
+
+        foreach (TurnInput input in inputs)
+        {
+            if (input is MoveInput move)
+            {
+                List<BattleEvent> battleEvents;
+                if (CurrentPlayerMon == move.User)
+                {
+                    battleEvents = ResolveMove(CurrentPlayerMon, CurrentEnemyMon, move.MoveID);
+                }
+                else if (CurrentEnemyMon == move.User)
+                {
+                    battleEvents = ResolveMove(CurrentPlayerMon, CurrentEnemyMon, move.MoveID);
+                }
+                else throw new Exception("Invalid Move Input");
+
+                foreach (BattleEvent e in battleEvents) EventQueue.Enqueue(e);
+            }
+
+            if (input is SwapMon swapMon)
+            {
+                if (CurrentPlayerMon == swapMon.SwapOut)
+                {
+                    EventQueue.Enqueue(new MonLeftBattle(this, CurrentPlayerMon));
+                    CurrentPlayerMon = PlayerParty[swapMon.SwapIn];
+                    EventQueue.Enqueue(new MonEnteredBattle(this, CurrentPlayerMon));
+                }
+                else if (CurrentEnemyMon == swapMon.SwapOut)
+                {
+                   EventQueue.Enqueue(new MonLeftBattle(this, CurrentEnemyMon));
+                   CurrentEnemyMon = EnemyParty[swapMon.SwapIn];
+                   EventQueue.Enqueue(new MonEnteredBattle(this, CurrentEnemyMon));
+                }
+                else throw new Exception("Invalid Swap Input");
+            }
+
+            if (input is UseItem item)
+            {
+                var events = ResolveItem(item.Target, item.ItemID);
+                
+                foreach(BattleEvent e in events) EventQueue.Enqueue(e);
+            }
+        }
+
+        return BattlePhase.TurnEnd;
+    }
+
+    protected virtual BattlePhase EndTurn()
     {
         EventQueue.Enqueue(new TurnEnd(this));
+
+        return BattlePhase.TurnStart;
     }
 
     protected virtual void CastMove(int moveId, HackmonInstance source, HackmonInstance target)

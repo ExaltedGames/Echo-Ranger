@@ -8,7 +8,7 @@ namespace HackmonInternals.Battle.Negotiators
             protected set => _ = value;
         }
 
-        public override TurnInputs GetAllInputs()
+        public override List<TurnInput> GetAllInputs()
         {
             return new();
         }
