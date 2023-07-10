@@ -120,7 +120,28 @@ public class BattleManager
         HackmonMove usingMove = HackmonManager.MoveRegistry[moveId];
 
         // TODO: Resolve move, create a BattleEvent to represent each step in the resolution process, return events in order.
+        // ((MovePower * Atk) + Level) / Def * STAB
+        int attack;
+        int defense;
+        float stab = 1.0f;
+        bool isStab = (user.staticData.PrimaryType == usingMove.MoveType);
 
+        if (usingMove.AttackType is AttackType.Physical)
+            {
+            attack = user.Attack;
+            defense = target.Defense;
+            }
+        else
+            {
+            attack = user.SpAttack;
+            defense = target.SpDefense;
+            }
+        
+        if (isStab)
+            stab = 1.25f;
+        
+        var damage = ((usingMove.Damage * attack) + user.Level) / defense * stab;
+       
         return events;
     }
 
