@@ -124,24 +124,26 @@ public class BattleManager
         int attack;
         int defense;
         float stab = 1.0f;
-        bool isStab = (user.staticData.PrimaryType == usingMove.MoveType);
 
         if (usingMove.AttackType is AttackType.Physical)
-            {
+        {
             attack = user.Attack;
             defense = target.Defense;
-            }
+        }
         else
-            {
+        {
             attack = user.SpAttack;
             defense = target.SpDefense;
-            }
-        
-        if (isStab)
+        }
+
+        if (user.staticData.PrimaryType == usingMove.MoveType)
             stab = 1.25f;
         
         var damage = ((usingMove.Damage * attack) + user.Level) / defense * stab;
-       
+
+        TakeDamage damageEvent = new TakeDamage(this, target, (int)damage, false);
+        events.Add(damageEvent);
+
         return events;
     }
 
@@ -152,7 +154,7 @@ public class BattleManager
 
         return events;
     }
-    
+
 
     protected virtual BattlePhase CommenceTurn()
     {
@@ -191,9 +193,9 @@ public class BattleManager
                 }
                 else if (CurrentEnemyMon == swapMon.SwapOut)
                 {
-                   EventQueue.Enqueue(new MonLeftBattle(this, CurrentEnemyMon));
-                   CurrentEnemyMon = EnemyParty[swapMon.SwapIn];
-                   EventQueue.Enqueue(new MonEnteredBattle(this, CurrentEnemyMon));
+                    EventQueue.Enqueue(new MonLeftBattle(this, CurrentEnemyMon));
+                    CurrentEnemyMon = EnemyParty[swapMon.SwapIn];
+                    EventQueue.Enqueue(new MonEnteredBattle(this, CurrentEnemyMon));
                 }
                 else throw new Exception("Invalid Swap Input");
             }
@@ -201,8 +203,8 @@ public class BattleManager
             if (input is UseItem item)
             {
                 var events = ResolveItem(item.Target, item.ItemID);
-                
-                foreach(BattleEvent e in events) EventQueue.Enqueue(e);
+
+                foreach (BattleEvent e in events) EventQueue.Enqueue(e);
             }
         }
 
