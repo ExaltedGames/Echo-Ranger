@@ -8,7 +8,10 @@
   "Target": "Single",
   "StaminaCost": 25,
   "UserStatuses": [
-    "SpAttackUp"
+    {
+      "Name": "SpAttackUp",
+      "Duration": -1
+    }
   ],
   "TargetStatuses": []
 }

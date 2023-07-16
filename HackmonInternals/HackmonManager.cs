@@ -27,21 +27,21 @@ public static class HackmonManager
         var moves = LoadData<HackmonMove>("Moves");
         foreach (var move in moves)
         {
-            foreach (var statusName in move.TargetStatuses)
+            foreach (var status in move.TargetStatuses)
             {
-                var status = ResolveStatusName(statusName);
-                if (status != null)
+                var statusType = ResolveStatusName(status.Name);
+                if (statusType != null)
                 {
-                    move.TargetStatusList.Add(status);
+                    move.TargetStatusTypes.Add(statusType);
                 }
             }
 
-            foreach (var statusName in move.UserStatuses)
+            foreach (var status in move.UserStatuses)
             {
-                var status = ResolveStatusName(statusName);
-                if (status != null)
+                var statusType = ResolveStatusName(status.Name);
+                if (statusType != null)
                 {
-                    move.UserStatusList.Add(status);
+                    move.UserStatusTypes.Add(statusType);
                 }
             }
             
@@ -55,15 +55,14 @@ public static class HackmonManager
     {
         return new BattleManager(playerData, enemyData);
     }
-
-    private static Status? ResolveStatusName(string statusName)
+    
+    private static Type? ResolveStatusName(string statusName)
     {
         var assembly = Assembly.GetExecutingAssembly();
-        var resolvedStatus =
-            Activator.CreateInstance(null!, $"{typeof(Status).Namespace}.{statusName}")
-                ?.Unwrap() as Status;
 
-        return resolvedStatus;
+        var statusType = assembly.GetType($"HackonInternals.StatusEffects.{statusName}");
+
+        return statusType;
     }
 
     private static List<T> LoadData<T>(string dir)

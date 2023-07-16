@@ -1,4 +1,6 @@
-﻿namespace HackmonInternals.Models;
+﻿using HackmonInternals.StatusEffects;
+
+namespace HackmonInternals.Models;
 
 public class HackmonInstance
 {
@@ -22,6 +24,8 @@ public class HackmonInstance
    public int MaxStamina { get; set; } = 100;
    
    public int Stamina { get; set; }
+
+   public List<Status> StatusEffects { get; set; } = new();
 
    public List<int> KnownMoves { get; set; } = new();
 

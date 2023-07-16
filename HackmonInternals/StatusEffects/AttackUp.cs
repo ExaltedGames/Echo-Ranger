@@ -3,4 +3,8 @@
 public class AttackUp : Status
 {
     public override string Name { get; set; } = "AttackUp";
+
+    public AttackUp(int numTurns) : base(numTurns)
+    {
+    }
 }

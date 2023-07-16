@@ -3,6 +3,7 @@ using HackmonInternals.Battle.Negotiators;
 using HackmonInternals.Enums;
 using HackmonInternals.Events.Battle;
 using HackmonInternals.Models;
+using HackmonInternals.StatusEffects;
 
 namespace HackmonInternals.Battle;
 
@@ -119,32 +120,85 @@ public class BattleManager
         List<BattleEvent> events = new();
         HackmonMove usingMove = HackmonManager.MoveRegistry[moveId];
 
-        // TODO: Resolve move, create a BattleEvent to represent each step in the resolution process, return events in order.
-        // ((MovePower * Atk) + Level) / Def * STAB
-        int attack;
-        int defense;
-        float stab = 1.0f;
-
-        if (usingMove.AttackType is AttackType.Physical)
+        if (usingMove.Damage != 0)
         {
-            attack = user.Attack;
-            defense = target.Defense;
+            // ((MovePower * Atk) + Level) / Def * STAB
+            int attack;
+            int defense;
+            float stab = 1.0f;
+
+            if (usingMove.AttackType is AttackType.Physical)
+            {
+                attack = user.Attack;
+                defense = target.Defense;
+            }
+            else
+            {
+                attack = user.SpAttack;
+                defense = target.SpDefense;
+            }
+
+            if (user.staticData.PrimaryType == usingMove.MoveType)
+                stab = 1.25f;
+
+            var damage = ((usingMove.Damage * attack) + user.Level) / defense * stab;
+
+            target.Hp -= (int) damage;
+            var damageEvent = new TakeDamage(this, target, (int) damage, false);
+            events.Add(damageEvent);
+
+            if (target.Hp <= 0)
+            {
+                //TODO: handle death
+            }
         }
-        else
+
+        if (usingMove.TargetStatuses.Count > 0)
         {
-            attack = user.SpAttack;
-            defense = target.SpDefense;
+            for (int i = 0; i < usingMove.TargetStatuses.Count; i++)
+            {
+                var duration = usingMove.TargetStatuses[i].Duration;
+                var statusType = usingMove.TargetStatusTypes[i];
+
+                var status = InstanceStatus(statusType, duration);
+
+                target.StatusEffects.Add(status);
+
+                var statusEvent = new GainStatus(this, target, status);
+                events.Add(statusEvent);
+            }
         }
 
-        if (user.staticData.PrimaryType == usingMove.MoveType)
-            stab = 1.25f;
-        
-        var damage = ((usingMove.Damage * attack) + user.Level) / defense * stab;
+        if (usingMove.UserStatuses.Count > 0)
+        {
+            for (int i = 0; i < usingMove.UserStatuses.Count; i++)
+            {
+                var duration = usingMove.UserStatuses[i].Duration;
+                var statusType = usingMove.UserStatusTypes[i];
 
-        TakeDamage damageEvent = new TakeDamage(this, target, (int)damage, false);
-        events.Add(damageEvent);
+                var status = InstanceStatus(statusType, duration);
+
+                user.StatusEffects.Add(status);
+
+                var statusEvent = new GainStatus(this, user, status);
+                events.Add(statusEvent);
+            }
+        }
 
         return events;
+    }
+
+    private Status InstanceStatus(Type statusType, int duration)
+    {
+        Status? statusInstance = (Status?) Activator.CreateInstance(statusType, duration);
+
+        if (statusInstance == null)
+        {
+            //TODO: define exactly what happens here
+            throw new Exception();
+        }
+
+        return statusInstance;
     }
 
     private List<BattleEvent> ResolveItem(HackmonInstance target, int itemID)

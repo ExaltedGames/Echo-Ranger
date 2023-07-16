@@ -12,12 +12,12 @@ public class HackmonMove
    public int Damage { get; set; }
    public AttackType AttackType { get; set; }
    public int StaminaCost { get; set; }
-   public List<string> UserStatuses { get; set; } = new();
-   public List<string> TargetStatuses { get; set; } = new();
+   public List<(string Name, int Duration)> UserStatuses { get; set; } = new();
+   public List<(string Name, int Duration)> TargetStatuses { get; set; } = new();
 
    [JsonIgnore]
-   public List<Status> UserStatusList { get; set; } = new();
+   public List<Type> UserStatusTypes { get; set; } = new();
 
    [JsonIgnore]
-   public List<Status> TargetStatusList { get; set; } = new();
+   public List<Type> TargetStatusTypes { get; set; } = new();
 }

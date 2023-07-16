@@ -14,7 +14,7 @@ public static class Tests
 
       foreach (var move in HackmonManager.MoveRegistry.Values)
       {
-         Console.WriteLine($"{move.Name} inflicts {move.TargetStatusList.Count} statuses.");
+         Console.WriteLine($"{move.Name} inflicts {move.TargetStatusTypes.Count} statuses.");
       }
 
       var battler = new BattleManager(new(), new());

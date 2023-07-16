@@ -9,6 +9,9 @@
   "StaminaCost": 20,
   "UserStatuses": [],
   "TargetStatuses": [
-    "Poison"
+    {
+      "Name": "Poison",
+      "Duration": 5
+    }
   ]
 }
