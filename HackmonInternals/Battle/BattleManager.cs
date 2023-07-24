@@ -75,6 +75,7 @@ public class BattleManager
                 break;
             case BattlePhase.PostBattle:
                 // prize money, etc, victory/defeat screen
+                CurrentPhase = EndBattle();
                 return;
             case BattlePhase.Unknown:
             default:
@@ -149,7 +150,21 @@ public class BattleManager
 
             if (target.Hp <= 0)
             {
-                //TODO: handle death
+                // Handle death and check if there are any other available hackmon.
+                // TODO
+                List<HackmonInstance> currentParty;
+                var undefeated = 0;
+
+                for (int i = 0; i < currentParty.Count; i++)
+                {
+                    var hackmon = currentParty[i];
+                    if (hackmon.Hp > 0)
+                        undefeated += 1;
+                }
+                if (undefeated == 0)
+                // TODO
+                Console.WriteLine("Pass to post battle handling from here because all hackmon have been defeated in a team.");
+
             }
         }
 
@@ -275,5 +290,9 @@ public class BattleManager
     protected virtual void CastMove(int moveId, HackmonInstance source, HackmonInstance target)
     {
         EventQueue.Enqueue(new HackmonAttack(this, source, HackmonManager.MoveRegistry[moveId]));
+    }
+        protected virtual BattlePhase EndBattle()
+    {
+        return BattlePhase.Unknown;
     }
 }
