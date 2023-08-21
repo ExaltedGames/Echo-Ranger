@@ -114,7 +114,7 @@ public class BattleManager
         return BattlePhase.TurnCommencing;
     }
 
-    private List<BattleEvent> ResolveMove(HackmonInstance user, HackmonInstance target, int moveId)
+    private List<BattleEvent> ResolveMoveEffects(HackmonInstance user, HackmonInstance target, int moveId)
     {
         if (!user.KnownMoves.Contains(moveId)) throw new Exception("Attempted to use a move not known to the user.");
 
@@ -147,25 +147,6 @@ public class BattleManager
             target.Hp -= (int) damage;
             var damageEvent = new TakeDamage(this, target, (int) damage, false);
             events.Add(damageEvent);
-
-            if (target.Hp <= 0)
-            {
-                // Handle death and check if there are any other available hackmon.
-                // TODO
-                List<HackmonInstance> currentParty;
-                var undefeated = 0;
-
-                for (int i = 0; i < currentParty.Count; i++)
-                {
-                    var hackmon = currentParty[i];
-                    if (hackmon.Hp > 0)
-                        undefeated += 1;
-                }
-                if (undefeated == 0)
-                // TODO
-                Console.WriteLine("Pass to post battle handling from here because all hackmon have been defeated in a team.");
-
-            }
         }
 
         if (usingMove.TargetStatuses.Count > 0)
@@ -241,15 +222,63 @@ public class BattleManager
                 List<BattleEvent> battleEvents;
                 if (CurrentPlayerMon == move.User)
                 {
-                    battleEvents = ResolveMove(CurrentPlayerMon, CurrentEnemyMon, move.MoveID);
+                    battleEvents = ResolveMoveEffects(CurrentPlayerMon, CurrentEnemyMon, move.MoveID);
                 }
                 else if (CurrentEnemyMon == move.User)
                 {
-                    battleEvents = ResolveMove(CurrentPlayerMon, CurrentEnemyMon, move.MoveID);
+                    battleEvents = ResolveMoveEffects(CurrentEnemyMon, CurrentPlayerMon, move.MoveID);
                 }
                 else throw new Exception("Invalid Move Input");
 
                 foreach (BattleEvent e in battleEvents) EventQueue.Enqueue(e);
+
+                // Handle deaths
+                if (CurrentEnemyMon.Hp <= 0)
+                {
+                    bool hasMonReamining = false;
+                    foreach (HackmonInstance h in EnemyParty)
+                    {
+                        if (h.Hp > 0)
+                        {
+                            hasMonReamining = true;
+                            break;
+                        }
+                    }
+
+                    if (hasMonReamining)
+                    {
+                        // go to AI logic.
+                         
+                    }
+                    else
+                    {
+                        // push player win event, go to end battle.
+                        return BattlePhase.PostBattle;
+                    }
+                }
+
+                if (CurrentPlayerMon.Hp <= 0)
+                {
+                    //check if any in the party are still alive
+                    bool hasMonRemaining = false;
+                    foreach (HackmonInstance h in PlayerParty)
+                    {
+                        if (h.Hp >= 0)
+                        {
+                            hasMonRemaining = true;
+                            break;
+                        }
+                    }
+
+                    if (hasMonRemaining)
+                    {
+                        // trigger swap in decision, go to player input stage.
+                    }
+                }
+                
+                // If a death has not ended the battle at this point (or forced more player input)
+                // we preceed to the next phase
+                return BattlePhase.TurnEnd;
             }
 
             if (input is SwapMon swapMon)
@@ -291,7 +320,8 @@ public class BattleManager
     {
         EventQueue.Enqueue(new HackmonAttack(this, source, HackmonManager.MoveRegistry[moveId]));
     }
-        protected virtual BattlePhase EndBattle()
+
+    protected virtual BattlePhase EndBattle()
     {
         return BattlePhase.Unknown;
     }
