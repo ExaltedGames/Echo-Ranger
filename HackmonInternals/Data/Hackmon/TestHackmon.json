@@ -1,5 +1,7 @@
 ﻿{
+  "ID": 0,
   "PrimaryType": "Basic",
+  "Name": "Test",
   "Family": "Construct",
   "MaxHp": {
     "BaseValue": 1,
