@@ -1,0 +1,3 @@
+[submodule "TurnBasedBattleSystem"]
+	path = TurnBasedBattleSystem
+	url = https://github.com/Sprocket06/TurnBasedBattleSystem
