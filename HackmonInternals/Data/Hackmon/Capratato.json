@@ -1,5 +1,7 @@
 ﻿{
+  "ID": 1,
   "PrimaryType": "Basic",
+  "Name": "Capratato",
   "Family": "Beast",
   "MaxHp": {
     "BaseValue": 200,
