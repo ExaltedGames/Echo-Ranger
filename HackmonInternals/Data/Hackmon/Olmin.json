@@ -1,19 +1,19 @@
 ﻿{
-  "ID": 0,
-  "PrimaryType": "Basic",
-  "Name": "Test",
-  "Family": "Construct",
+  "ID": 1,
+  "PrimaryType": "Water",
+  "Name": "Olmin",
+  "Family": "Reptile",
   "MaxHp": {
     "BaseValue": 100,
     "GrowthPerLevel": 19
   },
   "Attack": {
-    "BaseValue": 50,
+    "BaseValue": 25,
     "GrowthPerLevel": 1
   },
   "SpAttack": {
     "BaseValue": 50,
-    "GrowthPerLevel": 1
+    "GrowthPerLevel": 2
   },
   "Defense": {
     "BaseValue": 25,
@@ -21,11 +21,11 @@
   },
   "SpDefense": {
     "BaseValue": 25,
-    "GrowthPerLevel": 1
+    "GrowthPerLevel": 2
   },
   "Agility": {
     "BaseValue": 100,
-    "GrowthPerLevel": 19
+    "GrowthPerLevel": 18
   },
-  "LearnableMoves": [0]
+  "LearnableMoves": [1,7]
 }
