@@ -4,6 +4,8 @@ namespace HackmonInternals.Models;
 
 public class HackmonData
 {
+    public int ID { get; set; }
+    public string Name { get; set; } 
     public HackmonType PrimaryType { get; set; }
     public HackmonType? SecondaryType { get; set; }
     public HackmonFamily Family { get; set; }

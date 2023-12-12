@@ -12,8 +12,8 @@ public class HackmonMove
    public int Damage { get; set; }
    public AttackType AttackType { get; set; }
    public int StaminaCost { get; set; }
-   public List<(string Name, int Duration)> UserStatuses { get; set; } = new();
-   public List<(string Name, int Duration)> TargetStatuses { get; set; } = new();
+   public List<StatusDescriptor> UserStatuses { get; set; } = new();
+   public List<StatusDescriptor> TargetStatuses { get; set; } = new();
 
    [JsonIgnore]
    public List<Type> UserStatusTypes { get; set; } = new();

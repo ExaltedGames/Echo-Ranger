@@ -1,15 +1,22 @@
-﻿using HackmonInternals.StatusEffects;
+﻿using HackmonInternals.Enums;
+using HackmonInternals.StatusEffects;
+using TurnBasedBattleSystem;
 
 namespace HackmonInternals.Models;
 
-public class HackmonInstance
+public class HackmonInstance : IUnit
 {
    public HackmonData staticData { get; private set; }
+
+   public string Name => staticData.Name;
+   
    public int Level { get; set; }
    
-   public int Hp { get; set; }
+   public int Health { get; set; }
+   
+   public int Speed { get; set; }
 
-   public bool IsDead => Hp <= 0;
+   public bool IsDead => Health <= 0;
 
    public int Attack => staticData.Attack.BaseValue + (int)MathF.Round(staticData.Attack.GrowthPerLevel * Level);
 
@@ -25,6 +32,10 @@ public class HackmonInstance
    
    public int Stamina { get; set; }
 
+   public HackmonType PrimaryType => staticData.PrimaryType;
+   
+   public HackmonType? SecondaryType => staticData.SecondaryType;
+
    public List<Status> StatusEffects { get; set; } = new();
 
    public List<int> KnownMoves { get; set; } = new();
@@ -34,7 +45,12 @@ public class HackmonInstance
       this.staticData = staticData;
       Level = level;
 
-      Hp = MaxHp;
+      Health = MaxHp;
       Stamina = MaxStamina;
+      
+      //TODO: remove this later when we have better methods of generating this
+      KnownMoves = staticData.LearnableMoves;
    }
+
+   public List<IStatus> Statuses { get; set; }
 }

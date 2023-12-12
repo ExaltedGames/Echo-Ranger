@@ -13,4 +13,8 @@
         </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TurnBasedBattleSystem\TurnBasedBattleSystem\TurnBasedBattleSystem.csproj" />
+    </ItemGroup>
+
 </Project>
