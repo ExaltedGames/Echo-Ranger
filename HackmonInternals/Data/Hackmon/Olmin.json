@@ -1,0 +1,31 @@
+﻿{
+  "ID": 1,
+  "PrimaryType": "Water",
+  "Name": "Olmin",
+  "Family": "Reptile",
+  "MaxHp": {
+    "BaseValue": 100,
+    "GrowthPerLevel": 19
+  },
+  "Attack": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "SpAttack": {
+    "BaseValue": 50,
+    "GrowthPerLevel": 2
+  },
+  "Defense": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "SpDefense": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 2
+  },
+  "Agility": {
+    "BaseValue": 100,
+    "GrowthPerLevel": 18
+  },
+  "LearnableMoves": [1,7]
+}

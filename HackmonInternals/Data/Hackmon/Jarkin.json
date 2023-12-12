@@ -1,0 +1,31 @@
+﻿{
+  "ID": 2,
+  "PrimaryType": "Earth",
+  "Name": "Jarkin",
+  "Family": "Construct",
+  "MaxHp": {
+    "BaseValue": 120,
+    "GrowthPerLevel": 22
+  },
+  "Attack": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 2
+  },
+  "SpAttack": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "Defense": {
+    "BaseValue": 12,
+    "GrowthPerLevel": 2
+  },
+  "SpDefense": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 3
+  },
+  "Agility": {
+    "BaseValue": 100,
+    "GrowthPerLevel": 10
+  },
+  "LearnableMoves": [1,4,9]
+}

@@ -1,0 +1,31 @@
+﻿{
+  "ID": 3,
+  "PrimaryType": "Fire",
+  "Name": "Capratato",
+  "Family": "Arthropod",
+  "MaxHp": {
+    "BaseValue": 80,
+    "GrowthPerLevel": 18
+  },
+  "Attack": {
+    "BaseValue": 25,
+    "GrowthPerLevel": 1
+  },
+  "SpAttack": {
+    "BaseValue": 50,
+    "GrowthPerLevel": 3
+  },
+  "Defense": {
+    "BaseValue": 12,
+    "GrowthPerLevel": 1
+  },
+  "SpDefense": {
+    "BaseValue": 12,
+    "GrowthPerLevel": 1
+  },
+  "Agility": {
+    "BaseValue": 100,
+    "GrowthPerLevel": 3
+  },
+  "LearnableMoves": [1,2,6]
+}
