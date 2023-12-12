@@ -22,8 +22,8 @@ public static class Tests
 
    public static void TestBattle()
    {
-      var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[0], 1);
-      var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+      var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+      var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[2], 1);
 
       var playerTeam = new List<HackmonInstance>() { playerMon };
       var enemyTeam = new List<HackmonInstance>() { enemyMon };
