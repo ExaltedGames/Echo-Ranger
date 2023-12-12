@@ -27,15 +27,17 @@ public static class Tests
 
       var playerTeam = new List<HackmonInstance>() { playerMon };
       var enemyTeam = new List<HackmonInstance>() { enemyMon };
-
+      
       HackmonBattleManager.StartBattle(playerTeam, enemyTeam);
+      while (HackmonBattleManager.InBattle)
+      {
+         var playerAction = new AttackAction(
+            playerMon,
+            enemyMon,
+            new AttackResolver(HackmonManager.MoveRegistry[playerMon.KnownMoves[0]])
+         );
 
-      var playerAction = new AttackAction(
-         playerMon,
-         enemyMon,
-         new AttackResolver(HackmonManager.MoveRegistry[playerMon.KnownMoves[0]])
-      );
-
-      HackmonBattleManager.HandleInput(new() { playerAction });
+         HackmonBattleManager.HandleInput(new() { playerAction });
+      } 
    }
 }

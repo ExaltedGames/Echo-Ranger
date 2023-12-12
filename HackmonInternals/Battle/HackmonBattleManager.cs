@@ -11,6 +11,8 @@ namespace HackmonInternals.Battle;
 
 public static class HackmonBattleManager
 {
+    public static bool InBattle => BattleManager.BattleInProgress;
+    
     private static bool endBattle = false;
     
     public static void StartBattle(List<HackmonInstance> playerTeam, List<HackmonInstance> enemyTeam)
