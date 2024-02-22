@@ -16,7 +16,7 @@ public partial class Textbox : CanvasLayer
 
 	private TaskCompletionSource<bool> done = new();
 
-	public double TypewriterSpeed { get; set; } = 0.25;
+	public double TypewriterSpeed { get; set; } = 0.05;
 	public bool Enabled { get; private set; }
 	
 	public override void _Ready()
@@ -69,10 +69,12 @@ public partial class Textbox : CanvasLayer
 
 	public async Task ShowMessages(List<string> messages, Action callback)
 	{
-		if (!Enabled) Enable();
 		messageList = messages;
 		messageIndex = 0;
-
+		if (!Enabled) Enable();
+		
+		GD.Print($"Loaded {messages.Count} messages");
+		
 		await done.Task;
 		callback();
 	}

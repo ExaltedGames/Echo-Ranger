@@ -1,4 +1,5 @@
-﻿using HackmonInternals.Battle.Inputs;
+﻿using System.Threading.Tasks.Dataflow;
+using HackmonInternals.Battle.Inputs;
 using HackmonInternals.Battle.Negotiators;
 using HackmonInternals.Enums;
 using HackmonInternals.Events;
@@ -52,7 +53,7 @@ public static class HackmonBattleManager
         {
             Console.WriteLine("End of turn");
             var e = new HackmonEndTurnEvent();
-            EventQueue.Append(e);
+            EventQueue.Enqueue(e);
             if (endBattle)
             {
                 endBattle = false;
@@ -68,8 +69,10 @@ public static class HackmonBattleManager
         AttackResolver atk = (AttackResolver)e.Attack;
 
         var hitEvent = new HackmonHitEvent(attacker, target, atk.AttackData, e.Damage);
-        EventQueue.Append(hitEvent);
-
+        EventQueue.Enqueue(hitEvent);
+        
+        Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
+        
         Console.WriteLine(
             $"{attacker.Name} uses {atk.AttackData.Name} on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");
     }
@@ -79,7 +82,7 @@ public static class HackmonBattleManager
         // log death
         HackmonInstance deadUnit = (HackmonInstance)data.Unit;
         var deathEvent = new HackmonDeathEvent(deadUnit);
-        EventQueue.Append(deathEvent);
+        EventQueue.Enqueue(deathEvent);
         
         Console.WriteLine($"{deadUnit.Name} has fainted!");
 

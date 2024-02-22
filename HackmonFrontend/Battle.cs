@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -30,7 +31,6 @@ public partial class Battle : Node2D
 		var action = new AttackAction(ActivePlayerMon, ActiveEnemyMon, new AttackResolver(move));
 
 		HackmonBattleManager.HandleInput(new() {action});
-
 		processEvents = true;
 	}
 	
@@ -92,17 +92,18 @@ public partial class Battle : Node2D
 				switch (@event)
 				{
 					case HackmonEndTurnEvent:
-						var messageTask = eventText.ShowMessages(messageList, OnMessagesDone);	
+						GD.Print($"attempting to display messages");
+						var messageTask = eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);	
 						messageList.Clear();
 						processEvents = false;
 						break;
 					case HackmonHitEvent hitEvent:
 						eventStr = $"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-						messageList.Append(eventStr);
+						messageList.Add(eventStr);
 						break;
 					case HackmonDeathEvent deathEvent:
 						eventStr = $"{deathEvent.Unit.Name} has fainted.";
-						messageList.Append(eventStr);
+						messageList.Add(eventStr);
 						break;
 				}
 			}
