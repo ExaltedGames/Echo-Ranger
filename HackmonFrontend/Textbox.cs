@@ -72,6 +72,7 @@ public partial class Textbox : CanvasLayer
 		messageList = messages;
 		messageIndex = 0;
 		if (!Enabled) Enable();
+		done = new TaskCompletionSource<bool>();
 		
 		GD.Print($"Loaded {messages.Count} messages");
 		GD.Print($"Enabled: {Enabled} | Visible: {Visible}");
