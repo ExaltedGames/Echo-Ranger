@@ -15,7 +15,7 @@ public partial class ActionSelectUI : Control
 	public int CurrentSelection = -1;
 
 	public delegate void ActionSelectHandler(HackmonMove action);
-	public event ActionSelectHandler ActionSelected = null!; 
+	public event ActionSelectHandler OnActionSelected = null!; 
 	
 	private void _on_move_pressed(int selection)
 	{
@@ -24,7 +24,7 @@ public partial class ActionSelectUI : Control
 		if (CurrentSelection == selection)
 		{
 			GD.Print("Selection confirmed.");
-			ActionSelected?.Invoke(SelectableActions[selection]);
+			OnActionSelected?.Invoke(SelectableActions[selection]);
 		}
 		else
 		{

@@ -1,6 +1,7 @@
 ﻿using HackmonInternals.Battle.Inputs;
 using HackmonInternals.Battle.Negotiators;
 using HackmonInternals.Enums;
+using HackmonInternals.Events;
 using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
@@ -12,6 +13,8 @@ namespace HackmonInternals.Battle;
 public static class HackmonBattleManager
 {
     public static bool InBattle => BattleManager.BattleInProgress;
+    public static int TurnNum = 0;
+    public static Queue<HackmonBattleEvent> EventQueue = new(); 
     
     private static bool endBattle = false;
     
@@ -48,6 +51,8 @@ public static class HackmonBattleManager
         else if (b is EndTurnEvent)
         {
             Console.WriteLine("End of turn");
+            var e = new HackmonEndTurnEvent();
+            EventQueue.Append(e);
             if (endBattle)
             {
                 endBattle = false;
@@ -62,6 +67,9 @@ public static class HackmonBattleManager
         HackmonInstance target = (HackmonInstance)e.Target;
         AttackResolver atk = (AttackResolver)e.Attack;
 
+        var hitEvent = new HackmonHitEvent(attacker, target, atk.AttackData, e.Damage);
+        EventQueue.Append(hitEvent);
+
         Console.WriteLine(
             $"{attacker.Name} uses {atk.AttackData.Name} on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");
     }
@@ -70,6 +78,9 @@ public static class HackmonBattleManager
     {
         // log death
         HackmonInstance deadUnit = (HackmonInstance)data.Unit;
+        var deathEvent = new HackmonDeathEvent(deadUnit);
+        EventQueue.Append(deathEvent);
+        
         Console.WriteLine($"{deadUnit.Name} has fainted!");
 
         bool playerAlive = false;

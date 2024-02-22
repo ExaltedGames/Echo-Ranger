@@ -1,8 +1,13 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Godot;
 using Hackmon.Debugging;
 using HackmonInternals;
 using HackmonInternals.Battle;
+using HackmonInternals.Events;
 using HackmonInternals.Models;
+using TurnBasedBattleSystem.Actions;
 
 namespace HackmonFrontend;
 
@@ -15,11 +20,18 @@ public partial class Battle : Node2D
 	private BattlerStage enemyStage;
 	private ActionSelectUI actionSelect;
 
-	private void ShowMessage(string message)
+	private HackmonInstance ActivePlayerMon;
+	private HackmonInstance ActiveEnemyMon;
+	private bool processEvents = false;
+	private List<string> messageList = new();
+	
+	private void OnPlayerInput(HackmonMove move)
 	{
-		actionSelect.SetEnabled(false);
-		eventText.Enable();
-		eventText.SetText(message);
+		var action = new AttackAction(ActivePlayerMon, ActiveEnemyMon, new AttackResolver(move));
+
+		HackmonBattleManager.HandleInput(new() {action});
+
+		processEvents = true;
 	}
 	
 	public override void _Ready()
@@ -44,38 +56,63 @@ public partial class Battle : Node2D
 	{
 		HackmonBattleManager.StartBattle(playerData.CurrentParty, enemy.CurrentParty);
 
-		var playerStarter = playerData.CurrentParty[0];
+		ActivePlayerMon = playerData.CurrentParty[0];
+		ActiveEnemyMon = enemy.CurrentParty[0];
 		
-		GD.Print($"Player sends out {playerStarter.Name}");
+		GD.Print($"Player sends out {ActivePlayerMon.Name}");
 		GD.Print($"Enemy sends out: {enemy.CurrentParty[0].Name}");
 		
-		trainerUI.SetCurrentMon(playerStarter);
-		trainerStage.LoadHackmon(playerStarter.Name, true);
+		trainerUI.SetCurrentMon(ActivePlayerMon);
+		trainerStage.LoadHackmon(ActivePlayerMon.Name, true);
 		enemyUI.SetCurrentMon(enemy.CurrentParty[0]);
 		enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
 
 		HackmonMove[] battleMoveset = new HackmonMove[4];
 		for (int i = 0; i < 4; i++)
 		{
-			if (playerStarter.KnownMoves.Count > i)
+			if (ActivePlayerMon.KnownMoves.Count > i)
 			{
-				battleMoveset[i] = HackmonManager.MoveRegistry[playerStarter.KnownMoves[i]];
+				battleMoveset[i] = HackmonManager.MoveRegistry[ActivePlayerMon.KnownMoves[i]];
 			}
 			else break;
 		}
 		
 		actionSelect.SetActions(battleMoveset);
-		ShowMessage($"Go, {playerStarter.Name}!");
+		actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		// InitBattle should be getting called before any processing gets done, this should make sure of that.
-		// (and also keep me from having to make the entirety of event handling null-safe)
-		
-		//TODO: set up animations and shit
-		
-			//TODO: handle battle events	
+		if (processEvents)
+		{
+			HackmonBattleEvent @event;
+			while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
+			{
+				var eventStr = "";
+				switch (@event)
+				{
+					case HackmonEndTurnEvent:
+						var messageTask = eventText.ShowMessages(messageList, OnMessagesDone);	
+						messageList.Clear();
+						processEvents = false;
+						break;
+					case HackmonHitEvent hitEvent:
+						eventStr = $"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
+						messageList.Append(eventStr);
+						break;
+					case HackmonDeathEvent deathEvent:
+						eventStr = $"{deathEvent.Unit.Name} has fainted.";
+						messageList.Append(eventStr);
+						break;
+				}
+			}
+		}
+			
+	}
+
+	private void OnMessagesDone()
+	{
+		eventText.Disable();
+		actionSelect.SetEnabled(true);
 	}
 }

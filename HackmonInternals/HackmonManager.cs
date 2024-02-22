@@ -75,11 +75,6 @@ public static class HackmonManager
     {
         foreach (var type in a.GetTypes())
         {
-            /*
-            if (type.IsSealed == false) continue;
-            if (type.IsClass == false) continue;
-            */
-
             foreach (var method in type.GetRuntimeMethods())
             {
                 if (method.IsStatic == false) continue;
