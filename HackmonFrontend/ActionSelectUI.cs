@@ -36,7 +36,7 @@ public partial class ActionSelectUI : Control
 
 	public void SetEnabled(bool enabled)
 	{
-		Infobox.Visible = false;
+		Infobox.Visible = enabled;
 		for (int i = 0; i < numActions; i++)
 		{
 			Buttons[i].Visible = enabled;

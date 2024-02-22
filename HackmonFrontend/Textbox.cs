@@ -67,13 +67,14 @@ public partial class Textbox : CanvasLayer
 		TextBox.Text = currentMessage.Substring(0, typewriterPosition);
 	}
 
-	public async Task ShowMessages(List<string> messages, Action callback)
+	public async void ShowMessages(List<string> messages, Action callback)
 	{
 		messageList = messages;
 		messageIndex = 0;
 		if (!Enabled) Enable();
 		
 		GD.Print($"Loaded {messages.Count} messages");
+		GD.Print($"Enabled: {Enabled} | Visible: {Visible}");
 		
 		await done.Task;
 		callback();
