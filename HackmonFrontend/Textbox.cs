@@ -27,6 +27,7 @@ public partial class Textbox : CanvasLayer
 	
 	public override void _Input(InputEvent @event)
 	{
+		if (!Enabled) return;
 		if (@event.IsActionPressed("ui_accept"))
 		{
 			if (typewriterPosition != currentMessage.Length)
@@ -71,6 +72,7 @@ public partial class Textbox : CanvasLayer
 	{
 		messageList = messages;
 		messageIndex = 0;
+		typewriterPosition = 0;
 		if (!Enabled) Enable();
 		done = new TaskCompletionSource<bool>();
 		
