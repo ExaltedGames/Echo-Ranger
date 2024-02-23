@@ -25,6 +25,7 @@ public partial class ActionSelectUI : Control
 		{
 			GD.Print("Selection confirmed.");
 			OnActionSelected?.Invoke(SelectableActions[selection]);
+			CurrentSelection = -1;
 		}
 		else
 		{
