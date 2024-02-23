@@ -120,7 +120,7 @@ public static class HackmonManager
         var dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Data/{dir}");
         List<T> loadedData = new();
 
-        foreach (var file in Directory.EnumerateFiles(dataPath))
+        foreach (var file in Directory.EnumerateFiles(dataPath, "*.json", SearchOption.AllDirectories))
         {
             var json = File.ReadAllText(file);
 
