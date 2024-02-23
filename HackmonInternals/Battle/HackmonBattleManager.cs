@@ -100,6 +100,8 @@ public static class HackmonBattleManager
         {
             Console.WriteLine("Battle ends in player loss.");
             endBattle = true;
+            var endEvent = new HackmonBattleEndEvent(false);
+            EventQueue.Enqueue(endEvent);
             return;
         }
 
@@ -116,6 +118,8 @@ public static class HackmonBattleManager
         if (!enemyAlive)
         {
             Console.WriteLine("Battle ends in player victory.");
+            var endEvent = new HackmonBattleEndEvent(true);
+            EventQueue.Enqueue(endEvent);
             endBattle = true;
         }
     }

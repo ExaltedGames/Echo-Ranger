@@ -24,6 +24,7 @@ public partial class Battle : Node2D
     private HackmonInstance ActivePlayerMon;
     private HackmonInstance ActiveEnemyMon;
     private bool processEvents = false;
+    private bool itsSoOver = false;
     private List<string> messageList = new();
 
     private void OnPlayerInput(HackmonMove move)
@@ -37,6 +38,7 @@ public partial class Battle : Node2D
     private void OnMessagesDone()
     {
         eventText.Disable();
+        if (itsSoOver) return;
         actionSelect.SetEnabled(true);
     }
 
@@ -113,6 +115,11 @@ public partial class Battle : Node2D
                     case HackmonDeathEvent deathEvent:
                         eventStr = $"{deathEvent.Unit.Name} has fainted.";
                         messageList.Add(eventStr);
+                        break;
+                    case HackmonBattleEndEvent endEvent:
+                        eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
+                        messageList.Add(eventStr);
+                        itsSoOver = true;
                         break;
                 }
             }

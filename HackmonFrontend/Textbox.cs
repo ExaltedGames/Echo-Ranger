@@ -73,11 +73,11 @@ public partial class Textbox : CanvasLayer
 		messageList = messages;
 		messageIndex = 0;
 		typewriterPosition = 0;
-		if (!Enabled) Enable();
 		done = new TaskCompletionSource<bool>();
 		
+		if (!Enabled) Enable();
+		
 		GD.Print($"Loaded {messages.Count} messages");
-		GD.Print($"Enabled: {Enabled} | Visible: {Visible}");
 		
 		await done.Task;
 		callback();
