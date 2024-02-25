@@ -29,5 +29,5 @@ texture = ExtResource("1_qvym7")
 [node name="BattlerSprite" type="AnimatedSprite2D" parent="."]
 z_index = 1
 texture_filter = 1
-position = Vector2(0, -21)
+position = Vector2(0, -50.9201)
 sprite_frames = SubResource("SpriteFrames_d6vus")
