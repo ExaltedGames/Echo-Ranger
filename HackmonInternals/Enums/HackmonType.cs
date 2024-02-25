@@ -3,12 +3,14 @@
 public enum HackmonType
 {
     Basic,
-    Water,
-    Earth,
     Fire,
+    Water,
+    Plant,
+    Earth,
     Wind,
     Jolt,
     Spirit,
     Mech,
-    Chem
+    Chem,
+    Frost
 }
