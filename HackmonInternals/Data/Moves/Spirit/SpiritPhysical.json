@@ -1,0 +1,12 @@
+{
+  "ID": 30,
+  "MoveType": "Spirit",
+  "Name": "SpiritPhysical",
+  "Description": "TODO.",
+  "Damage": 40,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 20,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

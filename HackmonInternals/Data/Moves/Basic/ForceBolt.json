@@ -1,0 +1,12 @@
+{
+  "ID": 24,
+  "MoveType": "Basic",
+  "Name": "Force Bolt",
+  "Description": "The user inflicts damage upon it's foe through sheer force of will.",
+  "Damage": 40,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 20,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

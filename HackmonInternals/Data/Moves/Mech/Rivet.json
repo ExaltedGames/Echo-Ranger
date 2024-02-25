@@ -7,6 +7,6 @@
   "AttackType": "Special",
   "Target": "Single",
   "StaminaCost": 10,
-  "UserStatuses" : [],
+  "UserStatuses": [],
   "TargetStatuses": []
 }

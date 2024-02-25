@@ -1,0 +1,12 @@
+{
+  "ID": 20,
+  "MoveType": "Jolt",
+  "Name": "Surge",
+  "Description": "The user assaults it's foe with a constant stream of electricity.",
+  "Damage": 50,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 25,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

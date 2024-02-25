@@ -1,0 +1,12 @@
+{
+  "ID": 19,
+  "MoveType": "Wind",
+  "Name": "Wind2",
+  "Description": "TODO.",
+  "Damage": 50,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 25,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}
