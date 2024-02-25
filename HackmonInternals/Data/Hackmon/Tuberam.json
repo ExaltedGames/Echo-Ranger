@@ -1,31 +1,31 @@
 ﻿{
-  "ID": 4,
+  "ID": 5,
   "PrimaryType": "Basic",
-  "Name": "Capratato",
+  "Name": "Tuberam",
   "Family": "Beast",
   "MaxHp": {
     "BaseValue": 100,
     "GrowthPerLevel": 20
   },
   "Attack": {
-    "BaseValue": 50,
+    "BaseValue": 125,
     "GrowthPerLevel": 1
   },
   "SpAttack": {
-    "BaseValue": 50,
+    "BaseValue": 100,
     "GrowthPerLevel": 1
   },
   "Defense": {
-    "BaseValue": 25,
+    "BaseValue": 50,
     "GrowthPerLevel": 2
   },
   "SpDefense": {
-    "BaseValue": 25,
+    "BaseValue": 50,
     "GrowthPerLevel": 2
   },
   "Agility": {
-    "BaseValue": 100,
+    "BaseValue": 150,
     "GrowthPerLevel": 19
   },
-  "LearnableMoves": [1,24]
+  "LearnableMoves": [1,24,14,5,30]
 }
