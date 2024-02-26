@@ -102,7 +102,6 @@ public static class HackmonManager
 
     public static void StartBattle(TrainerData playerData, TrainerData enemyData)
     {
-        //TODO: Reimpl with new library
         HackmonBattleManager.StartBattle(playerData.CurrentParty, enemyData.CurrentParty);
     }
     
