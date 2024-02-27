@@ -1,0 +1,12 @@
+{
+  "ID": 16,
+  "MoveType": "Water",
+  "Name": "Stream",
+  "Description": "The user blasts it's opponent with a concentrated beam of water.",
+  "Damage": 50,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 25,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

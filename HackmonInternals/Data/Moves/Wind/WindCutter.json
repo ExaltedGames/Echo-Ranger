@@ -1,0 +1,12 @@
+{
+  "ID": 28,
+  "MoveType": "Wind",
+  "Name": "Wind Cutter",
+  "Description": "The user cleaves into it's foe with a forceful projection of air.",
+  "Damage": 40,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 20,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

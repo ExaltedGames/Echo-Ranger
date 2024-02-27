@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgnh5nicish3d"]
+[gd_scene load_steps=7 format=3 uid="uid://dgnh5nicish3d"]
 
 [ext_resource type="Script" path="res://Battle.cs" id="1_w30jk"]
 [ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://BattlerUI.tscn" id="2_1nxov"]
 [ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://BattlerStage.tscn" id="2_8ceye"]
 [ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="2_v5ddm"]
+[ext_resource type="Script" path="res://ActionSelectUI.cs" id="4_p2xem"]
+[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Textbox.tscn" id="6_oyx74"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_w30jk")
@@ -30,7 +32,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BattleStuff" type="Control" parent="UI"]
+[node name="ActionSelectUI" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -38,8 +40,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("4_p2xem")
 
-[node name="MoveList" type="VBoxContainer" parent="UI/BattleStuff"]
+[node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI"]
 layout_direction = 1
 layout_mode = 2
 offset_left = 383.0
@@ -48,31 +51,30 @@ offset_right = 507.0
 offset_bottom = 556.0
 scale = Vector2(3, 2)
 alignment = 1
-metadata/_edit_group_ = true
 
-[node name="TopMoves" type="BoxContainer" parent="UI/BattleStuff/MoveList"]
+[node name="TopMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
 layout_mode = 2
 
-[node name="Move1" type="Button" parent="UI/BattleStuff/MoveList/TopMoves"]
+[node name="Move1" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
 layout_mode = 2
 text = "Move1"
 
-[node name="Move2" type="Button" parent="UI/BattleStuff/MoveList/TopMoves"]
+[node name="Move2" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
 layout_mode = 2
 text = "Move2"
 
-[node name="BottomMoves" type="BoxContainer" parent="UI/BattleStuff/MoveList"]
+[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
 layout_mode = 2
 
-[node name="Move3" type="Button" parent="UI/BattleStuff/MoveList/BottomMoves"]
+[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
 layout_mode = 2
 text = "Move3"
 
-[node name="Move4" type="Button" parent="UI/BattleStuff/MoveList/BottomMoves"]
+[node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
 layout_mode = 2
 text = "Move4"
 
-[node name="Infobox" type="TextEdit" parent="UI/BattleStuff"]
+[node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI"]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 486.0
@@ -89,6 +91,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
+wrap_mode = 1
 
 [node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
@@ -105,3 +108,11 @@ offset_top = 196.0
 offset_right = 859.0
 offset_bottom = 282.0
 scale = Vector2(2, 2)
+
+[node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
+visible = false
+
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move1" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [0]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move2" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [1]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move3" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [2]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move4" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [3]]

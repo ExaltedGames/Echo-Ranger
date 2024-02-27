@@ -2,7 +2,7 @@
   "ID": 1,
   "PrimaryType": "Water",
   "Name": "Olmin",
-  "Family": "Reptile",
+  "Family": "Aquatic",
   "MaxHp": {
     "BaseValue": 100,
     "GrowthPerLevel": 19
@@ -27,5 +27,5 @@
     "BaseValue": 100,
     "GrowthPerLevel": 18
   },
-  "LearnableMoves": [1,7]
+  "LearnableMoves": [1,3,25]
 }

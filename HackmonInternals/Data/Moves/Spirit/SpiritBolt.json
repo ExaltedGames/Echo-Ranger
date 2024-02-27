@@ -1,0 +1,12 @@
+{
+  "ID": 21,
+  "MoveType": "Spirit",
+  "Name": "Spirit Bolt",
+  "Description": "The user launches a concentrated projectile of spiritual energy at it's foe.",
+  "Damage": 50,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 25,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

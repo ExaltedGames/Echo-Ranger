@@ -1,0 +1,12 @@
+{
+  "ID": 29,
+  "MoveType": "Jolt",
+  "Name": "JoltPhysical",
+  "Description": "TODO.",
+  "Damage": 40,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 20,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

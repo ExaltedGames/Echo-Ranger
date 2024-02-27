@@ -6,5 +6,6 @@ public static class Program
     {
         Console.WriteLine("Running tests...");
         Tests.TestMoveLoading();    
+        Tests.TestBattle();
     }
 }

@@ -1,7 +1,7 @@
 ﻿{
   "ID": 3,
   "PrimaryType": "Fire",
-  "Name": "Capratato",
+  "Name": "Verma",
   "Family": "Arthropod",
   "MaxHp": {
     "BaseValue": 80,
@@ -27,5 +27,5 @@
     "BaseValue": 100,
     "GrowthPerLevel": 3
   },
-  "LearnableMoves": [1,2,6]
+  "LearnableMoves": [1,2,11]
 }

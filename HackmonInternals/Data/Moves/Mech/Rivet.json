@@ -1,0 +1,12 @@
+{
+  "ID": 9,
+  "MoveType": "Mech",
+  "Name": "Rivet Launch",
+  "Description": "The user launches a loose part of it's body at high velocity to strike it's opponent.",
+  "Damage": 25,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 10,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

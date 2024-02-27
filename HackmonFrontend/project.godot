@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Hackmon"
 run/main_scene="res://Battle.tscn"
-config/features=PackedStringArray("4.0", "C#", "Forward Plus")
+config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://Assets/ProjectIcon.png"
+
+[autoload]
+
+GameManager="*res://GameManager.tscn"
 
 [dotnet]
 

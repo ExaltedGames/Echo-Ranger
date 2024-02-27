@@ -1,6 +1,22 @@
-﻿namespace HackmonInternals.StatusEffects;
+﻿using HackmonInternals.Attributes;
+using HackmonInternals.Models;
+
+namespace HackmonInternals.StatusEffects;
 
 public class Poison : Status
 {
-    public override string Name { get; set; } = "Poison";
+    [Status("Poison")]
+    public static Poison Init(HackmonInstance unit, int numTurns)
+    {
+        return new Poison(unit, numTurns);
+    }
+    
+    public Poison(HackmonInstance unit, int numTurns) : base(unit, numTurns)
+    {
+    }
+
+    public override void Remove(int stacks)
+    {
+        throw new NotImplementedException();
+    }
 }

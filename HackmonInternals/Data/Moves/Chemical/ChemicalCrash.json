@@ -1,0 +1,12 @@
+{
+  "ID": 32,
+  "MoveType": "Chem",
+  "Name": "Chemical Crash",
+  "Description": "The user coats itself in toxic chemicals before rapidly crashing into it's foe.",
+  "Damage": 40,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 20,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}
