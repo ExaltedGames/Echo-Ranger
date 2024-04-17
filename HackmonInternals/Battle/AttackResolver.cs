@@ -43,7 +43,7 @@ public class AttackResolver : IAttack
                     break;
                 case AttackType.Special:
                     atk = moveUser.SpAttack;
-                    def = moveUser.SpDefense;
+                    def = moveTarget.SpDefense;
                     break;
             }
 
