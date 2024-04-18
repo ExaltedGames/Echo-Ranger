@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using HackmonInternals.Models;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Actions;
@@ -10,7 +11,14 @@ public class HackmonAI : BattleAI
     {
         if (actor is HackmonInstance unit)
         {
-            var moveId = unit.KnownMoves[0];
+            Random rand = new();
+            var maxMoves = 4;
+            if(unit.KnownMoves.Count < 4)
+            {
+                maxMoves = unit.KnownMoves.Count;
+            }
+            var choice = rand.Next(maxMoves);
+            var moveId = unit.KnownMoves[choice];
             var move = HackmonManager.MoveRegistry[moveId];
             var target = BattleManager.PlayerTeam[0];
 
