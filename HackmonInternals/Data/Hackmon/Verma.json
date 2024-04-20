@@ -4,28 +4,28 @@
   "Name": "Verma",
   "Family": "Arthropod",
   "MaxHp": {
-    "BaseValue": 80,
-    "GrowthPerLevel": 18
+    "BaseValue": 1,
+    "GrowthPerLevel": 4.03
   },
   "Attack": {
-    "BaseValue": 25,
-    "GrowthPerLevel": 1
+    "BaseValue": 2,
+    "GrowthPerLevel": 7.05
   },
   "SpAttack": {
-    "BaseValue": 50,
-    "GrowthPerLevel": 3
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
   },
   "Defense": {
-    "BaseValue": 12,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 4.03
   },
   "SpDefense": {
-    "BaseValue": 12,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 4.03
   },
   "Agility": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 3
+    "BaseValue": 5,
+    "GrowthPerLevel": 6.01
   },
   "LearnableMoves": [1,2,11]
 }

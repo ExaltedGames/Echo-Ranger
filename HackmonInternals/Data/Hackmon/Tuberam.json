@@ -4,28 +4,28 @@
   "Name": "Tuberam",
   "Family": "Beast",
   "MaxHp": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 20
+    "BaseValue": 105,
+    "GrowthPerLevel": 6.01
   },
   "Attack": {
-    "BaseValue": 125,
-    "GrowthPerLevel": 1
+    "BaseValue": 51,
+    "GrowthPerLevel": 5.04
   },
   "SpAttack": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
   },
   "Defense": {
-    "BaseValue": 50,
-    "GrowthPerLevel": 2
+    "BaseValue": 27,
+    "GrowthPerLevel": 5.03
   },
   "SpDefense": {
-    "BaseValue": 50,
-    "GrowthPerLevel": 2
+    "BaseValue": 2,
+    "GrowthPerLevel": 5.03
   },
   "Agility": {
-    "BaseValue": 150,
-    "GrowthPerLevel": 19
+    "BaseValue": 26,
+    "GrowthPerLevel": 4.03
   },
   "LearnableMoves": [1,24,14,5,30]
 }

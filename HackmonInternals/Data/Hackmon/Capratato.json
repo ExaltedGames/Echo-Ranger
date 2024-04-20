@@ -4,28 +4,28 @@
   "Name": "Capratato",
   "Family": "Beast",
   "MaxHp": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 20
+    "BaseValue": 5,
+    "GrowthPerLevel": 6.01
   },
   "Attack": {
-    "BaseValue": 50,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
   },
   "SpAttack": {
-    "BaseValue": 50,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
   },
   "Defense": {
-    "BaseValue": 25,
-    "GrowthPerLevel": 2
+    "BaseValue": 2,
+    "GrowthPerLevel": 5.03
   },
   "SpDefense": {
-    "BaseValue": 25,
-    "GrowthPerLevel": 2
+    "BaseValue": 2,
+    "GrowthPerLevel": 5.03
   },
   "Agility": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 19
+    "BaseValue": 1,
+    "GrowthPerLevel": 4.03
   },
   "LearnableMoves": [1,24]
 }
