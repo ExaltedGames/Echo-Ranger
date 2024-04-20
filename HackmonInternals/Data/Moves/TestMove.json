@@ -3,7 +3,7 @@
   "MoveType": "Basic",
   "Name": "Test Move",
   "Description": "This is a test move.",
-  "Damage": 100,
+  "Damage": 42,
   "AttackType": "Physical",
   "Target": "Single",
   "StaminaCost": 20,

@@ -89,48 +89,48 @@ public partial class Battle : Node2D
 		actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
-    public override void _Process(double delta)
-    {
-        if (processEvents)
-        {
-            HackmonBattleEvent @event;
-            while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
-            {
-                var eventStr = "";
-                switch (@event)
-                {
-                    case HackmonEndTurnEvent:
-                        GD.Print($"attempting to display messages");
-                        actionSelect.SetEnabled(false);
-                        eventText.Enable();
-                        eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);
-                        messageList.Clear();
-                        processEvents = false;
-                        break;
-                    case HackmonHitEvent hitEvent:
-                        eventStr =
-                            $"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-                        messageList.Add(eventStr);
-                        if (ActivePlayerMon == hitEvent.Attacker)
-                        {
-                            enemyUI.DoDamageAnim(hitEvent.Damage);    
-                        }
-                        else
-                        {
-                            trainerUI.DoDamageAnim(hitEvent.Damage);
-                        }
-                        break;
-                    case HackmonDeathEvent deathEvent:
-                        eventStr = $"{deathEvent.Unit.Name} has fainted.";
-                        messageList.Add(eventStr);
-                        break;
-                    case HackmonBattleEndEvent endEvent:
-                        eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
-                        messageList.Add(eventStr);
-                        itsSoOver = true;
-                        break;
-                }
-            }
-        }
-    }
+	public override void _Process(double delta)
+	{
+		if (processEvents)
+		{
+			HackmonBattleEvent @event;
+			while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
+			{
+				var eventStr = "";
+				switch (@event)
+				{
+					case HackmonEndTurnEvent:
+						GD.Print($"attempting to display messages");
+						actionSelect.SetEnabled(false);
+						eventText.Enable();
+						eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);
+						messageList.Clear();
+						processEvents = false;
+						break;
+					case HackmonHitEvent hitEvent:
+						eventStr =
+							$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
+						messageList.Add(eventStr);
+						if (ActivePlayerMon == hitEvent.Attacker)
+						{
+							enemyUI.DoDamageAnim(hitEvent.Damage);    
+						}
+						else
+						{
+							trainerUI.DoDamageAnim(hitEvent.Damage);
+						}
+						break;
+					case HackmonDeathEvent deathEvent:
+						eventStr = $"{deathEvent.Unit.Name} has fainted.";
+						messageList.Add(eventStr);
+						break;
+					case HackmonBattleEndEvent endEvent:
+						eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
+						messageList.Add(eventStr);
+						itsSoOver = true;
+						break;
+				}
+			}
+		}
+	}
 }

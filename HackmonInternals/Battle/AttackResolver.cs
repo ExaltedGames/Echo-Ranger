@@ -29,7 +29,7 @@ public class AttackResolver : IAttack
         {
             var atk = 0;
             var def = 0;
-            var stab = (moveUser.PrimaryType == AttackData.MoveType) ? 1.25f : 1f;
+            var stab = (moveUser.PrimaryType == AttackData.MoveType) ? 1.20f : 1f;
 
             switch (AttackData.AttackType)
             {
@@ -47,7 +47,12 @@ public class AttackResolver : IAttack
                     break;
             }
 
-            int damage = (int)((AttackData.Damage * atk + moveUser.Level) / def * stab);
+            int damage = (int)(atk / ((def+100)/100) + AttackData.Damage - moveTarget.Level/2 * stab);
+            
+            if (damage <= 0)
+            {
+                damage = 1;
+            }
 
             moveTarget.Health -= damage;
             HitEvent damageEvent = new HitEvent(moveUser, moveTarget, this, damage);
