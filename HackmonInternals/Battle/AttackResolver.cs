@@ -49,7 +49,7 @@ public class AttackResolver : IAttack
 
             int damage = (int)(atk / ((def+100)/100) + AttackData.Damage - moveTarget.Level/2 * stab);
             
-            if (damage <= 0)
+            if (damage <= 1)
             {
                 damage = 1;
             }
