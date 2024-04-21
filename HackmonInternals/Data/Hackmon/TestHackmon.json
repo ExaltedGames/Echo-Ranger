@@ -4,28 +4,28 @@
   "Name": "Test",
   "Family": "Construct",
   "MaxHp": {
-    "BaseValue": 100,
-    "GrowthPerLevel": 1
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0.5
+    "GrowthPerLevel": 5.04
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0.5
+    "GrowthPerLevel": 5.04
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0.5
+    "GrowthPerLevel": 5.04
   },
   "SpDefense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0.5
+    "GrowthPerLevel": 5.04
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 1
+    "GrowthPerLevel": 5.04
   },
-  "LearnableMoves": [0,1,2,3,4,5,6,7,8,9,10]
+  "LearnableMoves": [0,1]
 }

@@ -26,7 +26,7 @@ public class HackmonInstance : IUnit
 
    public int SpDefense => StaticData.SpDefense.BaseValue + (int)MathF.Round(StaticData.SpDefense.GrowthPerLevel * Level);
 
-   public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level);
+   public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level) + 99;
 
    public int MaxStamina { get; set; } = 100;
    
