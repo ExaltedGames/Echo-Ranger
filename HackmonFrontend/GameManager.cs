@@ -37,6 +37,12 @@ public partial class GameManager : Node
 		EnterBattle(testOpponent);
 	}
 
+	public void Save()
+	{
+		var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Write);
+		
+	}
+
 	public void EnterBattle(TrainerData opponent)
 	{
 		CurrentOpponent = opponent;	

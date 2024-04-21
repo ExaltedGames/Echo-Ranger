@@ -6,35 +6,35 @@ namespace HackmonInternals.Models;
 
 public class HackmonInstance : IUnit
 {
-   public HackmonData staticData { get; private set; }
+   public HackmonData StaticData { get; private set; }
 
-   public string Name => staticData.Name;
+   public string Name => StaticData.Name;
    
    public int Level { get; set; }
    
    public int Health { get; set; }
    
    public int Speed { get; set; }
-
+   
    public bool IsDead => Health <= 0;
 
-   public int Attack => staticData.Attack.BaseValue + (int)MathF.Round(staticData.Attack.GrowthPerLevel * Level);
+   public int Attack => StaticData.Attack.BaseValue + (int)MathF.Round(StaticData.Attack.GrowthPerLevel * Level);
 
-   public int SpAttack => staticData.SpAttack.BaseValue + (int)MathF.Round(staticData.SpAttack.GrowthPerLevel * Level);
+   public int SpAttack => StaticData.SpAttack.BaseValue + (int)MathF.Round(StaticData.SpAttack.GrowthPerLevel * Level);
 
-   public int Defense => staticData.Defense.BaseValue + (int) MathF.Round(staticData.Defense.GrowthPerLevel * Level);
+   public int Defense => StaticData.Defense.BaseValue + (int) MathF.Round(StaticData.Defense.GrowthPerLevel * Level);
 
-   public int SpDefense => staticData.SpDefense.BaseValue + (int)MathF.Round(staticData.SpDefense.GrowthPerLevel * Level);
+   public int SpDefense => StaticData.SpDefense.BaseValue + (int)MathF.Round(StaticData.SpDefense.GrowthPerLevel * Level);
 
-   public int MaxHp => staticData.MaxHp.BaseValue + (int)MathF.Round(staticData.MaxHp.GrowthPerLevel * Level);
+   public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level);
 
    public int MaxStamina { get; set; } = 100;
    
    public int Stamina { get; set; }
 
-   public HackmonType PrimaryType => staticData.PrimaryType;
+   public HackmonType PrimaryType => StaticData.PrimaryType;
    
-   public HackmonType? SecondaryType => staticData.SecondaryType;
+   public HackmonType? SecondaryType => StaticData.SecondaryType;
 
    public List<Status> StatusEffects { get; set; } = new();
 
@@ -42,7 +42,7 @@ public class HackmonInstance : IUnit
 
    public HackmonInstance(HackmonData staticData, int level)
    {
-      this.staticData = staticData;
+      this.StaticData = staticData;
       Level = level;
 
       Health = MaxHp;

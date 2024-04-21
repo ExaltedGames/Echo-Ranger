@@ -18,6 +18,7 @@ public class HackmonAI : BattleAI
                 maxMoves = unit.KnownMoves.Count;
             }
             var choice = rand.Next(maxMoves);
+            Console.WriteLine($"Selected {choice} from {maxMoves} total moves.");
             var moveId = unit.KnownMoves[choice];
             var move = HackmonManager.MoveRegistry[moveId];
             var target = BattleManager.PlayerTeam[0];
