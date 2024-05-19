@@ -19,7 +19,7 @@ public static class HackmonManager
     // TODO: Make hackmon use IDs too
     public static Dictionary<int, HackmonData> HackmonRegistry { get; private set; } = new();
 
-    public static Dictionary<AttackType, Dictionary<HackmonType, float>>? ElementInteractionsRegistry { get; private set; } = new();
+    public static Dictionary<HackmonType, Dictionary<HackmonType, float>> ElementInteractionsRegistry { get; private set; } = new();
     
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
     private static Dictionary<string, StatusInitializer> statusMap = new();
@@ -68,8 +68,8 @@ public static class HackmonManager
         
         var elementJson = File.ReadAllText("Data/ElementInteractions.json");
         
-        ElementInteractionsRegistry =
-            JsonSerializer.Deserialize<Dictionary<AttackType, Dictionary<HackmonType, float>>?>(elementJson);
+        var reg = JsonSerializer.Deserialize<Dictionary<HackmonType, Dictionary<HackmonType, float>>>(elementJson);
+        ElementInteractionsRegistry = reg ?? throw new Exception("Null element registry");
     }
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)

@@ -35,9 +35,9 @@ public class AttackResolver : IAttack
             float elementModifier = 1.0f;
             if (elements != null)
             {
-                elementModifier *= elements[AttackData.AttackType][moveTarget.PrimaryType];
+                elementModifier *= elements[AttackData.MoveType][moveTarget.PrimaryType];
                 elementModifier *= (moveTarget.SecondaryType != null) ?
-                    elements[AttackData.AttackType][(HackmonType)moveTarget.SecondaryType] : 1.0f;
+                    elements[AttackData.MoveType][moveTarget.SecondaryType.Value] : 1.0f;
             }
 
             switch (AttackData.AttackType)
