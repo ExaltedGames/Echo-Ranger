@@ -17,7 +17,8 @@ public static class HackmonManager
     public static Dictionary<int, HackmonMove> MoveRegistry { get; private set; } = new();
     // TODO: Make hackmon use IDs too
     public static Dictionary<int, HackmonData> HackmonRegistry { get; private set; } = new();
-    
+
+    public static Dictionary<string, Dictionary<string, float>>? ElementInteractionsRegistry { get; private set; } = new();
     
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
     private static Dictionary<string, StatusInitializer> statusMap = new();
@@ -63,6 +64,10 @@ public static class HackmonManager
         }
         
         LoadStaticStatuses(Assembly.GetExecutingAssembly());
+        
+        var elementJson = File.ReadAllText("Data/ElementInteractions.json");
+        
+        ElementInteractionsRegistry = JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,float>>>(elementJson);
     }
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
@@ -137,16 +142,5 @@ public static class HackmonManager
         }
 
         return loadedData;
-    }
-    
-    public static void ElementInteractions()
-    {
-        //Dictionary<string, Dictionary<string, float>> dict = new();
-        var elementJson = File.ReadAllText("Data/ElementInteractions.json");
-        //Console.WriteLine(elementJson);
-
-        var parsed = JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,float>>>(elementJson);
-        Console.WriteLine(parsed);
-        Console.WriteLine(parsed?["Basic"]);
     }
 }
