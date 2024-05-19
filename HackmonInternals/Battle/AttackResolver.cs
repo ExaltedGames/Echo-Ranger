@@ -35,13 +35,9 @@ public class AttackResolver : IAttack
             float elementModifier = 1.0f;
             if (elements != null)
             {
-                elementModifier *= elements[nameof(moveUser.PrimaryType)][nameof(moveTarget.PrimaryType)];
-                elementModifier *= (moveUser.SecondaryType != null) ?
-                    elements[nameof(moveUser.SecondaryType)][nameof(moveTarget.PrimaryType)] : 1.0f;
+                elementModifier *= elements[nameof(AttackData.AttackType)][nameof(moveTarget.PrimaryType)];
                 elementModifier *= (moveTarget.SecondaryType != null) ?
-                    elements[nameof(moveUser.PrimaryType)][nameof(moveTarget.SecondaryType)] : 1.0f;
-                elementModifier *= (moveTarget.SecondaryType != null && moveUser.SecondaryType != null) ?
-                    elements[nameof(moveUser.SecondaryType)][nameof(moveTarget.SecondaryType)] : 1.0f;
+                    elements[nameof(AttackData.AttackType)][nameof(moveTarget.SecondaryType)] : 1.0f;
             }
 
             switch (AttackData.AttackType)
