@@ -68,6 +68,7 @@ public static class HackmonManager
         var elementJson = File.ReadAllText("Data/ElementInteractions.json");
         
         ElementInteractionsRegistry = JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,float>>>(elementJson);
+        Console.WriteLine(ElementInteractionsRegistry?["Basic"]);
     }
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
