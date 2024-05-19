@@ -30,7 +30,8 @@ public class AttackResolver : IAttack
             var atk = 0;
             var def = 0;
             var stab = (moveUser.PrimaryType == AttackData.MoveType) ? 1.20f : 1f;
-
+            
+            
             switch (AttackData.AttackType)
             {
                 case AttackType.None:

@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using HackmonInternals.Attributes;
@@ -15,7 +17,8 @@ public static class HackmonManager
     public static Dictionary<int, HackmonMove> MoveRegistry { get; private set; } = new();
     // TODO: Make hackmon use IDs too
     public static Dictionary<int, HackmonData> HackmonRegistry { get; private set; } = new();
-
+    
+    
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
     private static Dictionary<string, StatusInitializer> statusMap = new();
     private static readonly JsonSerializerOptions _jsonOpts = new()
@@ -122,7 +125,6 @@ public static class HackmonManager
         foreach (var file in Directory.EnumerateFiles(dataPath, "*.json", SearchOption.AllDirectories))
         {
             var json = File.ReadAllText(file);
-
             try
             {
                 var parsedItem = JsonSerializer.Deserialize<T>(json, _jsonOpts);
@@ -135,5 +137,16 @@ public static class HackmonManager
         }
 
         return loadedData;
+    }
+    
+    public static void ElementInteractions()
+    {
+        //Dictionary<string, Dictionary<string, float>> dict = new();
+        var elementJson = File.ReadAllText("Data/ElementInteractions.json");
+        //Console.WriteLine(elementJson);
+
+        var parsed = JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,float>>>(elementJson);
+        Console.WriteLine(parsed);
+        Console.WriteLine(parsed?["Basic"]);
     }
 }
