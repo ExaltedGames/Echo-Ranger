@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using HackmonInternals.Attributes;
 using HackmonInternals.Battle;
+using HackmonInternals.Enums;
 using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
@@ -18,7 +19,7 @@ public static class HackmonManager
     // TODO: Make hackmon use IDs too
     public static Dictionary<int, HackmonData> HackmonRegistry { get; private set; } = new();
 
-    public static Dictionary<string, Dictionary<string, float>>? ElementInteractionsRegistry { get; private set; } = new();
+    public static Dictionary<AttackType, Dictionary<HackmonType, float>>? ElementInteractionsRegistry { get; private set; } = new();
     
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
     private static Dictionary<string, StatusInitializer> statusMap = new();
@@ -67,8 +68,8 @@ public static class HackmonManager
         
         var elementJson = File.ReadAllText("Data/ElementInteractions.json");
         
-        ElementInteractionsRegistry = JsonSerializer.Deserialize<Dictionary<string,Dictionary<string,float>>>(elementJson);
-        Console.WriteLine(ElementInteractionsRegistry?["Basic"]);
+        ElementInteractionsRegistry =
+            JsonSerializer.Deserialize<Dictionary<AttackType, Dictionary<HackmonType, float>>?>(elementJson);
     }
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
