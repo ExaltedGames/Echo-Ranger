@@ -1,3 +1,4 @@
+using System;
 using Godot;
 
 namespace HackmonFrontend.Overworld;
@@ -5,7 +6,7 @@ namespace HackmonFrontend.Overworld;
 public partial class OverworldPlayer : Node2D
 {
 	[Export]
-	public float MoveTimeInSeconds = 0.25f;
+	public double MoveTimeInSeconds = 0.25;
 
 	public bool Moving => _animateTime <= MoveTimeInSeconds;
 	
@@ -16,7 +17,7 @@ public partial class OverworldPlayer : Node2D
     
     private Vector2 _newPosition;
     private Vector2 _previousPosition;
-    private float _animateTime = float.MaxValue;
+    private double _animateTime = double.MaxValue;
 
     private StringName IdleUp = new("idle_up");
     private StringName IdleDown = new("idle_down");
@@ -36,6 +37,8 @@ public partial class OverworldPlayer : Node2D
 		_sprite.Play();
 		VirtualPosition = _tileMap.LocalToMap(Position);
 		Position = _tileMap.MapToLocal(VirtualPosition);
+		_previousPosition = Position;
+		_newPosition = Position;
 	}
 
 	private void MoveToTile(Vector2I newMapPosition)
@@ -66,16 +69,24 @@ public partial class OverworldPlayer : Node2D
 		_animateTime = 0;
 	}
 
-	private void Animate(float delta)
+	private void InterpolatePosition(double delta)
+	{
+		var t = _animateTime / MoveTimeInSeconds;
+		GD.Print(t);
+		Position = _previousPosition + ((_newPosition - _previousPosition) * (float)t);
+		_animateTime += delta;
+	}
+
+	private void Animate(double delta)
 	{
 		if (Moving)
 		{
-			var t = _animateTime / MoveTimeInSeconds;
-			Position = _previousPosition + ((_newPosition - _previousPosition) * t);
-			_animateTime += delta;
+			InterpolatePosition(delta);
 		}
 		else
 		{
+			Position = _newPosition;
+			
 			if (_sprite.Animation == WalkUp)
 			{
 				_sprite.Animation = IdleUp;
@@ -98,7 +109,7 @@ public partial class OverworldPlayer : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Animate((float)delta);
+		Animate(delta);
 		
 		if (Input.IsActionPressed("overworld_up"))
 		{
