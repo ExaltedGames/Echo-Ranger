@@ -30,6 +30,15 @@ public class AttackResolver : IAttack
             var atk = 0;
             var def = 0;
             var stab = (moveUser.PrimaryType == AttackData.MoveType) ? 1.20f : 1f;
+            var elements = HackmonManager.ElementInteractionsRegistry;
+            
+            float elementModifier = 1.0f;
+            if (elements != null)
+            {
+                elementModifier *= elements[AttackData.MoveType][moveTarget.PrimaryType];
+                elementModifier *= (moveTarget.SecondaryType != null) ?
+                    elements[AttackData.MoveType][moveTarget.SecondaryType.Value] : 1.0f;
+            }
 
             switch (AttackData.AttackType)
             {
@@ -46,8 +55,8 @@ public class AttackResolver : IAttack
                     def = moveTarget.SpDefense;
                     break;
             }
-
-            int damage = Math.Max(1, (int)(atk / ((def+100)/100) + AttackData.Damage - moveTarget.Level/2 * stab));
+            
+            int damage =  Math.Max(1, (int)(atk / ((def+100)/100) + AttackData.Damage - moveTarget.Level/2 * stab * elementModifier));
 
             moveTarget.Health -= damage;
             HitEvent damageEvent = new HitEvent(moveUser, moveTarget, this, damage);

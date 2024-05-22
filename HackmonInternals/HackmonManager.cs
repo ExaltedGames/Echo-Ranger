@@ -1,8 +1,11 @@
-﻿using System.Reflection;
+﻿using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using HackmonInternals.Attributes;
 using HackmonInternals.Battle;
+using HackmonInternals.Enums;
 using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
@@ -16,6 +19,8 @@ public static class HackmonManager
     // TODO: Make hackmon use IDs too
     public static Dictionary<int, HackmonData> HackmonRegistry { get; private set; } = new();
 
+    public static Dictionary<HackmonType, Dictionary<HackmonType, float>> ElementInteractionsRegistry { get; private set; } = new();
+    
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
     private static Dictionary<string, StatusInitializer> statusMap = new();
     private static readonly JsonSerializerOptions _jsonOpts = new()
@@ -60,6 +65,11 @@ public static class HackmonManager
         }
         
         LoadStaticStatuses(Assembly.GetExecutingAssembly());
+        
+        var elementJson = File.ReadAllText("Data/ElementInteractions.json");
+        
+        var reg = JsonSerializer.Deserialize<Dictionary<HackmonType, Dictionary<HackmonType, float>>>(elementJson);
+        ElementInteractionsRegistry = reg ?? throw new Exception("Null element registry");
     }
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
@@ -122,7 +132,6 @@ public static class HackmonManager
         foreach (var file in Directory.EnumerateFiles(dataPath, "*.json", SearchOption.AllDirectories))
         {
             var json = File.ReadAllText(file);
-
             try
             {
                 var parsedItem = JsonSerializer.Deserialize<T>(json, _jsonOpts);
