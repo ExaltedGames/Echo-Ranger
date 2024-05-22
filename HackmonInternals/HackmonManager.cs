@@ -66,7 +66,7 @@ public static class HackmonManager
         
         LoadStaticStatuses(Assembly.GetExecutingAssembly());
         
-        var elementJson = File.ReadAllText("Data/ElementInteractions.json");
+        var elementJson = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Data/ElementInteractions.json"));
         
         var reg = JsonSerializer.Deserialize<Dictionary<HackmonType, Dictionary<HackmonType, float>>>(elementJson);
         ElementInteractionsRegistry = reg ?? throw new Exception("Null element registry");
