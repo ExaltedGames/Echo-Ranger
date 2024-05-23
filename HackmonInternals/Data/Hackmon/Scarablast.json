@@ -1,0 +1,32 @@
+﻿{
+  "ID": 9,
+  "PrimaryType": "Fire",
+  "SecondaryType": "Chem",
+  "Name": "Scarablast",
+  "Family": "Arthropod",
+  "MaxHp": {
+    "BaseValue": 126,
+    "GrowthPerLevel": 4.03
+  },
+  "Attack": {
+    "BaseValue": 77,
+    "GrowthPerLevel": 7.05
+  },
+  "SpAttack": {
+    "BaseValue": 151,
+    "GrowthPerLevel": 5.04
+  },
+  "Defense": {
+    "BaseValue": 76,
+    "GrowthPerLevel": 4.03
+  },
+  "SpDefense": {
+    "BaseValue": 76,
+    "GrowthPerLevel": 4.03
+  },
+  "Agility": {
+    "BaseValue": 180,
+    "GrowthPerLevel": 6.01
+  },
+  "LearnableMoves": [1,2,10,11,12,15]
+}

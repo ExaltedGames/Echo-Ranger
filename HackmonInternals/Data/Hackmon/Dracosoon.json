@@ -1,0 +1,32 @@
+﻿{
+  "ID": 8,
+  "PrimaryType": "Water",
+  "SecondaryType": "Wind",
+  "Name": "Dracosoon",
+  "Family": "Aquatic",
+  "MaxHp": {
+    "BaseValue": 101,
+    "GrowthPerLevel": 5.04
+  },
+  "Attack": {
+    "BaseValue": 106,
+    "GrowthPerLevel": 4.04
+  },
+  "SpAttack": {
+    "BaseValue": 155,
+    "GrowthPerLevel": 6.01
+  },
+  "Defense": {
+    "BaseValue": 61,
+    "GrowthPerLevel": 4.54
+  },
+  "SpDefense": {
+    "BaseValue": 96,
+    "GrowthPerLevel": 4.54
+  },
+  "Agility": {
+    "BaseValue": 95,
+    "GrowthPerLevel": 6.01
+  },
+  "LearnableMoves": [1,3,6,16,25,35]
+}
