@@ -9,7 +9,7 @@
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.04
+    "GrowthPerLevel": 4.03
   },
   "SpAttack": {
     "BaseValue": 5,
