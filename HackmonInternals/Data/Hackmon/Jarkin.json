@@ -25,7 +25,7 @@
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 3.03
+    "GrowthPerLevel": 3.02
   },
   "LearnableMoves": [1,5,27,8]
 }

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgefkoxoyhp8d"
-path="res://.godot/imported/Rosunda.png-c4e341216933c41652ca433c7916de06.ctex"
+uid="uid://cgnnot7cqimrf"
+path="res://.godot/imported/Olmerain.png-cb556361f566a5b3232e2f89d90e751f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Rosunda.png"
-dest_files=["res://.godot/imported/Rosunda.png-c4e341216933c41652ca433c7916de06.ctex"]
+source_file="res://Assets/BattleSprites/Olmerain.png"
+dest_files=["res://.godot/imported/Olmerain.png-cb556361f566a5b3232e2f89d90e751f.ctex"]
 
 [params]
 

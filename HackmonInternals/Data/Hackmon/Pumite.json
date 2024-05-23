@@ -1,0 +1,31 @@
+﻿{
+  "ID": 7,
+  "PrimaryType": "Fire",
+  "Name": "Pumite",
+  "Family": "Arthropod",
+  "MaxHp": {
+    "BaseValue": 26,
+    "GrowthPerLevel": 4.03
+  },
+  "Attack": {
+    "BaseValue": 27,
+    "GrowthPerLevel": 7.05
+  },
+  "SpAttack": {
+    "BaseValue": 51,
+    "GrowthPerLevel": 5.04
+  },
+  "Defense": {
+    "BaseValue": 51,
+    "GrowthPerLevel": 4.03
+  },
+  "SpDefense": {
+    "BaseValue": 51,
+    "GrowthPerLevel": 4.03
+  },
+  "Agility": {
+    "BaseValue": 5,
+    "GrowthPerLevel": 6.01
+  },
+  "LearnableMoves": [1,2,10,11,12,15]
+}
