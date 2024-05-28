@@ -72,6 +72,8 @@ public static class HackmonManager
         ElementInteractionsRegistry = reg ?? throw new Exception("Null element registry");
     }
 
+    
+
     public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
     {
         if (!statusMap.ContainsKey(status)) throw new Exception($"No such status currently loaded: {status}");

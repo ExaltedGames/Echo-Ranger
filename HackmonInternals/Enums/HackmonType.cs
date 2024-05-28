@@ -1,5 +1,8 @@
-﻿namespace HackmonInternals.Enums;
+﻿using System.Text.Json.Serialization;
 
+namespace HackmonInternals.Enums;
+
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum HackmonType
 {
     Basic,

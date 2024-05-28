@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Godot;
 using Hackmon.Debugging;
 using HackmonInternals;
+using HackmonInternals.Enums;
 using HackmonInternals.Models;
 
 namespace HackmonFrontend;
@@ -37,10 +40,45 @@ public partial class GameManager : Node
 		EnterBattle(testOpponent);
 	}
 
+	public override void _Input(InputEvent @event)
+	{
+		if (@event.IsActionPressed("Save"))
+		{
+			Save();
+		}
+		else if (@event.IsActionPressed("Load"))
+		{
+			GD.Print("Test one");
+			Load();
+			GD.Print("Load success?");
+			EnterBattle(CurrentOpponent);
+		}
+	}
+
 	public void Save()
 	{
-		var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Write);
-		
+		using var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Write);
+		var jsonOpts = new JsonSerializerOptions()
+		{
+			Converters = { new JsonStringEnumConverter() },
+			WriteIndented = true,
+			IgnoreReadOnlyProperties = true
+		};
+		var jsonText = JsonSerializer.Serialize(PlayerData, jsonOpts);
+		saveFile.StoreString(jsonText);
+		GD.Print("successfully saved the game.");
+	}
+
+	public void Load()
+	{
+		using var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Read);
+		var saveData = JsonSerializer.Deserialize<TrainerData>(saveFile.GetAsText());
+		if (saveData == null)
+		{
+			throw new Exception("Failed to properly load save data. Error when parsing file.");
+		}
+
+		PlayerData = saveData;
 	}
 
 	public void EnterBattle(TrainerData opponent)
@@ -52,6 +90,20 @@ public partial class GameManager : Node
 	public void ChangeScene(string scenePath)
 	{
 		CallDeferred(nameof(DeferredChangeScene), scenePath);
+	}
+	
+	public static void SaveData<T>(T dataObj)
+	{
+		var savePath = nameof(T);
+		using var saveFile = FileAccess.Open($"user://{savePath}.json", FileAccess.ModeFlags.Write);
+		var jsonOpts  = new JsonSerializerOptions()
+		{
+			Converters = { new JsonStringEnumConverter() },
+			WriteIndented = true,
+			IgnoreReadOnlyProperties = true
+		};
+		var jsonText = JsonSerializer.Serialize(dataObj, typeof(T), jsonOpts);
+		saveFile.StoreString(jsonText);
 	}
 
 	private void DeferredEnterBattle()
