@@ -1,12 +1,12 @@
 {
-  "ID": 28,
+  "ID": 37,
   "MoveType": "Wind",
   "Name": "Wind Cutter",
-  "Description": "The user cleaves into it's foe with a forceful projection of air.",
-  "Damage": 40,
-  "AttackType": "Physical",
+  "Description": "The user emits a narrow stream of air at signficiant force, piercing through any barrier. Damage cannot be reduced by battlefield effects.",
+  "Damage": 55,
+  "AttackType": "Special",
   "Target": "Single",
-  "StaminaCost": 20,
+  "StaminaCost": 40,
   "UserStatuses": [],
   "TargetStatuses": []
 }

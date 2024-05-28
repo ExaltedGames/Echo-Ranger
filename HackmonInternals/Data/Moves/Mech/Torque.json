@@ -1,8 +1,8 @@
 {
-  "ID": 18,
-  "MoveType": "Earth",
-  "Name": "Boulder Toss",
-  "Description": "The user hurls a hefty boulder at it's foe.",
+  "ID": 22,
+  "MoveType": "Mech",
+  "Name": "Torque",
+  "Description": "The user crushes it's foe with it's powerful machinery.",
   "Damage": 50,
   "AttackType": "Special",
   "Target": "Single",

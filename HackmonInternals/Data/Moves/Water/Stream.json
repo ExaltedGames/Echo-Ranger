@@ -2,7 +2,7 @@
   "ID": 16,
   "MoveType": "Water",
   "Name": "Stream",
-  "Description": "The user blasts it's opponent with a concentrated beam of water.",
+  "Description": "The user blasts it's opponent with a powerful beam of water.",
   "Damage": 50,
   "AttackType": "Special",
   "Target": "Single",

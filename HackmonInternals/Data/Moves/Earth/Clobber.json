@@ -1,12 +1,12 @@
 {
-  "ID": 27,
+  "ID": 38,
   "MoveType": "Earth",
   "Name": "Clobber",
-  "Description": "Forming an extension of earth, the user ruthlessly smashes it's foe with this makeshift weapon.",
-  "Damage": 40,
+  "Description": "The user strikes it's foe with it's hard body.",
+  "Damage": 25,
   "AttackType": "Physical",
   "Target": "Single",
-  "StaminaCost": 20,
+  "StaminaCost": 10,
   "UserStatuses": [],
   "TargetStatuses": []
 }

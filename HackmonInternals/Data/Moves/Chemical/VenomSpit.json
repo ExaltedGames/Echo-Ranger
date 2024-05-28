@@ -1,12 +1,12 @@
 {
-  "ID": 10,
+  "ID": 23,
   "MoveType": "Chem",
   "Name": "Venom Spit",
   "Description": "The user spits a globule of corrosive venom at it's foe.",
-  "Damage": 25,
+  "Damage": 50,
   "AttackType": "Special",
   "Target": "Single",
-  "StaminaCost": 10,
+  "StaminaCost": 25,
   "UserStatuses": [],
   "TargetStatuses": []
 }
