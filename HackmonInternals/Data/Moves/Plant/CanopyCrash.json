@@ -1,0 +1,12 @@
+{
+  "ID": 57,
+  "MoveType": "Plant",
+  "Name": "Canopy Crash",
+  "Description": "The user descends upon their foe with the unstoppable force of a felled tree.",
+  "Damage": 80,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

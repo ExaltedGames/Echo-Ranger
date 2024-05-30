@@ -1,0 +1,12 @@
+{
+  "ID": 55,
+  "MoveType": "Fire",
+  "Name": "Fire Breath",
+  "Description": "The user releases an unrelenting gout of flame upon it's foe.",
+  "Damage": 80,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

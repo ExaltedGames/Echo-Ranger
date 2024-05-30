@@ -1,0 +1,12 @@
+{
+  "ID": 56,
+  "MoveType": "Mech",
+  "Name": "Pneumatic Strike",
+  "Description": "The user delivers a bone shattering blow to it's opponent using i's high powered machinery.",
+  "Damage": 80,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}
