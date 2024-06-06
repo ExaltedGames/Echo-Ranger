@@ -1,0 +1,12 @@
+{
+  "ID": 68,
+  "MoveType": "Mech",
+  "Name": "Analyze",
+  "Description": "The user analyzes it's foe with computer-like efficiency to determine it's weaknesses. The user's next attack will ignore half of the opponent's defense.",
+  "Damage": 0,
+  "AttackType": "None",
+  "Target": "None",
+  "StaminaCost": 30,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

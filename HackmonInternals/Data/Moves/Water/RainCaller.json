@@ -1,0 +1,12 @@
+{
+  "ID": 63,
+  "MoveType": "Water",
+  "Name": "Rain Call",
+  "Description": "The user draws upon it's built up energy to call forth the rain for four turns. duration is doubled and user is healed by 50% of their max hp if the user has a charge.",
+  "Damage": 0,
+  "AttackType": "None",
+  "Target": "None",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}
