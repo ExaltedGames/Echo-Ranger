@@ -1,12 +1,12 @@
 {
-  "ID": 22,
+  "ID": 31,
   "MoveType": "Mech",
   "Name": "Steel Barrage",
-  "Description": "The user unleashes an onslaught of steel projectiles at it's foe.",
-  "Damage": 50,
+  "Description": "The user shoots a volley of metal rivets at it's foe.",
+  "Damage": 40,
   "AttackType": "Special",
   "Target": "Single",
-  "StaminaCost": 25,
+  "StaminaCost": 20,
   "UserStatuses": [],
   "TargetStatuses": []
 }

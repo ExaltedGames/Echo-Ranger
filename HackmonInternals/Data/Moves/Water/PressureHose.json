@@ -1,0 +1,12 @@
+{
+  "ID": 59,
+  "MoveType": "Water",
+  "Name": "Pressure Hose",
+  "Description": "Building up an immense pressure, the user emits a narrow stream of water that cuts through it's foe.",
+  "Damage": 80,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

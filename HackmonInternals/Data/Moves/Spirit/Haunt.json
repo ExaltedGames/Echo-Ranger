@@ -1,8 +1,8 @@
 {
   "ID": 30,
   "MoveType": "Spirit",
-  "Name": "SpiritPhysical",
-  "Description": "TODO.",
+  "Name": "Haunt",
+  "Description": "The user tackles it's foe with dark intent that harms the spirit.",
   "Damage": 40,
   "AttackType": "Physical",
   "Target": "Single",
