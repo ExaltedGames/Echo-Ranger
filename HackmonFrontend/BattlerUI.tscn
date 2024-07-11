@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dw1lrstaeowqs"]
 
-[ext_resource type="Texture2D" path="res://Assets/UI/PoisonIcon.svg" id="1_aomqb"]
 [ext_resource type="Script" path="res://BattlerUI.cs" id="1_j74b8"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="1_re52c"]
+[ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_3gx2m"]
 [ext_resource type="Texture2D" uid="uid://dab5uugs4xhwe" path="res://Assets/ProjectIcon.png" id="3_ewoaq"]
 [ext_resource type="Texture2D" uid="uid://w1awcpcwxinq" path="res://Assets/BattleSprites/Vroomba.png" id="4_0kljj"]
 [ext_resource type="Texture2D" uid="uid://cj8tnoupprmrf" path="res://Assets/BattleSprites/Verma.png" id="5_0fe1i"]
@@ -87,7 +87,7 @@ size_flags_stretch_ratio = 8.96
 [node name="Poison" type="TextureRect" parent="Status/Ailments"]
 layout_mode = 2
 tooltip_text = "Poisoned."
-texture = ExtResource("1_aomqb")
+texture = ExtResource("2_3gx2m")
 expand_mode = 3
 stretch_mode = 4
 
