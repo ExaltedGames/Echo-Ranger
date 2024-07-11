@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be63tlirxsbg7"
-path="res://.godot/imported/PoisonIcon.svg-294e901179c4ba21fc78bfe13e6a84c1.ctex"
+uid="uid://dwiepcd252l3i"
+path="res://.godot/imported/FrostIcon.png-19e8278bfd471e82b1137ed9c4f660f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/PoisonIcon.svg"
-dest_files=["res://.godot/imported/PoisonIcon.svg-294e901179c4ba21fc78bfe13e6a84c1.ctex"]
+source_file="res://Assets/UI/Icons/Type/FrostIcon.png"
+dest_files=["res://.godot/imported/FrostIcon.png-19e8278bfd471e82b1137ed9c4f660f5.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
