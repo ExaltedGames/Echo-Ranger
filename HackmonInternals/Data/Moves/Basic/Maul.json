@@ -1,0 +1,17 @@
+{
+  "ID": 73,
+  "MoveType": "Basic",
+  "Name": "Maul",
+  "Description": "Using it's powerful teeth, the user tears into it's foe with wild abandon. The resulting wounds lower the opponent's defense.",
+  "Damage": 60,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": [
+    {
+      "Name": "DefenseDown",
+      "Duration": -1
+    }
+  ]
+}
