@@ -13,16 +13,17 @@ script = ExtResource("1_w30jk")
 [node name="OpponentOp" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="OpponentOp"]
-position = Vector2(945, 138)
+position = Vector2(1009, 240)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_v5ddm")
 
 [node name="BattlerStage" parent="." instance=ExtResource("2_8ceye")]
-position = Vector2(283, 334)
+position = Vector2(250, 360)
+scale = Vector2(2.5, 2.5)
 
 [node name="OpponentStage" parent="." instance=ExtResource("2_8ceye")]
-position = Vector2(864, 250)
-scale = Vector2(1.96009, 1.96009)
+position = Vector2(900, 360)
+scale = Vector2(2.5, 2.5)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -95,18 +96,18 @@ wrap_mode = 1
 
 [node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
-offset_left = 111.0
-offset_top = 292.0
-offset_right = 286.0
-offset_bottom = 378.0
+offset_left = 50.0
+offset_top = -138.0
+offset_right = 225.0
+offset_bottom = -52.0
 scale = Vector2(2, 2)
 
 [node name="OpponentUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
-offset_left = 684.0
-offset_top = 196.0
-offset_right = 859.0
-offset_bottom = 282.0
+offset_left = 698.0
+offset_top = -138.0
+offset_right = 873.0
+offset_bottom = -52.0
 scale = Vector2(2, 2)
 
 [node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
