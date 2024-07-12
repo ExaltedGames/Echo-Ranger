@@ -6,7 +6,7 @@ public partial class BattlerUI : Panel
 {
 	private HackmonInstance _currentHackmon;
 	private RichTextLabel _nameLabel;
-	private ProgressBar _healthBar;
+	private TextureProgressBar _healthBar;
 	private int _currentChange = 0;
 	private double _valueBeforeChange;
 	private readonly double _tweenTime = 0.5;
@@ -31,7 +31,7 @@ public partial class BattlerUI : Panel
 	public override void _Ready()
 	{
 		_nameLabel = GetNode<RichTextLabel>("Status/Name");
-		_healthBar = GetNode<ProgressBar>("Status/HealthBar");
+		_healthBar = GetNode<TextureProgressBar>("Status/HealthBar");
 	}
 
 	public override void _Process(double delta)
