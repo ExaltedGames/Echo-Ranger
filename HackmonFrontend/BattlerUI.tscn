@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw1lrstaeowqs"]
+[gd_scene load_steps=13 format=3 uid="uid://dw1lrstaeowqs"]
 
 [ext_resource type="Script" path="res://BattlerUI.cs" id="1_j74b8"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="1_re52c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://w1awcpcwxinq" path="res://Assets/BattleSprites/Vroomba.png" id="4_0kljj"]
 [ext_resource type="Texture2D" uid="uid://cj8tnoupprmrf" path="res://Assets/BattleSprites/Verma.png" id="5_0fe1i"]
 [ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="7_41vfo"]
+[ext_resource type="Texture2D" uid="uid://bw2xgvvwta8ei" path="res://Assets/UI/PlayerStatusBar.png" id="8_i2s2i"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
 
@@ -39,6 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Name" type="RichTextLabel" parent="Status"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -55,13 +57,13 @@ fit_content = true
 scroll_active = false
 
 [node name="HealthBar" type="ProgressBar" parent="Status"]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -10.0
-offset_bottom = -16.0
+offset_left = 2.0
+offset_top = 74.0
+offset_right = 217.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -74,14 +76,13 @@ show_percentage = false
 [node name="Ailments" type="HBoxContainer" parent="Status"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -15.0
-offset_right = 3.0
-offset_bottom = 3.0
+offset_top = 12.0
+offset_right = 6.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_stretch_ratio = 8.96
@@ -153,7 +154,13 @@ texture = SubResource("PlaceholderTexture2D_5n0sp")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Status"]
-position = Vector2(11, 64)
+[node name="PlayerStatusBar" type="Sprite2D" parent="Status"]
+position = Vector2(100.9, 84.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_i2s2i")
+
+[node name="PrimaryType" type="Sprite2D" parent="Status"]
+z_index = 1
+position = Vector2(-9.9, 84.1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_41vfo")
