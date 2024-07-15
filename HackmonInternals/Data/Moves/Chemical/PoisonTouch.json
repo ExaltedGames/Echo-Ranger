@@ -1,8 +1,8 @@
 {
   "ID": 32,
   "MoveType": "Chem",
-  "Name": "Chemical Crash",
-  "Description": "The user coats itself in toxic chemicals before rapidly crashing into it's foe.",
+  "Name": "Poison Touch",
+  "Description": "The user makes physical contact with it's foe, harming them with a poisonous coating.",
   "Damage": 40,
   "AttackType": "Physical",
   "Target": "Single",

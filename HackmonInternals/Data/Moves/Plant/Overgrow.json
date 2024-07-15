@@ -1,0 +1,12 @@
+{
+  "ID": 66,
+  "MoveType": "Plant",
+  "Name": "Overgrowth",
+  "Description": "The user draws upon it's built up energy to sow Verdant Growth across the battlefield. duration is doubled and stamina cost halved if the user has a charge.",
+  "Damage": 0,
+  "AttackType": "None",
+  "Target": "None",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

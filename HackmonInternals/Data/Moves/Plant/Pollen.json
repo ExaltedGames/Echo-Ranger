@@ -2,11 +2,11 @@
   "ID": 4,
   "MoveType": "Plant",
   "Name": "Pollen Burst",
-  "Description": "The user sprays it's opponent with a cloud of irritant particles.",
-  "Damage": 25,
+  "Description": "The user sprays it's opponent with a stream of irritant particles.",
+  "Damage": 40,
   "AttackType": "Special",
   "Target": "Single",
-  "StaminaCost": 10,
+  "StaminaCost": 20,
   "UserStatuses": [],
   "TargetStatuses": []
 }

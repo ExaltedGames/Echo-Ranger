@@ -1,0 +1,12 @@
+{
+  "ID": 50,
+  "MoveType": "Wind",
+  "Name": "Dive Bomb",
+  "Description": "The user propels themselves high into the air before crashing down upon their foe with considerable strength.",
+  "Damage": 65,
+  "AttackType": "Physical",
+  "Target": "Single",
+  "StaminaCost": 40,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

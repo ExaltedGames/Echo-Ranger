@@ -2,11 +2,11 @@
   "ID": 14,
   "MoveType": "Basic",
   "Name": "Smash",
-  "Description": "Using the bulk of it's muscles, the user collides with it's foe with great force.",
-  "Damage": 50,
+  "Description": "Using the bulk of it's muscles, the user collides with it's foe with force.",
+  "Damage": 25,
   "AttackType": "Physical",
   "Target": "Single",
-  "StaminaCost": 25,
+  "StaminaCost": 10,
   "UserStatuses": [],
   "TargetStatuses": []
 }

@@ -4,9 +4,9 @@
   "Name": "Venom Cloud",
   "Description": "The user releases a cloud of poison around itself, afflicting all targets with poison.",
   "Damage": 0,
-  "AttackType": "Special",
+  "AttackType": "None",
   "Target": "Multi",
-  "StaminaCost": 50,
+  "StaminaCost": 40,
   "UserStatuses": [],
   "TargetStatuses": [
     {

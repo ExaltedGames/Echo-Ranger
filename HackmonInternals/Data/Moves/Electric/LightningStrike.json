@@ -1,0 +1,12 @@
+{
+  "ID": 54,
+  "MoveType": "Jolt",
+  "Name": "Lightning Strike",
+  "Description": "The user channels electricity through the air to call forth lightning to strike down their foe.",
+  "Damage": 80,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}

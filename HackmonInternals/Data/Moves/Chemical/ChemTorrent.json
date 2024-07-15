@@ -1,0 +1,12 @@
+{
+  "ID": 52,
+  "MoveType": "Chem",
+  "Name": "Chemical Torrent",
+  "Description": "The user relentlessly spews forth a flood of caustic fluid that erodes it's opponent.",
+  "Damage": 80,
+  "AttackType": "Special",
+  "Target": "Single",
+  "StaminaCost": 50,
+  "UserStatuses": [],
+  "TargetStatuses": []
+}
