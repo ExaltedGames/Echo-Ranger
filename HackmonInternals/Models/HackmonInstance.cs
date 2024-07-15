@@ -1,4 +1,5 @@
-﻿using HackmonInternals.Enums;
+﻿using System.Text.Json.Serialization;
+using HackmonInternals.Enums;
 using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
 
@@ -6,11 +7,26 @@ namespace HackmonInternals.Models;
 
 public class HackmonInstance : IUnit
 {
+   [JsonInclude]
    public HackmonData StaticData { get; private set; }
 
-   public string Name => StaticData.Name;
+   public string Species
+   {
+      get => StaticData.Name;
+      set => setSpecies(value);
+   }
+
+   public string Name => Nickname ?? StaticData.Name;
+
+   public string? Nickname = null;
+
+   public string Coloration { get; set; } = "Default";
    
    public int Level { get; set; }
+
+   public int Experience { get; set; } = 0;
+
+   public int Loyalty { get; set; } = 0;
    
    public int Health { get; set; }
    
@@ -36,9 +52,11 @@ public class HackmonInstance : IUnit
    
    public HackmonType? SecondaryType => StaticData.SecondaryType;
 
-   public List<Status> StatusEffects { get; set; } = new();
+   //public List<Status> StatusEffects { get; set; } = new();
 
-   public List<int> KnownMoves { get; set; } = new();
+   public List<int> KnownMoves { get; set; }
+
+   public List<int> ActiveMoves { get; set; } = new();
 
    public HackmonInstance(HackmonData staticData, int level)
    {
@@ -52,5 +70,15 @@ public class HackmonInstance : IUnit
       KnownMoves = staticData.LearnableMoves;
    }
 
-   public List<IStatus> Statuses { get; set; }
+   public List<IStatus> Statuses { get; set; } = new();
+
+   private void setSpecies(string speciesName)
+   {
+      var newSpecies = HackmonManager.HackmonRegistry.Values.FirstOrDefault(data => data.Name == speciesName);
+      Console.WriteLine($"TETJSETLKSJKJTSLKJTSL {speciesName} | {newSpecies == null}");
+      if (newSpecies != null)
+      {
+         StaticData = newSpecies;
+      }
+   }
 }
