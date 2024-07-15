@@ -70,6 +70,11 @@ public partial class ActionSelectUI : Control
 		numActions = totalActions;
 	}
 
+	public void ResetHandler()
+	{
+		OnActionSelected = null!;
+	}
+
 	public override void _Ready()
 	{
 		Infobox = GetNode<TextEdit>("Infobox");

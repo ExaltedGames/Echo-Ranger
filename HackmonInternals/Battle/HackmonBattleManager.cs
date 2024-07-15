@@ -21,6 +21,8 @@ public static class HackmonBattleManager
     
     public static void StartBattle(List<HackmonInstance> playerTeam, List<HackmonInstance> enemyTeam)
     {
+        EventQueue.Clear();
+		BattleManager.Cleanup();
         BattleManager.OnDeath += BattleEndCheck;
         BattleManager.OnHit += hitLogger;
         BattleManager.OnGainStatus += LogStatus;

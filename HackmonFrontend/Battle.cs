@@ -62,6 +62,12 @@ public partial class Battle : Node2D
 	// such as the TrainerData for the player and opponent.
 	public void InitBattle(TrainerData playerData, TrainerData enemy)
 	{
+		// reset potential old state
+		processEvents = false;
+		itsSoOver = false;
+		messageList = new();
+		eventText.Disable();
+		
 		HackmonBattleManager.StartBattle(playerData.CurrentParty, enemy.CurrentParty);
 
 		ActivePlayerMon = playerData.CurrentParty[0];
@@ -86,6 +92,8 @@ public partial class Battle : Node2D
 		}
 
 		actionSelect.SetActions(battleMoveset);
+		actionSelect.SetEnabled(true);
+		actionSelect.ResetHandler();
 		actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
@@ -108,6 +116,7 @@ public partial class Battle : Node2D
 						processEvents = false;
 						break;
 					case HackmonHitEvent hitEvent:
+						GD.Print("adding message.");
 						eventStr =
 							$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
 						messageList.Add(eventStr);

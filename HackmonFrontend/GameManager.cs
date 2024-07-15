@@ -28,8 +28,8 @@ public partial class GameManager : Node
 
 		PlayerData = new();
 		var testOpponent = new TrainerData();
-		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[0], 1);
-		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[0], 1);
+		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[2], 1);
 		var playerTeam = new List<HackmonInstance>() { playerMon }; 
 		var enemyTeam = new List<HackmonInstance>() { enemyMon };
 
@@ -51,7 +51,10 @@ public partial class GameManager : Node
 			GD.Print("Test one");
 			Load();
 			GD.Print("Load success?");
-			EnterBattle(CurrentOpponent);
+			var testOpponent = new TrainerData();
+			var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[2], 1);
+			testOpponent.CurrentParty = new List<HackmonInstance>() { enemyMon };
+			EnterBattle(testOpponent);	
 		}
 	}
 
