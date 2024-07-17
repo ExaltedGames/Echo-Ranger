@@ -48,11 +48,16 @@ public class HackmonInstance : IUnit
    
    public int Stamina { get; set; }
 
+   [JsonIgnore] public Dictionary<StatType, List<Modifier>> StatModifiers = new()
+   {
+      { StatType.MaxHp, new List<Modifier>() { new Modifier() { BaseAdditiveBonus = 99 } } }
+   };
+
    public HackmonType PrimaryType => StaticData.PrimaryType;
    
    public HackmonType? SecondaryType => StaticData.SecondaryType;
 
-   //public List<Status> StatusEffects { get; set; } = new();
+   public List<Status> StatusEffects { get; set; } = new();
 
    public List<int> KnownMoves { get; set; } = new();
 
@@ -74,6 +79,15 @@ public class HackmonInstance : IUnit
    }
 
    public List<IStatus> Statuses { get; set; } = new();
+
+   private int computeStatValue(StatType type, Stat baseStat)
+   {
+      var mods = StatModifiers[type];
+      var baseAdditiveBonus = mods.Aggregate(0, (acc, x) => acc + x.BaseAdditiveBonus);
+      var multiplicativeBonus = mods.Aggregate<Modifier, double>(1, (acc, x) => acc + x.Multiplier);
+      var stat = (baseStat.BaseValue + baseAdditiveBonus + (baseStat.GrowthPerLevel * Level)) * multiplicativeBonus;
+      return (int)Math.Round(stat);
+   }
 
    private void setSpecies(string speciesName)
    {
