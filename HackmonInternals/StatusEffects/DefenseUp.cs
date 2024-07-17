@@ -1,23 +1,23 @@
-﻿using HackmonInternals.Attributes;
+using HackmonInternals.Attributes;
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
 
 namespace HackmonInternals.StatusEffects;
 
-public class SpAttackUp : Status
+public class DefenseUp : Status
 {
     private static readonly int STACK_LIMIT = 8;
     private Modifier StatMod;
-    
-    [Status("SpAttackUp")]
-    public static SpAttackUp Init(HackmonInstance unit, int nTurns)
+
+    [Status("DefenseUp")]
+    public static DefenseUp Init(HackmonInstance unit, int nTurns)
     {
-        return new SpAttackUp(unit, nTurns);
+        return new DefenseUp(unit, nTurns);
     }
 
-    public SpAttackUp(HackmonInstance unit, int nTurns) : base(unit, nTurns)
+    public DefenseUp(HackmonInstance unit, int nTurns) : base(unit, nTurns)
     {
-        var oppositeEffect = unit.StatusEffects.Find(effect => effect.Name == "SpAttackDown");
+        var oppositeEffect = unit.StatusEffects.Find(effect => effect.Name == "DefenseDown");
         if (oppositeEffect != null)
         {
             if (nTurns - oppositeEffect.Stacks <= 0)
@@ -34,7 +34,7 @@ public class SpAttackUp : Status
             Multiplier = (Stacks * 0.05),
             BaseAdditiveBonus = unit.Level
         };
-        unit.StatModifiers[StatType.SpAttack].Add(StatMod);
+        unit.StatModifiers[StatType.Defense].Add(StatMod);
     }
 
     public override void Add(int stacks)
@@ -48,7 +48,7 @@ public class SpAttackUp : Status
         Stacks = Math.Max(0, Stacks - stacks);
         if (Stacks == 0)
         {
-            Unit.StatModifiers[StatType.SpAttack].Remove(StatMod);
+            Unit.StatModifiers[StatType.Defense].Remove(StatMod);
         }
     }
 }

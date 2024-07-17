@@ -1,5 +1,6 @@
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
+using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Events;
 
@@ -69,7 +70,15 @@ public class AttackResolver : IAttack
             {
                 var statusName = status.Name;
                 var duration = status.Duration;
-                var statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                var statusInstance = moveTarget.StatusEffects.Find(effect => effect.Name == statusName);
+                if (statusInstance != null)
+                {
+                   statusInstance.Add(duration); 
+                }
+                else
+                {
+                    statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                }
                 var sEvent = new GainStatusEvent(target, statusInstance, duration);
 
                 yield return sEvent;
@@ -82,7 +91,15 @@ public class AttackResolver : IAttack
             {
                 var statusName = status.Name;
                 var duration = status.Duration;
-                var statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                var statusInstance = moveTarget.StatusEffects.Find(effect => effect.Name == statusName);
+                if (statusInstance != null)
+                {
+                    statusInstance.Add(duration);
+                }
+                else
+                {
+                    statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                }
                 var sEvent = new GainStatusEvent(target, statusInstance, duration);
 
                 yield return sEvent;

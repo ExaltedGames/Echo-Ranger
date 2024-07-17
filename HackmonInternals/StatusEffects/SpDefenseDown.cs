@@ -1,23 +1,24 @@
-﻿using HackmonInternals.Attributes;
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
+using HackmonInternals.Attributes;
 
 namespace HackmonInternals.StatusEffects;
 
-public class SpAttackUp : Status
+public class SpDefenseDown : Status
 {
     private static readonly int STACK_LIMIT = 8;
+    private static readonly double MULTIPLIER_PER_STACK = -0.5;
     private Modifier StatMod;
-    
-    [Status("SpAttackUp")]
-    public static SpAttackUp Init(HackmonInstance unit, int nTurns)
+
+    [Status("SpDefenseDown")]
+    public static SpDefenseDown Init(HackmonInstance unit, int nTurns)
     {
-        return new SpAttackUp(unit, nTurns);
+        return new SpDefenseDown(unit, nTurns);
     }
 
-    public SpAttackUp(HackmonInstance unit, int nTurns) : base(unit, nTurns)
+    public SpDefenseDown(HackmonInstance unit, int nTurns) : base(unit, nTurns)
     {
-        var oppositeEffect = unit.StatusEffects.Find(effect => effect.Name == "SpAttackDown");
+        var oppositeEffect = unit.StatusEffects.Find(effect => effect.Name == "SpDefenseUp");
         if (oppositeEffect != null)
         {
             if (nTurns - oppositeEffect.Stacks <= 0)
@@ -28,19 +29,18 @@ public class SpAttackUp : Status
 
             Stacks = nTurns - oppositeEffect.Stacks;
         }
-
         StatMod = new()
         {
-            Multiplier = (Stacks * 0.05),
+            Multiplier = (Stacks * MULTIPLIER_PER_STACK),
             BaseAdditiveBonus = unit.Level
         };
-        unit.StatModifiers[StatType.SpAttack].Add(StatMod);
+        unit.StatModifiers[StatType.SpDefense].Add(StatMod);
     }
 
     public override void Add(int stacks)
     {
         Stacks = Math.Min(STACK_LIMIT, Stacks + stacks);
-        StatMod.Multiplier = (Stacks * 0.05);
+        StatMod.Multiplier = (Stacks * MULTIPLIER_PER_STACK);
     }
 
     public override void Remove(int stacks)
@@ -48,7 +48,7 @@ public class SpAttackUp : Status
         Stacks = Math.Max(0, Stacks - stacks);
         if (Stacks == 0)
         {
-            Unit.StatModifiers[StatType.SpAttack].Remove(StatMod);
+            Unit.StatModifiers[StatType.SpDefense].Remove(StatMod);
         }
     }
 }
