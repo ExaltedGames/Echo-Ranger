@@ -1,12 +1,12 @@
 {
-  "ID": 10,
+  "ID": 75,
   "MoveType": "Chem",
   "Name": "Acid Splash",
   "Description": "The user launches a corrosive fluid at it's foe, dealing direct damage.",
-  "Damage": 25,
+  "Damage": 50,
   "AttackType": "Special",
   "Target": "Single",
-  "StaminaCost": 10,
+  "StaminaCost": 25,
   "UserStatuses": [],
   "TargetStatuses": []
 }
