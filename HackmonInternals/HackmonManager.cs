@@ -54,8 +54,17 @@ public static class HackmonManager
                     move.UserStatusTypes.Add(statusType);
                 }
             }
-            
-            MoveRegistry.Add(move.ID, move);
+
+            try
+            {
+                MoveRegistry.Add(move.ID, move);
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine($"Duplicate move ID for move {move.Name}. ID {move.ID} already belongs to {MoveRegistry[move.ID].Name}.");
+                throw;
+            }
         }
         
         var hackmonList = LoadData<HackmonData>("Hackmon");
