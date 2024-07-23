@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3jvobfj7072s"]
+
+[ext_resource type="Texture2D" uid="uid://cxoc278fjd7bd" path="res://Assets/UI/Border.png" id="1_56b6f"]
+[ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://EchoSummary.tscn" id="2_hh0wb"]
+[ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.413348, 0.412476)
+texture = ExtResource("1_56b6f")
+
+[node name="EchoStatus" parent="." instance=ExtResource("2_hh0wb")]
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 501.0
+offset_bottom = 280.0
+
+[node name="EchoStatus2" parent="." instance=ExtResource("2_hh0wb")]
+offset_left = 650.0
+offset_top = 110.0
+offset_right = 1023.0
+offset_bottom = 262.0
+
+[node name="EchoStatus3" parent="." instance=ExtResource("2_hh0wb")]
+offset_left = 121.0
+offset_top = 357.0
+offset_right = 494.0
+offset_bottom = 509.0
+
+[node name="EchoStatus4" parent="." instance=ExtResource("2_hh0wb")]
+offset_left = 644.0
+offset_top = 354.0
+offset_right = 1017.0
+offset_bottom = 506.0
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 519.0
+offset_top = 513.0
+offset_right = 625.0
+offset_bottom = 619.0
+texture_normal = ExtResource("3_472rb")
+ignore_texture_size = true
+stretch_mode = 4
