@@ -36,10 +36,10 @@ offset_right = 1017.0
 offset_bottom = 506.0
 
 [node name="BackButton" type="TextureButton" parent="."]
-offset_left = 519.0
-offset_top = 513.0
-offset_right = 625.0
-offset_bottom = 619.0
+offset_left = 1002.0
+offset_top = 497.0
+offset_right = 1108.0
+offset_bottom = 603.0
 texture_normal = ExtResource("3_472rb")
 ignore_texture_size = true
 stretch_mode = 4
