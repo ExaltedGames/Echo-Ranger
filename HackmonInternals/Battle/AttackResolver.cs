@@ -56,7 +56,7 @@ public class AttackResolver : IAttack
                     break;
             }
             
-            int damage =  Math.Max(1, (int)(atk / ((def+100)/100) + AttackData.Damage - moveTarget.Level/2 * stab * elementModifier));
+            int damage =  Math.Max(1, (int)((atk / ((def+100)/(100 * elementModifier)) + (AttackData.Damage * stab) - (moveTarget.Level/3)) * elementModifier));
 
             moveTarget.Health -= damage;
             HitEvent damageEvent = new HitEvent(moveUser, moveTarget, this, damage);
