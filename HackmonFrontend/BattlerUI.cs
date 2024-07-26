@@ -11,7 +11,7 @@ public partial class BattlerUI : Panel
 	private double _valueBeforeChange;
 	private readonly double _tweenTime = 0.5;
 	private double _tweenTimePassed = 0.5;
-	
+
 	public void SetCurrentMon(HackmonInstance mon)
 	{
 		_currentHackmon = mon;
@@ -19,6 +19,23 @@ public partial class BattlerUI : Panel
 		_healthBar.MaxValue = mon.MaxHp;
 		_healthBar.Value = mon.Health;
 		//_healthBar.ShowPercentage = true;
+
+		var _primaryTypeImageNode = GetNode<Sprite2D>("Status/PrimarySocket/PrimaryType");
+		var _primaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.PrimaryType}Icon.png");
+
+		_primaryTypeImageNode.Texture = _primaryTypeImage;
+
+		if (mon.SecondaryType != null)
+		{
+			GetNode<CanvasItem>("Status/SecondarySocket").Show();
+			var _secondaryTypeImageNode = GetNode<Sprite2D>("Status/SecondarySocket/SecondaryType");
+			var _secondaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.SecondaryType}Icon.png");
+
+			_secondaryTypeImageNode.Texture = _secondaryTypeImage;
+		}
+		else GetNode<CanvasItem>("Status/SecondarySocket").Hide();
+
+
 	}
 
 	public void DoDamageAnim(int damage)
@@ -27,7 +44,7 @@ public partial class BattlerUI : Panel
 		_currentChange = damage;
 		_tweenTimePassed = 0;
 	}
-	
+
 	public override void _Ready()
 	{
 		_nameLabel = GetNode<RichTextLabel>("Status/Name");
