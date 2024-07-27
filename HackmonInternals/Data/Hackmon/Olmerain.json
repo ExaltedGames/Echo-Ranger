@@ -3,6 +3,7 @@
   "PrimaryType": "Water",
   "Name": "Olmerain",
   "Family": "Aquatic",
+  "Description": "Olmin that are sufficiently well-fed eventually become known as olmerain, abandoning their vegetarian diets in favor of live prey. They utilize their control of water to drown their prey from a safe distance, before closing in for the kill. Strangely, they have developed fully functional eyes but never open them willingly.",
   "MaxHp": {
     "BaseValue": 51,
     "GrowthPerLevel": 5.04

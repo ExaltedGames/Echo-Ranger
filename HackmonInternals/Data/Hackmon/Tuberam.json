@@ -3,6 +3,7 @@
   "PrimaryType": "Basic",
   "Name": "Tuberam",
   "Family": "Beast",
+  "Description": "As a capratato's energy reserves are increasingly consumed through conflict, their body begins to adapt for aggression by becoming a tuberam. Dense patches of fur emerge from their otherwise velvety coat, serving as effective armor.",
   "MaxHp": {
     "BaseValue": 105,
     "GrowthPerLevel": 6.01

@@ -4,6 +4,7 @@
   "SecondaryType": "Chem",
   "Name": "Scarablast",
   "Family": "Arthropod",
+  "Description": "Despite their appearance, scarablast are typically docile and strictly adhere to vegetarian diets consisting of charred plantlife. Should they be threatened, their advanced chemical arsenal will make short work of any common foe.",
   "MaxHp": {
     "BaseValue": 126,
     "GrowthPerLevel": 4.03
