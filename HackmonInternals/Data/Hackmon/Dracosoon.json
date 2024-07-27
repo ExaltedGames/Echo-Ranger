@@ -4,7 +4,7 @@
   "SecondaryType": "Wind",
   "Name": "Dracosoon",
   "Family": "Aquatic",
-  "Description": "TODO",
+  "Description": "When an olmerain has grown strong enough, it finally opens it's eyes and takes to the sky as a dracosoon. These fierce predators stake out entire lakes as their territory and visciously defend them with their lives.",
   "MaxHp": {
     "BaseValue": 101,
     "GrowthPerLevel": 5.04

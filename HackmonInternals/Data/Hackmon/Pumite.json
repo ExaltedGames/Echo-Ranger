@@ -3,7 +3,7 @@
   "PrimaryType": "Fire",
   "Name": "Pumite",
   "Family": "Arthropod",
-  "Description": "TODO",
+  "Description": "Pumite seldom move without intervention, spending their days silently conserving energy to prepare for their final transformation. Despite their inert appearance, their bodies contain a roiling reserve of volatile fluid to be released on any would-be foe.",
   "MaxHp": {
     "BaseValue": 26,
     "GrowthPerLevel": 4.03

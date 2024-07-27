@@ -3,7 +3,7 @@
   "PrimaryType": "Earth",
   "Name": "Jarkin",
   "Family": "Construct",
-  "Description": "TODO",
+  "Description": "Primitive urns molded from clay and given life through spirit, these unusual constructs wander the world in search of more material to add to their bodies. Their origin and purpose in the ecosystem is unclear.",
   "MaxHp": {
     "BaseValue": 5,
     "GrowthPerLevel": 6.01
