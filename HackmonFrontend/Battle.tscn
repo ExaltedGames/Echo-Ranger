@@ -112,3 +112,8 @@ scale = Vector2(-2, 2)
 
 [node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
 visible = false
+
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move1" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [0]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move2" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [1]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move3" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [2]]
+[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move4" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [3]]
