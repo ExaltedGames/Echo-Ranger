@@ -94,6 +94,14 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
 
+[node name="Button" type="Button" parent="UI/ActionSelectUI"]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 532.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Switch Echo"
+
 [node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
 offset_left = 50.0

@@ -1,0 +1,209 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwewfc50wdfhn"]
+
+[ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_0dhdi"]
+[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="3_466x8"]
+[ext_resource type="Texture2D" uid="uid://dab5uugs4xhwe" path="res://Assets/ProjectIcon.png" id="4_ted0x"]
+[ext_resource type="Texture2D" uid="uid://w1awcpcwxinq" path="res://Assets/BattleSprites/Vroomba.png" id="5_j65ys"]
+[ext_resource type="Texture2D" uid="uid://cj8tnoupprmrf" path="res://Assets/BattleSprites/Verma.png" id="6_7jrxv"]
+[ext_resource type="Texture2D" uid="uid://cur8k32q85ro5" path="res://Assets/UI/EchoSummary.png" id="6_76jm7"]
+[ext_resource type="Texture2D" uid="uid://cp45vgu7q8brt" path="res://Assets/UI/EchoBall.png" id="7_13evi"]
+[ext_resource type="Texture2D" uid="uid://0fabng76lfjg" path="res://Assets/UI/IconSocket.png" id="8_sleq6"]
+[ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="9_5aokd"]
+[ext_resource type="Texture2D" uid="uid://dv84vacji8wds" path="res://Assets/UI/StaminaTextureDepleted.png" id="10_sc30a"]
+[ext_resource type="Texture2D" uid="uid://cvktiuklx2v8t" path="res://Assets/UI/StaminaTexture.png" id="11_p4m44"]
+[ext_resource type="Texture2D" uid="uid://wtpaw55van05" path="res://Assets/UI/HealthTextureDepleted.png" id="12_ld7ar"]
+[ext_resource type="Texture2D" uid="uid://do8kem16ftmnn" path="res://Assets/UI/HealthTexture.png" id="13_64eyw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5n0sp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7c30h"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_466x8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EchoStatus" type="Panel"]
+offset_top = 1.0
+offset_right = 373.0
+offset_bottom = 153.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nm5n3")
+
+[node name="Status" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.008
+anchor_bottom = 1.053
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 0.0159912
+offset_bottom = -0.056015
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="Status"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = -153.0
+offset_right = 113.0
+offset_bottom = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="Ailments" type="HBoxContainer" parent="Status"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_right = 6.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 8.96
+
+[node name="Poison" type="TextureRect" parent="Status/Ailments"]
+visible = false
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("2_0dhdi")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Status/Ailments"]
+visible = false
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("3_466x8")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Status/Ailments"]
+visible = false
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("4_ted0x")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="Status/Ailments"]
+visible = false
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("5_j65ys")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="Status/Ailments"]
+visible = false
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = ExtResource("6_7jrxv")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect6" type="TextureRect" parent="Status/Ailments"]
+visible = false
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect7" type="TextureRect" parent="Status/Ailments"]
+visible = false
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="TextureRect8" type="TextureRect" parent="Status/Ailments"]
+visible = false
+modulate = Color(0.917647, 0.113725, 0, 1)
+layout_mode = 2
+tooltip_text = "Poisoned."
+texture = SubResource("PlaceholderTexture2D_5n0sp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="EchoSummaryBar" type="Sprite2D" parent="Status"]
+position = Vector2(187.2, 75.4)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_76jm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Status/EchoSummaryBar"]
+z_index = 1
+position = Vector2(-273, -1.00002)
+texture = ExtResource("7_13evi")
+
+[node name="PrimarySocket" type="Sprite2D" parent="Status"]
+z_index = 1
+position = Vector2(152.2, 119.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_sleq6")
+
+[node name="PrimaryType" type="Sprite2D" parent="Status/PrimarySocket"]
+z_index = 1
+position = Vector2(6.00815e-05, 8.44002e-05)
+texture = ExtResource("9_5aokd")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Status"]
+z_index = 1
+position = Vector2(134, 134)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_sleq6")
+
+[node name="SecondaryType" type="Sprite2D" parent="Status/SecondarySocket"]
+z_index = 1
+texture = ExtResource("9_5aokd")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="Status"]
+layout_mode = 0
+offset_left = 75.2
+offset_top = 86.4
+offset_right = 1157.2
+offset_bottom = 126.4
+scale = Vector2(0.2, 0.2)
+value = 100.0
+texture_under = ExtResource("10_sc30a")
+texture_progress = ExtResource("11_p4m44")
+
+[node name="HealthBar" type="TextureProgressBar" parent="Status"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 85.0
+offset_top = 53.0
+offset_right = 1207.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+value = 100.0
+texture_under = ExtResource("12_ld7ar")
+texture_progress = ExtResource("13_64eyw")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Status"]
+z_index = 1
+texture_filter = 1
+position = Vector2(79, 61)
+sprite_frames = SubResource("SpriteFrames_7c30h")
