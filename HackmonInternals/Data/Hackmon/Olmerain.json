@@ -3,6 +3,7 @@
   "PrimaryType": "Water",
   "Name": "Olmerain",
   "Family": "Aquatic",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 51,
     "GrowthPerLevel": 5.04

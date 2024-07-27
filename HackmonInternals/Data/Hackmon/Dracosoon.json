@@ -4,6 +4,7 @@
   "SecondaryType": "Wind",
   "Name": "Dracosoon",
   "Family": "Aquatic",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 101,
     "GrowthPerLevel": 5.04

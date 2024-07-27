@@ -3,6 +3,7 @@
   "PrimaryType": "Basic",
   "Name": "Tuberam",
   "Family": "Beast",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 105,
     "GrowthPerLevel": 6.01

@@ -3,6 +3,7 @@
   "PrimaryType": "Fire",
   "Name": "Pumite",
   "Family": "Arthropod",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 26,
     "GrowthPerLevel": 4.03

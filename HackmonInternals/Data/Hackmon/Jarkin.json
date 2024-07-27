@@ -3,6 +3,7 @@
   "PrimaryType": "Earth",
   "Name": "Jarkin",
   "Family": "Construct",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 5,
     "GrowthPerLevel": 6.01

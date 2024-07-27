@@ -4,6 +4,7 @@
   "SecondaryType": "Chem",
   "Name": "Scarablast",
   "Family": "Arthropod",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 126,
     "GrowthPerLevel": 4.03
