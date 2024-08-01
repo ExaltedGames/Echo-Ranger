@@ -1,9 +1,9 @@
 ﻿{
-  "ID": 11,
+  "ID": 12,
   "PrimaryType": "Basic",
-  "Name": "Tuberam",
+  "Name": "Rhizoram",
   "Family": "Beast",
-  "Description": "As a capratato's energy reserves are increasingly consumed through conflict, their body begins to adapt for aggression by becoming a tuberam. Dense patches of fur emerge from their otherwise velvety coat, serving as effective armor.",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 105,
     "GrowthPerLevel": 6.01

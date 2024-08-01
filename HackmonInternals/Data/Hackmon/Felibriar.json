@@ -1,0 +1,32 @@
+﻿{
+  "ID": 8,
+  "PrimaryType": "Plant",
+  "Name": "Felibriar",
+  "Family": "Beast",
+  "Description": "TODO",
+  "MaxHp": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "Attack": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "SpAttack": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "Defense": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "SpDefense": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "Agility": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 5.04
+  },
+  "LearnableMoves": [0,1]
+}

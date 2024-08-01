@@ -1,9 +1,9 @@
 ﻿{
-  "ID": 13,
+  "ID": 14,
   "PrimaryType": "Earth",
-  "Name": "Jarkin",
+  "Name": "Jarmor",
   "Family": "Construct",
-  "Description": "Primitive urns molded from clay and given life through spirit, these unusual constructs wander the world in search of more material to add to their bodies. Their origin and purpose in the ecosystem is unclear.",
+  "Description": "TODO",
   "MaxHp": {
     "BaseValue": 5,
     "GrowthPerLevel": 6.01
