@@ -6,27 +6,27 @@
   "Description": "Olmin that are sufficiently well-fed eventually become known as olmerain, abandoning their vegetarian diets in favor of live prey. They utilize their control of water to drown their prey from a safe distance, before closing in for the kill. Strangely, they have developed fully functional eyes but never open them willingly.",
   "MaxHp": {
     "BaseValue": 51,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 6,
-    "GrowthPerLevel": 4.04
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 55,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 11,
-    "GrowthPerLevel": 4.54
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 61,
-    "GrowthPerLevel": 4.54
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 30,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,3,6,16,25,35]
 }

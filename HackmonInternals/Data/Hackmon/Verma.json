@@ -6,27 +6,27 @@
   "Description": "Soft bodied worms that make their dens in the charred remains of trees. They are capable of unleashing deadly gouts of flame thanks to the volatile chemicals held within their tails.",
   "MaxHp": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 2,
-    "GrowthPerLevel": 7.05
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,2,11,15,70]
 }

@@ -6,27 +6,27 @@
   "Description": "TODO",
   "MaxHp": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [0,1]
 }

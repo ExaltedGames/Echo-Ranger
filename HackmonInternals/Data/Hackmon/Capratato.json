@@ -6,27 +6,27 @@
   "Description": "The plump bodies of the capratato contain dense stores of energy gathered throughout their life to prepare for times of drought. Docile and with only thick fat for defense, they serve as tempting prey for many predators.",
   "MaxHp": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 2,
-    "GrowthPerLevel": 5.03
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 2,
-    "GrowthPerLevel": 5.03
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,24]
 }

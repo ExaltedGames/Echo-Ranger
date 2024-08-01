@@ -7,27 +7,27 @@
   "Description": "Despite their appearance, scarablast are typically docile and strictly adhere to vegetarian diets consisting of charred plantlife. Should they be threatened, their advanced chemical arsenal will make short work of any common foe.",
   "MaxHp": {
     "BaseValue": 126,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 77,
-    "GrowthPerLevel": 7.05
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 151,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 76,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 76,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 180,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,2,10,11,12,15]
 }

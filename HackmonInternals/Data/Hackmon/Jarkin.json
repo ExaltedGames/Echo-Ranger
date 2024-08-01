@@ -6,27 +6,27 @@
   "Description": "Primitive urns molded from clay and given life through spirit, these unusual constructs wander the world in search of more material to add to their bodies. Their origin and purpose in the ecosystem is unclear.",
   "MaxHp": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 2,
-    "GrowthPerLevel": 5.03
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 3.02
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,5,27,8]
 }

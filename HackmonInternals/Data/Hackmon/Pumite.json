@@ -6,27 +6,27 @@
   "Description": "Pumite seldom move without intervention, spending their days silently conserving energy to prepare for their final transformation. Despite their inert appearance, their bodies contain a roiling reserve of volatile fluid to be released on any would-be foe.",
   "MaxHp": {
     "BaseValue": 26,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Attack": {
     "BaseValue": 27,
-    "GrowthPerLevel": 7.05
+    "GrowthPerLevel": 0
   },
   "SpAttack": {
     "BaseValue": 51,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0
   },
   "Defense": {
     "BaseValue": 51,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "SpDefense": {
     "BaseValue": 51,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0
   },
   "Agility": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0
   },
   "LearnableMoves": [1,2,10,11,12,15]
 }
