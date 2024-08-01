@@ -2,7 +2,8 @@
   "ID": 1,
   "PrimaryType": "Water",
   "Name": "Olmin",
-  "Family": "Aquatic",
+  "Family": "Reptile",
+  "Description": "Strange slippery creatures that feed on vegetation growing in the underground waterways they call home. Their eyes are merely vestigial, so they navigate their surroundings primarily through smell.",
   "MaxHp": {
     "BaseValue": 1,
     "GrowthPerLevel": 5.04

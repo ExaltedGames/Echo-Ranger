@@ -3,6 +3,7 @@
   "PrimaryType": "Basic",
   "Name": "Capratato",
   "Family": "Beast",
+  "Description": "The plump bodies of the capratato contain dense stores of energy gathered throughout their life to prepare for times of drought. Docile and with only thick fat for defense, they serve as tempting prey for many predators.",
   "MaxHp": {
     "BaseValue": 5,
     "GrowthPerLevel": 6.01

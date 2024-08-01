@@ -1,0 +1,213 @@
+[gd_scene load_steps=6 format=3 uid="uid://k4a0pmgf80o0"]
+
+[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="3_466x8"]
+[ext_resource type="Texture2D" uid="uid://cp45vgu7q8brt" path="res://Assets/UI/EchoBall.png" id="7_13evi"]
+[ext_resource type="Texture2D" uid="uid://0fabng76lfjg" path="res://Assets/UI/IconSocket.png" id="8_sleq6"]
+[ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="9_5aokd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4vnj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_466x8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TeamSummary" type="Panel"]
+offset_right = 319.0
+offset_bottom = 309.0
+
+[node name="Name" type="RichTextLabel" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 2.0
+offset_right = -13.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="Echo1" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.008
+anchor_bottom = 1.053
+offset_right = 127.68
+offset_bottom = 109.88
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrimarySocket" type="Sprite2D" parent="Echo1"]
+z_index = 1
+position = Vector2(152.2, 119.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_sleq6")
+
+[node name="PrimaryType" type="Sprite2D" parent="Echo1/PrimarySocket"]
+z_index = 1
+position = Vector2(6.00815e-05, 8.44002e-05)
+texture = ExtResource("9_5aokd")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Echo1"]
+z_index = 1
+position = Vector2(134, 134)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_sleq6")
+
+[node name="SecondaryType" type="Sprite2D" parent="Echo1/SecondarySocket"]
+z_index = 1
+texture = ExtResource("9_5aokd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Echo1"]
+z_index = 1
+position = Vector2(78, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_13evi")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Echo1"]
+z_index = 1
+texture_filter = 1
+position = Vector2(79, 61)
+sprite_frames = SubResource("SpriteFrames_i4vnj")
+
+[node name="Echo2" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.008
+anchor_bottom = 1.053
+offset_left = 147.0
+offset_top = 1.0
+offset_right = 274.68
+offset_bottom = 110.88
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrimarySocket" type="Sprite2D" parent="Echo2"]
+z_index = 1
+position = Vector2(152.2, 119.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_sleq6")
+
+[node name="PrimaryType" type="Sprite2D" parent="Echo2/PrimarySocket"]
+z_index = 1
+position = Vector2(6.00815e-05, 8.44002e-05)
+texture = ExtResource("9_5aokd")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Echo2"]
+z_index = 1
+position = Vector2(134, 134)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_sleq6")
+
+[node name="SecondaryType" type="Sprite2D" parent="Echo2/SecondarySocket"]
+z_index = 1
+texture = ExtResource("9_5aokd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Echo2"]
+z_index = 1
+position = Vector2(78, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_13evi")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Echo2"]
+z_index = 1
+texture_filter = 1
+position = Vector2(79, 61)
+sprite_frames = SubResource("SpriteFrames_i4vnj")
+
+[node name="Echo3" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.008
+anchor_bottom = 1.053
+offset_top = 146.0
+offset_right = 127.68
+offset_bottom = 255.88
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrimarySocket" type="Sprite2D" parent="Echo3"]
+z_index = 1
+position = Vector2(152.2, 119.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_sleq6")
+
+[node name="PrimaryType" type="Sprite2D" parent="Echo3/PrimarySocket"]
+z_index = 1
+position = Vector2(6.00815e-05, 8.44002e-05)
+texture = ExtResource("9_5aokd")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Echo3"]
+z_index = 1
+position = Vector2(134, 134)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_sleq6")
+
+[node name="SecondaryType" type="Sprite2D" parent="Echo3/SecondarySocket"]
+z_index = 1
+texture = ExtResource("9_5aokd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Echo3"]
+z_index = 1
+position = Vector2(78, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_13evi")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Echo3"]
+z_index = 1
+texture_filter = 1
+position = Vector2(79, 61)
+sprite_frames = SubResource("SpriteFrames_i4vnj")
+
+[node name="Echo4" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.008
+anchor_bottom = 1.053
+offset_left = 148.0
+offset_top = 147.0
+offset_right = 275.68
+offset_bottom = 256.88
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PrimarySocket" type="Sprite2D" parent="Echo4"]
+z_index = 1
+position = Vector2(152.2, 119.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_sleq6")
+
+[node name="PrimaryType" type="Sprite2D" parent="Echo4/PrimarySocket"]
+z_index = 1
+position = Vector2(6.00815e-05, 8.44002e-05)
+texture = ExtResource("9_5aokd")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Echo4"]
+z_index = 1
+position = Vector2(134, 134)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_sleq6")
+
+[node name="SecondaryType" type="Sprite2D" parent="Echo4/SecondarySocket"]
+z_index = 1
+texture = ExtResource("9_5aokd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Echo4"]
+z_index = 1
+position = Vector2(78, 75)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_13evi")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="Echo4"]
+z_index = 1
+texture_filter = 1
+position = Vector2(79, 61)
+sprite_frames = SubResource("SpriteFrames_i4vnj")
