@@ -15,14 +15,14 @@ public partial class GameManager : Node
 	public Node CurrentScene { get; set; }
 	public TrainerData PlayerData { get; set; }
 	private TrainerData CurrentOpponent { get; set; }
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		DebugPlug.Init();
 		var root = GetTree().Root;
 		CurrentScene = root.GetChild(root.GetChildCount() - 1);
-		
+
 		HackmonManager.LoadAllData();
 		GD.Print("Data loaded.");
 
@@ -30,12 +30,12 @@ public partial class GameManager : Node
 		var testOpponent = new TrainerData();
 		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
 		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
-		var playerTeam = new List<HackmonInstance>() { playerMon }; 
+		var playerTeam = new List<HackmonInstance>() { playerMon };
 		var enemyTeam = new List<HackmonInstance>() { enemyMon };
 
 		PlayerData.CurrentParty = playerTeam;
 		testOpponent.CurrentParty = enemyTeam;
-		
+
 		GD.Print("Now entering: test battle.");
 		EnterBattle(testOpponent);
 	}
@@ -54,7 +54,7 @@ public partial class GameManager : Node
 			var testOpponent = new TrainerData();
 			var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[2], 1);
 			testOpponent.CurrentParty = new List<HackmonInstance>() { enemyMon };
-			EnterBattle(testOpponent);	
+			EnterBattle(testOpponent);
 		}
 	}
 
@@ -86,7 +86,7 @@ public partial class GameManager : Node
 
 	public void EnterBattle(TrainerData opponent)
 	{
-		CurrentOpponent = opponent;	
+		CurrentOpponent = opponent;
 		CallDeferred(nameof(DeferredEnterBattle));
 	}
 
@@ -94,7 +94,7 @@ public partial class GameManager : Node
 	{
 		CallDeferred(nameof(DeferredChangeScene), scenePath);
 	}
-	
+
 	public static void SaveData<T>(T dataObj)
 	{
 		var savePath = nameof(T);
@@ -120,7 +120,7 @@ public partial class GameManager : Node
 		var battleScene = (Battle)CurrentScene;
 		battleScene.InitBattle(PlayerData, CurrentOpponent);
 	}
-	
+
 	private void DeferredChangeScene(string path)
 	{
 		CurrentScene.QueueFree();
