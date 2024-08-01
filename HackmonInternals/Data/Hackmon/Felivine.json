@@ -28,5 +28,5 @@
     "BaseValue": 1,
     "GrowthPerLevel": 5.04
   },
-  "LearnableMoves": [0,1]
+  "LearnableMoves": [1,4,26,42,65]
 }
