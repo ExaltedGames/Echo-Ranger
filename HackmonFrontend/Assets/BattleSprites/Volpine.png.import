@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwqd2leeen25u"
-path="res://.godot/imported/Volpin.png-d9b9213bae19ae3e7912f3ee2090bea4.ctex"
+uid="uid://b84opc06i1nfo"
+path="res://.godot/imported/Volpine.png-f67063ec547bd43f08e0f75b934d5254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Volpin.png"
-dest_files=["res://.godot/imported/Volpin.png-d9b9213bae19ae3e7912f3ee2090bea4.ctex"]
+source_file="res://Assets/BattleSprites/Volpine.png"
+dest_files=["res://.godot/imported/Volpine.png-f67063ec547bd43f08e0f75b934d5254.ctex"]
 
 [params]
 
