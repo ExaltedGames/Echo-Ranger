@@ -1,0 +1,32 @@
+﻿{
+  "ID": 7,
+  "PrimaryType": "Plant",
+  "Name": "Felivine",
+  "Family": "Beast",
+  "Description": "Rare predators that resemble felines from Earth, Felivines utilize symbiotic vines to ensnare their prey. They carefully tend to the vine growing from their bodies to ensure it grows strong and healthy.",
+  "MaxHp": {
+    "BaseValue": 10,
+    "GrowthPerLevel": 0.4
+  },
+  "Attack": {
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.45
+  },
+  "SpAttack": {
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.24
+  },
+  "Defense": {
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.95
+  },
+  "SpDefense": {
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.20
+  },
+  "Agility": {
+    "BaseValue": 2,
+    "GrowthPerLevel": 0.48
+  },
+  "LearnableMoves": [1,4,26,42,65]
+}

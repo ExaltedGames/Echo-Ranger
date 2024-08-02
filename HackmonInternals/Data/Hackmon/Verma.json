@@ -1,32 +1,32 @@
 ﻿{
-  "ID": 3,
+  "ID": 4,
   "PrimaryType": "Fire",
   "Name": "Verma",
   "Family": "Arthropod",
   "Description": "Soft bodied worms that make their dens in the charred remains of trees. They are capable of unleashing deadly gouts of flame thanks to the volatile chemicals held within their tails.",
   "MaxHp": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0.24
   },
   "Attack": {
-    "BaseValue": 2,
-    "GrowthPerLevel": 7.05
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.24
   },
   "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 10,
+    "GrowthPerLevel": 1.4
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "GrowthPerLevel": 0.24
   },
   "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 4.03
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.20
   },
   "Agility": {
     "BaseValue": 5,
-    "GrowthPerLevel": 6.01
+    "GrowthPerLevel": 0.45
   },
-  "LearnableMoves": [1,2,11]
+  "LearnableMoves": [1,2,11,15,70]
 }

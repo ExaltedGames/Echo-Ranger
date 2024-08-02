@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co0lkwwgsv26r"
-path="res://.godot/imported/Vroomba.png-e7b4b8b915491b279a9f70f741e78489.ctex"
+uid="uid://cqxyd4fb8ctgt"
+path="res://.godot/imported/Felivine.png-267b5ca45f4c96f8ee1c800ac31692ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Vroomba.png"
-dest_files=["res://.godot/imported/Vroomba.png-e7b4b8b915491b279a9f70f741e78489.ctex"]
+source_file="res://Assets/BattleSprites/Felivine.png"
+dest_files=["res://.godot/imported/Felivine.png-267b5ca45f4c96f8ee1c800ac31692ea.ctex"]
 
 [params]
 

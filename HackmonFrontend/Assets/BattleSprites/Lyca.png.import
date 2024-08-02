@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://culgiybysby7a"
-path="res://.godot/imported/Lycerna.png-3948c52118c929474f295311e3ae3166.ctex"
+uid="uid://b8rchsbdnu0mx"
+path="res://.godot/imported/Lyca.png-31232ea60cb60ffbefce5b8e85dc8791.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Lycerna.png"
-dest_files=["res://.godot/imported/Lycerna.png-3948c52118c929474f295311e3ae3166.ctex"]
+source_file="res://Assets/BattleSprites/Lyca.png"
+dest_files=["res://.godot/imported/Lyca.png-31232ea60cb60ffbefce5b8e85dc8791.ctex"]
 
 [params]
 

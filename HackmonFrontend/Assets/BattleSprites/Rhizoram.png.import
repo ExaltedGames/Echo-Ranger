@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwqd2leeen25u"
-path="res://.godot/imported/Volpin.png-d9b9213bae19ae3e7912f3ee2090bea4.ctex"
+uid="uid://cfgq0a8crfo4h"
+path="res://.godot/imported/Rhizoram.png-f8bd468b84edbd09ca08434dea8063a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Volpin.png"
-dest_files=["res://.godot/imported/Volpin.png-d9b9213bae19ae3e7912f3ee2090bea4.ctex"]
+source_file="res://Assets/BattleSprites/Rhizoram.png"
+dest_files=["res://.godot/imported/Rhizoram.png-f8bd468b84edbd09ca08434dea8063a9.ctex"]
 
 [params]
 

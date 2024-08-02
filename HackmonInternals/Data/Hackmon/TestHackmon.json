@@ -6,27 +6,27 @@
   "Description": "This creature should not exist in the world. If you have somehow encountered this creature, it is either through an unusual error or by your own deliberate actions.",
   "MaxHp": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "Attack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "SpDefense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "LearnableMoves": [0,1]
 }
