@@ -5,28 +5,28 @@
   "Family": "Arthropod",
   "Description": "Pumite seldom move without intervention, spending their days silently conserving energy to prepare for their final transformation. Despite their inert appearance, their bodies contain a roiling reserve of volatile fluid to be released on any would-be foe.",
   "MaxHp": {
-    "BaseValue": 26,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.49
   },
   "Attack": {
-    "BaseValue": 27,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.59
   },
   "SpAttack": {
-    "BaseValue": 51,
-    "GrowthPerLevel": 0
+    "BaseValue": 10,
+    "GrowthPerLevel": 1.55
   },
   "Defense": {
-    "BaseValue": 51,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.24
   },
   "SpDefense": {
-    "BaseValue": 51,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.95
   },
   "Agility": {
     "BaseValue": 5,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.45
   },
   "LearnableMoves": [1,2,10,11,12,15]
 }

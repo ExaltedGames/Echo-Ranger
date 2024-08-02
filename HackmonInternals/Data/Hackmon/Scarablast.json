@@ -6,28 +6,28 @@
   "Family": "Arthropod",
   "Description": "Despite their appearance, scarablast are typically docile and strictly adhere to vegetarian diets consisting of charred plantlife. Should they be threatened, their advanced chemical arsenal will make short work of any common foe.",
   "MaxHp": {
-    "BaseValue": 126,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.64
   },
   "Attack": {
-    "BaseValue": 77,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.79
   },
   "SpAttack": {
-    "BaseValue": 151,
-    "GrowthPerLevel": 0
+    "BaseValue": 10,
+    "GrowthPerLevel": 1.70
   },
   "Defense": {
-    "BaseValue": 76,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.49
   },
   "SpDefense": {
-    "BaseValue": 76,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.95
   },
   "Agility": {
-    "BaseValue": 180,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.20
   },
   "LearnableMoves": [1,2,10,11,12,15]
 }

@@ -3,30 +3,30 @@
   "PrimaryType": "Plant",
   "Name": "Felibriar",
   "Family": "Beast",
-  "Description": "TODO",
+  "Description": "Times of plenty can lead to the creation of Felibriar, whose vines have grown strong enough to break bone. The blooming ends of their vines exude a sticky sap that provides an inescapable grip on prey.",
   "MaxHp": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 10,
+    "GrowthPerLevel": 0.65
   },
   "Attack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.65
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "GrowthPerLevel": 0.49
   },
   "Defense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.95
   },
   "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.45
   },
   "Agility": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 5.04
+    "BaseValue": 2,
+    "GrowthPerLevel": 0.98
   },
-  "LearnableMoves": [0,1]
+  "LearnableMoves": [1,4,7,17,26,42,51,65,73]
 }

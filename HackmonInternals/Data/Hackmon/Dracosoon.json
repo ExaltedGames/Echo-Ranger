@@ -6,28 +6,28 @@
   "Family": "Reptile",
   "Description": "When an olmerain has grown strong enough, it finally opens it's eyes and takes to the sky as a dracosoon. These fierce predators stake out entire lakes as their territory and visciously defend them with their lives.",
   "MaxHp": {
-    "BaseValue": 101,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.45
   },
   "Attack": {
-    "BaseValue": 106,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.70
   },
   "SpAttack": {
-    "BaseValue": 155,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.1
   },
   "Defense": {
-    "BaseValue": 61,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.75
   },
   "SpDefense": {
-    "BaseValue": 96,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.39
   },
   "Agility": {
-    "BaseValue": 95,
-    "GrowthPerLevel": 0
+    "BaseValue": 10,
+    "GrowthPerLevel": 1.30
   },
   "LearnableMoves": [1,3,6,16,25,35]
 }

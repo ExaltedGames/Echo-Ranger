@@ -1,32 +1,33 @@
 ﻿{
   "ID": 9,
   "PrimaryType": "Plant",
+  "SecondaryType": "Jolt",
   "Name": "TODO",
   "Family": "Beast",
   "Description": "TODO",
   "MaxHp": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 10,
+    "GrowthPerLevel": 0.95
   },
   "Attack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.15
   },
   "SpAttack": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.74
   },
   "Defense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.05
   },
   "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.60
   },
   "Agility": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 2,
+    "GrowthPerLevel": 1.23
   },
-  "LearnableMoves": [0,1]
+  "LearnableMoves": [1,4,7,17,26,42,51,65,73]
 }

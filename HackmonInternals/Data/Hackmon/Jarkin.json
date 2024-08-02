@@ -3,30 +3,30 @@
   "PrimaryType": "Earth",
   "Name": "Jarkin",
   "Family": "Construct",
-  "Description": "Primitive urns molded from clay and given life through spirit, these unusual constructs wander the world in search of more material to add to their bodies. Their origin and purpose in the ecosystem is unclear.",
+  "Description": "Primitive urns molded from clay and given life through a strange energy, these unusual constructs wander the world in search of more material to add to their bodies. Their origin and purpose in the ecosystem is unclear.",
   "MaxHp": {
     "BaseValue": 5,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.20
   },
   "Attack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 0.85
   },
   "SpAttack": {
-    "BaseValue": 2,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.49
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.24
   },
   "SpDefense": {
     "BaseValue": 5,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.55
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.49
   },
-  "LearnableMoves": [1,5,27,8]
+  "LearnableMoves": [1,5,8,14,27,38]
 }

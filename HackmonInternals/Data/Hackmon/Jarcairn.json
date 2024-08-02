@@ -1,32 +1,33 @@
 ﻿{
   "ID": 15,
   "PrimaryType": "Earth",
-  "Name": "Jarmor",
+  "SecondaryType": "Spirit",
+  "Name": "Jarcairn",
   "Family": "Construct",
   "Description": "TODO",
   "MaxHp": {
     "BaseValue": 5,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 1.65
   },
   "Attack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "BaseValue": 5,
+    "GrowthPerLevel": 1.05
   },
   "SpAttack": {
-    "BaseValue": 2,
-    "GrowthPerLevel": 0
+    "BaseValue": 1,
+    "GrowthPerLevel": 0.67
   },
   "Defense": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.26
   },
   "SpDefense": {
     "BaseValue": 5,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 1.65
   },
   "Agility": {
     "BaseValue": 1,
-    "GrowthPerLevel": 0
+    "GrowthPerLevel": 0.54
   },
-  "LearnableMoves": [1,5,27,8]
+  "LearnableMoves": [1,4,5,8,14,27,30,38,40]
 }
