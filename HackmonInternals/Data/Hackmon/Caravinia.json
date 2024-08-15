@@ -1,10 +1,10 @@
 ﻿{
   "ID": 9,
   "PrimaryType": "Plant",
-  "SecondaryType": "Jolt",
-  "Name": "TODO",
+  "SecondaryType": "Earth",
+  "Name": "Caravinia",
   "Family": "Beast",
-  "Description": "TODO",
+  "Description": "Caravinia dominate the forests they call home as apex predators, making use of the very trees as their own weapons. The symbiotic vegetation overtaking their body is capable of pulverizing stone in it's vice grip, but demands immense energy from it's host.",
   "MaxHp": {
     "BaseValue": 10,
     "GrowthPerLevel": 0.95
