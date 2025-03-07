@@ -7,6 +7,7 @@ public partial class BattlerUI : Panel
 	private HackmonInstance _currentHackmon;
 	private RichTextLabel _nameLabel;
 	private TextureProgressBar _healthBar;
+	private TextureProgressBar _staminaBar;
 	private int _currentChange = 0;
 	private double _valueBeforeChange;
 	private readonly double _tweenTime = 0.5;
@@ -18,6 +19,8 @@ public partial class BattlerUI : Panel
 		_nameLabel.Text = mon.Name;
 		_healthBar.MaxValue = mon.MaxHp;
 		_healthBar.Value = mon.Health;
+		_staminaBar.MaxValue = mon.MaxStamina;
+		_staminaBar.Value = mon.Stamina;
 		//_healthBar.ShowPercentage = true;
 
 		var _primaryTypeImageNode = GetNode<Sprite2D>("Status/PrimarySocket/PrimaryType");
