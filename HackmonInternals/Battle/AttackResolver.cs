@@ -32,6 +32,7 @@ public class AttackResolver : IAttack
         {
             throw new Exception($"Not enough stamina for move: {AttackData.Name}");
         }
+        
         if (AttackData.Damage != 0)
         {
             var atk = 0;
