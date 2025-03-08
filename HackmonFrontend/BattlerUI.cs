@@ -52,6 +52,7 @@ public partial class BattlerUI : Panel
 	{
 		_nameLabel = GetNode<RichTextLabel>("Status/Name");
 		_healthBar = GetNode<TextureProgressBar>("Status/HealthBar");
+		_staminaBar = GetNode<TextureProgressBar>("Status/StaminaBar");
 	}
 
 	public override void _Process(double delta)
