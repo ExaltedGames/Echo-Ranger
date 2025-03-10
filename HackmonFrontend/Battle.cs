@@ -33,6 +33,7 @@ public partial class Battle : Node2D
 
 		HackmonBattleManager.HandleInput(new() { action });
 		processEvents = true;
+		trainerUI.DoStaminaAnim(move.StaminaCost);
 	}
 
 	private void OnMessagesDone()

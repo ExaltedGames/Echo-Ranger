@@ -8,8 +8,10 @@ public partial class BattlerUI : Panel
 	private RichTextLabel _nameLabel;
 	private TextureProgressBar _healthBar;
 	private TextureProgressBar _staminaBar;
-	private int _currentChange = 0;
-	private double _valueBeforeChange;
+	private int _healthCurrentChange = 0;
+	private int _staminaCurrentChange = 0;
+	private double _healthValueBeforeChange;
+	private double _staminaValueBeforeChange;
 	private readonly double _tweenTime = 0.5;
 	private double _tweenTimePassed = 0.5;
 
@@ -43,8 +45,14 @@ public partial class BattlerUI : Panel
 
 	public void DoDamageAnim(int damage)
 	{
-		_valueBeforeChange = _healthBar.Value;
-		_currentChange = damage;
+		_healthValueBeforeChange = _healthBar.Value;
+		_healthCurrentChange = damage;
+		_tweenTimePassed = 0;
+	}
+	public void DoStaminaAnim(int staminaCost)
+	{
+		_staminaValueBeforeChange = _staminaBar.Value;
+		_staminaCurrentChange = staminaCost;
 		_tweenTimePassed = 0;
 	}
 
@@ -62,13 +70,16 @@ public partial class BattlerUI : Panel
 			_tweenTimePassed += delta;
 			if (_tweenTimePassed >= _tweenTime)
 			{
-				_healthBar.Value = _valueBeforeChange - _currentChange;
+				_healthBar.Value = _healthValueBeforeChange - _healthCurrentChange;
+				_staminaBar.Value = _staminaValueBeforeChange - _staminaCurrentChange;
 				_tweenTimePassed = _tweenTime;
-				_currentChange = 0;
+				_healthCurrentChange = 0;
+				_staminaCurrentChange = 0;
 			}
 			else
 			{
-				_healthBar.Value = _valueBeforeChange - (_currentChange * (_tweenTimePassed / _tweenTime));
+				_healthBar.Value = _healthValueBeforeChange - (_healthCurrentChange * (_tweenTimePassed / _tweenTime));
+				_staminaBar.Value = _staminaValueBeforeChange - (_staminaCurrentChange * (_tweenTimePassed / _tweenTime));
 			}
 		}
 	}
