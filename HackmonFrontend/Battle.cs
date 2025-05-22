@@ -33,7 +33,7 @@ public partial class Battle : Node2D
 
 		HackmonBattleManager.HandleInput(new() { action });
 		processEvents = true;
-		trainerUI.DoStaminaAnim(move.StaminaCost);
+		//trainerUI.DoStaminaAnim(move.StaminaCost);
 	}
 
 	private void OnMessagesDone()
@@ -123,10 +123,12 @@ public partial class Battle : Node2D
 						messageList.Add(eventStr);
 						if (ActivePlayerMon == hitEvent.Attacker)
 						{
+							trainerUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
 							enemyUI.DoDamageAnim(hitEvent.Damage);    
 						}
 						else
 						{
+							enemyUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
 							trainerUI.DoDamageAnim(hitEvent.Damage);
 						}
 						break;
