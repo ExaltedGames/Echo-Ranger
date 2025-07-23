@@ -29,10 +29,12 @@ public partial class Battle : Node2D
 
 	private void OnPlayerInput(HackmonMove move)
 	{
-		
 		if (move.StaminaCost > ActivePlayerMon.Stamina)
 		{
-			GD.Print("Selection failed. Not enough stamina.");
+			actionSelect.SetEnabled(false);
+			eventText.Enable();
+			eventText.ShowMessages(new List<string> {"Not enough stamina!"}, OnMessagesDone);
+			GD.Print("Nostamina.");
 			return;
 		}
 		var action = new AttackAction(ActivePlayerMon, ActiveEnemyMon, new AttackResolver(move));
