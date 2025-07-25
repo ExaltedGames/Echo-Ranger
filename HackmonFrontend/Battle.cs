@@ -26,18 +26,35 @@ public partial class Battle : Node2D
 	private bool processEvents = false;
 	private bool itsSoOver = false;
 	private List<string> messageList = new();
+	private int _playerPreRegenStamina = 0;
+	private int _playerPreRegenHealth = 0;
+	private int _enemyPreRegenStamina = 0;
+	private int _enemyPreRegenHealth = 0;
 
 	private void OnPlayerInput(HackmonMove move)
 	{
+		if (move.StaminaCost > ActivePlayerMon.Stamina)
+		{
+			actionSelect.SetEnabled(false);
+			eventText.Enable();
+			eventText.ShowMessages(new List<string> {"Not enough stamina!"}, OnMessagesDone);
+			GD.Print("Nostamina.");
+			return;
+		}
 		var action = new AttackAction(ActivePlayerMon, ActiveEnemyMon, new AttackResolver(move));
 
 		HackmonBattleManager.HandleInput(new() { action });
 		processEvents = true;
+		//trainerUI.DoStaminaAnim(move.StaminaCost);
 	}
 
 	private void OnMessagesDone()
 	{
 		eventText.Disable();
+		trainerUI.DoStamRegenAnim(ActivePlayerMon.Stamina - _playerPreRegenStamina);
+		trainerUI.DoHpRegenAnim(ActivePlayerMon.Health - _playerPreRegenHealth);
+		enemyUI.DoStamRegenAnim(ActiveEnemyMon.Stamina - _enemyPreRegenStamina);
+		enemyUI.DoHpRegenAnim(ActiveEnemyMon.Health - _enemyPreRegenHealth);
 		if (itsSoOver) return;
 		actionSelect.SetEnabled(true);
 	}
@@ -114,6 +131,20 @@ public partial class Battle : Node2D
 						eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);
 						messageList.Clear();
 						processEvents = false;
+						if (ActivePlayerMon.Stamina < ActivePlayerMon.MaxStamina)
+						{
+							_playerPreRegenStamina = ActivePlayerMon.Stamina;
+							_playerPreRegenHealth = ActivePlayerMon.Health;
+							ActivePlayerMon.Stamina += ActivePlayerMon.MaxStamina / 8;
+							ActivePlayerMon.Stamina = Math.Min(ActivePlayerMon.Stamina, ActivePlayerMon.MaxStamina);
+						}
+						if (ActiveEnemyMon.Stamina < ActiveEnemyMon.MaxStamina)
+						{
+							_enemyPreRegenStamina = ActiveEnemyMon.Stamina;
+							_enemyPreRegenHealth = ActiveEnemyMon.Health;
+							ActiveEnemyMon.Stamina += ActiveEnemyMon.MaxStamina / 8;
+							ActiveEnemyMon.Stamina = Math.Min(ActiveEnemyMon.Stamina, ActiveEnemyMon.MaxStamina);
+						}
 						break;
 					case HackmonHitEvent hitEvent:
 						GD.Print("adding message.");
@@ -122,10 +153,12 @@ public partial class Battle : Node2D
 						messageList.Add(eventStr);
 						if (ActivePlayerMon == hitEvent.Attacker)
 						{
+							trainerUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
 							enemyUI.DoDamageAnim(hitEvent.Damage);    
 						}
 						else
 						{
+							enemyUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
 							trainerUI.DoDamageAnim(hitEvent.Damage);
 						}
 						break;
