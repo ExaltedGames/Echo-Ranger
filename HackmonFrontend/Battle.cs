@@ -26,6 +26,8 @@ public partial class Battle : Node2D
 	private bool processEvents = false;
 	private bool itsSoOver = false;
 	private List<string> messageList = new();
+	private int _preRegenStamina = 0;
+	private int _preRegenHealth = 0;
 
 	private void OnPlayerInput(HackmonMove move)
 	{
@@ -47,6 +49,8 @@ public partial class Battle : Node2D
 	private void OnMessagesDone()
 	{
 		eventText.Disable();
+		trainerUI.DoStamRegenAnim(ActivePlayerMon.Stamina - _preRegenStamina);
+		trainerUI.DoHpRegenAnim(ActivePlayerMon.Health - _preRegenHealth);
 		if (itsSoOver) return;
 		actionSelect.SetEnabled(true);
 	}
@@ -123,6 +127,14 @@ public partial class Battle : Node2D
 						eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);
 						messageList.Clear();
 						processEvents = false;
+						if (ActivePlayerMon.Stamina < ActivePlayerMon.MaxStamina)
+						{
+							_preRegenStamina = ActivePlayerMon.Stamina;
+							_preRegenHealth = ActivePlayerMon.Health;
+							ActivePlayerMon.Stamina += ActivePlayerMon.MaxStamina / 4;
+							ActivePlayerMon.Stamina = Math.Min(ActivePlayerMon.Stamina, ActivePlayerMon.MaxStamina);
+							GD.Print($"Restored Player Stamina by {ActivePlayerMon.MaxStamina / 4}.");
+						}
 						break;
 					case HackmonHitEvent hitEvent:
 						GD.Print("adding message.");

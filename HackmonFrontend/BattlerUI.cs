@@ -49,10 +49,22 @@ public partial class BattlerUI : Panel
 		_healthCurrentChange = damage;
 		_tweenTimePassed = 0;
 	}
+	public void DoHpRegenAnim(int health)
+	{
+		_healthValueBeforeChange = _healthBar.Value;
+		_healthCurrentChange = -health;
+		_tweenTimePassed = 0;
+	}
 	public void DoStaminaAnim(int staminaCost)
 	{
 		_staminaValueBeforeChange = _staminaBar.Value;
 		_staminaCurrentChange = staminaCost;
+		_tweenTimePassed = 0;
+	}
+	public void DoStamRegenAnim(int stamina)
+	{
+		_staminaValueBeforeChange = _staminaBar.Value;
+		_staminaCurrentChange = -stamina;
 		_tweenTimePassed = 0;
 	}
 
