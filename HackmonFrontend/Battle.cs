@@ -26,8 +26,10 @@ public partial class Battle : Node2D
 	private bool processEvents = false;
 	private bool itsSoOver = false;
 	private List<string> messageList = new();
-	private int _preRegenStamina = 0;
-	private int _preRegenHealth = 0;
+	private int _playerPreRegenStamina = 0;
+	private int _playerPreRegenHealth = 0;
+	private int _enemyPreRegenStamina = 0;
+	private int _enemyPreRegenHealth = 0;
 
 	private void OnPlayerInput(HackmonMove move)
 	{
@@ -49,8 +51,10 @@ public partial class Battle : Node2D
 	private void OnMessagesDone()
 	{
 		eventText.Disable();
-		trainerUI.DoStamRegenAnim(ActivePlayerMon.Stamina - _preRegenStamina);
-		trainerUI.DoHpRegenAnim(ActivePlayerMon.Health - _preRegenHealth);
+		trainerUI.DoStamRegenAnim(ActivePlayerMon.Stamina - _playerPreRegenStamina);
+		trainerUI.DoHpRegenAnim(ActivePlayerMon.Health - _playerPreRegenHealth);
+		enemyUI.DoStamRegenAnim(ActiveEnemyMon.Stamina - _enemyPreRegenStamina);
+		enemyUI.DoHpRegenAnim(ActiveEnemyMon.Health - _enemyPreRegenHealth);
 		if (itsSoOver) return;
 		actionSelect.SetEnabled(true);
 	}
@@ -129,11 +133,17 @@ public partial class Battle : Node2D
 						processEvents = false;
 						if (ActivePlayerMon.Stamina < ActivePlayerMon.MaxStamina)
 						{
-							_preRegenStamina = ActivePlayerMon.Stamina;
-							_preRegenHealth = ActivePlayerMon.Health;
-							ActivePlayerMon.Stamina += ActivePlayerMon.MaxStamina / 4;
+							_playerPreRegenStamina = ActivePlayerMon.Stamina;
+							_playerPreRegenHealth = ActivePlayerMon.Health;
+							ActivePlayerMon.Stamina += ActivePlayerMon.MaxStamina / 8;
 							ActivePlayerMon.Stamina = Math.Min(ActivePlayerMon.Stamina, ActivePlayerMon.MaxStamina);
-							GD.Print($"Restored Player Stamina by {ActivePlayerMon.MaxStamina / 4}.");
+						}
+						if (ActiveEnemyMon.Stamina < ActiveEnemyMon.MaxStamina)
+						{
+							_enemyPreRegenStamina = ActiveEnemyMon.Stamina;
+							_enemyPreRegenHealth = ActiveEnemyMon.Health;
+							ActiveEnemyMon.Stamina += ActiveEnemyMon.MaxStamina / 8;
+							ActiveEnemyMon.Stamina = Math.Min(ActiveEnemyMon.Stamina, ActiveEnemyMon.MaxStamina);
 						}
 						break;
 					case HackmonHitEvent hitEvent:
