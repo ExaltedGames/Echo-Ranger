@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0p5fxcwm0ak"]
+
+[ext_resource type="PackedScene" uid="uid://dy0cntwrps6l0" path="res://player.tscn" id="1_mktdt"]
+[ext_resource type="Texture2D" uid="uid://bod1vij2xrmcq" path="res://Placeholder.png" id="2_7dfrk"]
+
+[node name="OverworldTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_mktdt")]
+position = Vector2(565, 328)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(479, 325)
+texture = ExtResource("2_7dfrk")
