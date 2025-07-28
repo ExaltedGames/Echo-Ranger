@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Godot;
-using Hackmon.Debugging;
 using HackmonInternals;
 using HackmonInternals.Battle;
 using HackmonInternals.Events;
@@ -14,18 +11,17 @@ namespace HackmonFrontend;
 
 public partial class Battle : Node2D
 {
-	private Textbox eventText;
-	private BattlerUI trainerUI;
-	private BattlerUI enemyUI;
-	private BattlerStage trainerStage;
-	private BattlerStage enemyStage;
-	private ActionSelectUI actionSelect;
+	private Textbox _eventText;
+	private BattlerUI _trainerUi;
+	private BattlerUI _enemyUi;
+	private BattlerStage _trainerStage;
+	private BattlerStage _enemyStage;
+	private ActionSelectUI _actionSelect;
 
-	private HackmonInstance ActivePlayerMon;
-	private HackmonInstance ActiveEnemyMon;
-	private bool processEvents = false;
-	private bool itsSoOver = false;
-	private List<string> messageList = new();
+	private HackmonInstance _activePlayerMon;
+	private HackmonInstance _activeEnemyMon;
+	private bool _processEvents = false;
+	private bool _itsSoOver = false;
 	private int _playerPreRegenStamina = 0;
 	private int _playerPreRegenHealth = 0;
 	private int _enemyPreRegenStamina = 0;
@@ -33,42 +29,45 @@ public partial class Battle : Node2D
 
 	private void OnPlayerInput(HackmonMove move)
 	{
-		if (move.StaminaCost > ActivePlayerMon.Stamina)
+		if (move.StaminaCost > _activePlayerMon.Stamina)
 		{
-			actionSelect.SetEnabled(false);
-			eventText.Enable();
-			eventText.ShowMessages(new List<string> {"Not enough stamina!"}, OnMessagesDone);
+			_actionSelect.SetEnabled(false);
+			_eventText.QueueMessage("Not enough stamina!");
+			_eventText.ShowMessages(OnMessagesDone);
 			GD.Print("Nostamina.");
 			return;
 		}
-		var action = new AttackAction(ActivePlayerMon, ActiveEnemyMon, new AttackResolver(move));
+		var action = new AttackAction(_activePlayerMon, _activeEnemyMon, new AttackResolver(move));
 
 		HackmonBattleManager.HandleInput(new() { action });
-		processEvents = true;
-		//trainerUI.DoStaminaAnim(move.StaminaCost);
+		_processEvents = true;
 	}
 
 	private void OnMessagesDone()
 	{
-		eventText.Disable();
-		trainerUI.DoStamRegenAnim(ActivePlayerMon.Stamina - _playerPreRegenStamina);
-		trainerUI.DoHpRegenAnim(ActivePlayerMon.Health - _playerPreRegenHealth);
-		enemyUI.DoStamRegenAnim(ActiveEnemyMon.Stamina - _enemyPreRegenStamina);
-		enemyUI.DoHpRegenAnim(ActiveEnemyMon.Health - _enemyPreRegenHealth);
-		if (itsSoOver) return;
-		actionSelect.SetEnabled(true);
+		_eventText.Disable();
+		if (_itsSoOver) return;
+		_actionSelect.SetEnabled(true);
+	}
+	private async void TurnEndEvent()
+	{
+		await Task.WhenAll(
+			_trainerUi.DoStamRegenAnim(_activePlayerMon.Stamina - _playerPreRegenStamina),
+			_enemyUi.DoStamRegenAnim(_activeEnemyMon.Stamina - _enemyPreRegenStamina)
+		);
+		OnMessagesDone();
 	}
 
 	public override void _Ready()
 	{
-		eventText = GetNode<Textbox>("UI/Textbox");
-		trainerUI = GetNode<BattlerUI>("UI/BattlerUI");
-		trainerStage = GetNode<BattlerStage>("BattlerStage");
-		enemyStage = GetNode<BattlerStage>("OpponentStage");
-		enemyUI = GetNode<BattlerUI>("UI/OpponentUI");
-		actionSelect = GetNode<ActionSelectUI>("UI/ActionSelectUI");
+		_eventText = GetNode<Textbox>("UI/Textbox");
+		_trainerUi = GetNode<BattlerUI>("UI/BattlerUI");
+		_trainerStage = GetNode<BattlerStage>("BattlerStage");
+		_enemyStage = GetNode<BattlerStage>("OpponentStage");
+		_enemyUi = GetNode<BattlerUI>("UI/OpponentUI");
+		_actionSelect = GetNode<ActionSelectUI>("UI/ActionSelectUI");
 
-		eventText.SetText("Test Hackmon Takes 40 damage from MISSINGNO :)");
+		_eventText.SetText("Test Hackmon Takes 40 damage from MISSINGNO :)");
 
 		GD.Print("test thingy");
 
@@ -80,99 +79,104 @@ public partial class Battle : Node2D
 	public void InitBattle(TrainerData playerData, TrainerData enemy)
 	{
 		// reset potential old state
-		processEvents = false;
-		itsSoOver = false;
-		messageList = new();
-		eventText.Disable();
+		_processEvents = false;
+		_itsSoOver = false;
+		_eventText.Disable();
 		
 		HackmonBattleManager.StartBattle(playerData.CurrentParty, enemy.CurrentParty);
 
-		ActivePlayerMon = playerData.CurrentParty[0];
-		ActiveEnemyMon = enemy.CurrentParty[0];
+		_activePlayerMon = playerData.CurrentParty[0];
+		_activeEnemyMon = enemy.CurrentParty[0];
 
-		GD.Print($"Player sends out {ActivePlayerMon.Name}");
+		GD.Print($"Player sends out {_activePlayerMon.Name}");
 		GD.Print($"Enemy sends out: {enemy.CurrentParty[0].Name}");
 
-		trainerUI.SetCurrentMon(ActivePlayerMon);
-		trainerStage.LoadHackmon(ActivePlayerMon.Name, true);
-		enemyUI.SetCurrentMon(enemy.CurrentParty[0]);
-		enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
+		_trainerUi.SetCurrentMon(_activePlayerMon);
+		_trainerStage.LoadHackmon(_activePlayerMon.Name, true);
+		_enemyUi.SetCurrentMon(enemy.CurrentParty[0]);
+		_enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
 
 		HackmonMove[] battleMoveset = new HackmonMove[4];
 		for (int i = 0; i < 4; i++)
 		{
-			if (ActivePlayerMon.KnownMoves.Count > i)
+			if (_activePlayerMon.KnownMoves.Count > i)
 			{
-				battleMoveset[i] = HackmonManager.MoveRegistry[ActivePlayerMon.KnownMoves[i]];
+				battleMoveset[i] = HackmonManager.MoveRegistry[_activePlayerMon.KnownMoves[i]];
 			}
 			else break;
 		}
 
-		actionSelect.SetActions(battleMoveset);
-		actionSelect.SetEnabled(true);
-		actionSelect.ResetHandler();
-		actionSelect.OnActionSelected += OnPlayerInput;
+		_actionSelect.SetActions(battleMoveset);
+		_actionSelect.SetEnabled(true);
+		_actionSelect.ResetHandler();
+		_actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
 	public override void _Process(double delta)
 	{
-		if (processEvents)
+		if (!_processEvents) return;
+		HackmonBattleEvent @event;
+		while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
 		{
-			HackmonBattleEvent @event;
-			while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
+			var eventStr = "";
+			switch (@event)
 			{
-				var eventStr = "";
-				switch (@event)
-				{
-					case HackmonEndTurnEvent:
-						GD.Print($"attempting to display messages");
-						actionSelect.SetEnabled(false);
-						eventText.Enable();
-						eventText.ShowMessages(new List<string>(messageList), OnMessagesDone);
-						messageList.Clear();
-						processEvents = false;
-						if (ActivePlayerMon.Stamina < ActivePlayerMon.MaxStamina)
+				case HackmonEndTurnEvent:
+					GD.Print($"attempting to display messages");
+					_actionSelect.SetEnabled(false);
+					_eventText.Enable();
+					_processEvents = false;
+					if (_activePlayerMon.Stamina < _activePlayerMon.MaxStamina)
+					{
+						_playerPreRegenStamina = _activePlayerMon.Stamina;
+						_activePlayerMon.Stamina += _activePlayerMon.MaxStamina / 8;
+						_activePlayerMon.Stamina = Math.Min(_activePlayerMon.Stamina, _activePlayerMon.MaxStamina);
+					}
+					if (_activeEnemyMon.Stamina < _activeEnemyMon.MaxStamina)
+					{
+						_enemyPreRegenStamina = _activeEnemyMon.Stamina;
+						_activeEnemyMon.Stamina += _activeEnemyMon.MaxStamina / 8;
+						_activeEnemyMon.Stamina = Math.Min(_activeEnemyMon.Stamina, _activeEnemyMon.MaxStamina);
+					}
+					_eventText.ShowMessages(TurnEndEvent);
+					break;
+				case HackmonHitEvent hitEvent:
+					GD.Print("adding message.");
+					eventStr =
+						$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
+					if (_activePlayerMon == hitEvent.Attacker)
+					{
+						_eventText.QueueMessage(eventStr, async () =>
 						{
-							_playerPreRegenStamina = ActivePlayerMon.Stamina;
-							_playerPreRegenHealth = ActivePlayerMon.Health;
-							ActivePlayerMon.Stamina += ActivePlayerMon.MaxStamina / 8;
-							ActivePlayerMon.Stamina = Math.Min(ActivePlayerMon.Stamina, ActivePlayerMon.MaxStamina);
-						}
-						if (ActiveEnemyMon.Stamina < ActiveEnemyMon.MaxStamina)
+							await Task.WhenAll(
+								_trainerUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
+								_enemyUi.DoDamageAnim(hitEvent.Damage)
+							);
+						});
+					}
+					else
+					{
+						_eventText.QueueMessage(eventStr, async () =>
 						{
-							_enemyPreRegenStamina = ActiveEnemyMon.Stamina;
-							_enemyPreRegenHealth = ActiveEnemyMon.Health;
-							ActiveEnemyMon.Stamina += ActiveEnemyMon.MaxStamina / 8;
-							ActiveEnemyMon.Stamina = Math.Min(ActiveEnemyMon.Stamina, ActiveEnemyMon.MaxStamina);
-						}
-						break;
-					case HackmonHitEvent hitEvent:
-						GD.Print("adding message.");
-						eventStr =
-							$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-						messageList.Add(eventStr);
-						if (ActivePlayerMon == hitEvent.Attacker)
-						{
-							trainerUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
-							enemyUI.DoDamageAnim(hitEvent.Damage);    
-						}
-						else
-						{
-							enemyUI.DoStaminaAnim(hitEvent.Attack.StaminaCost);
-							trainerUI.DoDamageAnim(hitEvent.Damage);
-						}
-						break;
-					case HackmonDeathEvent deathEvent:
-						eventStr = $"{deathEvent.Unit.Name} has fainted.";
-						messageList.Add(eventStr);
-						break;
-					case HackmonBattleEndEvent endEvent:
-						eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
-						messageList.Add(eventStr);
-						itsSoOver = true;
-						break;
-				}
+							await Task.WhenAll(
+								_enemyUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
+								_trainerUi.DoDamageAnim(hitEvent.Damage)
+							);
+						});
+					}
+					break;
+				case HackmonDeathEvent deathEvent:
+					eventStr = $"{deathEvent.Unit.Name} has fainted.";
+					_eventText.QueueMessage(eventStr);
+					break;
+				case HackmonBattleEndEvent endEvent:
+					eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
+					_eventText.QueueMessage(eventStr);
+					_itsSoOver = true;
+					break;
 			}
 		}
 	}
+
+	
 }

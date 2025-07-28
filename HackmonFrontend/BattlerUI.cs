@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 using HackmonInternals.Models;
 
 public partial class BattlerUI : Panel
@@ -13,7 +14,10 @@ public partial class BattlerUI : Panel
 	private double _healthValueBeforeChange;
 	private double _staminaValueBeforeChange;
 	private readonly double _tweenTime = 0.5;
-	private double _tweenTimePassed = 0.5;
+	private double _healthTweenTimePassed = 0.5;
+	private double _staminaTweenTimePassed = 0.5;
+	private TaskCompletionSource _healthTween = new();
+	private TaskCompletionSource _staminaTween = new();
 
 	public void SetCurrentMon(HackmonInstance mon)
 	{
@@ -25,47 +29,60 @@ public partial class BattlerUI : Panel
 		_staminaBar.Value = mon.Stamina;
 		//_healthBar.ShowPercentage = true;
 
-		var _primaryTypeImageNode = GetNode<Sprite2D>("Status/PrimarySocket/PrimaryType");
-		var _primaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.PrimaryType}Icon.png");
+		var primaryTypeImageNode = GetNode<Sprite2D>("Status/PrimarySocket/PrimaryType");
+		var primaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.PrimaryType}Icon.png");
 
-		_primaryTypeImageNode.Texture = _primaryTypeImage;
+		primaryTypeImageNode.Texture = primaryTypeImage;
 
 		if (mon.SecondaryType != null)
 		{
 			GetNode<CanvasItem>("Status/SecondarySocket").Show();
-			var _secondaryTypeImageNode = GetNode<Sprite2D>("Status/SecondarySocket/SecondaryType");
-			var _secondaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.SecondaryType}Icon.png");
+			var secondaryTypeImageNode = GetNode<Sprite2D>("Status/SecondarySocket/SecondaryType");
+			var secondaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.SecondaryType}Icon.png");
 
-			_secondaryTypeImageNode.Texture = _secondaryTypeImage;
+			secondaryTypeImageNode.Texture = secondaryTypeImage;
 		}
 		else GetNode<CanvasItem>("Status/SecondarySocket").Hide();
-
-
 	}
 
-	public void DoDamageAnim(int damage)
+	public Task DoDamageAnim(int damage)
 	{
+		if (_healthCurrentChange != 0) throw new Exception("There is already a health tween in progress.");
 		_healthValueBeforeChange = _healthBar.Value;
 		_healthCurrentChange = damage;
-		_tweenTimePassed = 0;
+		_healthTweenTimePassed = 0;
+		_healthTween = new();
+		return _healthTween.Task;
 	}
-	public void DoHpRegenAnim(int health)
+	
+	public Task DoHpRegenAnim(int health)
 	{
+		if (_healthCurrentChange != 0) throw new Exception("There is already a health tween in progress.");
 		_healthValueBeforeChange = _healthBar.Value;
 		_healthCurrentChange = -health;
-		_tweenTimePassed = 0;
+		_healthTweenTimePassed = 0;
+		_healthTween = new();
+		return _healthTween.Task;
 	}
-	public void DoStaminaAnim(int staminaCost)
+	
+	public Task DoStaminaAnim(int staminaCost)
 	{
+		if (_staminaCurrentChange != 0) throw new Exception("There is already a stamina tween in progress.");		
 		_staminaValueBeforeChange = _staminaBar.Value;
 		_staminaCurrentChange = staminaCost;
-		_tweenTimePassed = 0;
+		_staminaTweenTimePassed = 0;
+		_staminaTween = new();
+		return _staminaTween.Task;
 	}
-	public void DoStamRegenAnim(int stamina)
+	
+	public Task DoStamRegenAnim(int stamina)
 	{
+		if (_staminaCurrentChange != 0) throw new Exception("There is already a stamina tween in progress.");
 		_staminaValueBeforeChange = _staminaBar.Value;
 		_staminaCurrentChange = -stamina;
-		_tweenTimePassed = 0;
+		_staminaTweenTimePassed = 0;
+		_staminaTween = new();
+		return _staminaTween.Task;
 	}
 
 	public override void _Ready()
@@ -77,21 +94,35 @@ public partial class BattlerUI : Panel
 
 	public override void _Process(double delta)
 	{
-		if (_tweenTimePassed < _tweenTime)
+		if (_healthTweenTimePassed < _tweenTime)
 		{
-			_tweenTimePassed += delta;
-			if (_tweenTimePassed >= _tweenTime)
+			_healthTweenTimePassed += delta;
+			if (_healthValueBeforeChange >= _tweenTime)
 			{
 				_healthBar.Value = _healthValueBeforeChange - _healthCurrentChange;
-				_staminaBar.Value = _staminaValueBeforeChange - _staminaCurrentChange;
-				_tweenTimePassed = _tweenTime;
+				_healthTweenTimePassed = _tweenTime;
 				_healthCurrentChange = 0;
-				_staminaCurrentChange = 0;
+				_healthTween.SetResult();
 			}
 			else
 			{
-				_healthBar.Value = _healthValueBeforeChange - (_healthCurrentChange * (_tweenTimePassed / _tweenTime));
-				_staminaBar.Value = _staminaValueBeforeChange - (_staminaCurrentChange * (_tweenTimePassed / _tweenTime));
+				_healthBar.Value = _healthValueBeforeChange - (_healthCurrentChange * (_healthTweenTimePassed / _tweenTime));
+			}
+		}
+
+		if (_staminaTweenTimePassed < _tweenTime)
+		{
+			_staminaTweenTimePassed += delta;
+			if (_staminaValueBeforeChange >= _tweenTime)
+			{
+				_staminaBar.Value = _staminaValueBeforeChange - _staminaCurrentChange;
+				_staminaTweenTimePassed = _tweenTime;
+				_staminaCurrentChange = 0;
+				_staminaTween.SetResult();
+			}
+			else
+			{
+				_staminaBar.Value = _staminaValueBeforeChange - (_staminaCurrentChange * (_staminaTweenTimePassed / _tweenTime));
 			}
 		}
 	}
