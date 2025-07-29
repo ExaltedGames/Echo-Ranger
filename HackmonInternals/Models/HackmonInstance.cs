@@ -44,7 +44,7 @@ public class HackmonInstance : IUnit
 
    public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level) + 99;
 
-   public int MaxStamina { get; set; } = 100;
+   public int MaxStamina => StaticData.MaxStamina.BaseValue + (int)MathF.Round(StaticData.MaxStamina.GrowthPerLevel * Level) + 99;
    
    public int Stamina { get; set; }
 
