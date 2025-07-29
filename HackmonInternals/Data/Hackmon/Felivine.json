@@ -31,6 +31,12 @@
   "MaxStamina": {
     "BaseValue": 1,
     "GrowthPerLevel": 0
-},
-  "LearnableMoves": [1,4,26,42,65]
+  },
+  "LearnableMoves": [
+    [1,1],
+    [4,10],
+    [26,1],
+    [42,15],
+    [65,15]
+  ]
 }

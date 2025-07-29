@@ -54,7 +54,7 @@ public class HackmonInstance : IUnit
 
    //public List<Status> StatusEffects { get; set; } = new();
 
-   public List<int> KnownMoves { get; set; }
+   public List<int> KnownMoves { get; set; } = new();
 
    public List<int> ActiveMoves { get; set; } = new();
 
@@ -66,8 +66,11 @@ public class HackmonInstance : IUnit
       Health = MaxHp;
       Stamina = MaxStamina;
       
-      //TODO: remove this later when we have better methods of generating this
-      KnownMoves = staticData.LearnableMoves;
+      //Finds which moves are valid for current level, selects the move ID, and sends it to the KnownMoves list.
+      KnownMoves = StaticData.LearnableMoves
+         .Where(move => Level >= move[1])
+         .Select(move => move[0])
+         .ToList();
    }
 
    public List<IStatus> Statuses { get; set; } = new();
