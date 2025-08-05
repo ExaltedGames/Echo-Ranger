@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0cntwrps6l0"]
+[gd_scene load_steps=5 format=3 uid="uid://b6trcylpmc4ok"]
 
 [ext_resource type="Texture2D" uid="uid://c54bjbv7kd72s" path="res://Assets/OverworldSprites/Characters/Placeholder.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bq151vy6reulp" path="res://Player.cs" id="1_onrkg"]
@@ -28,5 +28,3 @@ sprite_frames = SubResource("SpriteFrames_onrkg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(0, 15)
 shape = SubResource("CapsuleShape2D_i3pqv")
-
-[node name="Camera2D" type="Camera2D" parent="."]

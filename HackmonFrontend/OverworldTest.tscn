@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://k0p5fxcwm0ak"]
+[gd_scene load_steps=4 format=3 uid="uid://c332jnvooix8t"]
 
-[ext_resource type="PackedScene" uid="uid://dy0cntwrps6l0" path="res://player.tscn" id="1_mktdt"]
-[ext_resource type="PackedScene" uid="uid://bq3mlvv2whvve" path="res://Opponent.tscn" id="2_7dfrk"]
+[ext_resource type="PackedScene" uid="uid://b6trcylpmc4ok" path="res://player.tscn" id="1_mktdt"]
+[ext_resource type="PackedScene" path="res://Opponent.tscn" id="2_7dfrk"]
+[ext_resource type="Script" uid="uid://bls5rfbk5w61v" path="res://FollowerCamera.cs" id="3_fjif1"]
 
 [node name="OverworldTest" type="Node2D"]
 
@@ -10,3 +11,10 @@ position = Vector2(530, 326)
 
 [node name="Opponent" parent="." instance=ExtResource("2_7dfrk")]
 position = Vector2(635, 329)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+script = ExtResource("3_fjif1")
+FollowObjectPath = NodePath("../Player")
