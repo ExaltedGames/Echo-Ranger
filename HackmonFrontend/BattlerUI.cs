@@ -82,14 +82,10 @@ public partial class BattlerUI : Panel
 
 	private void FlipAilments()
 	{
-		GD.Print("Test!!!!!!!");
 		foreach (var node in FindChildren("*", nameof(AilmentNode)))
 		{
-			GD.Print(node.Name);
-			var child = ((AilmentNode)node).FindChild("Container") as Control;
-			if (child != null)
+			if (((AilmentNode)node).FindChild("Container") is Control child)
 				child.Scale = new Vector2((Flipped ? -1 : 1) * Mathf.Abs(child.Scale.X), child.Scale.Y);
-			GD.Print(child?.Scale);
 		}
 	}
 
