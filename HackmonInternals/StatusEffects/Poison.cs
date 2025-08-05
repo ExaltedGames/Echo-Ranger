@@ -10,12 +10,12 @@ public class Poison : Status
     private static readonly int STACK_LIMIT = 8;
     
     [Status("Poison")]
-    public static Poison Init(HackmonInstance unit, int numTurns)
+    public static Poison Init(HackmonInstance unit, int stacks)
     {
-        return new Poison(unit, numTurns);
+        return new Poison(unit, stacks);
     }
     
-    public Poison(HackmonInstance unit, int numTurns) : base(unit, numTurns)
+    public Poison(HackmonInstance unit, int stacks) : base(unit, stacks)
     {
         BattleManager.OnTurnEnd += DoTick;
         unit.StatusEffects.Add(this); 

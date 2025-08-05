@@ -129,6 +129,11 @@ public partial class Battle : Node2D
 							trainerUI.DoDamageAnim(hitEvent.Damage);
 						}
 						break;
+					case HackmonStatusEvent statusEvent:
+						GD.Print("adding message.");
+						eventStr = $"{statusEvent.Unit.Name} is afflicted with {statusEvent.Stacks} stacks of {statusEvent.Status.Name}.";
+						messageList.Add(eventStr);
+						break;
 					case HackmonDeathEvent deathEvent:
 						eventStr = $"{deathEvent.Unit.Name} has fainted.";
 						messageList.Add(eventStr);

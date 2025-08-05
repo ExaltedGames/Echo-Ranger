@@ -83,11 +83,11 @@ public static class HackmonManager
 
     
 
-    public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
+    public static Status InstanceStatus(string status, HackmonInstance unit, int stacks)
     {
         if (!statusMap.ContainsKey(status)) throw new Exception($"No such status currently loaded: {status}");
 
-        var s = statusMap[status](unit, numTurns);
+        var s = statusMap[status](unit, stacks);
         s.Name = status;
         return s;
     }

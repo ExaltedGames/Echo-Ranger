@@ -34,23 +34,28 @@ public class HackmonInstance : IUnit
    
    public bool IsDead => Health <= 0;
 
-   public int Attack => StaticData.Attack.BaseValue + (int)MathF.Round(StaticData.Attack.GrowthPerLevel * Level);
+   public int Attack => computeStatValue(StatType.Attack, StaticData.Attack); 
 
-   public int SpAttack => StaticData.SpAttack.BaseValue + (int)MathF.Round(StaticData.SpAttack.GrowthPerLevel * Level);
+   public int SpAttack => computeStatValue(StatType.SpAttack, StaticData.SpAttack); 
 
-   public int Defense => StaticData.Defense.BaseValue + (int) MathF.Round(StaticData.Defense.GrowthPerLevel * Level);
+   public int Defense => computeStatValue(StatType.Defense, StaticData.Defense);
 
-   public int SpDefense => StaticData.SpDefense.BaseValue + (int)MathF.Round(StaticData.SpDefense.GrowthPerLevel * Level);
+   public int SpDefense => computeStatValue(StatType.SpDefense, StaticData.SpDefense);
 
-   public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level) + 99;
+   public int MaxHp => computeStatValue(StatType.MaxHp, StaticData.MaxHp);
 
    public int MaxStamina { get; set; } = 100;
    
    public int Stamina { get; set; }
 
-   [JsonIgnore] public Dictionary<StatType, List<Modifier>> StatModifiers = new()
+   [JsonIgnore]
+   public Dictionary<StatType, List<Modifier>> StatModifiers = new()
    {
-      { StatType.MaxHp, new List<Modifier>() { new Modifier() { BaseAdditiveBonus = 99 } } }
+      { StatType.Attack, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.SpAttack, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.MaxHp, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.Defense, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.SpDefense, [new Modifier { BaseAdditiveBonus = 99 }] },
    };
 
    public HackmonType PrimaryType => StaticData.PrimaryType;

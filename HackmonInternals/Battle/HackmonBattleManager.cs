@@ -41,8 +41,14 @@ public static class HackmonBattleManager
     {
         var unit = (HackmonInstance)s.Unit;
         var status = (Status)s.Status;
+        var stacks = s.Stacks;
+        
+        var hitEvent = new HackmonStatusEvent(unit, status, stacks);
+        EventQueue.Enqueue(hitEvent);
+        
+        Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
 
-        Console.WriteLine($"{unit.Name} gained {s.Stacks} stacks of {status.Name}");
+        Console.WriteLine($"{unit.Name} gained {stacks} stacks of {status.Name}");
     }
 
     private static void LogTurnBoundary(BattleEvent b)

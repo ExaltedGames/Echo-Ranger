@@ -11,10 +11,10 @@ public abstract class Status : IStatus
    public abstract void Remove(int stacks);
    public abstract void Add(int stacks);
 
-   protected Status(HackmonInstance unit, int numTurns)
+   protected Status(HackmonInstance unit, int stacks)
    {
       Unit = unit;
-      Stacks = numTurns;
+      Stacks = stacks;
    }
 
 }

@@ -15,7 +15,7 @@ public class Burn : Status
         return new Burn(unit, nTurns);
     }
     
-    public Burn(HackmonInstance unit, int numTurns) : base(unit, numTurns)
+    public Burn(HackmonInstance unit, int stacks) : base(unit, stacks)
     {
         unit.StatusEffects.Add(this);
         BattleManager.OnTurnEnd += DoTick;
