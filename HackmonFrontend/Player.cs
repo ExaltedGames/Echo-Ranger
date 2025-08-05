@@ -1,11 +1,11 @@
 using Godot;
-using System;
 
 public partial class Player : CharacterBody2D
 {
 	private int _walkSpeed = 250;
 	private int _runSpeed = 500;
-	private int _moveSpeed = 0;
+	private int _moveSpeed;
+	
 	public void GetInput()
 	{
 		_moveSpeed = _walkSpeed;

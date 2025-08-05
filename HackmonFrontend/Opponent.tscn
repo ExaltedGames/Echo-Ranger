@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq3mlvv2whvve"]
+[gd_scene load_steps=6 format=3 uid="uid://cx6s7u8bksjn6"]
 
 [ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="1_51stq"]
 [ext_resource type="Script" uid="uid://dhyusumdyt7rc" path="res://Opponent.cs" id="1_hnejy"]
@@ -19,7 +19,7 @@ radius = 13.0
 height = 38.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51stq"]
-radius = 72.0
+radius = 35.0571
 
 [node name="Opponent" type="CharacterBody2D"]
 motion_mode = 1
