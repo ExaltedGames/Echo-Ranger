@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Godot;
-using Hackmon.Debugging;
 using HackmonInternals;
 using HackmonInternals.Battle;
 using HackmonInternals.Events;
@@ -97,6 +93,11 @@ public partial class Battle : Node2D
 		actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
+	private BattlerUI GetUiForUnit(HackmonInstance unit, bool inverse = false)
+	{
+		return unit == ActivePlayerMon ^ inverse ? trainerUI : enemyUI;
+	}
+
 	public override void _Process(double delta)
 	{
 		if (processEvents)
@@ -120,19 +121,15 @@ public partial class Battle : Node2D
 						eventStr =
 							$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
 						messageList.Add(eventStr);
-						if (ActivePlayerMon == hitEvent.Attacker)
-						{
-							enemyUI.DoDamageAnim(hitEvent.Damage);    
-						}
-						else
-						{
-							trainerUI.DoDamageAnim(hitEvent.Damage);
-						}
+						GetUiForUnit(hitEvent.Attacker).DoDamageAnim(hitEvent.Damage);    
 						break;
+					// TODO This assumes that status' are only added and never expire
 					case HackmonStatusEvent statusEvent:
 						GD.Print("adding message.");
 						eventStr = $"{statusEvent.Unit.Name} is afflicted with {statusEvent.Stacks} stacks of {statusEvent.Status.Name}.";
 						messageList.Add(eventStr);
+						
+						GetUiForUnit(statusEvent.Unit).AddAilment(statusEvent.Status);
 						break;
 					case HackmonDeathEvent deathEvent:
 						eventStr = $"{deathEvent.Unit.Name} has fainted.";

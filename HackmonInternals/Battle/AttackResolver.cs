@@ -1,6 +1,5 @@
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
-using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Events;
 

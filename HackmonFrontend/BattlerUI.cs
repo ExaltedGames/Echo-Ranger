@@ -1,9 +1,21 @@
 using Godot;
-using System;
 using HackmonInternals.Models;
+using HackmonInternals.StatusEffects;
 
+[Tool]
 public partial class BattlerUI : Panel
 {
+	[Export]
+	public bool Flipped
+	{
+		get => _flipped;
+		set
+		{
+			_flipped = value;
+			FlipAilments();
+		}
+	}
+
 	private HackmonInstance _currentHackmon;
 	private RichTextLabel _nameLabel;
 	private TextureProgressBar _healthBar;
@@ -11,6 +23,9 @@ public partial class BattlerUI : Panel
 	private double _valueBeforeChange;
 	private readonly double _tweenTime = 0.5;
 	private double _tweenTimePassed = 0.5;
+
+	private Container _ailmentContainer;
+	private bool _flipped;
 
 	public void SetCurrentMon(HackmonInstance mon)
 	{
@@ -33,9 +48,15 @@ public partial class BattlerUI : Panel
 
 			_secondaryTypeImageNode.Texture = _secondaryTypeImage;
 		}
-		else GetNode<CanvasItem>("Status/SecondarySocket").Hide();
+		else
+			GetNode<CanvasItem>("Status/SecondarySocket").Hide();
 
-
+		_ailmentContainer = GetNode<Container>("Status/Ailments");
+		foreach (var child in _ailmentContainer.GetChildren())
+		{
+			if (child is CanvasItem c)
+				c.Hide();
+		}
 	}
 
 	public void DoDamageAnim(int damage)
@@ -45,10 +66,31 @@ public partial class BattlerUI : Panel
 		_tweenTimePassed = 0;
 	}
 
+	public void AddAilment(Status status)
+	{
+		var ailment = _ailmentContainer.FindChild(status.Name, false) as AilmentNode;
+		ailment!.Stacks = status.Stacks;
+		ailment.Show();
+	}
+
 	public override void _Ready()
 	{
 		_nameLabel = GetNode<RichTextLabel>("Status/Name");
 		_healthBar = GetNode<TextureProgressBar>("Status/HealthBar");
+		FlipAilments();
+	}
+
+	private void FlipAilments()
+	{
+		GD.Print("Test!!!!!!!");
+		foreach (var node in FindChildren("*", nameof(AilmentNode)))
+		{
+			GD.Print(node.Name);
+			var child = ((AilmentNode)node).FindChild("Container") as Control;
+			if (child != null)
+				child.Scale = new Vector2((Flipped ? -1 : 1) * Mathf.Abs(child.Scale.X), child.Scale.Y);
+			GD.Print(child?.Scale);
+		}
 	}
 
 	public override void _Process(double delta)
