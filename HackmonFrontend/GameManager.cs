@@ -15,8 +15,14 @@ public partial class GameManager : Node
     public static GameManager Instance { get; private set; }
     
     public Node CurrentScene { get; set; }
+    public Node BackgroundScene { get; set; }
     public TrainerData PlayerData { get; set; }
     private TrainerData CurrentOpponent { get; set; }
+    
+    /// <summary>
+    /// Use this event to reactivate certain must-haves, e.g. CurrentCamera etc
+    /// </summary>
+    public event Action OnSceneReturned;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -88,12 +94,8 @@ public partial class GameManager : Node
     {
         using var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Read);
         var saveData = JsonSerializer.Deserialize<TrainerData>(saveFile.GetAsText());
-        if (saveData == null)
-        {
-            throw new Exception("Failed to properly load save data. Error when parsing file.");
-        }
 
-        PlayerData = saveData;
+        PlayerData = saveData ?? throw new Exception("Failed to properly load save data. Error when parsing file.");
     }
 
     public void EnterBattle(TrainerData opponent)
@@ -107,9 +109,14 @@ public partial class GameManager : Node
         CallDeferred(nameof(DeferredChangeScene), scenePath);
     }
 
+    public void DeferredPopCurrentScene()
+    {
+        CallDeferred(nameof(PopCurrentScene));
+    }
+
     public static void SaveData<T>(T dataObj)
     {
-        var savePath = nameof(T);
+        var savePath = dataObj.GetType().Name;
         using var saveFile = FileAccess.Open($"user://{savePath}.json", FileAccess.ModeFlags.Write);
         var jsonOpts = new JsonSerializerOptions()
         {
@@ -120,10 +127,23 @@ public partial class GameManager : Node
         var jsonText = JsonSerializer.Serialize(dataObj, typeof(T), jsonOpts);
         saveFile.StoreString(jsonText);
     }
-
+    
+    // TODO Both of these "DeferredX" functions should not be called such as they are not deferred.
+    // Call the functions that call them deferred Deferred.
     private void DeferredEnterBattle()
     {
-        CurrentScene.QueueFree();
+        // TODO This maybe should get moved to DeferredChangeScene
+        if (CurrentScene.HasMeta("DestroyOnChange") && !CurrentScene.GetMeta("DestroyOnChange").AsBool())
+        {
+            BackgroundScene = CurrentScene;
+            if (BackgroundScene is CanvasItem c)
+                c.Hide();
+            BackgroundScene.ProcessMode = ProcessModeEnum.Disabled;
+        }
+        else
+        {
+            CurrentScene.QueueFree();
+        }
         var battle = GD.Load<PackedScene>("res://Battle.tscn");
         CurrentScene = battle.Instantiate();
         GetTree().Root.AddChild(CurrentScene);
@@ -140,5 +160,19 @@ public partial class GameManager : Node
         CurrentScene = nextScene.Instantiate();
         GetTree().Root.AddChild(CurrentScene);
         GetTree().CurrentScene = CurrentScene;
+    }
+
+    private void PopCurrentScene()
+    {
+        if (BackgroundScene == null)
+            return;
+        
+        CurrentScene.QueueFree();
+        CurrentScene = BackgroundScene;
+        BackgroundScene = null;
+        GetTree().CurrentScene = CurrentScene;
+        CurrentScene.ProcessMode = ProcessModeEnum.Inherit;
+        if (CurrentScene is CanvasItem c)
+            c.Show();
     }
 }

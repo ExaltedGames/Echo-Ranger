@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://c332jnvooix8t"]
+[gd_scene load_steps=5 format=4 uid="uid://cheuspyap2rn7"]
 
 [ext_resource type="TileSet" uid="uid://dbc7u3bjbjcae" path="res://Assets/OverworldSprites/Tiles/TestTileSet.tres" id="1_gl0hr"]
 [ext_resource type="PackedScene" uid="uid://b6trcylpmc4ok" path="res://player.tscn" id="1_mktdt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bls5rfbk5w61v" path="res://FollowerCamera.cs" id="3_fjif1"]
 
 [node name="OverworldTest" type="Node2D"]
+metadata/DestroyOnChange = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(42, -52)

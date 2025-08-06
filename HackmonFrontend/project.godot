@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Hackmon"
-run/main_scene="uid://dgnh5nicish3d"
+run/main_scene="uid://cheuspyap2rn7"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://Assets/ProjectIcon.png"
 

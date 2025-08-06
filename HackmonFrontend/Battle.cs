@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Godot;
-using Hackmon.Debugging;
 using HackmonInternals;
 using HackmonInternals.Battle;
 using HackmonInternals.Events;
@@ -44,6 +40,7 @@ public partial class Battle : Node2D
 
 	public override void _Ready()
 	{
+		GetNode<Camera2D>("Camera").MakeCurrent();
 		eventText = GetNode<Textbox>("UI/Textbox");
 		trainerUI = GetNode<BattlerUI>("UI/BattlerUI");
 		trainerStage = GetNode<BattlerStage>("BattlerStage");
@@ -137,6 +134,10 @@ public partial class Battle : Node2D
 						eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
 						messageList.Add(eventStr);
 						itsSoOver = true;
+						
+						// TODO: Two battle events are sent (presumably for each echo dying?) so this is dubious
+						// Also this should get queued to only happen once the text is complete.
+						GameManager.Instance.DeferredPopCurrentScene();
 						break;
 				}
 			}
