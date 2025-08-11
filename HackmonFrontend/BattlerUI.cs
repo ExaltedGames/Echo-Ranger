@@ -142,7 +142,7 @@ public partial class BattlerUI : Panel
 		if (_healthTweenTimePassed < _tweenTime)
 		{
 			_healthTweenTimePassed += delta;
-			if (_healthValueBeforeChange >= _tweenTime)
+			if (_healthTweenTimePassed >= _tweenTime)
 			{
 				_healthBar.Value = _healthValueBeforeChange - _healthCurrentChange;
 				_healthTweenTimePassed = _tweenTime;
@@ -158,7 +158,7 @@ public partial class BattlerUI : Panel
 		if (_staminaTweenTimePassed < _tweenTime)
 		{
 			_staminaTweenTimePassed += delta;
-			if (_staminaValueBeforeChange >= _tweenTime)
+			if (_staminaTweenTimePassed >= _tweenTime)
 			{
 				_staminaBar.Value = _staminaValueBeforeChange - _staminaCurrentChange;
 				_staminaTweenTimePassed = _tweenTime;
