@@ -11,7 +11,14 @@ Overview
 Echo-Ranger uses a modular code design, the likes of which I am probably not qualified to explain, so I'll just leave this here for Sprocket to fill out later.
 
 ### Structure:
-Something something styleguide, something something setup instructions.
+
+## Project naming conventions:
+
+Methods UpperCamelCase
+private properties/fields _lowerCamelCase
+public properties/fields UpperCamelCase
+local variables lowerCamelCase
+
 
 ### Requirements & Setup:
 
