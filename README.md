@@ -15,8 +15,11 @@ Echo-Ranger uses a modular code design, the likes of which I am probably not qua
 ## Project naming conventions:
 
 Methods UpperCamelCase
+
 private properties/fields _lowerCamelCase
+
 public properties/fields UpperCamelCase
+
 local variables lowerCamelCase
 
 
