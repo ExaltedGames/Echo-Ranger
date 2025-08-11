@@ -155,35 +155,20 @@ public partial class Battle : Node2D
 					GD.Print("adding message.");
 					eventStr =
 						$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-					if (_activePlayerMon == hitEvent.Attacker)
+					_eventText.QueueMessage(eventStr, async () =>
 					{
-						_eventText.QueueMessage(eventStr, async () =>
-						{
-							await Task.WhenAll(
-								_trainerUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
-								_enemyUi.DoDamageAnim(hitEvent.Damage)
-							);
-						});
-					}
-					else
-					{
-						_eventText.QueueMessage(eventStr, async () =>
-						{
-							await Task.WhenAll(
-								_enemyUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
-								_trainerUi.DoDamageAnim(hitEvent.Damage)
-							);
-						});
-					}
-					GetUiForUnit(hitEvent.Attacker).DoDamageAnim(hitEvent.Damage);    
+						await Task.WhenAll(
+							GetUiForUnit(hitEvent.Attacker).DoStaminaAnim(hitEvent.Attack.StaminaCost),
+							GetUiForUnit(hitEvent.Attacker, true).DoDamageAnim(hitEvent.Damage)
+						);
+					});
 					break;
 				// TODO This assumes that status' are only added and never expire
 				case HackmonStatusEvent statusEvent:
 					GD.Print("adding message.");
 					eventStr = $"{statusEvent.Unit.Name} is afflicted with {statusEvent.Stacks} stacks of {statusEvent.Status.Name}.";
-					messageList.Add(eventStr);
+					_eventText.QueueMessage(eventStr, () => GetUiForUnit(statusEvent.Unit).AddAilment(statusEvent.Status));
 						
-					GetUiForUnit(statusEvent.Unit).AddAilment(statusEvent.Status);
 					break;
 				case HackmonDeathEvent deathEvent:
 					eventStr = $"{deathEvent.Unit.Name} has fainted.";

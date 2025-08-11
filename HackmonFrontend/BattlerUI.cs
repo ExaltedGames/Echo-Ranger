@@ -110,11 +110,14 @@ public partial class BattlerUI : Panel
 		return _staminaTween.Task;
 	}
 
-	public void AddAilment(Status status)
+	// Doesn't actually have any animation at the moment
+	public Task AddAilment(Status status)
 	{
 		var ailment = _ailmentContainer.FindChild(status.Name, false) as AilmentNode;
 		ailment!.Stacks = status.Stacks;
 		ailment.Show();
+
+		return Task.CompletedTask;
 	}
 
 	public override void _Ready()

@@ -64,7 +64,7 @@ public static class HackmonManager
         }
         
         var hackmonList = LoadData<HackmonData>("Hackmon");
-        foreach (HackmonData d in hackmonList)
+        foreach (var d in hackmonList)
         {
             HackmonRegistry.Add(d.ID, d);
         }
