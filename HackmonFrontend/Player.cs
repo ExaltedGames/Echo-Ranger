@@ -13,7 +13,8 @@ public partial class Player : CharacterBody2D
 		{
 			_moveSpeed = _runSpeed;
 		}
-		Vector2 inputDirection = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		
+		var inputDirection = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		Velocity = inputDirection * _moveSpeed;
 	}
 	public override void _PhysicsProcess(double delta)

@@ -17,12 +17,13 @@ public partial class GameManager : Node
     public Node CurrentScene { get; set; }
     public Node BackgroundScene { get; set; }
     public TrainerData PlayerData { get; set; }
-    private TrainerData CurrentOpponent { get; set; }
     
     /// <summary>
     /// Use this event to reactivate certain must-haves, e.g. CurrentCamera etc
     /// </summary>
     public event Action OnSceneReturned;
+    
+    private TrainerData _currentOpponent;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -100,7 +101,7 @@ public partial class GameManager : Node
 
     public void EnterBattle(TrainerData opponent)
     {
-        CurrentOpponent = opponent;
+        _currentOpponent = opponent;
         CallDeferred(nameof(DeferredEnterBattle));
     }
 
@@ -150,7 +151,7 @@ public partial class GameManager : Node
         GetTree().CurrentScene = CurrentScene;
 
         var battleScene = (Battle)CurrentScene;
-        battleScene.InitBattle(PlayerData, CurrentOpponent);
+        battleScene.InitBattle(PlayerData, _currentOpponent);
     }
 
     private void DeferredChangeScene(string path)

@@ -102,8 +102,8 @@ public partial class Battle : Node2D
 		_enemyUi.SetCurrentMon(enemy.CurrentParty[0]);
 		_enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
 
-		HackmonMove[] battleMoveset = new HackmonMove[4];
-		for (int i = 0; i < 4; i++)
+		var battleMoveset = new HackmonMove[4];
+		for (var i = 0; i < 4; i++)
 		{
 			if (_activePlayerMon.KnownMoves.Count > i)
 			{
