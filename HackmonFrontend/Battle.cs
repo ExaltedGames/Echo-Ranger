@@ -46,7 +46,12 @@ public partial class Battle : Node2D
 	private void OnMessagesDone()
 	{
 		_eventText.Disable();
-		if (_itsSoOver) return;
+		if (_itsSoOver)
+		{
+			// Return to overworld
+			GameManager.Instance.DeferredPopCurrentScene();
+			return;
+		}
 		_actionSelect.SetEnabled(true);
 	}
 	private async void TurnEndEvent()
@@ -60,6 +65,7 @@ public partial class Battle : Node2D
 
 	public override void _Ready()
 	{
+		GetNode<Camera2D>("Camera").MakeCurrent();
 		_eventText = GetNode<Textbox>("UI/Textbox");
 		_trainerUi = GetNode<BattlerUI>("UI/BattlerUI");
 		_trainerStage = GetNode<BattlerStage>("BattlerStage");
@@ -96,8 +102,8 @@ public partial class Battle : Node2D
 		_enemyUi.SetCurrentMon(enemy.CurrentParty[0]);
 		_enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
 
-		HackmonMove[] battleMoveset = new HackmonMove[4];
-		for (int i = 0; i < 4; i++)
+		var battleMoveset = new HackmonMove[4];
+		for (var i = 0; i < 4; i++)
 		{
 			if (_activePlayerMon.KnownMoves.Count > i)
 			{
@@ -177,6 +183,4 @@ public partial class Battle : Node2D
 			}
 		}
 	}
-
-	
 }
