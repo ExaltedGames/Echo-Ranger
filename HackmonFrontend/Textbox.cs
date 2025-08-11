@@ -5,23 +5,24 @@ using System.Threading.Tasks;
 
 public partial class Textbox : CanvasLayer
 {
-	private RichTextLabel TextBox;
-	private bool AwaitConfirm = false;
-	private int typewriterPosition = 0;
-	private double nextLetterTimer = 0;
+	private RichTextLabel _textBox;
+	private bool _awaitConfirm = false;
+	private int _typewriterPosition = 0;
+	private double _nextLetterTimer = 0;
+	private bool _awaitEvent = false;
 
-	private List<string> messageList = new();
-	private int messageIndex = 0;
-	private string currentMessage => messageList[messageIndex];
+	private Queue<(string, Func<Task>)> _messageList = new();
+	private string _currentMessage;
+	private Func<Task> _currentEvent = null;
 
-	private TaskCompletionSource<bool> done = new();
+	private TaskCompletionSource<bool> _done = new();
 
 	public double TypewriterSpeed { get; set; } = 0.05;
 	public bool Enabled { get; private set; }
 	
 	public override void _Ready()
 	{
-		TextBox = GetNode<RichTextLabel>("OuterMargin/InnerMargin/Container/RichTextLabel");
+		_textBox = GetNode<RichTextLabel>("OuterMargin/InnerMargin/Container/RichTextLabel");
 		Enabled = true;
 	}
 	
@@ -30,19 +31,26 @@ public partial class Textbox : CanvasLayer
 		if (!Enabled) return;
 		if (@event.IsActionPressed("ui_accept"))
 		{
-			if (typewriterPosition != currentMessage.Length)
+			if (_typewriterPosition != _currentMessage.Length)
 			{
-				typewriterPosition = currentMessage.Length;
+				_typewriterPosition = _currentMessage.Length;
 			}
-			else
+			else if(!_awaitEvent)
 			{
-				if (messageIndex == messageList.Count - 1)
+				if (_messageList.Count == 0)
 				{
-					done.SetResult(true);
+					_done.SetResult(true);
+					Disable();
 					return;
 				}
-				typewriterPosition = 1;
-				messageIndex++;
+				_typewriterPosition = 1;
+				(_currentMessage, _currentEvent) =  _messageList.Dequeue();
+				if (_currentEvent != null)
+				{
+					_awaitEvent = true;
+					_currentEvent().ContinueWith(t => _awaitEvent = false);
+				}
+				else _awaitEvent = false; //failsafe
 			}
 		}
 	}
@@ -50,42 +58,51 @@ public partial class Textbox : CanvasLayer
 	public override void _Process(double delta)
 	{
 		if (!Enabled) return;
-		if (messageList.Count <= 0)
+		if (_typewriterPosition != _currentMessage.Length)
 		{
-			Disable();
-			return;
-		}
-		if (typewriterPosition != currentMessage.Length)
-		{
-			nextLetterTimer += delta;
-			if (nextLetterTimer >= TypewriterSpeed)
+			_nextLetterTimer += delta;
+			if (_nextLetterTimer >= TypewriterSpeed)
 			{
-				nextLetterTimer = 0;
-				typewriterPosition++;
+				_nextLetterTimer = 0;
+				_typewriterPosition++;
 			}
 		}
 
-		TextBox.Text = currentMessage.Substring(0, typewriterPosition);
+		_textBox.Text = _currentMessage.Substring(0, _typewriterPosition);
 	}
 
-	public async void ShowMessages(List<string> messages, Action callback)
+	public void QueueMessage(string message)
 	{
-		messageList = messages;
-		messageIndex = 0;
-		typewriterPosition = 0;
-		done = new TaskCompletionSource<bool>();
+		_messageList.Enqueue((message, null));
+	}
+	
+	public void QueueMessage(string message, Func<Task> @event)
+	{
+		_messageList.Enqueue((message, @event));	
+	}
+
+	public async void ShowMessages(Action callback)
+	{
+		_typewriterPosition = 0;
+		_done = new TaskCompletionSource<bool>();
 		
 		if (!Enabled) Enable();
+		GD.Print($"{_messageList.Count}");
+		(_currentMessage, _currentEvent) = _messageList.Dequeue();
+		if (_currentEvent != null)
+		{
+			_awaitEvent = true;
+			await _currentEvent().ContinueWith(t => _awaitEvent = false);
+		}
+		else _awaitEvent = false; //failsafe
 		
-		GD.Print($"Loaded {messages.Count} messages");
-		
-		await done.Task;
+		await _done.Task;
 		callback();
 	}
 
 	public void SetText(string text)
 	{
-		TextBox.Text = text;
+		_textBox.Text = text;
 	}
 
 	public void Disable()
