@@ -46,7 +46,12 @@ public partial class Battle : Node2D
 	private void OnMessagesDone()
 	{
 		_eventText.Disable();
-		if (_itsSoOver) return;
+		if (_itsSoOver)
+		{
+			// Return to overworld
+			GameManager.Instance.DeferredPopCurrentScene();
+			return;
+		}
 		_actionSelect.SetEnabled(true);
 	}
 	private async void TurnEndEvent()
@@ -174,10 +179,6 @@ public partial class Battle : Node2D
 					eventStr = $"Battle ends in player {(endEvent.PlayerWin ? "victory" : "defeat")}";
 					_eventText.QueueMessage(eventStr);
 					_itsSoOver = true;
-					
-					// TODO: Two battle events are sent (presumably for each echo dying?) so this is dubious
-					// Also this should get queued to only happen once the text is complete.
-					GameManager.Instance.DeferredPopCurrentScene();
 					break;
 			}
 		}
