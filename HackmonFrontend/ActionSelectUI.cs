@@ -30,7 +30,7 @@ public partial class ActionSelectUI : Control
 		{
 			CurrentSelection = selection;
 			var currentMove = SelectableActions[selection];
-			Infobox.Text = $"{currentMove.Description}\nType: {currentMove.AttackType}\nDamage: {currentMove.Damage}";
+			Infobox.Text = $"{currentMove.Description}\nType: {currentMove.AttackType}\nDamage: {currentMove.Damage}      Cost: {currentMove.StaminaCost}";
 		}
 	}
 

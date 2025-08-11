@@ -24,7 +24,15 @@ public class AttackResolver : IAttack
 
         HackmonInstance moveUser = (HackmonInstance)attacker;
         HackmonInstance moveTarget = (HackmonInstance)target;
-
+        if (AttackData.StaminaCost <= moveUser.Stamina)
+        {
+            moveUser.Stamina -= AttackData.StaminaCost;
+        }
+        else
+        {
+            throw new Exception($"Not enough stamina for move: {AttackData.Name}");
+        }
+        
         if (AttackData.Damage != 0)
         {
             var atk = 0;

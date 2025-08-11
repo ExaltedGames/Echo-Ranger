@@ -78,7 +78,7 @@ public static class HackmonBattleManager
         Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
         
         Console.WriteLine(
-            $"{attacker.Name} uses {atk.AttackData.Name} on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");
+            $"{attacker.Name} uses {atk.AttackData.Name} for {atk.AttackData.StaminaCost} stamina on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");
     }
 
     private static void BattleEndCheck(DeathEvent data)
