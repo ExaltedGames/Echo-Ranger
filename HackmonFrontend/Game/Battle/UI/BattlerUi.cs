@@ -5,7 +5,7 @@ using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 
 [Tool]
-public partial class BattlerUI : Panel
+public partial class BattlerUi : Panel
 {
 	[Export]
 	public bool Flipped

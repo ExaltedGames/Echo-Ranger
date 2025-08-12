@@ -12,11 +12,11 @@ namespace HackmonFrontend;
 public partial class Battle : Node2D
 {
 	private Textbox _eventText;
-	private BattlerUI _trainerUi;
-	private BattlerUI _enemyUi;
+	private BattlerUi _trainerUi;
+	private BattlerUi _enemyUi;
 	private BattlerStage _trainerStage;
 	private BattlerStage _enemyStage;
-	private ActionSelectUI _actionSelect;
+	private ActionSelectUi _actionSelect;
 
 	private HackmonInstance _activePlayerMon;
 	private HackmonInstance _activeEnemyMon;
@@ -67,11 +67,11 @@ public partial class Battle : Node2D
 	{
 		GetNode<Camera2D>("Camera").MakeCurrent();
 		_eventText = GetNode<Textbox>("UI/Textbox");
-		_trainerUi = GetNode<BattlerUI>("UI/BattlerUI");
+		_trainerUi = GetNode<BattlerUi>("UI/BattlerUI");
 		_trainerStage = GetNode<BattlerStage>("BattlerStage");
 		_enemyStage = GetNode<BattlerStage>("OpponentStage");
-		_enemyUi = GetNode<BattlerUI>("UI/OpponentUI");
-		_actionSelect = GetNode<ActionSelectUI>("UI/ActionSelectUI");
+		_enemyUi = GetNode<BattlerUi>("UI/OpponentUI");
+		_actionSelect = GetNode<ActionSelectUi>("UI/ActionSelectUI");
 
 		_eventText.SetText("Test Hackmon Takes 40 damage from MISSINGNO :)");
 
@@ -118,10 +118,7 @@ public partial class Battle : Node2D
 		_actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
-	private BattlerUI GetUiForUnit(HackmonInstance unit, bool inverse = false)
-	{
-		return unit == _activePlayerMon ^ inverse ? _trainerUi : _enemyUi;
-	}
+	private BattlerUi GetUiForUnit(HackmonInstance unit, bool inverse = false) => unit == _activePlayerMon ^ inverse ? _trainerUi : _enemyUi;
 
 	public override void _Process(double delta)
 	{

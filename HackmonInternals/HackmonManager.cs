@@ -18,7 +18,7 @@ public static class HackmonManager
     public static Dictionary<HackmonType, Dictionary<HackmonType, float>> ElementInteractionsRegistry { get; private set; } = new();
     
     private delegate Status StatusInitializer(HackmonInstance unit, int stacks);
-    private static Dictionary<string, StatusInitializer> statusMap = new();
+    private static Dictionary<string, StatusInitializer> _statusMap = new();
     private static readonly JsonSerializerOptions _jsonOpts = new()
     {
         Converters =
@@ -53,12 +53,12 @@ public static class HackmonManager
 
             try
             {
-                MoveRegistry.Add(move.ID, move);
+                MoveRegistry.Add(move.Id, move);
             }
             catch (ArgumentException e)
             {
                 Console.WriteLine(e);
-                Console.WriteLine($"Duplicate move ID for move {move.Name}. ID {move.ID} already belongs to {MoveRegistry[move.ID].Name}.");
+                Console.WriteLine($"Duplicate move ID for move {move.Name}. ID {move.Id} already belongs to {MoveRegistry[move.Id].Name}.");
                 throw;
             }
         }
@@ -66,7 +66,7 @@ public static class HackmonManager
         var hackmonList = LoadData<HackmonData>("Hackmon");
         foreach (var d in hackmonList)
         {
-            HackmonRegistry.Add(d.ID, d);
+            HackmonRegistry.Add(d.Id, d);
         }
         
         LoadStaticStatuses(Assembly.GetExecutingAssembly());
@@ -81,9 +81,9 @@ public static class HackmonManager
 
     public static Status InstanceStatus(string status, HackmonInstance unit, int stacks)
     {
-        if (!statusMap.ContainsKey(status)) throw new Exception($"No such status currently loaded: {status}");
+        if (!_statusMap.ContainsKey(status)) throw new Exception($"No such status currently loaded: {status}");
 
-        var s = statusMap[status](unit, stacks);
+        var s = _statusMap[status](unit, stacks);
         s.Name = status;
         return s;
     }
@@ -111,7 +111,7 @@ public static class HackmonManager
                     continue;
                 }
 
-                statusMap[attr.Name] = del;
+                _statusMap[attr.Name] = del;
                 Console.WriteLine($"Found and loaded status with name {attr.Name}");
             }
         }

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgnh5nicish3d"]
 
 [ext_resource type="Script" uid="uid://bokgfr8tytri2" path="res://Game/Battle/Battle.cs" id="1_w30jk"]
-[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Game/Battle/UI/BattlerUI.tscn" id="2_1nxov"]
+[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Game/Battle/UI/BattlerUi.tscn" id="2_1nxov"]
 [ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://Game/Battle/UI/BattlerStage.tscn" id="2_8ceye"]
 [ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="2_v5ddm"]
-[ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUI.cs" id="4_p2xem"]
-[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/Textbox.tscn" id="6_oyx74"]
+[ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUi.cs" id="4_p2xem"]
+[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/UI/Textbox.tscn" id="6_oyx74"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_w30jk")

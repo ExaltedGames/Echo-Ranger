@@ -5,7 +5,7 @@ using Godot;
 
 namespace Hackmon.Debugging;
 
-public class GDWriter : StringWriter
+public class GdWriter : StringWriter
 {
     public override void Write(char value)
     {

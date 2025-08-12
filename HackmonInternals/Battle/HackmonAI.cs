@@ -4,7 +4,7 @@ using TurnBasedBattleSystem.Actions;
 
 namespace HackmonInternals.Battle;
 
-public class HackmonAI : BattleAI
+public class HackmonAi : BattleAI
 {
     public BattleAction DoAction(IUnit actor)
     {

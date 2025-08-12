@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cxoc278fjd7bd" path="res://Assets/UI/Border.png" id="1_56b6f"]
 [ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
-[ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://Game/EchoSelect/EchoSummary.tscn" id="3_686ov"]
+[ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://Game/EchoSelect/UI/EchoSummary.tscn" id="3_686ov"]
 
 [node name="Node2D" type="Node2D"]
 

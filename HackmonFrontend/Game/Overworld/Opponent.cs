@@ -6,13 +6,13 @@ public partial class Opponent : CharacterBody2D
 {
 	private enum State
 	{
-		IDLE,
-		WANDER,
-		CHASE,
-		SEARCH,
+		Idle,
+		Wander,
+		Chase,
+		Search,
 	}
 	
-	private State _state = State.WANDER;
+	private State _state = State.Wander;
 	private double _stateChangeTimer;
 	private Vector2 _wanderDirection;
 	private int _moveSpeed = 100;
@@ -21,30 +21,30 @@ public partial class Opponent : CharacterBody2D
 	{
 		switch (_state)
 		{
-			case State.IDLE:
+			case State.Idle:
 				_stateChangeTimer -= delta;
 				if (_stateChangeTimer <= 0)
 				{
-					_state = State.WANDER;
+					_state = State.Wander;
 					_stateChangeTimer = GD.RandRange(0.5, 1.5);
 					_wanderDirection = new Vector2(GD.RandRange(-1, 1), GD.RandRange(-1, 1));
 				}
 				break;
-			case State.WANDER:
+			case State.Wander:
 				_stateChangeTimer -= delta;
 				if (_stateChangeTimer <= 0)
 				{
-					_state = State.IDLE;
+					_state = State.Idle;
 					_stateChangeTimer = GD.RandRange(1, 4);
 					_wanderDirection = new Vector2(GD.RandRange(-1, 1), GD.RandRange(-1, 1));
 				}
 
 				Velocity = _wanderDirection * _moveSpeed;
 				break;
-			case State.CHASE:
+			case State.Chase:
 				// TODO Add chase state
 				break;
-			case State.SEARCH:
+			case State.Search:
 				// TODO Add search state
 				break;
 			default:

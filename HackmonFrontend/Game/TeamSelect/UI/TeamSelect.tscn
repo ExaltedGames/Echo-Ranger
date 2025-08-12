@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b700ovjp5wi7s"]
 
 [ext_resource type="Texture2D" uid="uid://cxoc278fjd7bd" path="res://Assets/UI/Border.png" id="1_56b6f"]
-[ext_resource type="PackedScene" uid="uid://k4a0pmgf80o0" path="res://Game/TeamSelect/TeamSummary.tscn" id="3_1mfxt"]
+[ext_resource type="PackedScene" uid="uid://k4a0pmgf80o0" path="res://Game/TeamSelect/UI/TeamSummary.tscn" id="3_1mfxt"]
 [ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
 
 [node name="Node2D" type="Node2D"]

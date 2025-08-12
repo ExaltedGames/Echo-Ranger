@@ -5,7 +5,7 @@ using Godot;
 
 namespace Hackmon.Debugging;
 
-public class GDErrWriter : StringWriter
+public class GdErrWriter : StringWriter
 {
     public override void Write(char value)
         => GD.PushError(value);

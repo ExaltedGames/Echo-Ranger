@@ -8,8 +8,5 @@ public sealed class TestNegotiator : InputNegotiator
         protected set => _ = value;
     }
 
-    public override List<TurnInput> GetAllInputs()
-    {
-        return [];
-    }
+    public override List<TurnInput> GetAllInputs() => [];
 }

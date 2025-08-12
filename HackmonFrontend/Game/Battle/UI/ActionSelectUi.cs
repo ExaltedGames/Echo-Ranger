@@ -4,7 +4,7 @@ using HackmonInternals.Models;
 
 namespace HackmonFrontend;
 
-public partial class ActionSelectUI : Control
+public partial class ActionSelectUi : Control
 {
 	public HackmonMove?[] SelectableActions = new HackmonMove[4];
 	public Button[] Buttons = new Button[4];

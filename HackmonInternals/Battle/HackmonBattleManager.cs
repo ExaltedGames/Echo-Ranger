@@ -20,11 +20,11 @@ public static class HackmonBattleManager
         EventQueue.Clear();
 		BattleManager.Cleanup();
         BattleManager.OnDeath += BattleEndCheck;
-        BattleManager.OnHit += hitLogger;
+        BattleManager.OnHit += HitLogger;
         BattleManager.OnGainStatus += LogStatus;
         BattleManager.OnTurnStart += LogTurnBoundary;
         BattleManager.OnTurnEnd += LogTurnBoundary;
-        BattleManager.EnemyAI = new HackmonAI();
+        BattleManager.EnemyAI = new HackmonAi();
         BattleManager.StartBattle(playerTeam.Cast<IUnit>().ToList(), enemyTeam.Cast<IUnit>().ToList());
     }
 
@@ -66,7 +66,7 @@ public static class HackmonBattleManager
         }
     }
 
-    private static void hitLogger(HitEvent e)
+    private static void HitLogger(HitEvent e)
     {
         var attacker = (HackmonInstance)e.Attacker;
         var target = (HackmonInstance)e.Target;
@@ -75,7 +75,7 @@ public static class HackmonBattleManager
         var hitEvent = new HackmonHitEvent(attacker, target, atk.AttackData, e.Damage);
         EventQueue.Enqueue(hitEvent);
         
-        Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
+        Console.WriteLine($"EventQueue now contains {EventQueue.Count} items");
         
         Console.WriteLine(
             $"{attacker.Name} uses {atk.AttackData.Name} for {atk.AttackData.StaminaCost} stamina on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");

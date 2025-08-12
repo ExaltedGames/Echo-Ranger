@@ -1,5 +1,5 @@
 {
-  "ID": 32,
+  "Id": 32,
   "MoveType": "Chem",
   "Name": "Poison Touch",
   "Description": "The user makes physical contact with it's foe, harming them with a poisonous coating.",
