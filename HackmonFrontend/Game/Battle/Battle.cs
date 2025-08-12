@@ -39,7 +39,7 @@ public partial class Battle : Node2D
 		}
 		var action = new AttackAction(_activePlayerMon, _activeEnemyMon, new AttackResolver(move));
 
-		HackmonBattleManager.HandleInput(new() { action });
+		HackmonBattleManager.HandleInput([action]);
 		_processEvents = true;
 	}
 
@@ -129,7 +129,7 @@ public partial class Battle : Node2D
 		HackmonBattleEvent @event;
 		while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
 		{
-			var eventStr = "";
+			string eventStr;
 			switch (@event)
 			{
 				case HackmonEndTurnEvent:

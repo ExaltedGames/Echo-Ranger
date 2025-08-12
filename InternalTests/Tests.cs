@@ -37,7 +37,7 @@ public static class Tests
             new AttackResolver(HackmonManager.MoveRegistry[playerMon.KnownMoves[0]])
          );
 
-         HackmonBattleManager.HandleInput(new() { playerAction });
+         HackmonBattleManager.HandleInput([playerAction]);
       } 
    }
 }

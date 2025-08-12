@@ -4,7 +4,7 @@ using HackmonFrontend;
 
 public partial class Opponent : CharacterBody2D
 {
-	enum State
+	private enum State
 	{
 		IDLE,
 		WANDER,

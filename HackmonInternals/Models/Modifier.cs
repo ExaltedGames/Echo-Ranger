@@ -1,5 +1,8 @@
-﻿namespace HackmonInternals.Models;
+﻿using JetBrains.Annotations;
 
+namespace HackmonInternals.Models;
+
+[UsedImplicitly]
 public class Modifier
 {
    public int BaseAdditiveBonus { get; set; } = 0;

@@ -134,7 +134,7 @@ public static class HackmonManager
     private static List<T> LoadData<T>(string dir)
     {
         var dataPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"Data/{dir}");
-        List<T> loadedData = new();
+        List<T> loadedData = [];
 
         foreach (var file in Directory.EnumerateFiles(dataPath, "*.json", SearchOption.AllDirectories))
         {

@@ -4,17 +4,17 @@ using System;
 public partial class FollowerCamera : Camera2D
 {
     [Export]
-    public NodePath FollowObjectPath;
+    public NodePath FollowObject;
 
-    public Node2D FollowObject;
+    private Node2D _followObject;
 
     public override void _Ready()
     {
-        FollowObject = GetNode<Node2D>(FollowObjectPath);
+        _followObject = GetNode<Node2D>(FollowObject);
     }
 
     public override void _Process(double delta)
     {
-        Position = FollowObject.Position;
+        Position = _followObject.Position;
     }
 }

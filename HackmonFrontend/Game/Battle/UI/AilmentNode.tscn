@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c33w73ns7f74g"]
 
-[ext_resource type="Script" uid="uid://dcem672vrwkke" path="res://AilmentNode.cs" id="1_gfwqr"]
+[ext_resource type="Script" uid="uid://dcem672vrwkke" path="res://Game/Battle/UI/AilmentNode.cs" id="1_gfwqr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h1hbi"]
 font_size = 256

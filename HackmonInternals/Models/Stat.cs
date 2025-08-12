@@ -1,7 +1,9 @@
 ﻿using System.Text.Json.Serialization;
+using JetBrains.Annotations;
 
 namespace HackmonInternals.Models;
 
+[UsedImplicitly]
 public class Stat
 {
    public float GrowthPerLevel { get; set; }
@@ -16,5 +18,5 @@ public class Stat
    }
    
    [JsonIgnore]
-   public List<Modifier> Modifiers{ get; set; } = new();
+   public List<Modifier> Modifiers{ get; set; } = [];
 }

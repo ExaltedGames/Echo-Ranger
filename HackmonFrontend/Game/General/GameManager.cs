@@ -13,17 +13,27 @@ namespace HackmonFrontend;
 public partial class GameManager : Node
 {
     public static GameManager Instance { get; private set; }
+
+    [Export]
+    public PackedScene BattleScene;
     
     public Node CurrentScene { get; set; }
-    public Node BackgroundScene { get; set; }
+    public Node? BackgroundScene { get; set; }
     public TrainerData PlayerData { get; set; }
     
     /// <summary>
     /// Use this event to reactivate certain must-haves, e.g. CurrentCamera etc
     /// </summary>
-    public event Action OnSceneReturned;
+    public event Action? OnSceneReturned;
     
     private TrainerData _currentOpponent;
+
+    private static readonly JsonSerializerOptions _jsonSerializerOptions = new()
+    {
+        Converters = { new JsonStringEnumConverter() },
+        WriteIndented = true,
+        IgnoreReadOnlyProperties = true
+    };
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -47,7 +57,7 @@ public partial class GameManager : Node
 
         PlayerData = new();
         var testOpponent = new TrainerData();
-        var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+        var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[4], 99);
         var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
         var playerTeam = new List<HackmonInstance>() { playerMon };
         var enemyTeam = new List<HackmonInstance>() { enemyMon };
@@ -72,7 +82,7 @@ public partial class GameManager : Node
             GD.Print("Load success?");
             var testOpponent = new TrainerData();
             var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[2], 1);
-            testOpponent.CurrentParty = new List<HackmonInstance>() { enemyMon };
+            testOpponent.CurrentParty = [enemyMon];
             EnterBattle(testOpponent);
         }
     }
@@ -80,13 +90,7 @@ public partial class GameManager : Node
     public void Save()
     {
         using var saveFile = FileAccess.Open("user://PlayerData.json", FileAccess.ModeFlags.Write);
-        var jsonOpts = new JsonSerializerOptions()
-        {
-            Converters = { new JsonStringEnumConverter() },
-            WriteIndented = true,
-            IgnoreReadOnlyProperties = true
-        };
-        var jsonText = JsonSerializer.Serialize(PlayerData, jsonOpts);
+        var jsonText = JsonSerializer.Serialize(PlayerData, _jsonSerializerOptions);
         saveFile.StoreString(jsonText);
         GD.Print("successfully saved the game.");
     }
@@ -117,15 +121,9 @@ public partial class GameManager : Node
 
     public static void SaveData<T>(T dataObj)
     {
-        var savePath = dataObj.GetType().Name;
+        var savePath = typeof(T).Name;
         using var saveFile = FileAccess.Open($"user://{savePath}.json", FileAccess.ModeFlags.Write);
-        var jsonOpts = new JsonSerializerOptions()
-        {
-            Converters = { new JsonStringEnumConverter() },
-            WriteIndented = true,
-            IgnoreReadOnlyProperties = true
-        };
-        var jsonText = JsonSerializer.Serialize(dataObj, typeof(T), jsonOpts);
+        var jsonText = JsonSerializer.Serialize(dataObj, typeof(T), _jsonSerializerOptions);
         saveFile.StoreString(jsonText);
     }
     
@@ -145,12 +143,12 @@ public partial class GameManager : Node
         {
             CurrentScene.QueueFree();
         }
-        var battle = GD.Load<PackedScene>("res://Battle.tscn");
-        CurrentScene = battle.Instantiate();
+        
+        var battleScene = BattleScene.Instantiate<Battle>();
+        CurrentScene = battleScene;
         GetTree().Root.AddChild(CurrentScene);
         GetTree().CurrentScene = CurrentScene;
 
-        var battleScene = (Battle)CurrentScene;
         battleScene.InitBattle(PlayerData, _currentOpponent);
     }
 

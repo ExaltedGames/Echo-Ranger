@@ -1,11 +1,6 @@
 ﻿namespace HackmonInternals.StatusEffects;
 
-public class StatusText
+public class StatusText(string name)
 {
-   public string Name { get; set; }
-
-   public StatusText(string name)
-   {
-      Name = name;
-   }
+   public string Name { get; set; } = name;
 }

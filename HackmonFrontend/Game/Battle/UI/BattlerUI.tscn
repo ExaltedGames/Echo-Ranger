@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://dw1lrstaeowqs"]
 
-[ext_resource type="Script" uid="uid://c40u0ndqu86dy" path="res://BattlerUI.cs" id="1_j74b8"]
+[ext_resource type="Script" uid="uid://c40u0ndqu86dy" path="res://Game/Battle/UI/BattlerUI.cs" id="1_j74b8"]
 [ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_3gx2m"]
-[ext_resource type="PackedScene" uid="uid://c33w73ns7f74g" path="res://AilmentNode.tscn" id="2_qeg0h"]
+[ext_resource type="PackedScene" uid="uid://c33w73ns7f74g" path="res://Game/Battle/UI/AilmentNode.tscn" id="2_qeg0h"]
 [ext_resource type="Texture2D" uid="uid://dxrbn6rufp1dl" path="res://Assets/UI/Icons/Status/BurnIcon.svg" id="4_1fw8h"]
 [ext_resource type="Texture2D" uid="uid://ds0am2wq56e2i" path="res://Assets/UI/Icons/Status/AtkUpIcon.svg" id="5_wv0n7"]
 [ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="7_41vfo"]

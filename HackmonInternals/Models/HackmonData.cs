@@ -1,7 +1,9 @@
 ﻿using HackmonInternals.Enums;
+using JetBrains.Annotations;
 
 namespace HackmonInternals.Models;
 
+[UsedImplicitly]
 public class HackmonData
 {
     public int ID { get; set; }
