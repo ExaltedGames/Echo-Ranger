@@ -33,7 +33,7 @@ public partial class Battle : Node2D
 		{
 			_actionSelect.SetEnabled(false);
 			_eventText.QueueMessage("Not enough stamina!");
-			_eventText.ShowMessages(OnMessagesDone);
+			_eventText.ShowMessagesSync(OnMessagesDone);
 			GD.Print("Nostamina.");
 			return;
 		}
@@ -43,24 +43,26 @@ public partial class Battle : Node2D
 		_processEvents = true;
 	}
 
-	private void OnMessagesDone()
+	private Task OnMessagesDone()
 	{
 		_eventText.Disable();
 		if (_itsSoOver)
 		{
 			// Return to overworld
 			GameManager.Instance.DeferredPopCurrentScene();
-			return;
+			return Task.CompletedTask;
 		}
 		_actionSelect.SetEnabled(true);
+		return Task.CompletedTask;
 	}
-	private async void TurnEndEvent()
+	
+	private async Task TurnEndEvent()
 	{
 		await Task.WhenAll(
 			_trainerUi.DoStamRegenAnim(_activePlayerMon.Stamina - _playerPreRegenStamina),
 			_enemyUi.DoStamRegenAnim(_activeEnemyMon.Stamina - _enemyPreRegenStamina)
 		);
-		OnMessagesDone();
+		await OnMessagesDone();
 	}
 
 	public override void _Ready()
@@ -146,7 +148,7 @@ public partial class Battle : Node2D
 						_activeEnemyMon.Stamina += _activeEnemyMon.MaxStamina / 8;
 						_activeEnemyMon.Stamina = Math.Min(_activeEnemyMon.Stamina, _activeEnemyMon.MaxStamina);
 					}
-					_eventText.ShowMessages(TurnEndEvent);
+					_eventText.ShowMessagesSync(TurnEndEvent);
 					break;
 				case HackmonHitEvent hitEvent:
 					GD.Print("adding message.");
