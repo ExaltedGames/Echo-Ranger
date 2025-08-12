@@ -120,6 +120,7 @@ offset_top = -138.0
 offset_right = 1277.0
 offset_bottom = -52.0
 scale = Vector2(-2, 2)
+Flipped = true
 
 [node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
 visible = false

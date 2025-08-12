@@ -1,6 +1,5 @@
 ﻿using System.Text.Json.Serialization;
 using HackmonInternals.Enums;
-using HackmonInternals.StatusEffects;
 
 namespace HackmonInternals.Models;
 

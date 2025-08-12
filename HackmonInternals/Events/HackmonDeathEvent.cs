@@ -1,5 +1,4 @@
 using HackmonInternals.Models;
-using TurnBasedBattleSystem.Events;
 
 namespace HackmonInternals.Events;
 
