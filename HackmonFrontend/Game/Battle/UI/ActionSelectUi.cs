@@ -16,7 +16,7 @@ public partial class ActionSelectUi : Control
 	private TextEdit _infoBox;
 	private int _numActions = 4;
 	
-	private void _on_move_pressed(int selection)
+	private void OnMovePressed(int selection)
 	{
 		GD.Print($"test: {selection}");
 
@@ -71,16 +71,20 @@ public partial class ActionSelectUi : Control
 
 	public void ResetHandler()
 	{
-		OnActionSelected = null!;
+		OnActionSelected = null;
 	}
 
 	public override void _Ready()
 	{
 		_infoBox = GetNode<TextEdit>("Infobox");
 		Buttons[0] = GetNode<Button>("MoveList/TopMoves/Move1");
+		Buttons[0].Pressed += () => OnMovePressed(0);
 		Buttons[1] = GetNode<Button>("MoveList/TopMoves/Move2");
+		Buttons[1].Pressed += () => OnMovePressed(1);
 		Buttons[2] = GetNode<Button>("MoveList/BottomMoves/Move3");
+		Buttons[2].Pressed += () => OnMovePressed(2);
 		Buttons[3] = GetNode<Button>("MoveList/BottomMoves/Move4");
+		Buttons[3].Pressed += () => OnMovePressed(3);
 	}
 
 	public override void _Process(double delta)

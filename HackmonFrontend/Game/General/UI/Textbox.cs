@@ -100,7 +100,7 @@ public partial class Textbox : CanvasLayer
 		await callback();
 	}
 
-	public void ShowMessagesSync(Func<Task> callback) => ShowMessages(callback).Wait();
+	public void ShowMessagesSync(Func<Task> callback) => _ = ShowMessages(callback);
 
 	public void SetText(string text)
 	{
