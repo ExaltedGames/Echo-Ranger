@@ -1,5 +1,5 @@
 {
-  "ID": 64,
+  "Id": 64,
   "MoveType": "Wind",
   "Name": "Dispelling Wind",
   "Description": "The user works to bring order to the battlefield with powerful gusts of wind. Reduces duration of all ongoing battlefield effects by 4 turns.",

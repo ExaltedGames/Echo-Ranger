@@ -1,13 +1,15 @@
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
 using HackmonInternals.Attributes;
+using JetBrains.Annotations;
 
 namespace HackmonInternals.StatusEffects;
 
+[UsedImplicitly]
 public class SpAttackDown : Status
 {
-    private static readonly int STACK_LIMIT = 8;
-    private Modifier StatMod;
+    private const int STACK_LIMIT = 8;
+    private Modifier _statMod;
 
     [Status("SpAttackDown")]
     public static SpAttackDown Init(HackmonInstance unit, int nTurns)
@@ -28,18 +30,18 @@ public class SpAttackDown : Status
 
             Stacks = nTurns - oppositeEffect.Stacks;
         }
-        StatMod = new()
+        _statMod = new()
         {
             Multiplier = (Stacks * -0.05),
             BaseAdditiveBonus = unit.Level
         };
-        unit.StatModifiers[StatType.SpAttack].Add(StatMod);
+        unit.StatModifiers[StatType.SpAttack].Add(_statMod);
     }
 
     public override void Add(int stacks)
     {
         Stacks = Math.Min(STACK_LIMIT, Stacks + stacks);
-        StatMod.Multiplier = (Stacks * -0.05);
+        _statMod.Multiplier = (Stacks * -0.05);
     }
 
     public override void Remove(int stacks)
@@ -47,7 +49,7 @@ public class SpAttackDown : Status
         Stacks = Math.Max(0, Stacks - stacks);
         if (Stacks == 0)
         {
-            Unit.StatModifiers[StatType.SpAttack].Remove(StatMod);
+            Unit.StatModifiers[StatType.SpAttack].Remove(_statMod);
         }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System.Text.Json.Serialization;
 using HackmonInternals.Enums;
 using HackmonInternals.StatusEffects;
+using JetBrains.Annotations;
 using TurnBasedBattleSystem;
 
 namespace HackmonInternals.Models;
 
+[UsedImplicitly]
 public class HackmonInstance : IUnit
 {
    [JsonInclude]
@@ -13,7 +15,7 @@ public class HackmonInstance : IUnit
    public string Species
    {
       get => StaticData.Name;
-      set => setSpecies(value);
+      set => SetSpecies(value);
    }
 
    public string Name => Nickname ?? StaticData.Name;
@@ -34,15 +36,15 @@ public class HackmonInstance : IUnit
    
    public bool IsDead => Health <= 0;
 
-   public int Attack => computeStatValue(StatType.Attack, StaticData.Attack); 
+   public int Attack => ComputeStatValue(StatType.Attack, StaticData.Attack); 
 
-   public int SpAttack => computeStatValue(StatType.SpAttack, StaticData.SpAttack); 
+   public int SpAttack => ComputeStatValue(StatType.SpAttack, StaticData.SpAttack); 
 
-   public int Defense => computeStatValue(StatType.Defense, StaticData.Defense);
+   public int Defense => ComputeStatValue(StatType.Defense, StaticData.Defense);
 
-   public int SpDefense => computeStatValue(StatType.SpDefense, StaticData.SpDefense);
+   public int SpDefense => ComputeStatValue(StatType.SpDefense, StaticData.SpDefense);
 
-   public int MaxHp => computeStatValue(StatType.MaxHp, StaticData.MaxHp);
+   public int MaxHp => ComputeStatValue(StatType.MaxHp, StaticData.MaxHp);
 
    public int MaxStamina => StaticData.MaxStamina.BaseValue + (int)MathF.Round(StaticData.MaxStamina.GrowthPerLevel * Level) + 99;
    
@@ -62,11 +64,11 @@ public class HackmonInstance : IUnit
    
    public HackmonType? SecondaryType => StaticData.SecondaryType;
 
-   public List<Status> StatusEffects { get; set; } = new();
+   public List<Status> StatusEffects { get; set; } = [];
 
-   public List<int> KnownMoves { get; set; } = new();
+   public List<int> KnownMoves { get; set; } = [];
 
-   public List<int> ActiveMoves { get; set; } = new();
+   public List<int> ActiveMoves { get; set; } = [];
 
    public HackmonInstance(HackmonData staticData, int level)
    {
@@ -83,9 +85,9 @@ public class HackmonInstance : IUnit
          .ToList();
    }
 
-   public List<IStatus> Statuses { get; set; } = new();
+   public List<IStatus> Statuses { get; set; } = [];
 
-   private int computeStatValue(StatType type, Stat baseStat)
+   private int ComputeStatValue(StatType type, Stat baseStat)
    {
       var mods = StatModifiers[type];
       var baseAdditiveBonus = mods.Aggregate(0, (acc, x) => acc + x.BaseAdditiveBonus);
@@ -94,7 +96,7 @@ public class HackmonInstance : IUnit
       return (int)Math.Round(stat);
    }
 
-   private void setSpecies(string speciesName)
+   private void SetSpecies(string speciesName)
    {
       var newSpecies = HackmonManager.HackmonRegistry.Values.FirstOrDefault(data => data.Name == speciesName);
       Console.WriteLine($"TETJSETLKSJKJTSLKJTSL {speciesName} | {newSpecies == null}");

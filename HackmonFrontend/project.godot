@@ -17,7 +17,7 @@ config/icon="res://Assets/ProjectIcon.png"
 
 [autoload]
 
-GameManager="*res://GameManager.tscn"
+GameManager="*res://Game/General/GameManager.tscn"
 
 [dotnet]
 

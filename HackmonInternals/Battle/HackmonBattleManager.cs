@@ -11,20 +11,20 @@ public static class HackmonBattleManager
 {
     public static bool InBattle => BattleManager.BattleInProgress;
     public static int TurnNum = 0;
-    public static Queue<HackmonBattleEvent> EventQueue = new(); 
+    public static readonly Queue<HackmonBattleEvent> EventQueue = new(); 
     
-    private static bool endBattle = false;
+    private static bool _endBattle = false;
     
     public static void StartBattle(List<HackmonInstance> playerTeam, List<HackmonInstance> enemyTeam)
     {
         EventQueue.Clear();
 		BattleManager.Cleanup();
         BattleManager.OnDeath += BattleEndCheck;
-        BattleManager.OnHit += hitLogger;
+        BattleManager.OnHit += HitLogger;
         BattleManager.OnGainStatus += LogStatus;
         BattleManager.OnTurnStart += LogTurnBoundary;
         BattleManager.OnTurnEnd += LogTurnBoundary;
-        BattleManager.EnemyAI = new HackmonAI();
+        BattleManager.EnemyAI = new HackmonAi();
         BattleManager.StartBattle(playerTeam.Cast<IUnit>().ToList(), enemyTeam.Cast<IUnit>().ToList());
     }
 
@@ -58,24 +58,24 @@ public static class HackmonBattleManager
             Console.WriteLine("End of turn");
             var e = new HackmonEndTurnEvent();
             EventQueue.Enqueue(e);
-            if (endBattle)
+            if (_endBattle)
             {
-                endBattle = false;
+                _endBattle = false;
                 BattleManager.Cleanup();
             }
         }
     }
 
-    private static void hitLogger(HitEvent e)
+    private static void HitLogger(HitEvent e)
     {
-        HackmonInstance attacker = (HackmonInstance)e.Attacker;
-        HackmonInstance target = (HackmonInstance)e.Target;
-        AttackResolver atk = (AttackResolver)e.Attack;
+        var attacker = (HackmonInstance)e.Attacker;
+        var target = (HackmonInstance)e.Target;
+        var atk = (AttackResolver)e.Attack;
 
         var hitEvent = new HackmonHitEvent(attacker, target, atk.AttackData, e.Damage);
         EventQueue.Enqueue(hitEvent);
         
-        Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
+        Console.WriteLine($"EventQueue now contains {EventQueue.Count} items");
         
         Console.WriteLine(
             $"{attacker.Name} uses {atk.AttackData.Name} for {atk.AttackData.StaminaCost} stamina on {target.Name}\nDamage: {e.Damage}. {target.Name} HP Remaining: {target.Health}");
@@ -84,13 +84,13 @@ public static class HackmonBattleManager
     private static void BattleEndCheck(DeathEvent data)
     {
         // log death
-        HackmonInstance deadUnit = (HackmonInstance)data.Unit;
+        var deadUnit = (HackmonInstance)data.Unit;
         var deathEvent = new HackmonDeathEvent(deadUnit);
         EventQueue.Enqueue(deathEvent);
         
         Console.WriteLine($"{deadUnit.Name} has fainted!");
 
-        bool playerAlive = false;
+        var playerAlive = false;
         foreach (HackmonInstance u in BattleManager.PlayerTeam)
         {
             if (u.Health > 0)
@@ -103,28 +103,20 @@ public static class HackmonBattleManager
         if (!playerAlive)
         {
             Console.WriteLine("Battle ends in player loss.");
-            endBattle = true;
+            _endBattle = true;
             var endEvent = new HackmonBattleEndEvent(false);
             EventQueue.Enqueue(endEvent);
             return;
         }
 
-        bool enemyAlive = false;
-        foreach (HackmonInstance u in BattleManager.AITeam)
-        {
-            if (u.Health > 0)
-            {
-                enemyAlive = true;
-                break;
-            }
-        }
+        var enemyAlive = BattleManager.AITeam.Cast<HackmonInstance>().Any(u => u.Health > 0);
 
         if (!enemyAlive)
         {
             Console.WriteLine("Battle ends in player victory.");
             var endEvent = new HackmonBattleEndEvent(true);
             EventQueue.Enqueue(endEvent);
-            endBattle = true;
+            _endBattle = true;
         }
     }
 }

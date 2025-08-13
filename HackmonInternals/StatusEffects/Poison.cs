@@ -1,13 +1,15 @@
 ﻿using HackmonInternals.Attributes;
 using HackmonInternals.Models;
+using JetBrains.Annotations;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Events;
 
 namespace HackmonInternals.StatusEffects;
 
+[UsedImplicitly]
 public class Poison : Status
 {
-    private static readonly int STACK_LIMIT = 8;
+    private const int STACK_LIMIT = 8;
     
     [Status("Poison")]
     public static Poison Init(HackmonInstance unit, int stacks)

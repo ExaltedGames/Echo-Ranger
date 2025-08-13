@@ -12,11 +12,11 @@ namespace HackmonFrontend;
 public partial class Battle : Node2D
 {
 	private Textbox _eventText;
-	private BattlerUI _trainerUi;
-	private BattlerUI _enemyUi;
+	private BattlerUi _trainerUi;
+	private BattlerUi _enemyUi;
 	private BattlerStage _trainerStage;
 	private BattlerStage _enemyStage;
-	private ActionSelectUI _actionSelect;
+	private ActionSelectUi _actionSelect;
 
 	private HackmonInstance _activePlayerMon;
 	private HackmonInstance _activeEnemyMon;
@@ -33,45 +33,47 @@ public partial class Battle : Node2D
 		{
 			_actionSelect.SetEnabled(false);
 			_eventText.QueueMessage("Not enough stamina!");
-			_eventText.ShowMessages(OnMessagesDone);
+			_eventText.ShowMessagesSync(OnMessagesDone);
 			GD.Print("Nostamina.");
 			return;
 		}
 		var action = new AttackAction(_activePlayerMon, _activeEnemyMon, new AttackResolver(move));
 
-		HackmonBattleManager.HandleInput(new() { action });
+		HackmonBattleManager.HandleInput([action]);
 		_processEvents = true;
 	}
 
-	private void OnMessagesDone()
+	private Task OnMessagesDone()
 	{
 		_eventText.Disable();
 		if (_itsSoOver)
 		{
 			// Return to overworld
 			GameManager.Instance.DeferredPopCurrentScene();
-			return;
+			return Task.CompletedTask;
 		}
 		_actionSelect.SetEnabled(true);
+		return Task.CompletedTask;
 	}
-	private async void TurnEndEvent()
+	
+	private async Task TurnEndEvent()
 	{
 		await Task.WhenAll(
 			_trainerUi.DoStamRegenAnim(_activePlayerMon.Stamina - _playerPreRegenStamina),
 			_enemyUi.DoStamRegenAnim(_activeEnemyMon.Stamina - _enemyPreRegenStamina)
 		);
-		OnMessagesDone();
+		await OnMessagesDone();
 	}
 
 	public override void _Ready()
 	{
 		GetNode<Camera2D>("Camera").MakeCurrent();
 		_eventText = GetNode<Textbox>("UI/Textbox");
-		_trainerUi = GetNode<BattlerUI>("UI/BattlerUI");
+		_trainerUi = GetNode<BattlerUi>("UI/BattlerUI");
 		_trainerStage = GetNode<BattlerStage>("BattlerStage");
 		_enemyStage = GetNode<BattlerStage>("OpponentStage");
-		_enemyUi = GetNode<BattlerUI>("UI/OpponentUI");
-		_actionSelect = GetNode<ActionSelectUI>("UI/ActionSelectUI");
+		_enemyUi = GetNode<BattlerUi>("UI/OpponentUI");
+		_actionSelect = GetNode<ActionSelectUi>("UI/ActionSelectUI");
 
 		_eventText.SetText("Test Hackmon Takes 40 damage from MISSINGNO :)");
 
@@ -118,10 +120,7 @@ public partial class Battle : Node2D
 		_actionSelect.OnActionSelected += OnPlayerInput;
 	}
 
-	private BattlerUI GetUiForUnit(HackmonInstance unit, bool inverse = false)
-	{
-		return unit == _activePlayerMon ^ inverse ? _trainerUi : _enemyUi;
-	}
+	private BattlerUi GetUiForUnit(HackmonInstance unit, bool inverse = false) => unit == _activePlayerMon ^ inverse ? _trainerUi : _enemyUi;
 
 	public override void _Process(double delta)
 	{
@@ -129,7 +128,7 @@ public partial class Battle : Node2D
 		HackmonBattleEvent @event;
 		while (HackmonBattleManager.EventQueue.TryDequeue(out @event))
 		{
-			var eventStr = "";
+			string eventStr;
 			switch (@event)
 			{
 				case HackmonEndTurnEvent:
@@ -149,7 +148,7 @@ public partial class Battle : Node2D
 						_activeEnemyMon.Stamina += _activeEnemyMon.MaxStamina / 8;
 						_activeEnemyMon.Stamina = Math.Min(_activeEnemyMon.Stamina, _activeEnemyMon.MaxStamina);
 					}
-					_eventText.ShowMessages(TurnEndEvent);
+					_eventText.ShowMessagesSync(TurnEndEvent);
 					break;
 				case HackmonHitEvent hitEvent:
 					GD.Print("adding message.");

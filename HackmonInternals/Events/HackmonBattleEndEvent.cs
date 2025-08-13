@@ -1,11 +1,6 @@
 namespace HackmonInternals.Events;
 
-public class HackmonBattleEndEvent : HackmonBattleEvent
+public class HackmonBattleEndEvent(bool playerWon) : HackmonBattleEvent
 {
-    public HackmonBattleEndEvent(bool playerWon)
-    {
-        PlayerWin = playerWon;
-    }
-    
-    public bool PlayerWin;
+    public bool PlayerWin = playerWon;
 }

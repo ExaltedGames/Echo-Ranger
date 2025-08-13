@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dgnh5nicish3d"]
 
-[ext_resource type="Script" uid="uid://bokgfr8tytri2" path="res://Battle.cs" id="1_w30jk"]
-[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://BattlerUI.tscn" id="2_1nxov"]
-[ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://BattlerStage.tscn" id="2_8ceye"]
+[ext_resource type="Script" uid="uid://bokgfr8tytri2" path="res://Game/Battle/Battle.cs" id="1_w30jk"]
+[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Game/Battle/UI/BattlerUi.tscn" id="2_1nxov"]
+[ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://Game/Battle/UI/BattlerStage.tscn" id="2_8ceye"]
 [ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="2_v5ddm"]
-[ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://ActionSelectUI.cs" id="4_p2xem"]
-[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Textbox.tscn" id="6_oyx74"]
+[ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUi.cs" id="4_p2xem"]
+[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/UI/Textbox.tscn" id="6_oyx74"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_w30jk")
@@ -124,8 +124,3 @@ Flipped = true
 
 [node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
 visible = false
-
-[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move1" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [0]]
-[connection signal="pressed" from="UI/ActionSelectUI/MoveList/TopMoves/Move2" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [1]]
-[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move3" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [2]]
-[connection signal="pressed" from="UI/ActionSelectUI/MoveList/BottomMoves/Move4" to="UI/ActionSelectUI" method="_on_move_pressed" binds= [3]]

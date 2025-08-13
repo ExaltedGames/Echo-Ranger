@@ -1,13 +1,15 @@
 ﻿using HackmonInternals.Attributes;
 using HackmonInternals.Models;
+using JetBrains.Annotations;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Events;
 
 namespace HackmonInternals.StatusEffects;
 
+[UsedImplicitly]
 public class Burn : Status
 {
-    public static readonly int STACK_LIMIT = 8;
+    public const int STACK_LIMIT = 8;
     
     [Status("Burn")]
     public static Burn Init(HackmonInstance unit, int nTurns)

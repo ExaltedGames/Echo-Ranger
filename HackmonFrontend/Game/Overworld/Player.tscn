@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6trcylpmc4ok"]
 
 [ext_resource type="Texture2D" uid="uid://c54bjbv7kd72s" path="res://Assets/OverworldSprites/Characters/Placeholder.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://bq151vy6reulp" path="res://Player.cs" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://bq151vy6reulp" path="res://Game/Overworld/Player.cs" id="1_onrkg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{

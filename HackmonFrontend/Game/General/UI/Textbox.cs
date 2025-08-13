@@ -11,9 +11,9 @@ public partial class Textbox : CanvasLayer
 	private double _nextLetterTimer = 0;
 	private bool _awaitEvent = false;
 
-	private Queue<(string, Func<Task>)> _messageList = new();
+	private readonly Queue<(string, Func<Task>?)> _messageList = new();
 	private string _currentMessage;
-	private Func<Task> _currentEvent = null;
+	private Func<Task>? _currentEvent;
 
 	private TaskCompletionSource<bool> _done = new();
 
@@ -68,7 +68,7 @@ public partial class Textbox : CanvasLayer
 			}
 		}
 
-		_textBox.Text = _currentMessage.Substring(0, _typewriterPosition);
+		_textBox.Text = _currentMessage[.._typewriterPosition];
 	}
 
 	public void QueueMessage(string message)
@@ -81,7 +81,7 @@ public partial class Textbox : CanvasLayer
 		_messageList.Enqueue((message, @event));	
 	}
 
-	public async void ShowMessages(Action callback)
+	public async Task ShowMessages(Func<Task> callback)
 	{
 		_typewriterPosition = 0;
 		_done = new TaskCompletionSource<bool>();
@@ -97,8 +97,10 @@ public partial class Textbox : CanvasLayer
 		else _awaitEvent = false; //failsafe
 		
 		await _done.Task;
-		callback();
+		await callback();
 	}
+
+	public void ShowMessagesSync(Func<Task> callback) => _ = ShowMessages(callback);
 
 	public void SetText(string text)
 	{

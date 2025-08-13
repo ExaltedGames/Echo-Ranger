@@ -1,13 +1,10 @@
+using JetBrains.Annotations;
+
 namespace HackmonInternals.Models;
 
-public class StatusDescriptor
+[UsedImplicitly]
+public class StatusDescriptor(string name, int duration)
 {
-    public string Name { get; set; }
-    public int Duration { get; set; }
-
-    public StatusDescriptor(string name, int duration)
-    {
-        Name = name;
-        Duration = duration;
-    }
+    public string Name { get; set; } = name;
+    public int Duration { get; set; } = duration;
 }

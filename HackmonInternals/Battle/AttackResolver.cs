@@ -5,25 +5,18 @@ using TurnBasedBattleSystem.Events;
 
 namespace HackmonInternals.Battle;
 
-public class AttackResolver : IAttack
+public class AttackResolver(HackmonMove atkData) : IAttack
 {
-    public HackmonMove AttackData { get; private set; }
-
-    public AttackResolver(HackmonMove atkData)
-    {
-        AttackData = atkData;
-    }
+    public HackmonMove AttackData { get; private set; } = atkData;
 
     public IEnumerable<BattleEvent> Resolve(IUnit attacker, IUnit target)
     {
         //calc damage
-        if (attacker is not HackmonInstance || target is not HackmonInstance)
+        if (attacker is not HackmonInstance moveUser || target is not HackmonInstance moveTarget)
         {
             throw new Exception("Use in unsupported scenario.");
         }
 
-        HackmonInstance moveUser = (HackmonInstance)attacker;
-        HackmonInstance moveTarget = (HackmonInstance)target;
         if (AttackData.StaminaCost <= moveUser.Stamina)
         {
             moveUser.Stamina -= AttackData.StaminaCost;
@@ -40,13 +33,10 @@ public class AttackResolver : IAttack
             var stab = (moveUser.PrimaryType == AttackData.MoveType) ? 1.20f : 1f;
             var elements = HackmonManager.ElementInteractionsRegistry;
             
-            float elementModifier = 1.0f;
-            if (elements != null)
-            {
-                elementModifier *= elements[AttackData.MoveType][moveTarget.PrimaryType];
-                elementModifier *= (moveTarget.SecondaryType != null) ?
-                    elements[AttackData.MoveType][moveTarget.SecondaryType.Value] : 1.0f;
-            }
+            var elementModifier = 1.0f;
+            elementModifier *= elements[AttackData.MoveType][moveTarget.PrimaryType];
+            elementModifier *= (moveTarget.SecondaryType != null) ?
+                elements[AttackData.MoveType][moveTarget.SecondaryType.Value] : 1.0f;
 
             switch (AttackData.AttackType)
             {
@@ -62,12 +52,14 @@ public class AttackResolver : IAttack
                     atk = moveUser.SpAttack;
                     def = moveTarget.SpDefense;
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
             
-            int damage =  Math.Max(1, (int)((atk / ((def+100)/(100 * elementModifier)) + (AttackData.Damage * stab) - (moveTarget.Level/3)) * elementModifier));
+            var damage =  Math.Max(1, (int)((atk / ((def+100)/(100 * elementModifier)) + (AttackData.Damage * stab) - (moveTarget.Level/3)) * elementModifier));
 
             moveTarget.Health -= damage;
-            HitEvent damageEvent = new HitEvent(moveUser, moveTarget, this, damage);
+            var damageEvent = new HitEvent(moveUser, moveTarget, this, damage);
             yield return damageEvent;
         }
 
@@ -84,9 +76,9 @@ public class AttackResolver : IAttack
                 }
                 else
                 {
-                    statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                    statusInstance = HackmonManager.InstanceStatus(statusName, moveTarget, duration);
                 }
-                var sEvent = new GainStatusEvent(target, statusInstance, duration);
+                var sEvent = new GainStatusEvent(moveTarget, statusInstance, duration);
 
                 yield return sEvent;
             }
@@ -105,9 +97,9 @@ public class AttackResolver : IAttack
                 }
                 else
                 {
-                    statusInstance = HackmonManager.InstanceStatus(statusName, (HackmonInstance)target, duration);
+                    statusInstance = HackmonManager.InstanceStatus(statusName, moveTarget, duration);
                 }
-                var sEvent = new GainStatusEvent(target, statusInstance, duration);
+                var sEvent = new GainStatusEvent(moveTarget, statusInstance, duration);
 
                 yield return sEvent;
             }
