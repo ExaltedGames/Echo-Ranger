@@ -1,8 +1,4 @@
-﻿using System.Threading.Tasks.Dataflow;
-using HackmonInternals.Battle.Inputs;
-using HackmonInternals.Battle.Negotiators;
-using HackmonInternals.Enums;
-using HackmonInternals.Events;
+﻿using HackmonInternals.Events;
 using HackmonInternals.Models;
 using HackmonInternals.StatusEffects;
 using TurnBasedBattleSystem;
@@ -41,8 +37,14 @@ public static class HackmonBattleManager
     {
         var unit = (HackmonInstance)s.Unit;
         var status = (Status)s.Status;
+        var stacks = s.Stacks;
+        
+        var hitEvent = new HackmonStatusEvent(unit, status, stacks);
+        EventQueue.Enqueue(hitEvent);
+        
+        Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
 
-        Console.WriteLine($"{unit.Name} gained {s.Stacks} stacks of {status.Name}");
+        Console.WriteLine($"{unit.Name} gained {stacks} stacks of {status.Name}");
     }
 
     private static void LogTurnBoundary(BattleEvent b)

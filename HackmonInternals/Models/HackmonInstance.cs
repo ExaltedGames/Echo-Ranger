@@ -34,25 +34,35 @@ public class HackmonInstance : IUnit
    
    public bool IsDead => Health <= 0;
 
-   public int Attack => StaticData.Attack.BaseValue + (int)MathF.Round(StaticData.Attack.GrowthPerLevel * Level);
+   public int Attack => computeStatValue(StatType.Attack, StaticData.Attack); 
 
-   public int SpAttack => StaticData.SpAttack.BaseValue + (int)MathF.Round(StaticData.SpAttack.GrowthPerLevel * Level);
+   public int SpAttack => computeStatValue(StatType.SpAttack, StaticData.SpAttack); 
 
-   public int Defense => StaticData.Defense.BaseValue + (int) MathF.Round(StaticData.Defense.GrowthPerLevel * Level);
+   public int Defense => computeStatValue(StatType.Defense, StaticData.Defense);
 
-   public int SpDefense => StaticData.SpDefense.BaseValue + (int)MathF.Round(StaticData.SpDefense.GrowthPerLevel * Level);
+   public int SpDefense => computeStatValue(StatType.SpDefense, StaticData.SpDefense);
 
-   public int MaxHp => StaticData.MaxHp.BaseValue + (int)MathF.Round(StaticData.MaxHp.GrowthPerLevel * Level) + 99;
+   public int MaxHp => computeStatValue(StatType.MaxHp, StaticData.MaxHp);
 
    public int MaxStamina => StaticData.MaxStamina.BaseValue + (int)MathF.Round(StaticData.MaxStamina.GrowthPerLevel * Level) + 99;
    
    public int Stamina { get; set; }
 
+   [JsonIgnore]
+   public Dictionary<StatType, List<Modifier>> StatModifiers = new()
+   {
+      { StatType.Attack, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.SpAttack, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.MaxHp, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.Defense, [new Modifier { BaseAdditiveBonus = 99 }] },
+      { StatType.SpDefense, [new Modifier { BaseAdditiveBonus = 99 }] },
+   };
+
    public HackmonType PrimaryType => StaticData.PrimaryType;
    
    public HackmonType? SecondaryType => StaticData.SecondaryType;
 
-   //public List<Status> StatusEffects { get; set; } = new();
+   public List<Status> StatusEffects { get; set; } = new();
 
    public List<int> KnownMoves { get; set; } = new();
 
@@ -74,6 +84,15 @@ public class HackmonInstance : IUnit
    }
 
    public List<IStatus> Statuses { get; set; } = new();
+
+   private int computeStatValue(StatType type, Stat baseStat)
+   {
+      var mods = StatModifiers[type];
+      var baseAdditiveBonus = mods.Aggregate(0, (acc, x) => acc + x.BaseAdditiveBonus);
+      var multiplicativeBonus = mods.Aggregate<Modifier, double>(1, (acc, x) => acc + x.Multiplier);
+      var stat = (baseStat.BaseValue + baseAdditiveBonus + (baseStat.GrowthPerLevel * Level)) * multiplicativeBonus;
+      return (int)Math.Round(stat);
+   }
 
    private void setSpecies(string speciesName)
    {

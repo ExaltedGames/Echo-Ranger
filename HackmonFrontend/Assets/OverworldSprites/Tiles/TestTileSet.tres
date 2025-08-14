@@ -1,0 +1,27 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dbc7u3bjbjcae"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_575af"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_01v8w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_01v8w"]
+load_path = "res://.godot/imported/TestTileSource.png-36d4eb839c312fc06d57a7594a2c89cc.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x4i87"]
+resource_name = "Basic"
+texture = SubResource("CompressedTexture2D_01v8w")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_575af")
+physics_layer_1/collision_layer = 4
+physics_layer_1/collision_mask = 4
+physics_layer_1/physics_material = SubResource("PhysicsMaterial_01v8w")
+sources/0 = SubResource("TileSetAtlasSource_x4i87")

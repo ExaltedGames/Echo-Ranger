@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx6s7u8bksjn6"]
+
+[ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="1_51stq"]
+[ext_resource type="Script" uid="uid://dhyusumdyt7rc" path="res://Opponent.cs" id="1_hnejy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_51stq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3pqv"]
+radius = 13.0
+height = 38.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51stq"]
+radius = 35.0571
+
+[node name="Opponent" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_hnejy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.330078, 0.330078)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CapsuleShape2D_i3pqv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_51stq")
+
+[connection signal="body_entered" from="Area2D" to="." method="OnAreaEntered"]

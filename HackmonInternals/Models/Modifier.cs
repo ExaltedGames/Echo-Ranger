@@ -2,5 +2,6 @@
 
 public class Modifier
 {
-   public float Value { get; set; }
+   public int BaseAdditiveBonus { get; set; } = 0;
+   public double Multiplier { get; set; } = 1;
 }

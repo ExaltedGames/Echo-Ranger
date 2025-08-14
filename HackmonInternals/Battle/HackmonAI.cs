@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using HackmonInternals.Models;
 using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Actions;

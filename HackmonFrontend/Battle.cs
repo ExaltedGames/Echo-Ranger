@@ -46,7 +46,12 @@ public partial class Battle : Node2D
 	private void OnMessagesDone()
 	{
 		_eventText.Disable();
-		if (_itsSoOver) return;
+		if (_itsSoOver)
+		{
+			// Return to overworld
+			GameManager.Instance.DeferredPopCurrentScene();
+			return;
+		}
 		_actionSelect.SetEnabled(true);
 	}
 	private async void TurnEndEvent()
@@ -60,6 +65,7 @@ public partial class Battle : Node2D
 
 	public override void _Ready()
 	{
+		GetNode<Camera2D>("Camera").MakeCurrent();
 		_eventText = GetNode<Textbox>("UI/Textbox");
 		_trainerUi = GetNode<BattlerUI>("UI/BattlerUI");
 		_trainerStage = GetNode<BattlerStage>("BattlerStage");
@@ -96,8 +102,8 @@ public partial class Battle : Node2D
 		_enemyUi.SetCurrentMon(enemy.CurrentParty[0]);
 		_enemyStage.LoadHackmon(enemy.CurrentParty[0].Name);
 
-		HackmonMove[] battleMoveset = new HackmonMove[4];
-		for (int i = 0; i < 4; i++)
+		var battleMoveset = new HackmonMove[4];
+		for (var i = 0; i < 4; i++)
 		{
 			if (_activePlayerMon.KnownMoves.Count > i)
 			{
@@ -110,6 +116,11 @@ public partial class Battle : Node2D
 		_actionSelect.SetEnabled(true);
 		_actionSelect.ResetHandler();
 		_actionSelect.OnActionSelected += OnPlayerInput;
+	}
+
+	private BattlerUI GetUiForUnit(HackmonInstance unit, bool inverse = false)
+	{
+		return unit == _activePlayerMon ^ inverse ? _trainerUi : _enemyUi;
 	}
 
 	public override void _Process(double delta)
@@ -144,26 +155,20 @@ public partial class Battle : Node2D
 					GD.Print("adding message.");
 					eventStr =
 						$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-					if (_activePlayerMon == hitEvent.Attacker)
+					_eventText.QueueMessage(eventStr, async () =>
 					{
-						_eventText.QueueMessage(eventStr, async () =>
-						{
-							await Task.WhenAll(
-								_trainerUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
-								_enemyUi.DoDamageAnim(hitEvent.Damage)
-							);
-						});
-					}
-					else
-					{
-						_eventText.QueueMessage(eventStr, async () =>
-						{
-							await Task.WhenAll(
-								_enemyUi.DoStaminaAnim(hitEvent.Attack.StaminaCost),
-								_trainerUi.DoDamageAnim(hitEvent.Damage)
-							);
-						});
-					}
+						await Task.WhenAll(
+							GetUiForUnit(hitEvent.Attacker).DoStaminaAnim(hitEvent.Attack.StaminaCost),
+							GetUiForUnit(hitEvent.Attacker, true).DoDamageAnim(hitEvent.Damage)
+						);
+					});
+					break;
+				// TODO This assumes that status' are only added and never expire
+				case HackmonStatusEvent statusEvent:
+					GD.Print("adding message.");
+					eventStr = $"{statusEvent.Unit.Name} is afflicted with {statusEvent.Stacks} stacks of {statusEvent.Status.Name}.";
+					_eventText.QueueMessage(eventStr, () => GetUiForUnit(statusEvent.Unit).AddAilment(statusEvent.Status));
+						
 					break;
 				case HackmonDeathEvent deathEvent:
 					eventStr = $"{deathEvent.Unit.Name} has fainted.";
@@ -177,6 +182,4 @@ public partial class Battle : Node2D
 			}
 		}
 	}
-
-	
 }

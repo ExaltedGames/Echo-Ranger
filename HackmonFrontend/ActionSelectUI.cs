@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Collections.Generic;
 using HackmonInternals.Models;
 
 namespace HackmonFrontend;

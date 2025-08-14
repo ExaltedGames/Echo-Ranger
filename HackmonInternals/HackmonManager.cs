@@ -1,14 +1,10 @@
-﻿using System.Linq.Expressions;
-using System.Reflection;
-using System.Runtime.InteropServices;
+﻿using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using HackmonInternals.Attributes;
 using HackmonInternals.Battle;
 using HackmonInternals.Enums;
 using HackmonInternals.Models;
-using HackmonInternals.StatusEffects;
-using TurnBasedBattleSystem;
 using Status = HackmonInternals.StatusEffects.Status;
 
 namespace HackmonInternals;
@@ -68,7 +64,7 @@ public static class HackmonManager
         }
         
         var hackmonList = LoadData<HackmonData>("Hackmon");
-        foreach (HackmonData d in hackmonList)
+        foreach (var d in hackmonList)
         {
             HackmonRegistry.Add(d.ID, d);
         }
@@ -83,11 +79,11 @@ public static class HackmonManager
 
     
 
-    public static Status InstanceStatus(string status, HackmonInstance unit, int numTurns)
+    public static Status InstanceStatus(string status, HackmonInstance unit, int stacks)
     {
         if (!statusMap.ContainsKey(status)) throw new Exception($"No such status currently loaded: {status}");
 
-        var s = statusMap[status](unit, numTurns);
+        var s = statusMap[status](unit, stacks);
         s.Name = status;
         return s;
     }
