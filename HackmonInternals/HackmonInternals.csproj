@@ -14,11 +14,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TurnBasedBattleSystem\TurnBasedBattleSystem\TurnBasedBattleSystem.csproj" />
+        <ProjectReference Include="..\TurnBasedBattleSystem\TurnBasedBattleSystem\TurnBasedBattleSystem.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="JetBrains.Annotations" Version="2025.2.0" />
+        <PackageReference Include="JetBrains.Annotations" Version="2025.2.0"/>
     </ItemGroup>
 
 </Project>

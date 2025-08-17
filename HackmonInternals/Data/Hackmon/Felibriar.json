@@ -1,42 +1,42 @@
 ﻿{
-  "Id": 8,
-  "PrimaryType": "Plant",
-  "Name": "Felibriar",
-  "Family": "Beast",
-  "Description": "Times of plenty can lead to the creation of Felibriar, whose vines have grown strong enough to break bone. The blooming ends of their vines exude a sticky sap that provides an inescapable grip on prey.",
-  "MaxHp": {
-    "BaseValue": 10,
-    "GrowthPerLevel": 0.65
-  },
-  "Attack": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.65
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.49
-  },
-  "Defense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.95
-  },
-  "SpDefense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.45
-  },
-  "Agility": {
-    "BaseValue": 2,
-    "GrowthPerLevel": 0.98
-  },
-  "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [4,10],
-    [26,1],
-    [42,15],
-    [65,15]
-  ]
+	"Id": 8,
+	"PrimaryType": "Plant",
+	"Name": "Felibriar",
+	"Family": "Beast",
+	"Description": "Times of plenty can lead to the creation of Felibriar, whose vines have grown strong enough to break bone. The blooming ends of their vines exude a sticky sap that provides an inescapable grip on prey.",
+	"MaxHp": {
+		"BaseValue": 10,
+		"GrowthPerLevel": 0.65
+	},
+	"Attack": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.65
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.49
+	},
+	"Defense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.95
+	},
+	"SpDefense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.45
+	},
+	"Agility": {
+		"BaseValue": 2,
+		"GrowthPerLevel": 0.98
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[4, 10],
+		[26, 1],
+		[42, 15],
+		[65, 15]
+	]
 }

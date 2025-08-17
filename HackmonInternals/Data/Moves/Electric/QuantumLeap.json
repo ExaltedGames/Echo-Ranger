@@ -1,12 +1,12 @@
 {
-  "Id": 72,
-  "MoveType": "Jolt",
-  "Name": "Quantum Leap",
-  "Description": "Dissolving into pure energy, the user instantly switches places with an ally from their team. The resulting shockwave afflicts all combatants with static.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "Self",
-  "StaminaCost": 35,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 72,
+	"MoveType": "Jolt",
+	"Name": "Quantum Leap",
+	"Description": "Dissolving into pure energy, the user instantly switches places with an ally from their team. The resulting shockwave afflicts all combatants with static.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "Self",
+	"StaminaCost": 35,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

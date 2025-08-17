@@ -1,12 +1,12 @@
 {
-  "Id": 41,
-  "MoveType": "Basic",
-  "Name": "Power Ray",
-  "Description": "The user emits an intense beam of pure energy from within it's body, dealing considerable damage to it's target.",
-  "Damage": 65,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 41,
+	"MoveType": "Basic",
+	"Name": "Power Ray",
+	"Description": "The user emits an intense beam of pure energy from within it's body, dealing considerable damage to it's target.",
+	"Damage": 65,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

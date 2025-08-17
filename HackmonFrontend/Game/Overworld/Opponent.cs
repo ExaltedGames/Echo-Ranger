@@ -1,21 +1,22 @@
-using System;
-using Godot;
-using HackmonFrontend;
+using HackmonFrontend.Game.General;
+
+namespace HackmonFrontend.Game.Overworld;
 
 public partial class Opponent : CharacterBody2D
 {
+	private int _moveSpeed = 100;
+
+	private State _state = State.Wander;
+	private double _stateChangeTimer;
+	private Vector2 _wanderDirection;
+
 	private enum State
 	{
 		Idle,
 		Wander,
 		Chase,
-		Search,
+		Search
 	}
-	
-	private State _state = State.Wander;
-	private double _stateChangeTimer;
-	private Vector2 _wanderDirection;
-	private int _moveSpeed = 100;
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -29,6 +30,7 @@ public partial class Opponent : CharacterBody2D
 					_stateChangeTimer = GD.RandRange(0.5, 1.5);
 					_wanderDirection = new Vector2(GD.RandRange(-1, 1), GD.RandRange(-1, 1));
 				}
+
 				break;
 			case State.Wander:
 				_stateChangeTimer -= delta;
@@ -50,7 +52,7 @@ public partial class Opponent : CharacterBody2D
 			default:
 				throw new ArgumentOutOfRangeException();
 		}
-		
+
 		MoveAndSlide();
 	}
 

@@ -1,12 +1,12 @@
 {
-  "Id": 4,
-  "MoveType": "Plant",
-  "Name": "Pollen Burst",
-  "Description": "The user sprays it's opponent with a stream of irritant particles.",
-  "Damage": 40,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 4,
+	"MoveType": "Plant",
+	"Name": "Pollen Burst",
+	"Description": "The user sprays it's opponent with a stream of irritant particles.",
+	"Damage": 40,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

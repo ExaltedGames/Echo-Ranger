@@ -1,12 +1,12 @@
 {
-  "Id": 8,
-  "MoveType": "Spirit",
-  "Name": "Wisp",
-  "Description": "The user releases a bolt of ephereal energy upon it's foe.",
-  "Damage": 25,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 8,
+	"MoveType": "Spirit",
+	"Name": "Wisp",
+	"Description": "The user releases a bolt of ephereal energy upon it's foe.",
+	"Damage": 25,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

@@ -1,17 +1,17 @@
 {
-  "Id": 70,
-  "MoveType": "Fire",
-  "Name": "Flickering Ember",
-  "Description": "The user hurls a glowing hot ember that sticks to it's opponent's skin, leaving a nasty burn.",
-  "Damage": 20,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": [
-    {
-      "Name": "Burn",
-      "Duration": 3
-    }
-  ]
+	"Id": 70,
+	"MoveType": "Fire",
+	"Name": "Flickering Ember",
+	"Description": "The user hurls a glowing hot ember that sticks to it's opponent's skin, leaving a nasty burn.",
+	"Damage": 20,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": [
+		{
+			"Name": "Burn",
+			"Duration": 3
+		}
+	]
 }

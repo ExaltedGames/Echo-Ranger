@@ -1,21 +1,20 @@
-﻿using HackmonInternals.Enums;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
 namespace HackmonInternals.Models;
 
-[UsedImplicitly]
+[UsedImplicitly(ImplicitUseKindFlags.InstantiatedNoFixedConstructorSignature)]
 public class HackmonData
 {
-    public int Id { get; set; }
-    public string Name { get; set; } 
-    public HackmonType PrimaryType { get; set; }
-    public HackmonType? SecondaryType { get; set; }
-    public HackmonFamily Family { get; set; }
-    public Stat MaxHp { get; set; }
-    public Stat Attack { get; set; }
-    public Stat SpAttack { get; set; }
-    public Stat Defense { get; set; }
-    public Stat SpDefense { get; set; }
-    public Stat MaxStamina { get; set;}
-    public List<int[]> LearnableMoves { get; set; } 
+	public required int Id { get; set; }
+	public required string Name { get; set; }
+	public required HackmonType PrimaryType { get; set; }
+	public HackmonType? SecondaryType { get; set; }
+	public HackmonFamily Family { get; set; }
+	public required Stat MaxHp { get; set; }
+	public required Stat Attack { get; set; }
+	public required Stat SpAttack { get; set; }
+	public required Stat Defense { get; set; }
+	public required Stat SpDefense { get; set; }
+	public required Stat MaxStamina { get; set; }
+	public List<int[]> LearnableMoves { get; set; } = [];
 }

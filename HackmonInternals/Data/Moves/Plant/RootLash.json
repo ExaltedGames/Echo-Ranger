@@ -1,12 +1,12 @@
 {
-  "Id": 26,
-  "MoveType": "Plant",
-  "Name": "Root Lash",
-  "Description": "The user summons forth roots that strike at it's opponent.",
-  "Damage": 25,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 26,
+	"MoveType": "Plant",
+	"Name": "Root Lash",
+	"Description": "The user summons forth roots that strike at it's opponent.",
+	"Damage": 25,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

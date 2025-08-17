@@ -1,12 +1,12 @@
 {
-  "Id": 5,
-  "MoveType": "Earth",
-  "Name": "Pebble Volley",
-  "Description": "The user launches several high velocity pellets of stone at it's opponent.",
-  "Damage": 40,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 5,
+	"MoveType": "Earth",
+	"Name": "Pebble Volley",
+	"Description": "The user launches several high velocity pellets of stone at it's opponent.",
+	"Damage": 40,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

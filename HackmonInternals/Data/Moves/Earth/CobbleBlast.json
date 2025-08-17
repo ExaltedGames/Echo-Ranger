@@ -1,12 +1,12 @@
 {
-  "Id": 18,
-  "MoveType": "Earth",
-  "Name": "Cobble Blast",
-  "Description": "The user unleashes a blast of fragmented stone that impacts it's foe with great power.",
-  "Damage": 65,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 18,
+	"MoveType": "Earth",
+	"Name": "Cobble Blast",
+	"Description": "The user unleashes a blast of fragmented stone that impacts it's foe with great power.",
+	"Damage": 65,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

@@ -1,12 +1,12 @@
 {
-  "Id": 2,
-  "MoveType": "Fire",
-  "Name": "Singe",
-  "Description": "The user unleashes a blast of superheated air upon it's opponent.",
-  "Damage": 25,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 2,
+	"MoveType": "Fire",
+	"Name": "Singe",
+	"Description": "The user unleashes a blast of superheated air upon it's opponent.",
+	"Damage": 25,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

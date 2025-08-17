@@ -1,43 +1,43 @@
 ﻿{
-  "Id": 9,
-  "PrimaryType": "Plant",
-  "SecondaryType": "Earth",
-  "Name": "Caravinia",
-  "Family": "Beast",
-  "Description": "Caravinia dominate the forests they call home as apex predators, making use of the very trees as their own weapons. The symbiotic vegetation overtaking their body is capable of pulverizing stone in it's vice grip, but demands immense energy from it's host.",
-  "MaxHp": {
-    "BaseValue": 10,
-    "GrowthPerLevel": 0.95
-  },
-  "Attack": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.15
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.74
-  },
-  "Defense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.05
-  },
-  "SpDefense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.60
-  },
-  "Agility": {
-    "BaseValue": 2,
-    "GrowthPerLevel": 1.23
-  },
-    "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [4,10],
-    [26,1],
-    [42,15],
-    [65,15]
-  ]
+	"Id": 9,
+	"PrimaryType": "Plant",
+	"SecondaryType": "Earth",
+	"Name": "Caravinia",
+	"Family": "Beast",
+	"Description": "Caravinia dominate the forests they call home as apex predators, making use of the very trees as their own weapons. The symbiotic vegetation overtaking their body is capable of pulverizing stone in it's vice grip, but demands immense energy from it's host.",
+	"MaxHp": {
+		"BaseValue": 10,
+		"GrowthPerLevel": 0.95
+	},
+	"Attack": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.15
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.74
+	},
+	"Defense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.05
+	},
+	"SpDefense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.60
+	},
+	"Agility": {
+		"BaseValue": 2,
+		"GrowthPerLevel": 1.23
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[4, 10],
+		[26, 1],
+		[42, 15],
+		[65, 15]
+	]
 }

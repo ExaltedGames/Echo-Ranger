@@ -1,12 +1,12 @@
 {
-  "Id": 38,
-  "MoveType": "Earth",
-  "Name": "Clobber",
-  "Description": "The user strikes it's foe with it's hard body.",
-  "Damage": 25,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 38,
+	"MoveType": "Earth",
+	"Name": "Clobber",
+	"Description": "The user strikes it's foe with it's hard body.",
+	"Damage": 25,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

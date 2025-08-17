@@ -1,12 +1,12 @@
 {
-  "Id": 31,
-  "MoveType": "Mech",
-  "Name": "Steel Barrage",
-  "Description": "The user shoots a volley of metal rivets at it's foe.",
-  "Damage": 40,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 31,
+	"MoveType": "Mech",
+	"Name": "Steel Barrage",
+	"Description": "The user shoots a volley of metal rivets at it's foe.",
+	"Damage": 40,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

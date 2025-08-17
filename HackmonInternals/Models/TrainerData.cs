@@ -2,5 +2,5 @@
 
 public class TrainerData
 {
-    public List<HackmonInstance> CurrentParty { get; set; } = [];
+	public List<HackmonInstance> CurrentParty { get; set; } = [];
 }

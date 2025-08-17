@@ -1,17 +1,17 @@
 {
-  "Id": 12,
-  "MoveType": "Chem",
-  "Name": "Venom Cloud",
-  "Description": "The user releases a cloud of poison around itself, afflicting all targets with poison.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "Multi",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": [
-    {
-      "Name": "Poison",
-      "Duration": 5
-    }
-  ]
+	"Id": 12,
+	"MoveType": "Chem",
+	"Name": "Venom Cloud",
+	"Description": "The user releases a cloud of poison around itself, afflicting all targets with poison.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "Multi",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": [
+		{
+			"Name": "Poison",
+			"Duration": 5
+		}
+	]
 }

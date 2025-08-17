@@ -2,15 +2,15 @@ namespace HackmonInternals.Battle;
 
 public abstract class InputNegotiator
 {
-    public abstract bool InputsReady { get; protected set; }
-    
-    public abstract List<TurnInput> GetAllInputs();
+	public abstract bool InputsReady { get; protected set; }
 
-    public virtual void PlayerAInput()
-    {
-    }
+	public abstract List<TurnInput> GetAllInputs();
 
-    public virtual void PlayerBInput()
-    {
-    }
+	public virtual void PlayerAInput()
+	{
+	}
+
+	public virtual void PlayerBInput()
+	{
+	}
 }

@@ -1,12 +1,12 @@
 {
-  "Id": 46,
-  "MoveType": "Chem",
-  "Name": "Toxin Rush",
-  "Description": "The user secretes immense amounts of toxins across it's body before slamming into it's foe.",
-  "Damage": 65,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 46,
+	"MoveType": "Chem",
+	"Name": "Toxin Rush",
+	"Description": "The user secretes immense amounts of toxins across it's body before slamming into it's foe.",
+	"Damage": 65,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }
