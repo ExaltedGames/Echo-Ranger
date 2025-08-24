@@ -1,12 +1,12 @@
 {
-  "ID": 34,
-  "MoveType": "Fire",
-  "Name": "Superheat",
-  "Description": "The user draws upon it's built up energy to unleash unbridled heat into the earth, and activating the Scorched Earth arena effect for 4 turns. Duration is doubled and all targets burned if the user has Charge.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "None",
-  "StaminaCost": 50,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 34,
+	"MoveType": "Fire",
+	"Name": "Superheat",
+	"Description": "The user draws upon it's built up energy to unleash unbridled heat into the earth, and activating the Scorched Earth arena effect for 4 turns. Duration is doubled and all targets burned if the user has Charge.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "None",
+	"StaminaCost": 50,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

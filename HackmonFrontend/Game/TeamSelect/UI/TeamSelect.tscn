@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b700ovjp5wi7s"]
+
+[ext_resource type="Texture2D" uid="uid://cxoc278fjd7bd" path="res://Assets/UI/Border.png" id="1_56b6f"]
+[ext_resource type="PackedScene" uid="uid://k4a0pmgf80o0" path="res://Game/TeamSelect/UI/TeamSummary.tscn" id="3_1mfxt"]
+[ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.413348, 0.412476)
+texture = ExtResource("1_56b6f")
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 1002.0
+offset_top = 497.0
+offset_right = 1108.0
+offset_bottom = 603.0
+texture_normal = ExtResource("3_472rb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="TeamSummary" parent="." instance=ExtResource("3_1mfxt")]
+offset_left = 52.0
+offset_top = 109.0
+offset_right = 371.0
+offset_bottom = 418.0
+
+[node name="TeamSummary2" parent="." instance=ExtResource("3_1mfxt")]
+offset_left = 406.0
+offset_top = 114.0
+offset_right = 725.0
+offset_bottom = 423.0
+
+[node name="TeamSummary3" parent="." instance=ExtResource("3_1mfxt")]
+offset_left = 771.0
+offset_top = 109.0
+offset_right = 1090.0
+offset_bottom = 418.0

@@ -1,17 +1,17 @@
 {
-  "ID": 36,
-  "MoveType": "Mech",
-  "Name": "Drill Break",
-  "Description": "Spinning an appendage at high speed, the user strikes their foe with tremendous velocity, piercing their defenses.",
-  "Damage": 30,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 25,
-  "UserStatuses": [],
-  "TargetStatuses": [
-    {
-      "Name": "DefenseDown",
-      "Duration": -1
-    }
-  ]
+	"Id": 36,
+	"MoveType": "Mech",
+	"Name": "Drill Break",
+	"Description": "Spinning an appendage at high speed, the user strikes their foe with tremendous velocity, piercing their defenses.",
+	"Damage": 30,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 25,
+	"UserStatuses": [],
+	"TargetStatuses": [
+		{
+			"Name": "DefenseDown",
+			"Duration": -1
+		}
+	]
 }

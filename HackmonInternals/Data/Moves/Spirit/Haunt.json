@@ -1,12 +1,12 @@
 {
-  "ID": 30,
-  "MoveType": "Spirit",
-  "Name": "Haunt",
-  "Description": "The user tackles it's foe with dark intent that harms the spirit.",
-  "Damage": 40,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 30,
+	"MoveType": "Spirit",
+	"Name": "Haunt",
+	"Description": "The user tackles it's foe with dark intent that harms the spirit.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://dw1lrstaeowqs"]
+
+[ext_resource type="Script" uid="uid://c40u0ndqu86dy" path="res://Game/Battle/UI/BattlerUI.cs" id="1_vysyo"]
+[ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_3gx2m"]
+[ext_resource type="PackedScene" uid="uid://c33w73ns7f74g" path="res://Game/Battle/UI/AilmentNode.tscn" id="2_qeg0h"]
+[ext_resource type="Texture2D" uid="uid://dxrbn6rufp1dl" path="res://Assets/UI/Icons/Status/BurnIcon.svg" id="4_1fw8h"]
+[ext_resource type="Texture2D" uid="uid://ds0am2wq56e2i" path="res://Assets/UI/Icons/Status/AtkUpIcon.svg" id="5_wv0n7"]
+[ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="7_41vfo"]
+[ext_resource type="Texture2D" uid="uid://bw2xgvvwta8ei" path="res://Assets/UI/PlayerStatusBar.png" id="8_i2s2i"]
+[ext_resource type="Texture2D" uid="uid://0fabng76lfjg" path="res://Assets/UI/IconSocket.png" id="9_t752p"]
+[ext_resource type="Texture2D" uid="uid://cvktiuklx2v8t" path="res://Assets/UI/StaminaTexture.png" id="10_h5044"]
+[ext_resource type="Texture2D" uid="uid://dv84vacji8wds" path="res://Assets/UI/StaminaTextureDepleted.png" id="10_syb43"]
+[ext_resource type="Texture2D" uid="uid://wtpaw55van05" path="res://Assets/UI/HealthTextureDepleted.png" id="11_0km60"]
+[ext_resource type="Texture2D" uid="uid://do8kem16ftmnn" path="res://Assets/UI/HealthTexture.png" id="11_hl735"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
+
+[node name="BattlerUI" type="Panel"]
+offset_left = -92.0
+offset_top = -99.0
+offset_right = 83.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nm5n3")
+script = ExtResource("1_vysyo")
+
+[node name="Status" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="Status"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -43.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 13
+text = "Name"
+fit_content = true
+scroll_active = false
+
+[node name="Ailments" type="HBoxContainer" parent="Status"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_right = 5.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(90, 9)
+size_flags_stretch_ratio = 8.96
+
+[node name="Poison" parent="Status/Ailments" instance=ExtResource("2_qeg0h")]
+layout_mode = 2
+Sprite = ExtResource("2_3gx2m")
+
+[node name="Burn" parent="Status/Ailments" instance=ExtResource("2_qeg0h")]
+layout_mode = 2
+Sprite = ExtResource("4_1fw8h")
+
+[node name="AttackUp" parent="Status/Ailments" instance=ExtResource("2_qeg0h")]
+layout_mode = 2
+Sprite = ExtResource("5_wv0n7")
+
+[node name="PlayerStatusBar" type="Sprite2D" parent="Status"]
+position = Vector2(100.9, 84.1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_i2s2i")
+
+[node name="PrimarySocket" type="Sprite2D" parent="Status"]
+z_index = 1
+position = Vector2(-10, 84)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_t752p")
+
+[node name="PrimaryType" type="Sprite2D" parent="Status/PrimarySocket"]
+z_index = 1
+position = Vector2(1.43051e-05, 4.57764e-05)
+texture = ExtResource("7_41vfo")
+
+[node name="SecondarySocket" type="Sprite2D" parent="Status"]
+visible = false
+z_index = 1
+position = Vector2(2, 93)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_t752p")
+
+[node name="SecondaryType" type="Sprite2D" parent="Status/SecondarySocket"]
+z_index = 1
+texture = ExtResource("7_41vfo")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="Status"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 90.0
+offset_right = 1080.0
+offset_bottom = 130.0
+scale = Vector2(0.2, 0.2)
+value = 100.0
+texture_under = ExtResource("10_syb43")
+texture_progress = ExtResource("10_h5044")
+
+[node name="HealthBar" type="TextureProgressBar" parent="Status"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -6.0
+offset_top = 73.0
+offset_right = 1116.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+value = 100.0
+texture_under = ExtResource("11_0km60")
+texture_progress = ExtResource("11_hl735")

@@ -1,41 +1,41 @@
 ﻿{
-  "ID": 11,
-  "PrimaryType": "Basic",
-  "Name": "Tuberam",
-  "Family": "Beast",
-  "Description": "As a capratato's energy reserves are increasingly consumed through conflict, their body begins to adapt for aggression by becoming a tuberam. Dense patches of fur emerge from their otherwise velvety coat, serving as effective armor.",
-  "MaxHp": {
-    "BaseValue": 10,
-    "GrowthPerLevel": 1.15
-  },
-  "Attack": {
-    "BaseValue": 3,
-    "GrowthPerLevel": 0.72
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.34
-  },
-  "Defense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.95
-  },
-  "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.54
-  },
-  "Agility": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.55
-  },
-  "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [14,5],
-    [24,25],
-    [40,-1]
-  ]
+	"Id": 11,
+	"PrimaryType": "Basic",
+	"Name": "Tuberam",
+	"Family": "Beast",
+	"Description": "As a capratato's energy reserves are increasingly consumed through conflict, their body begins to adapt for aggression by becoming a tuberam. Dense patches of fur emerge from their otherwise velvety coat, serving as effective armor.",
+	"MaxHp": {
+		"BaseValue": 10,
+		"GrowthPerLevel": 1.15
+	},
+	"Attack": {
+		"BaseValue": 3,
+		"GrowthPerLevel": 0.72
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.34
+	},
+	"Defense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.95
+	},
+	"SpDefense": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.54
+	},
+	"Agility": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.55
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[14, 5],
+		[24, 25],
+		[40, -1]
+	]
 }

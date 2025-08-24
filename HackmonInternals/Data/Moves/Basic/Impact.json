@@ -1,12 +1,12 @@
 {
-  "ID": 51,
-  "MoveType": "Basic",
-  "Name": "Unyielding Impact",
-  "Description": "The user puts their all into delivering a powerful blow to their opponent.",
-  "Damage": 80,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 50,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 51,
+	"MoveType": "Basic",
+	"Name": "Unyielding Impact",
+	"Description": "The user puts their all into delivering a powerful blow to their opponent.",
+	"Damage": 80,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 50,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

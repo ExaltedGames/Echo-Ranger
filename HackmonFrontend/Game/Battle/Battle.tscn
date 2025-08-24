@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://dgnh5nicish3d"]
+
+[ext_resource type="Script" uid="uid://bokgfr8tytri2" path="res://Game/Battle/Battle.cs" id="1_w30jk"]
+[ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Game/Battle/UI/BattlerUI.tscn" id="2_1nxov"]
+[ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://Game/Battle/UI/BattlerStage.tscn" id="2_8ceye"]
+[ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="2_v5ddm"]
+[ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUI.cs" id="4_layk2"]
+[ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/UI/Textbox.tscn" id="6_oyx74"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_w30jk")
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="OpponentOp" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="OpponentOp"]
+position = Vector2(1009, 240)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_v5ddm")
+
+[node name="BattlerStage" parent="." instance=ExtResource("2_8ceye")]
+position = Vector2(250, 360)
+scale = Vector2(2.5, 2.5)
+
+[node name="OpponentStage" parent="." instance=ExtResource("2_8ceye")]
+position = Vector2(900, 360)
+scale = Vector2(2.5, 2.5)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionSelectUI" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_layk2")
+
+[node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI"]
+layout_direction = 1
+layout_mode = 2
+offset_left = 383.0
+offset_top = 490.0
+offset_right = 507.0
+offset_bottom = 556.0
+scale = Vector2(3, 2)
+alignment = 1
+
+[node name="TopMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
+layout_mode = 2
+
+[node name="Move1" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
+layout_mode = 2
+text = "Move1"
+
+[node name="Move2" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
+layout_mode = 2
+text = "Move2"
+
+[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
+layout_mode = 2
+
+[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move3"
+
+[node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move4"
+
+[node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 486.0
+offset_right = 377.0
+offset_bottom = 637.0
+mouse_force_pass_scroll_events = false
+mouse_default_cursor_shape = 0
+text = "Move information goes here."
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+
+[node name="Button" type="Button" parent="UI/ActionSelectUI"]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 532.0
+offset_right = 1152.0
+offset_bottom = 648.0
+text = "Switch Echo"
+
+[node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = -138.0
+offset_right = 225.0
+offset_bottom = -52.0
+scale = Vector2(2, 2)
+
+[node name="OpponentUI" parent="UI" instance=ExtResource("2_1nxov")]
+layout_mode = 0
+offset_left = 1102.0
+offset_top = -138.0
+offset_right = 1277.0
+offset_bottom = -52.0
+scale = Vector2(-2, 2)
+Flipped = true
+
+[node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
+visible = false

@@ -1,17 +1,17 @@
 ﻿{
-  "ID": 0,
-  "MoveType": "Basic",
-  "Name": "Test Move",
-  "Description": "This is a test move.",
-  "Damage": 42,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": [
-    {
-      "Name": "Poison",
-      "Duration": 5
-    }
-  ]
+	"Id": 0,
+	"MoveType": "Basic",
+	"Name": "Test Move",
+	"Description": "This is a test move.",
+	"Damage": 42,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": [
+		{
+			"Name": "Poison",
+			"Duration": 5
+		}
+	]
 }

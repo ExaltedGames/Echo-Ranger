@@ -1,41 +1,41 @@
 ﻿{
-  "ID": 12,
-  "PrimaryType": "Basic",
-  "Name": "Rhizoram",
-  "Family": "Beast",
-  "Description": "The body of a rhizoram is hardened through countless battles won through strength and perseverance. The soft fur that once coated their bodies is now all but gone, replaced with dense plates of fur akin to steel fibers. Rhizoram typically spend their day vigilantly watching over a herd of Capratato.",
-  "MaxHp": {
-    "BaseValue": 10,
-    "GrowthPerLevel": 1.30
-  },
-  "Attack": {
-    "BaseValue": 3,
-    "GrowthPerLevel": 0.97
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.69
-  },
-  "Defense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.45
-  },
-  "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.59
-  },
-  "Agility": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.75
-  },
-  "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [14,5],
-    [24,25],
-    [40,-1]
-  ]
+	"Id": 12,
+	"PrimaryType": "Basic",
+	"Name": "Rhizoram",
+	"Family": "Beast",
+	"Description": "The body of a rhizoram is hardened through countless battles won through strength and perseverance. The soft fur that once coated their bodies is now all but gone, replaced with dense plates of fur akin to steel fibers. Rhizoram typically spend their day vigilantly watching over a herd of Capratato.",
+	"MaxHp": {
+		"BaseValue": 10,
+		"GrowthPerLevel": 1.30
+	},
+	"Attack": {
+		"BaseValue": 3,
+		"GrowthPerLevel": 0.97
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.69
+	},
+	"Defense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.45
+	},
+	"SpDefense": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.59
+	},
+	"Agility": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.75
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[14, 5],
+		[24, 25],
+		[40, -1]
+	]
 }

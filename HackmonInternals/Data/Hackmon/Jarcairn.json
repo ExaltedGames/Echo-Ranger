@@ -1,44 +1,44 @@
 ﻿{
-  "ID": 15,
-  "PrimaryType": "Earth",
-  "SecondaryType": "Spirit",
-  "Name": "Jarcairn",
-  "Family": "Construct",
-  "Description": "TODO",
-  "MaxHp": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.65
-  },
-  "Attack": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.05
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.67
-  },
-  "Defense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.26
-  },
-  "SpDefense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 1.65
-  },
-  "Agility": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.54
-  },
-  "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [5,15],
-    [8,20],
-    [14,5],
-    [27,20],
-    [38,10]
-  ]
+	"Id": 15,
+	"PrimaryType": "Earth",
+	"SecondaryType": "Spirit",
+	"Name": "Jarcairn",
+	"Family": "Construct",
+	"Description": "TODO",
+	"MaxHp": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.65
+	},
+	"Attack": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.05
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.67
+	},
+	"Defense": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.26
+	},
+	"SpDefense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 1.65
+	},
+	"Agility": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.54
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[5, 15],
+		[8, 20],
+		[14, 5],
+		[27, 20],
+		[38, 10]
+	]
 }

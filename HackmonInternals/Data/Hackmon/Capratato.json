@@ -1,41 +1,41 @@
 ﻿{
-  "ID": 10,
-  "PrimaryType": "Basic",
-  "Name": "Capratato",
-  "Family": "Beast",
-  "Description": "The plump bodies of the capratato contain dense stores of energy gathered throughout their life to prepare for times of drought. Docile and with only thick fat for defense, they serve as tempting prey for many predators.",
-  "MaxHp": {
-    "BaseValue": 10,
-    "GrowthPerLevel": 0.90
-  },
-  "Attack": {
-    "BaseValue": 3,
-    "GrowthPerLevel": 0.47
-  },
-  "SpAttack": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.24
-  },
-  "Defense": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.45
-  },
-  "SpDefense": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0.24
-  },
-  "Agility": {
-    "BaseValue": 5,
-    "GrowthPerLevel": 0.45
-  },
-  "MaxStamina": {
-    "BaseValue": 1,
-    "GrowthPerLevel": 0
-  },
-  "LearnableMoves": [
-    [1,1],
-    [14,5],
-    [24,25],
-    [40,-1]
-  ]
+	"Id": 10,
+	"PrimaryType": "Basic",
+	"Name": "Capratato",
+	"Family": "Beast",
+	"Description": "The plump bodies of the capratato contain dense stores of energy gathered throughout their life to prepare for times of drought. Docile and with only thick fat for defense, they serve as tempting prey for many predators.",
+	"MaxHp": {
+		"BaseValue": 10,
+		"GrowthPerLevel": 0.90
+	},
+	"Attack": {
+		"BaseValue": 3,
+		"GrowthPerLevel": 0.47
+	},
+	"SpAttack": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.24
+	},
+	"Defense": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.45
+	},
+	"SpDefense": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0.24
+	},
+	"Agility": {
+		"BaseValue": 5,
+		"GrowthPerLevel": 0.45
+	},
+	"MaxStamina": {
+		"BaseValue": 1,
+		"GrowthPerLevel": 0
+	},
+	"LearnableMoves": [
+		[1, 1],
+		[14, 5],
+		[24, 25],
+		[40, -1]
+	]
 }

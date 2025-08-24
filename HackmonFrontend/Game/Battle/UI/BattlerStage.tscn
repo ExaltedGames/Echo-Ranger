@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://da67fsjnrbh8v"]
+
+[ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_qvym7"]
+[ext_resource type="Script" uid="uid://32u1ps0vm2ia" path="res://Game/Battle/UI/BattlerStage.cs" id="1_veywt"]
+[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="2_d5r1n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6vus"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d5r1n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BattlerStage" type="Node2D"]
+scale = Vector2(2.40641, 2.40641)
+script = ExtResource("1_veywt")
+
+[node name="PodiumPlaceholder" type="Sprite2D" parent="."]
+z_index = -2
+texture_filter = 1
+position = Vector2(0, 9)
+texture = ExtResource("1_qvym7")
+
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -50.9201)
+sprite_frames = SubResource("SpriteFrames_d6vus")

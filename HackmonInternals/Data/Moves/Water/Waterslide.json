@@ -1,12 +1,12 @@
 {
-  "ID": 49,
-  "MoveType": "Water",
-  "Name": "Water Slide",
-  "Description": "Coasting on a torrent of water, the user crashes into it's foe.",
-  "Damage": 65,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 49,
+	"MoveType": "Water",
+	"Name": "Water Slide",
+	"Description": "Coasting on a torrent of water, the user crashes into it's foe.",
+	"Damage": 65,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

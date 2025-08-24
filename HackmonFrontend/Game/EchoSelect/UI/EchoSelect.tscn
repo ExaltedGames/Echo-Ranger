@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3jvobfj7072s"]
+
+[ext_resource type="Texture2D" uid="uid://cxoc278fjd7bd" path="res://Assets/UI/Border.png" id="1_56b6f"]
+[ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
+[ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://Game/EchoSelect/UI/EchoSummary.tscn" id="3_686ov"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.413348, 0.412476)
+texture = ExtResource("1_56b6f")
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 1002.0
+offset_top = 497.0
+offset_right = 1108.0
+offset_bottom = 603.0
+texture_normal = ExtResource("3_472rb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="EchoStatus" parent="." instance=ExtResource("3_686ov")]
+offset_left = 175.0
+offset_top = 123.0
+offset_right = 548.0
+offset_bottom = 275.0
+
+[node name="EchoStatus2" parent="." instance=ExtResource("3_686ov")]
+offset_left = 632.0
+offset_top = 123.0
+offset_right = 1005.0
+offset_bottom = 275.0
+
+[node name="EchoStatus3" parent="." instance=ExtResource("3_686ov")]
+offset_left = 158.0
+offset_top = 359.0
+offset_right = 531.0
+offset_bottom = 511.0
+
+[node name="EchoStatus4" parent="." instance=ExtResource("3_686ov")]
+offset_left = 627.0
+offset_top = 353.0
+offset_right = 1000.0
+offset_bottom = 505.0

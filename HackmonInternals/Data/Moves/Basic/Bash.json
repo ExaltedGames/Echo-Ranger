@@ -1,12 +1,12 @@
 {
-  "ID": 1,
-  "MoveType": "Basic",
-  "Name": "Bash",
-  "Description": "The user strikes it's opponent with anything it can.",
-  "Damage": 15,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 5,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 1,
+	"MoveType": "Basic",
+	"Name": "Bash",
+	"Description": "The user strikes it's opponent with anything it can.",
+	"Damage": 15,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 5,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

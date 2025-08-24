@@ -1,12 +1,12 @@
 {
-  "ID": 43,
-  "MoveType": "Plant",
-  "Name": "Regrowth",
-  "Description": "The user consolidates it's energy to quickly regenerate it's body. Restores 75% of damage sustained from the opponent's latest attack.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "Self",
-  "StaminaCost": 50,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 43,
+	"MoveType": "Plant",
+	"Name": "Regrowth",
+	"Description": "The user consolidates it's energy to quickly regenerate it's body. Restores 75% of damage sustained from the opponent's latest attack.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "Self",
+	"StaminaCost": 50,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

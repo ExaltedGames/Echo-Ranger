@@ -1,20 +1,12 @@
-﻿using HackmonInternals.Models;
-using TurnBasedBattleSystem;
+﻿using TurnBasedBattleSystem;
 
 namespace HackmonInternals.StatusEffects;
 
-public abstract class Status : IStatus
+public abstract class Status(HackmonInstance unit, int stacks) : IStatus
 {
-   public int Stacks;
-   public string Name { get; set; }
-   public HackmonInstance Unit { get; set; }
-   public abstract void Remove(int stacks);
-   public abstract void Add(int stacks);
-
-   protected Status(HackmonInstance unit, int stacks)
-   {
-      Unit = unit;
-      Stacks = stacks;
-   }
-
+	public string Name { get; set; } = null!;
+	public HackmonInstance Unit { get; set; } = unit;
+	public int Stacks = stacks;
+	public abstract void Remove(int stacks);
+	public abstract void Add(int stacks);
 }

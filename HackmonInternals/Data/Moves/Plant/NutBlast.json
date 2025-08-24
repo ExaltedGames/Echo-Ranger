@@ -1,12 +1,12 @@
 {
-  "ID": 17,
-  "MoveType": "Plant",
-  "Name": "Nut Blast",
-  "Description": "The user launches a cluster of hard seeds that explode on impact, dealing heavy damage to it's opponent.",
-  "Damage": 65,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 17,
+	"MoveType": "Plant",
+	"Name": "Nut Blast",
+	"Description": "The user launches a cluster of hard seeds that explode on impact, dealing heavy damage to it's opponent.",
+	"Damage": 65,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

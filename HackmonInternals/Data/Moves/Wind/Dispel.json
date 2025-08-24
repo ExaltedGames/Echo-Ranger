@@ -1,12 +1,12 @@
 {
-  "ID": 64,
-  "MoveType": "Wind",
-  "Name": "Dispelling Wind",
-  "Description": "The user works to bring order to the battlefield with powerful gusts of wind. Reduces duration of all ongoing battlefield effects by 4 turns.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "All",
-  "StaminaCost": 45,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 64,
+	"MoveType": "Wind",
+	"Name": "Dispelling Wind",
+	"Description": "The user works to bring order to the battlefield with powerful gusts of wind. Reduces duration of all ongoing battlefield effects by 4 turns.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "All",
+	"StaminaCost": 45,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

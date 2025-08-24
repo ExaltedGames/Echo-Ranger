@@ -1,12 +1,12 @@
 {
-  "ID": 9,
-  "MoveType": "Mech",
-  "Name": "Piston",
-  "Description": "The user quickly strikes it's foe with machine-like force and efficiency.",
-  "Damage": 25,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 9,
+	"MoveType": "Mech",
+	"Name": "Piston",
+	"Description": "The user quickly strikes it's foe with machine-like force and efficiency.",
+	"Damage": 25,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

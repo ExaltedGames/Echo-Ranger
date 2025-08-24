@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <LangVersion>latest</LangVersion>
@@ -14,7 +14,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\TurnBasedBattleSystem\TurnBasedBattleSystem\TurnBasedBattleSystem.csproj" />
+        <ProjectReference Include="..\TurnBasedBattleSystem\TurnBasedBattleSystem\TurnBasedBattleSystem.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2025.2.0"/>
     </ItemGroup>
 
 </Project>
