@@ -12,7 +12,4 @@
         <None Include="**/*.tscn"/>
         <ProjectReference Include="..\HackmonInternals\HackmonInternals.csproj"/>
     </ItemGroup>
-    <ItemGroup>
-        <Content Include="ORGANIZATION.md"/>
-    </ItemGroup>
 </Project>

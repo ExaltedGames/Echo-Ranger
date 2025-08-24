@@ -1,1 +1,4 @@
-# Defer to the artists for now
+# Organization Rules
+
+## Defer to the artists for now
+
