@@ -8,9 +8,10 @@
 		"Wind": 1.0,
 		"Jolt": 1.0,
 		"Spirit": 0.0,
-		"Mech": 0.6,
+		"Metal": 0.6,
 		"Chem": 1.0,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
 	"Fire": {
 		"Basic": 1.0,
@@ -21,9 +22,10 @@
 		"Wind": 1.0,
 		"Jolt": 1.0,
 		"Spirit": 1.0,
-		"Mech": 1.0,
+		"Metal": 1.0,
 		"Chem": 1.2,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
 	"Water": {
 		"Basic": 1.0,
@@ -34,9 +36,10 @@
 		"Wind": 1.0,
 		"Jolt": 0.6,
 		"Spirit": 1.0,
-		"Mech": 1.0,
+		"Metal": 1.0,
 		"Chem": 1.2,
-		"Frost": 0.6
+		"Frost": 0.6,
+		"Astral": 1.0
 	},
 	"Plant": {
 		"Basic": 1.0,
@@ -47,9 +50,10 @@
 		"Wind": 1.0,
 		"Jolt": 1.0,
 		"Spirit": 1.0,
-		"Mech": 1.0,
+		"Metal": 1.0,
 		"Chem": 1.0,
-		"Frost": 0.6
+		"Frost": 0.6,
+		"Astral": 1.0
 	},
 	"Earth": {
 		"Basic": 1.0,
@@ -60,9 +64,10 @@
 		"Wind": 0.6,
 		"Jolt": 1.2,
 		"Spirit": 1.0,
-		"Mech": 0.6,
+		"Metal": 0.6,
 		"Chem": 1.2,
-		"Frost": 1.2
+		"Frost": 1.2,
+		"Astral": 1.0
 	},
 	"Wind": {
 		"Basic": 1.0,
@@ -73,9 +78,10 @@
 		"Wind": 0.6,
 		"Jolt": 1.0,
 		"Spirit": 1.0,
-		"Mech": 1.0,
+		"Metal": 1.0,
 		"Chem": 1.0,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
 	"Jolt": {
 		"Basic": 1.0,
@@ -86,9 +92,10 @@
 		"Wind": 1.0,
 		"Jolt": 0.6,
 		"Spirit": 1.0,
-		"Mech": 1.2,
+		"Metal": 1.2,
 		"Chem": 1.0,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
 	"Spirit": {
 		"Basic": 0.0,
@@ -99,11 +106,12 @@
 		"Wind": 1.0,
 		"Jolt": 1.0,
 		"Spirit": 1.2,
-		"Mech": 1.2,
+		"Metal": 1.2,
 		"Chem": 0.6,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
-	"Mech": {
+	"Metal": {
 		"Basic": 1.2,
 		"Fire": 1.0,
 		"Water": 1.0,
@@ -112,9 +120,10 @@
 		"Wind": 1.0,
 		"Jolt": 0.6,
 		"Spirit": 0.6,
-		"Mech": 1.0,
+		"Metal": 1.0,
 		"Chem": 1.0,
-		"Frost": 1.2
+		"Frost": 1.2,
+		"Astral": 1.0
 	},
 	"Chem": {
 		"Basic": 1.0,
@@ -125,9 +134,10 @@
 		"Wind": 1.2,
 		"Jolt": 1.0,
 		"Spirit": 1.2,
-		"Mech": 0.0,
+		"Metal": 0.0,
 		"Chem": 0.0,
-		"Frost": 1.0
+		"Frost": 1.0,
+		"Astral": 1.0
 	},
 	"Frost": {
 		"Basic": 1.0,
@@ -138,8 +148,23 @@
 		"Wind": 1.0,
 		"Jolt": 1.0,
 		"Spirit": 1.0,
-		"Mech": 0.6,
+		"Metal": 0.6,
 		"Chem": 1.0,
-		"Frost": 0.6
+		"Frost": 0.6,
+		"Astral": 1.0
+	},
+	"Astral": {
+		"Basic": 1.0,
+		"Fire": 1.0,
+		"Water": 1.0,
+		"Plant": 1.0,
+		"Earth": 1.0,
+		"Wind": 1.0,
+		"Jolt": 1.0,
+		"Spirit": 1.0,
+		"Metal": 1.0,
+		"Chem": 1.0,
+		"Frost": 1.0,
+		"Astral": 1.0
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"Id": 69,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Hydraulic Crush",
 	"Description": "The user catches it's foe in an unbreakable grasp, before slowly crushing the life out of them. Damage doubles each time the move is used in succession. This move always goes last.",
 	"Damage": 15,

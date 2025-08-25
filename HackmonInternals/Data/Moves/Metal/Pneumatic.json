@@ -1,6 +1,6 @@
 {
 	"Id": 56,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Pneumatic Strike",
 	"Description": "The user delivers a bone shattering blow to it's opponent using i's high powered machinery.",
 	"Damage": 80,

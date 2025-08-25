@@ -1,6 +1,6 @@
 {
 	"Id": 36,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Drill Break",
 	"Description": "Spinning an appendage at high speed, the user strikes their foe with tremendous velocity, piercing their defenses.",
 	"Damage": 30,

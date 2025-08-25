@@ -1,6 +1,6 @@
 {
 	"Id": 22,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Torque",
 	"Description": "The user crushes it's foe with it's powerful machinery.",
 	"Damage": 50,

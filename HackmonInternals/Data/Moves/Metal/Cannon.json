@@ -1,6 +1,6 @@
 {
 	"Id": 44,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Machine Cannon",
 	"Description": "The user launches a part of itself at incredibly high speeds to impact it's foe from a distance.",
 	"Damage": 65,

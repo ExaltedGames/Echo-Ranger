@@ -1,6 +1,6 @@
 {
 	"Id": 31,
-	"MoveType": "Mech",
+	"MoveType": "Metal",
 	"Name": "Steel Barrage",
 	"Description": "The user shoots a volley of metal rivets at it's foe.",
 	"Damage": 40,
