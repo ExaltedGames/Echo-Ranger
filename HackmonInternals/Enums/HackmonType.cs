@@ -13,7 +13,8 @@ public enum HackmonType
 	Wind,
 	Jolt,
 	Spirit,
-	Mech,
+	Metal,
 	Chem,
-	Frost
+	Frost,
+	Astral
 }
