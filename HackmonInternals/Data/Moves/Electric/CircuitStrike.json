@@ -1,12 +1,12 @@
 {
-  "ID": 29,
-  "MoveType": "Jolt",
-  "Name": "Circuit Strike",
-  "Description": "The user makes physical contact with it's opponent, allowing their electrical charge to surge into their foe.",
-  "Damage": 40,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 29,
+	"MoveType": "Jolt",
+	"Name": "Circuit Strike",
+	"Description": "The user makes physical contact with it's opponent, allowing their electrical charge to surge into their foe.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

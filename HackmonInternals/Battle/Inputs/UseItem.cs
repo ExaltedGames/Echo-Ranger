@@ -1,9 +1,7 @@
-﻿using HackmonInternals.Models;
-
-namespace HackmonInternals.Battle.Inputs;
+﻿namespace HackmonInternals.Battle.Inputs;
 
 public class UseItem : TurnInput
 {
-   public HackmonInstance Target { get; set; } 
-   public int ItemID { get; set; }
+	public HackmonInstance Target { get; set; }
+	public int ItemId { get; set; }
 }

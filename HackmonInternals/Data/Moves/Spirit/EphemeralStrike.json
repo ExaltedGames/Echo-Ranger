@@ -1,12 +1,12 @@
 {
-  "ID": 48,
-  "MoveType": "Spirit",
-  "Name": "Ephemeral Strike",
-  "Description": "The user briefly phases through the spiritual realm to directly attack the target's life force.",
-  "Damage": 65,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 48,
+	"MoveType": "Spirit",
+	"Name": "Ephemeral Strike",
+	"Description": "The user briefly phases through the spiritual realm to directly attack the target's life force.",
+	"Damage": 65,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

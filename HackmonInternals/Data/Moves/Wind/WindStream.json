@@ -1,12 +1,12 @@
 {
-  "ID": 19,
-  "MoveType": "Wind",
-  "Name": "Wind Stream",
-  "Description": "The user unleashes a powerful stream of air that crashes into the foe with great force.",
-  "Damage": 50,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 25,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 19,
+	"MoveType": "Wind",
+	"Name": "Wind Stream",
+	"Description": "The user unleashes a powerful stream of air that crashes into the foe with great force.",
+	"Damage": 50,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 25,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

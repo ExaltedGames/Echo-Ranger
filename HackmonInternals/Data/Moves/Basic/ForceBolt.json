@@ -1,12 +1,12 @@
 {
-  "ID": 24,
-  "MoveType": "Basic",
-  "Name": "Force Bolt",
-  "Description": "The user releases a bolt of energy that damages it's foe through sheer force of will.",
-  "Damage": 40,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 24,
+	"MoveType": "Basic",
+	"Name": "Force Bolt",
+	"Description": "The user releases a bolt of energy that damages it's foe through sheer force of will.",
+	"Damage": 40,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

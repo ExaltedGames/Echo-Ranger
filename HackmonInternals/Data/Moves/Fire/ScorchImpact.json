@@ -1,12 +1,12 @@
 {
-  "ID": 47,
-  "MoveType": "Fire",
-  "Name": "Scorching Impact",
-  "Description": "The user bursts forward to crash into it's foe, igniting the surrounding air upon collision.",
-  "Damage": 65,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 40,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 47,
+	"MoveType": "Fire",
+	"Name": "Scorching Impact",
+	"Description": "The user bursts forward to crash into it's foe, igniting the surrounding air upon collision.",
+	"Damage": 65,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

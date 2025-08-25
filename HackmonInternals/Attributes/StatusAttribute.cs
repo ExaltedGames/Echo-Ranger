@@ -1,12 +1,10 @@
+using JetBrains.Annotations;
+
 namespace HackmonInternals.Attributes;
 
-[System.AttributeUsage(System.AttributeTargets.Method)]
-public class StatusAttribute : System.Attribute
+[AttributeUsage(AttributeTargets.Method)]
+[MeansImplicitUse]
+public class StatusAttribute(string name) : Attribute
 {
-    public string Name;
-
-    public StatusAttribute(string name)
-    {
-        Name = name;
-    }
+	public readonly string Name = name;
 }

@@ -1,12 +1,10 @@
-using System;
-
-namespace Hackmon.Debugging;
+namespace HackmonFrontend.Debugging;
 
 public static class DebugPlug
 {
-    public static void Init()
-    {
-        Console.SetOut(new GDWriter());
-        Console.SetError(new GDErrWriter());
-    }
+	public static void Init()
+	{
+		Console.SetOut(new GdWriter());
+		Console.SetError(new GdErrWriter());
+	}
 }

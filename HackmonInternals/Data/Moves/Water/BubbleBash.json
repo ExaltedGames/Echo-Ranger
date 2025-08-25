@@ -1,12 +1,12 @@
 {
-  "ID": 25,
-  "MoveType": "Water",
-  "Name": "Bubble Bash",
-  "Description": "Forming a coating of water around itself, the user gathers mass before smashing into it's foe.",
-  "Damage": 40,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 25,
+	"MoveType": "Water",
+	"Name": "Bubble Bash",
+	"Description": "Forming a coating of water around itself, the user gathers mass before smashing into it's foe.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

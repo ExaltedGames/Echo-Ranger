@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://c33w73ns7f74g"]
+
+[ext_resource type="Script" uid="uid://dcem672vrwkke" path="res://Game/Battle/UI/AilmentNode.cs" id="1_gfwqr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1hbi"]
+font_size = 256
+
+[node name="AilmentNode" type="Control"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 3
+anchor_right = 0.016
+anchor_bottom = 0.028
+offset_right = -0.432001
+offset_bottom = -0.144001
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(9, 9)
+script = ExtResource("1_gfwqr")
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_right = 18.0
+offset_bottom = 18.0
+pivot_offset = Vector2(9, 9)
+
+[node name="Sprite" type="TextureRect" parent="Container"]
+layout_mode = 2
+tooltip_text = "Poisoned."
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Stacks" type="Label" parent="Container/Sprite"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_right = 407.0
+offset_bottom = 338.0
+scale = Vector2(0.04, 0.04)
+text = "0"
+label_settings = SubResource("LabelSettings_h1hbi")
+horizontal_alignment = 2

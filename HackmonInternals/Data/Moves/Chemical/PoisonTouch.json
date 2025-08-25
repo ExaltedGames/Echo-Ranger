@@ -1,12 +1,12 @@
 {
-  "ID": 32,
-  "MoveType": "Chem",
-  "Name": "Poison Touch",
-  "Description": "The user makes physical contact with it's foe, harming them with a poisonous coating.",
-  "Damage": 40,
-  "AttackType": "Physical",
-  "Target": "Single",
-  "StaminaCost": 20,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 32,
+	"MoveType": "Chem",
+	"Name": "Poison Touch",
+	"Description": "The user makes physical contact with it's foe, harming them with a poisonous coating.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

@@ -1,13 +1,6 @@
-using HackmonInternals.Models;
-
 namespace HackmonInternals.Events;
 
-public class HackmonDeathEvent : HackmonBattleEvent
+public class HackmonDeathEvent(HackmonInstance unit) : HackmonBattleEvent
 {
-   public HackmonDeathEvent(HackmonInstance unit)
-   {
-      Unit = unit;
-   }
-   
-   public HackmonInstance Unit { get; set; }
+	public HackmonInstance Unit { get; set; } = unit;
 }

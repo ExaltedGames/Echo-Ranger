@@ -1,12 +1,12 @@
 {
-  "ID": 7,
-  "MoveType": "Jolt",
-  "Name": "Zap",
-  "Description": "The user shocks it's foe with built up electricity.",
-  "Damage": 25,
-  "AttackType": "Special",
-  "Target": "Single",
-  "StaminaCost": 10,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 7,
+	"MoveType": "Jolt",
+	"Name": "Zap",
+	"Description": "The user shocks it's foe with built up electricity.",
+	"Damage": 25,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 10,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }

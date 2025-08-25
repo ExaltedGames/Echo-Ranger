@@ -3,9 +3,4 @@
 namespace HackmonInternals.Enums;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
-public enum AttackType
-{
-    None,
-    Special,
-    Physical
-}
+public enum AttackType { None, Special, Physical }

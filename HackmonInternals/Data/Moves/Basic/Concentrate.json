@@ -1,17 +1,17 @@
 {
-  "ID": 33,
-  "MoveType": "Basic",
-  "Name": "Concentrate",
-  "Description": "The user does not make a move, and focuses on gathering significant energy within itself. Raises user's charge status by 2.",
-  "Damage": 0,
-  "AttackType": "None",
-  "Target": "Self",
-  "StaminaCost": 25,
-  "UserStatuses": [
-    {
-      "Name": "Charge",
-      "Duration": -1
-    }
-  ],
-  "TargetStatuses": []
+	"Id": 33,
+	"MoveType": "Basic",
+	"Name": "Concentrate",
+	"Description": "The user does not make a move, and focuses on gathering significant energy within itself. Raises user's charge status by 2.",
+	"Damage": 0,
+	"AttackType": "None",
+	"Target": "Self",
+	"StaminaCost": 25,
+	"UserStatuses": [
+		{
+			"Name": "Charge",
+			"Duration": -1
+		}
+	],
+	"TargetStatuses": []
 }

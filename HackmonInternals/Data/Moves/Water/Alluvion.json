@@ -1,12 +1,12 @@
 {
-  "ID": 61,
-  "MoveType": "Water",
-  "Name": "Alluvion",
-  "Description": "Drawing up hidden reserves of water from beneath the earth, the user summons a flood of water to drown the battlefield. If Downpour is currently in effect, damage is doubled.",
-  "Damage": 50,
-  "AttackType": "Special",
-  "Target": "All",
-  "StaminaCost": 45,
-  "UserStatuses": [],
-  "TargetStatuses": []
+	"Id": 61,
+	"MoveType": "Water",
+	"Name": "Alluvion",
+	"Description": "Drawing up hidden reserves of water from beneath the earth, the user summons a flood of water to drown the battlefield. If Downpour is currently in effect, damage is doubled.",
+	"Damage": 50,
+	"AttackType": "Special",
+	"Target": "All",
+	"StaminaCost": 45,
+	"UserStatuses": [],
+	"TargetStatuses": []
 }
