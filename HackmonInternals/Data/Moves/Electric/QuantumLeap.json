@@ -1,6 +1,6 @@
 {
 	"Id": 72,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Quantum Leap",
 	"Description": "Dissolving into pure energy, the user instantly switches places with an ally from their team. The resulting shockwave afflicts all combatants with static.",
 	"Damage": 0,

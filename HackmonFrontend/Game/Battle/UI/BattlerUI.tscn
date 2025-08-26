@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c33w73ns7f74g" path="res://Game/Battle/UI/AilmentNode.tscn" id="2_qeg0h"]
 [ext_resource type="Texture2D" uid="uid://dxrbn6rufp1dl" path="res://Assets/UI/Icons/Status/BurnIcon.svg" id="4_1fw8h"]
 [ext_resource type="Texture2D" uid="uid://ds0am2wq56e2i" path="res://Assets/UI/Icons/Status/AtkUpIcon.svg" id="5_wv0n7"]
-[ext_resource type="Texture2D" uid="uid://ofu6dsmhgpgj" path="res://Assets/UI/Icons/Type/BasicIcon.png" id="7_41vfo"]
+[ext_resource type="Texture2D" uid="uid://dwwrfr2n53mi2" path="res://Assets/UI/Icons/Type/BasicIcon.svg" id="8_amxat"]
 [ext_resource type="Texture2D" uid="uid://bw2xgvvwta8ei" path="res://Assets/UI/PlayerStatusBar.png" id="8_i2s2i"]
 [ext_resource type="Texture2D" uid="uid://0fabng76lfjg" path="res://Assets/UI/IconSocket.png" id="9_t752p"]
 [ext_resource type="Texture2D" uid="uid://cvktiuklx2v8t" path="res://Assets/UI/StaminaTexture.png" id="10_h5044"]
@@ -87,11 +87,10 @@ texture = ExtResource("9_t752p")
 
 [node name="PrimaryType" type="Sprite2D" parent="Status/PrimarySocket"]
 z_index = 1
-position = Vector2(1.43051e-05, 4.57764e-05)
-texture = ExtResource("7_41vfo")
+scale = Vector2(0.2675, 0.2675)
+texture = ExtResource("8_amxat")
 
 [node name="SecondarySocket" type="Sprite2D" parent="Status"]
-visible = false
 z_index = 1
 position = Vector2(2, 93)
 scale = Vector2(0.1, 0.1)
@@ -99,7 +98,9 @@ texture = ExtResource("9_t752p")
 
 [node name="SecondaryType" type="Sprite2D" parent="Status/SecondarySocket"]
 z_index = 1
-texture = ExtResource("7_41vfo")
+position = Vector2(2.43187e-05, -4.76837e-07)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("8_amxat")
 
 [node name="StaminaBar" type="TextureProgressBar" parent="Status"]
 layout_mode = 0

@@ -1,6 +1,6 @@
 {
 	"Id": 45,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Shock Rush",
 	"Description": "The user rushes at it's foe, building up electricity until it makes contact.",
 	"Damage": 65,

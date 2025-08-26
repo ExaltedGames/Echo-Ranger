@@ -1,6 +1,6 @@
 {
 	"Id": 13,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Static Slash",
 	"Description": "Raking part of it's body across a surface, the user generates charge before slashing it's foe. Raises Special Attack.",
 	"Damage": 25,

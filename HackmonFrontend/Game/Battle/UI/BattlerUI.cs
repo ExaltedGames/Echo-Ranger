@@ -55,7 +55,7 @@ public partial class BattlerUI : Panel
 		//_healthBar.ShowPercentage = true;
 
 		var primaryTypeImageNode = GetNode<Sprite2D>("Status/PrimarySocket/PrimaryType");
-		var primaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.PrimaryType}Icon.png");
+		var primaryTypeImage = ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.PrimaryType}Icon.svg");
 
 		primaryTypeImageNode.Texture = primaryTypeImage;
 
@@ -64,7 +64,7 @@ public partial class BattlerUI : Panel
 			GetNode<CanvasItem>("Status/SecondarySocket").Show();
 			var secondaryTypeImageNode = GetNode<Sprite2D>("Status/SecondarySocket/SecondaryType");
 			var secondaryTypeImage =
-				ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.SecondaryType}Icon.png");
+				ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{mon.SecondaryType}Icon.svg");
 
 			secondaryTypeImageNode.Texture = secondaryTypeImage;
 		}

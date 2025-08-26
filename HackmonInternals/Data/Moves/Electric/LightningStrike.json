@@ -1,6 +1,6 @@
 {
 	"Id": 54,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Lightning Strike",
 	"Description": "The user channels electricity through the air to call forth lightning to strike down their foe.",
 	"Damage": 80,

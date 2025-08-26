@@ -11,9 +11,10 @@ public enum HackmonType
 	Plant,
 	Earth,
 	Wind,
-	Jolt,
+	Electric,
 	Spirit,
-	Mech,
+	Metal,
 	Chem,
-	Frost
+	Frost,
+	Astral
 }

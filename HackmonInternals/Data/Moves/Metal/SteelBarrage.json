@@ -1,0 +1,12 @@
+{
+	"Id": 31,
+	"MoveType": "Metal",
+	"Name": "Steel Barrage",
+	"Description": "The user shoots a volley of metal rivets at it's foe.",
+	"Damage": 40,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 20,
+	"UserStatuses": [],
+	"TargetStatuses": []
+}
