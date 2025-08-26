@@ -1,6 +1,6 @@
 {
 	"Id": 7,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Zap",
 	"Description": "The user shocks it's foe with built up electricity.",
 	"Damage": 25,

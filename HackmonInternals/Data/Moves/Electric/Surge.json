@@ -1,6 +1,6 @@
 {
 	"Id": 20,
-	"MoveType": "Jolt",
+	"MoveType": "Electric",
 	"Name": "Surge",
 	"Description": "The user assaults it's foe with a constant stream of electricity.",
 	"Damage": 50,
