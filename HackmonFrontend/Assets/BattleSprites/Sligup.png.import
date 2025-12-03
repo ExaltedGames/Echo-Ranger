@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dslquud45q6bj"
-path="res://.godot/imported/Slipup.png-1bdea29cafffc91b3b2d2dac269058e9.ctex"
+uid="uid://ce7ud4238ddj2"
+path="res://.godot/imported/Sligup.png-2b57d3beeafbd796458ac78a3a907f9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Slipup.png"
-dest_files=["res://.godot/imported/Slipup.png-1bdea29cafffc91b3b2d2dac269058e9.ctex"]
+source_file="res://Assets/BattleSprites/Sligup.png"
+dest_files=["res://.godot/imported/Sligup.png-2b57d3beeafbd796458ac78a3a907f9e.ctex"]
 
 [params]
 

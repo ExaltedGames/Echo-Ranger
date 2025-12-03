@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhjsbufy4kvxr"
-path="res://.godot/imported/Scarablast.png-b3c96ebebdc256b809ceb7cf756c945e.ctex"
+uid="uid://w8re6v5ojx27"
+path="res://.godot/imported/Vermite.png-0026728ea6b905597aff235bba0043e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Scarablast.png"
-dest_files=["res://.godot/imported/Scarablast.png-b3c96ebebdc256b809ceb7cf756c945e.ctex"]
+source_file="res://Assets/BattleSprites/Vermite.png"
+dest_files=["res://.godot/imported/Vermite.png-0026728ea6b905597aff235bba0043e4.ctex"]
 
 [params]
 
