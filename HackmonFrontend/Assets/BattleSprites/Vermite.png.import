@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bchbc06xjtrf6"
-path="res://.godot/imported/Pumite.png-a0169e2f7de6c1c05dc943104fabb582.ctex"
+uid="uid://w8re6v5ojx27"
+path="res://.godot/imported/Vermite.png-0026728ea6b905597aff235bba0043e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Pumite.png"
-dest_files=["res://.godot/imported/Pumite.png-a0169e2f7de6c1c05dc943104fabb582.ctex"]
+source_file="res://Assets/BattleSprites/Vermite.png"
+dest_files=["res://.godot/imported/Vermite.png-0026728ea6b905597aff235bba0043e4.ctex"]
 
 [params]
 
