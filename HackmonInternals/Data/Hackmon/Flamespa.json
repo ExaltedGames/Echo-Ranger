@@ -1,24 +1,25 @@
 ﻿{
-	"Id": 5,
+	"Id": 6,
 	"PrimaryType": "Fire",
-	"Name": "Pumite",
+	"SecondaryType": "Chem",
+	"Name": "Flamespa",
 	"Family": "Arthropod",
-	"Description": "Pumite seldom move without intervention, spending their days silently conserving energy to prepare for their final transformation. Despite their inert appearance, their bodies contain a roiling reserve of volatile fluid to be released on any would-be foe.",
+	"Description": "Despite their appearance, flamespa are typically docile and strictly adhere to vegetarian diets consisting of charred plantlife. Should they be threatened, their advanced chemical arsenal will make short work of any common foe.",
 	"MaxHp": {
 		"BaseValue": 1,
-		"GrowthPerLevel": 0.49
+		"GrowthPerLevel": 0.64
 	},
 	"Attack": {
 		"BaseValue": 1,
-		"GrowthPerLevel": 0.59
+		"GrowthPerLevel": 0.79
 	},
 	"SpAttack": {
 		"BaseValue": 10,
-		"GrowthPerLevel": 1.55
+		"GrowthPerLevel": 1.70
 	},
 	"Defense": {
 		"BaseValue": 1,
-		"GrowthPerLevel": 0.24
+		"GrowthPerLevel": 0.49
 	},
 	"SpDefense": {
 		"BaseValue": 5,
@@ -26,7 +27,7 @@
 	},
 	"Agility": {
 		"BaseValue": 5,
-		"GrowthPerLevel": 0.45
+		"GrowthPerLevel": 1.20
 	},
 	"MaxStamina": {
 		"BaseValue": 1,
