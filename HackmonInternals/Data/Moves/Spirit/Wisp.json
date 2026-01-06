@@ -2,7 +2,7 @@
 	"Id": 8,
 	"MoveType": "Spirit",
 	"Name": "Wisp",
-	"Description": "The user releases a bolt of ephereal energy upon it's foe.",
+	"Description": "The user releases a bolt of ethereal energy upon it's foe.",
 	"Damage": 25,
 	"AttackType": "Special",
 	"Target": "Single",

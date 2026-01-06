@@ -1,8 +1,8 @@
 {
 	"Id": 32,
 	"MoveType": "Chem",
-	"Name": "Poison Touch",
-	"Description": "The user makes physical contact with it's foe, harming them with a poisonous coating.",
+	"Name": "Toxic Touch",
+	"Description": "The user makes physical contact with it's foe, harming them with a toxic coating.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",
