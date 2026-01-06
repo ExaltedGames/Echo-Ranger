@@ -2,7 +2,7 @@
 	"Id": 22,
 	"MoveType": "Metal",
 	"Name": "Steel Run",
-	"Description": "The user charges forward while coating their entire body in metal to deliver a bone rattling impact.",
+	"Description": "The user charges forward while coating its entire body in metal to deliver a bone rattling impact.",
 	"Damage": 50,
 	"AttackType": "Physical",
 	"Target": "Single",

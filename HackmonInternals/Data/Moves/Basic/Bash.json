@@ -2,7 +2,7 @@
 	"Id": 1,
 	"MoveType": "Basic",
 	"Name": "Bash",
-	"Description": "The user strikes it's opponent with anything it can.",
+	"Description": "The user strikes its opponent with anything it can.",
 	"Damage": 15,
 	"AttackType": "Physical",
 	"Target": "Single",

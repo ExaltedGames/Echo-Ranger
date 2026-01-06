@@ -2,7 +2,7 @@
 	"Id": 11,
 	"MoveType": "Fire",
 	"Name": "Brand",
-	"Description": "The user superheats it's body before colliding with it's opponent.",
+	"Description": "The user superheats its body before colliding with its opponent.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",

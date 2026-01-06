@@ -2,7 +2,7 @@
 	"Id": 4,
 	"MoveType": "Plant",
 	"Name": "Pollen Burst",
-	"Description": "The user sprays it's opponent with a stream of irritant particles.",
+	"Description": "The user sprays its opponent with a stream of irritant particles.",
 	"Damage": 40,
 	"AttackType": "Special",
 	"Target": "Single",

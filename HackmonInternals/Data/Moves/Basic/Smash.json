@@ -2,7 +2,7 @@
 	"Id": 14,
 	"MoveType": "Basic",
 	"Name": "Smash",
-	"Description": "Using the bulk of it's muscles, the user collides with it's foe with force.",
+	"Description": "Using the bulk of its muscles, the user collides with its foe with force.",
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Single",

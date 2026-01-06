@@ -2,7 +2,7 @@
 	"Id": 76,
 	"MoveType": "Metal",
 	"Name": "Slag Toss",
-	"Description": "The user extracts a superheated fragment of it's body and hurls it at it's foe, causing burns. Stamina cost is halved if user is presently burned.",
+	"Description": "The user extracts a superheated fragment of its body and hurls it at its foe, causing burns. Stamina cost is halved if user is presently burned.",
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",

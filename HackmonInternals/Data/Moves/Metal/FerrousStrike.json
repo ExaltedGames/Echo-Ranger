@@ -2,7 +2,7 @@
 	"Id": 9,
 	"MoveType": "Metal",
 	"Name": "Ferrous Strike",
-	"Description": "The user concentrates metallic energy into a part of it's body, before swinging it towards it's foe.",
+	"Description": "The user concentrates metallic energy into a part of its body, before swinging it towards its foe.",
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Single",

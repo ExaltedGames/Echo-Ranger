@@ -2,7 +2,7 @@
 	"Id": 49,
 	"MoveType": "Water",
 	"Name": "Water Slide",
-	"Description": "Coasting on a torrent of water, the user crashes into it's foe.",
+	"Description": "Coasting on a torrent of water, the user crashes into its foe.",
 	"Damage": 65,
 	"AttackType": "Physical",
 	"Target": "Single",

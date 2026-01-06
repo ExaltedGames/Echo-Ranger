@@ -2,7 +2,7 @@
 	"Id": 41,
 	"MoveType": "Basic",
 	"Name": "Power Ray",
-	"Description": "The user emits an intense beam of pure energy from within it's body, dealing considerable damage to it's target.",
+	"Description": "The user emits an intense beam of pure energy from within its body, dealing considerable damage to its target.",
 	"Damage": 65,
 	"AttackType": "Special",
 	"Target": "Single",

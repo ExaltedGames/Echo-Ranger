@@ -2,7 +2,7 @@
 	"Id": 42,
 	"MoveType": "Plant",
 	"Name": "Branch Strike",
-	"Description": "The user viciously strikes it's foe with reinforced foliage.",
+	"Description": "The user viciously strikes its foe with reinforced foliage.",
 	"Damage": 50,
 	"AttackType": "Physical",
 	"Target": "Single",

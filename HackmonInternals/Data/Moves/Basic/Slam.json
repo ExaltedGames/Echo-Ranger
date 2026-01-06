@@ -2,7 +2,7 @@
 	"Id": 40,
 	"MoveType": "Basic",
 	"Name": "Slam",
-	"Description": "The user charges forward and crashes into it's foe with incredible strength.",
+	"Description": "The user charges forward and crashes into its foe with incredible strength.",
 	"Damage": 50,
 	"AttackType": "Physical",
 	"Target": "Single",

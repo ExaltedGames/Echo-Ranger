@@ -2,7 +2,7 @@
 	"Id": 75,
 	"MoveType": "Chem",
 	"Name": "Acid Splash",
-	"Description": "The user launches a corrosive fluid at it's foe, dealing direct damage.",
+	"Description": "The user launches a corrosive fluid at its foe, dealing direct damage.",
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",

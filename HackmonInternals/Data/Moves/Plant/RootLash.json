@@ -2,7 +2,7 @@
 	"Id": 26,
 	"MoveType": "Plant",
 	"Name": "Root Lash",
-	"Description": "The user summons forth roots that strike at it's opponent.",
+	"Description": "The user summons forth roots that strike at its opponent.",
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Single",

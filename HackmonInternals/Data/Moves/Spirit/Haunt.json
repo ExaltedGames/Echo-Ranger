@@ -2,7 +2,7 @@
 	"Id": 30,
 	"MoveType": "Spirit",
 	"Name": "Haunt",
-	"Description": "The user tackles it's foe with dark intent that harms the spirit.",
+	"Description": "The user tackles its foe with dark intent that harms the spirit.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",

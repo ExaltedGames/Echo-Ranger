@@ -2,7 +2,7 @@
 	"Id": 72,
 	"MoveType": "Electric",
 	"Name": "Quantum Leap",
-	"Description": "Dissolving into pure electrical energy, the user instantly switches places with an ally from it's team. The resulting shockwave afflicts all combatants with static.",
+	"Description": "Dissolving into pure electrical energy, the user instantly switches places with an ally from its team. The resulting shockwave afflicts all combatants with static.",
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "Self",

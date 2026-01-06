@@ -2,7 +2,7 @@
 	"Id": 74,
 	"MoveType": "Chem",
 	"Name": "Sting",
-	"Description": "Utilizing a suitably sharp part of it's own body, the user swiftly injects it's foe with debilitating venom.",
+	"Description": "Utilizing a suitably sharp part of its own body, the user swiftly injects its foe with debilitating venom.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",

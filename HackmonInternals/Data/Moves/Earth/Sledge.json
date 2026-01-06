@@ -2,7 +2,7 @@
 	"Id": 27,
 	"MoveType": "Earth",
 	"Name": "Sledge",
-	"Description": "Forming an extension of earth, the user ruthlessly smashes it's foe with immense force.",
+	"Description": "Forming an extension of earth, the user ruthlessly smashes its foe with immense force.",
 	"Damage": 50,
 	"AttackType": "Physical",
 	"Target": "Single",

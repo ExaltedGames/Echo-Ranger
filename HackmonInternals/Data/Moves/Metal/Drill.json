@@ -2,7 +2,7 @@
 	"Id": 36,
 	"MoveType": "Metal",
 	"Name": "Drill Break",
-	"Description": "Spinning an appendage at high speed, the user strikes their foe with tremendous velocity, piercing their defenses.",
+	"Description": "Spinning an appendage at high speed, the user strikes its foe with tremendous velocity, piercing through defenses.",
 	"Damage": 30,
 	"AttackType": "Physical",
 	"Target": "Single",

@@ -2,7 +2,7 @@
 	"Id": 28,
 	"MoveType": "Wind",
 	"Name": "Swooping Impact",
-	"Description": "Using the force of wind, the user smashes into it's foe from above.",
+	"Description": "Using the force of wind, the user smashes into its foe from above.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",

@@ -2,7 +2,7 @@
 	"Id": 65,
 	"MoveType": "Plant",
 	"Name": "Bark Skin",
-	"Description": "The user bolsters it's defenses with hardened plant matter, increasing defense by two levels. Defense is increased by a level further if Verdant Growth is active.",
+	"Description": "The user bolsters its defenses with hardened plant matter, increasing defense by two levels. Defense is increased by a level further if Verdant Growth is active.",
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Self",

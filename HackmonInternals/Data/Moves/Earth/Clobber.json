@@ -2,7 +2,7 @@
 	"Id": 38,
 	"MoveType": "Earth",
 	"Name": "Clobber",
-	"Description": "The user strikes it's foe with it's hard body.",
+	"Description": "The user strikes its foe with its hard body.",
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Single",

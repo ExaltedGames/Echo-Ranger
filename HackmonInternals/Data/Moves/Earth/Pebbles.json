@@ -2,7 +2,7 @@
 	"Id": 5,
 	"MoveType": "Earth",
 	"Name": "Pebble Volley",
-	"Description": "The user launches several high velocity pellets of stone at it's opponent.",
+	"Description": "The user launches several high velocity pellets of stone at its opponent.",
 	"Damage": 40,
 	"AttackType": "Special",
 	"Target": "Single",

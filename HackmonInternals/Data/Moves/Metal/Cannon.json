@@ -2,7 +2,7 @@
 	"Id": 44,
 	"MoveType": "Metal",
 	"Name": "Alloy Cannon",
-	"Description": "The user shapes a dense mass of metal from parts of it's body, before launching it at great velocity into their foe.",
+	"Description": "The user shapes a dense mass of metal from parts of its body, before launching it at great velocity into their foe.",
 	"Damage": 65,
 	"AttackType": "Special",
 	"Target": "Single",

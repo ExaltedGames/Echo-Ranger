@@ -2,7 +2,7 @@
 	"Id": 60,
 	"MoveType": "Wind",
 	"Name": "Gale Force",
-	"Description": "With it's powerful control of the wind, the user forces it's foe to bear the crushing weight of the atmosphere.",
+	"Description": "With its powerful control of the wind, the user forces its foe to bear the crushing weight of the atmosphere.",
 	"Damage": 80,
 	"AttackType": "Special",
 	"Target": "Single",

@@ -2,7 +2,7 @@
 	"Id": 68,
 	"MoveType": "Metal",
 	"Name": "Analyze",
-	"Description": "The user analyzes it's foe with computer-like efficiency to determine it's weaknesses. The user's next attack will ignore half of the opponent's defense and ranged defense.",
+	"Description": "The user analyzes its foe with computer-like efficiency to determine its weaknesses. The users next attack will ignore half of the opponent's defense and ranged defense.",
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "None",

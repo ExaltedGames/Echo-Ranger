@@ -2,7 +2,7 @@
 	"Id": 39,
 	"MoveType": "Earth",
 	"Name": "Mountain Breaker",
-	"Description": "The user concentrates on bringing down the force of the Earth itself upon it's foe. Reduces opponent HP to zero if successfully used three times in a row.",
+	"Description": "The user concentrates on bringing down the force of the Earth itself upon its foe. Reduces opponent HP to zero if successfully used three times in a row.",
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "Single",

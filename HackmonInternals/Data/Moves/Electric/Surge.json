@@ -2,7 +2,7 @@
 	"Id": 20,
 	"MoveType": "Electric",
 	"Name": "Voltaic Surge",
-	"Description": "The user assaults it's foe with a relentless stream of electricity.",
+	"Description": "The user assaults its foe with a relentless stream of electricity.",
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",

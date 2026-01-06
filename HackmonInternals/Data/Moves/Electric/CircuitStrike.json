@@ -2,7 +2,7 @@
 	"Id": 29,
 	"MoveType": "Electric",
 	"Name": "Circuit Strike",
-	"Description": "The user makes physical contact with it's opponent, before releasing electrical energy to surge into it's foe.",
+	"Description": "The user makes physical contact with its opponent, before releasing electrical energy to surge into its foe.",
 	"Damage": 40,
 	"AttackType": "Physical",
 	"Target": "Single",

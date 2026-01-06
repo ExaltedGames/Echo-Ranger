@@ -2,7 +2,7 @@
 	"Id": 50,
 	"MoveType": "Wind",
 	"Name": "Dive Bomb",
-	"Description": "The user propels itself high into the air before crashing down upon it's foe with considerable strength.",
+	"Description": "The user propels itself high into the air before crashing down upon its foe with considerable strength.",
 	"Damage": 65,
 	"AttackType": "Physical",
 	"Target": "Single",

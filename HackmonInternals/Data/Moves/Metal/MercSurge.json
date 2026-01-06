@@ -2,7 +2,7 @@
 	"Id": 56,
 	"MoveType": "Metal",
 	"Name": "Mercurial Surge",
-	"Description": "The user manifests a mass of liquified metal that lashes out to flay it's target.",
+	"Description": "The user manifests a mass of liquified metal that lashes out to flay its target.",
 	"Damage": 80,
 	"AttackType": "Physical",
 	"Target": "Single",

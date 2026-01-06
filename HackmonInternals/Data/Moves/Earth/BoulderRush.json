@@ -2,7 +2,7 @@
 	"Id": 53,
 	"MoveType": "Earth",
 	"Name": "Boulder Rush",
-	"Description": "Building a shell of earth around itself, the user bulks up it's mass before rushing down their foe with frightening power.",
+	"Description": "Building a shell of earth around itself, the user bulks up its mass before rushing down their foe with frightening power.",
 	"Damage": 80,
 	"AttackType": "Physical",
 	"Target": "Single",

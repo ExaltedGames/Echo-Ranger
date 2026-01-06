@@ -2,7 +2,7 @@
 	"Id": 62,
 	"MoveType": "Spirit",
 	"Name": "Phase",
-	"Description": "The user recedes from the material plane for one round. During this time, the user cannot be struck by attacks, and none of it's own attacks will connect.",
+	"Description": "The user recedes from the material plane for one round. During this time, the user cannot be struck by attacks, and none of its own attacks will connect.",
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "Self",

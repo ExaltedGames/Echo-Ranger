@@ -2,7 +2,7 @@
 	"Id": 73,
 	"MoveType": "Basic",
 	"Name": "Maul",
-	"Description": "Using it's powerful teeth, the user tears into it's foe with wild abandon. The resulting wounds lower the opponent's defense.",
+	"Description": "Using its powerful teeth, the user tears into its foe with wild abandon. The resulting wounds lower the opponents defense.",
 	"Damage": 60,
 	"AttackType": "Physical",
 	"Target": "Single",

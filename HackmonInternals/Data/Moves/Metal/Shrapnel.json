@@ -2,7 +2,7 @@
 	"Id": 31,
 	"MoveType": "Metal",
 	"Name": "Shrapnel",
-	"Description": "The user releases a volley of metal fragments from it's body to strike it's foe.",
+	"Description": "The user releases a volley of metal fragments from its body to strike its foe.",
 	"Damage": 40,
 	"AttackType": "Special",
 	"Target": "Single",

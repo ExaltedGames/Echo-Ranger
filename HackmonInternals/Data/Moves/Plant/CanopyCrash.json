@@ -2,7 +2,7 @@
 	"Id": 57,
 	"MoveType": "Plant",
 	"Name": "Canopy Crash",
-	"Description": "The user descends upon it's foe with the unstoppable force of a felled tree of immense proportions.",
+	"Description": "The user descends upon its foe with the unstoppable force of a felled tree of immense proportions.",
 	"Damage": 80,
 	"AttackType": "Physical",
 	"Target": "Single",

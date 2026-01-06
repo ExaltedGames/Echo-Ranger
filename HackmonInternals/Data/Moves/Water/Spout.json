@@ -2,7 +2,7 @@
 	"Id": 3,
 	"MoveType": "Water",
 	"Name": "Spout",
-	"Description": "The user sprays it's opponent with a concentrated burst of water.",
+	"Description": "The user sprays its opponent with a concentrated burst of water.",
 	"Damage": 25,
 	"AttackType": "Special",
 	"Target": "Single",
