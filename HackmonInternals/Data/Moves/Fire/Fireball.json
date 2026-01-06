@@ -2,7 +2,7 @@
 	"Id": 15,
 	"MoveType": "Fire",
 	"Name": "Fireball",
-	"Description": "The user unleashes a powerful burst of fire torwards it's foe.",
+	"Description": "The user unleashes a powerful burst of fire towards it's foe.",
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",

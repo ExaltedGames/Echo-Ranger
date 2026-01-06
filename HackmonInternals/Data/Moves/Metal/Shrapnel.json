@@ -1,8 +1,8 @@
 {
 	"Id": 31,
 	"MoveType": "Metal",
-	"Name": "Steel Barrage",
-	"Description": "The user shoots a volley of metal rivets at it's foe.",
+	"Name": "Shrapnel",
+	"Description": "The user releases a volley of metal fragments from it's body to strike it's foe.",
 	"Damage": 40,
 	"AttackType": "Special",
 	"Target": "Single",

@@ -1,8 +1,8 @@
 {
 	"Id": 54,
 	"MoveType": "Electric",
-	"Name": "Lightning Strike",
-	"Description": "The user channels electricity through the air to call forth lightning to strike down their foe.",
+	"Name": "Lightning Bolt",
+	"Description": "The user pulls immense electrical energy from within itself, before releasing a blinding strike of lightning.",
 	"Damage": 80,
 	"AttackType": "Special",
 	"Target": "Single",

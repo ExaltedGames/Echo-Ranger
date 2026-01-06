@@ -1,8 +1,8 @@
 {
 	"Id": 20,
 	"MoveType": "Electric",
-	"Name": "Surge",
-	"Description": "The user assaults it's foe with a constant stream of electricity.",
+	"Name": "Voltaic Surge",
+	"Description": "The user assaults it's foe with a relentless stream of electricity.",
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",

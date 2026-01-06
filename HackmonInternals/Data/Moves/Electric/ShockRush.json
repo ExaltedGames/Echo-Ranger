@@ -2,7 +2,7 @@
 	"Id": 45,
 	"MoveType": "Electric",
 	"Name": "Shock Rush",
-	"Description": "The user rushes at it's foe, building up electricity until it makes contact.",
+	"Description": "The user gathers electrical energy as it rushes forward, ramming into their foe like a bolt of lightning.",
 	"Damage": 65,
 	"AttackType": "Physical",
 	"Target": "Single",
