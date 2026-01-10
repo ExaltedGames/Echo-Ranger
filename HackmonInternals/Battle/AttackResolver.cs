@@ -51,10 +51,8 @@ public class AttackResolver(HackmonMove atkData) : IAttack
 
 			var damage = Math.Max(
 				1,
-				(int)((atk / ((def + 100) / (100 * elementModifier)) +
-				       AttackData.Damage * stab -
-				       moveTarget.Level / 3) * // Possible loss of fraction here. Is this intended?
-				      elementModifier)
+				(int)((AttackData.Damage * stab) * (atk / ((def + moveTarget.Level)/2f)) * elementModifier)
+				//atk, def, elementModifier, stab, elementModifier, moveTarget.Level, AttackData.Damage
 			);
 
 			moveTarget.Health -= damage;
