@@ -6,11 +6,11 @@
 	"Damage": 25,
 	"AttackType": "Physical",
 	"Target": "Single",
-	"StaminaCost": 25,
+	"StaminaCost": 40,
 	"UserStatuses": [
 		{
 			"Name": "SpAttackUp",
-			"Duration": -1
+			"Duration": 1
 		}
 	],
 	"TargetStatuses": []

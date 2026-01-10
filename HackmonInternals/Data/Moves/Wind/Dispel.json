@@ -6,7 +6,7 @@
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "All",
-	"StaminaCost": 45,
+	"StaminaCost": 60,
 	"UserStatuses": [],
 	"TargetStatuses": []
 }

@@ -6,11 +6,11 @@
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "Self",
-	"StaminaCost": 25,
+	"StaminaCost": 50,
 	"UserStatuses": [
 		{
 			"Name": "Charge",
-			"Duration": -1
+			"Duration": 2
 		}
 	],
 	"TargetStatuses": []

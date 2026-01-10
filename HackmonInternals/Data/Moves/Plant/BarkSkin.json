@@ -3,14 +3,14 @@
 	"MoveType": "Plant",
 	"Name": "Bark Skin",
 	"Description": "The user bolsters its defenses with hardened plant matter, increasing defense by two levels. Defense is increased by a level further if Verdant Growth is active.",
-	"Damage": 25,
-	"AttackType": "Physical",
+	"Damage": 0,
+	"AttackType": "None",
 	"Target": "Self",
-	"StaminaCost": 25,
+	"StaminaCost": 40,
 	"UserStatuses": [
 		{
 			"Name": "DefenseUp",
-			"Duration": -1
+			"Duration": 2
 		}
 	],
 	"TargetStatuses": []

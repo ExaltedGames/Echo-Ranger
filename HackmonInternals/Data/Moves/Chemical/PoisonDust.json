@@ -6,12 +6,12 @@
 	"Damage": 0,
 	"AttackType": "None",
 	"Target": "Multi",
-	"StaminaCost": 40,
+	"StaminaCost": 55,
 	"UserStatuses": [],
 	"TargetStatuses": [
 		{
 			"Name": "Poison",
-			"Duration": 5
+			"Duration": 1
 		}
 	]
 }

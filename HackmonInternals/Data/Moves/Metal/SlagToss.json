@@ -6,7 +6,7 @@
 	"Damage": 50,
 	"AttackType": "Special",
 	"Target": "Single",
-	"StaminaCost": 40,
+	"StaminaCost": 50,
 	"UserStatuses": [],
 	"TargetStatuses": [
 		{
