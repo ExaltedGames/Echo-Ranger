@@ -58,11 +58,11 @@ public class HackmonInstance : IUnit
 	[JsonIgnore]
 	public Dictionary<StatType, List<Modifier>> StatModifiers = new()
 	{
-		{ StatType.Attack, [new Modifier { BaseAdditiveBonus = 99 }] },
-		{ StatType.SpAttack, [new Modifier { BaseAdditiveBonus = 99 }] },
+		{ StatType.Attack, [new Modifier { BaseAdditiveBonus = 0 }] },
+		{ StatType.SpAttack, [new Modifier { BaseAdditiveBonus = 0 }] },
 		{ StatType.MaxHp, [new Modifier { BaseAdditiveBonus = 99 }] },
-		{ StatType.Defense, [new Modifier { BaseAdditiveBonus = 99 }] },
-		{ StatType.SpDefense, [new Modifier { BaseAdditiveBonus = 99 }] }
+		{ StatType.Defense, [new Modifier { BaseAdditiveBonus = 0 }] },
+		{ StatType.SpDefense, [new Modifier { BaseAdditiveBonus = 0 }] }
 	};
 
 	public int Health { get; set; }
@@ -91,6 +91,7 @@ public class HackmonInstance : IUnit
 		var mods = StatModifiers[type];
 		var baseAdditiveBonus = mods.Aggregate(0, (acc, x) => acc + x.BaseAdditiveBonus);
 		var multiplicativeBonus = mods.Aggregate<Modifier, double>(1, (acc, x) => acc + x.Multiplier);
+		//Note that stat growth applies even at lvl 1. Account for this in stats.
 		var stat = (baseStat.BaseValue + baseAdditiveBonus + baseStat.GrowthPerLevel * Level) * multiplicativeBonus;
 		return (int)Math.Round(stat);
 	}

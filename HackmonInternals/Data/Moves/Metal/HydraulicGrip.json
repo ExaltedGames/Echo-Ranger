@@ -6,7 +6,7 @@
 	"Damage": 15,
 	"AttackType": "Physical",
 	"Target": "Single",
-	"StaminaCost": 35,
+	"StaminaCost": 40,
 	"UserStatuses": [],
 	"TargetStatuses": []
 }
