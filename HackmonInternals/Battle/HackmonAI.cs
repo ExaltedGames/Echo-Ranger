@@ -11,8 +11,8 @@ public class HackmonAI : IBattleAI
 			throw new Exception("Used outside of intended context.");
 
 		Random rand = new();
-		var maxMoves = 4;
-		if (unit.KnownMoves.Count < 4)
+		var maxMoves = 6;
+		if (unit.KnownMoves.Count < 6)
 			maxMoves = unit.KnownMoves.Count;
 
 		var choice = rand.Next(maxMoves);

@@ -67,16 +67,24 @@ text = "Move1"
 layout_mode = 2
 text = "Move2"
 
-[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
-layout_mode = 2
-
-[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
 layout_mode = 2
 text = "Move3"
+
+[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
+layout_mode = 2
 
 [node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
 layout_mode = 2
 text = "Move4"
+
+[node name="Move5" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move5"
+
+[node name="Move6" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+layout_mode = 2
+text = "Move6"
 
 [node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI"]
 layout_mode = 0

@@ -6,11 +6,11 @@ public partial class ActionSelectUI : Control
 
 	public event ActionSelectHandler? OnActionSelected;
 
-	public Button[] Buttons = new Button[4];
+	public Button[] Buttons = new Button[6];
 	public int CurrentSelection = -1;
-	public HackmonMove?[] SelectableActions = new HackmonMove[4];
+	public HackmonMove?[] SelectableActions = new HackmonMove[6];
 	private TextEdit _infoBox;
-	private int _numActions = 4;
+	private int _numActions = 6;
 
 	public override void _Ready()
 	{
@@ -19,10 +19,14 @@ public partial class ActionSelectUI : Control
 		Buttons[0].Pressed += () => OnMovePressed(0);
 		Buttons[1] = GetNode<Button>("MoveList/TopMoves/Move2");
 		Buttons[1].Pressed += () => OnMovePressed(1);
-		Buttons[2] = GetNode<Button>("MoveList/BottomMoves/Move3");
+		Buttons[2] = GetNode<Button>("MoveList/TopMoves/Move3");
 		Buttons[2].Pressed += () => OnMovePressed(2);
 		Buttons[3] = GetNode<Button>("MoveList/BottomMoves/Move4");
 		Buttons[3].Pressed += () => OnMovePressed(3);
+		Buttons[4] = GetNode<Button>("MoveList/BottomMoves/Move5");
+		Buttons[4].Pressed += () => OnMovePressed(4);
+		Buttons[5] = GetNode<Button>("MoveList/BottomMoves/Move6");
+		Buttons[5].Pressed += () => OnMovePressed(5);
 	}
 
 	public void SetEnabled(bool enabled)
@@ -37,8 +41,8 @@ public partial class ActionSelectUI : Control
 
 	public void SetActions(HackmonMove?[] actions)
 	{
-		if (actions.Length > 4)
-			throw new Exception("UI currently not built to support more than 4 moves.");
+		if (actions.Length > 6)
+			throw new Exception("UI currently not built to support more than 6 moves.");
 
 		var totalActions = 0;
 
@@ -54,7 +58,7 @@ public partial class ActionSelectUI : Control
 			totalActions++;
 		}
 
-		for (var i = totalActions; i < 4; i++)
+		for (var i = totalActions; i < 6; i++)
 		{
 			SelectableActions[i] = null;
 			Buttons[i].Disabled = true;
