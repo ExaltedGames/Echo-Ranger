@@ -52,7 +52,7 @@ public class AttackResolver(HackmonMove atkData) : IAttack
 			var damage = Math.Max(
 				1,
 				(int)((AttackData.Damage * stab) * (atk / ((def + moveTarget.Level)/2f)) * elementModifier)
-				//atk, def, elementModifier, stab, elementModifier, moveTarget.Level, AttackData.Damage
+				//Note: Formula is currently written so that damage will be multiplied instead of reduced when attacking targets with comparatively low defense.
 			);
 
 			moveTarget.Health -= damage;
