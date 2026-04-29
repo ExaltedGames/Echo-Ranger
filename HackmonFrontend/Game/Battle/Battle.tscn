@@ -116,18 +116,18 @@ text = "Switch Echo"
 
 [node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
-offset_left = 50.0
-offset_top = -138.0
-offset_right = 225.0
-offset_bottom = -52.0
+offset_left = 48.0
+offset_top = -134.0
+offset_right = 223.0
+offset_bottom = -48.0
 scale = Vector2(2, 2)
 
 [node name="OpponentUI" parent="UI" instance=ExtResource("2_1nxov")]
 layout_mode = 0
-offset_left = 1102.0
-offset_top = -138.0
-offset_right = 1277.0
-offset_bottom = -52.0
+offset_left = 1104.0
+offset_top = -134.0
+offset_right = 1279.0
+offset_bottom = -48.0
 scale = Vector2(-2, 2)
 Flipped = true
 
