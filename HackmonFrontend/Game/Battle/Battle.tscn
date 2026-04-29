@@ -29,6 +29,7 @@ position = Vector2(900, 360)
 scale = Vector2(2.5, 2.5)
 
 [node name="UI" type="Control" parent="."]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
