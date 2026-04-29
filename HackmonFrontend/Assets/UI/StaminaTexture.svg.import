@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxoc278fjd7bd"
-path="res://.godot/imported/Border.png-0386e93bfffd015c52d19652479bb873.ctex"
+uid="uid://c4n23v2cdnsvk"
+path="res://.godot/imported/StaminaTexture.svg-6a009628ca70aa730a86aedbd929dc9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Border.png"
-dest_files=["res://.godot/imported/Border.png-0386e93bfffd015c52d19652479bb873.ctex"]
+source_file="res://Assets/UI/StaminaTexture.svg"
+dest_files=["res://.godot/imported/StaminaTexture.svg-6a009628ca70aa730a86aedbd929dc9e.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

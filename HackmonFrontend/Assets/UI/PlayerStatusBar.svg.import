@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv84vacji8wds"
-path="res://.godot/imported/StaminaTextureDepleted.png-043ce549a592af3a497f703571f9d12b.ctex"
+uid="uid://d3yx3dysj7qw"
+path="res://.godot/imported/PlayerStatusBar.svg-84c14978dbd4c79032c4969b35ac9bb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/StaminaTextureDepleted.png"
-dest_files=["res://.godot/imported/StaminaTextureDepleted.png-043ce549a592af3a497f703571f9d12b.ctex"]
+source_file="res://Assets/UI/PlayerStatusBar.svg"
+dest_files=["res://.godot/imported/PlayerStatusBar.svg-84c14978dbd4c79032c4969b35ac9bb7.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
