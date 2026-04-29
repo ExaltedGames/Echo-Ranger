@@ -1,4 +1,7 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dbc7u3bjbjcae"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://dbc7u3bjbjcae"]
+
+[ext_resource type="Texture2D" uid="uid://ymr33v14vtpr" path="res://Assets/OverworldSprites/Tiles/BloomingMoor/DirtTile.png" id="1_2mepe"]
+[ext_resource type="Texture2D" uid="uid://pwe47l25hvfy" path="res://Assets/OverworldSprites/Tiles/BloomingMoor/GrassTile2.png" id="2_575af"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_575af"]
 
@@ -17,7 +20,48 @@ texture = SubResource("CompressedTexture2D_01v8w")
 1:1/0 = 0
 1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_575af"]
+resource_name = "Dirt"
+texture = ExtResource("1_2mepe")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c4i3r"]
+resource_name = "Grass"
+texture = ExtResource("2_575af")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [resource]
+tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_575af")
@@ -25,3 +69,5 @@ physics_layer_1/collision_layer = 4
 physics_layer_1/collision_mask = 4
 physics_layer_1/physics_material = SubResource("PhysicsMaterial_01v8w")
 sources/0 = SubResource("TileSetAtlasSource_x4i87")
+sources/1 = SubResource("TileSetAtlasSource_575af")
+sources/2 = SubResource("TileSetAtlasSource_c4i3r")
