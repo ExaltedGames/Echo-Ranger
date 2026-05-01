@@ -38,9 +38,9 @@ public static class HackmonBattleManager
 		var status = (Status)s.Status;
 		var stacks = s.Stacks;
 
-		var hitEvent = new HackmonStatusEvent(unit, status, stacks);
-		EventQueue.Enqueue(hitEvent);
-
+		//var hitEvent = new HackmonStatusEvent(unit, status, stacks);
+		//EventQueue.Enqueue(hitEvent);
+		//This makes the AI choose their action before the player chooses their own. Currently redundant.
 		Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
 
 		Console.WriteLine($"{unit.Name} gained {stacks} stacks of {status.Name}");
