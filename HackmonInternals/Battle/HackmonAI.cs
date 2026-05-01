@@ -19,6 +19,7 @@ public class HackmonAI : IBattleAI
 			return moveEquals.StaminaCost <= unit.Stamina;
 		}).ToList();
 
+		var moveId = 1;
 		if (validMoves.Count >= 1)
 		{
 			Random rand = new();
@@ -28,23 +29,13 @@ public class HackmonAI : IBattleAI
 
 			var choice = rand.Next(maxMoves);
 			Console.WriteLine($"Selected {choice} from {maxMoves} total moves.");
-			var moveId = validMoves[choice];
-			var move = HackmonManager.MoveRegistry[moveId];
-			var target = BattleManager.PlayerTeam[0];
-
-			var action = new AttackAction(unit, target, new AttackResolver(move));
-
-			return action;
+			moveId = validMoves[choice];
 		}
-		else
-		{
-			Console.WriteLine("Can't afford any moves!");
-			var move = HackmonManager.MoveRegistry[1];
-			var target = BattleManager.PlayerTeam[0];
+		
+		var move = HackmonManager.MoveRegistry[moveId];
+		var target = BattleManager.PlayerTeam[0];
+		var action = new AttackAction(unit, target, new AttackResolver(move));
 
-			var action = new AttackAction(unit, target, new AttackResolver(move));
-
-			return action;
-		}
+		return action;
 	}
 }
