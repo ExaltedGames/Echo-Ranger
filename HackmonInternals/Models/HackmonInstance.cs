@@ -41,7 +41,7 @@ public class HackmonInstance : IUnit
 
 	public int MaxStamina => ComputeStatValue(StatType.MaxStamina, StaticData.MaxStamina);
 
-	public int Stamina { get; set; }
+	public int Agility => ComputeStatValue(StatType.Agility, StaticData.Agility);
 
 	public HackmonType PrimaryType => StaticData.PrimaryType;
 
@@ -67,6 +67,8 @@ public class HackmonInstance : IUnit
 	};
 
 	public int Health { get; set; }
+	
+	public int Stamina { get; set; }
 
 	public int Speed { get; set; }
 
@@ -79,6 +81,7 @@ public class HackmonInstance : IUnit
 
 		Health = MaxHp;
 		Stamina = MaxStamina;
+		Speed = Agility;
 
 		//Finds which moves are valid for current level, selects the move ID, and sends it to the KnownMoves list.
 		KnownMoves = StaticData.LearnableMoves
