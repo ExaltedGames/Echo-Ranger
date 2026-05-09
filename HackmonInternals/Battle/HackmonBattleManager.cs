@@ -40,7 +40,6 @@ public static class HackmonBattleManager
 
 		var hitEvent = new HackmonStatusEvent(unit, status, stacks);
 		EventQueue.Enqueue(hitEvent);
-
 		Console.WriteLine($"eventqueue now contains {EventQueue.Count} items");
 
 		Console.WriteLine($"{unit.Name} gained {stacks} stacks of {status.Name}");
