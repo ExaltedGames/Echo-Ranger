@@ -16,5 +16,6 @@ public class HackmonData
 	public required Stat Defense { get; set; }
 	public required Stat SpDefense { get; set; }
 	public required Stat MaxStamina { get; set; }
+	public required Stat Agility { get; set; }
 	public List<int[]> LearnableMoves { get; set; } = [];
 }

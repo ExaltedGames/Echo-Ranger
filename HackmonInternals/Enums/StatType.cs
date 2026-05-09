@@ -7,5 +7,6 @@ public enum StatType
 	Defense,
 	SpDefense,
 	MaxHp,
+	MaxStamina,
 	Agility
 }
