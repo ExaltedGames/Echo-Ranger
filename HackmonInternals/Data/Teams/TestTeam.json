@@ -2,9 +2,21 @@
 	"Id": 0,
 	"Category": "Test",
 	"Party": [
-		[0, 1],
-		[0, 5],
-		[0, 25],
-		[0, 50]
+		{
+			"Id": 0,
+			"Level": 5,
+			"ActiveMoves": [
+				1,
+				14
+			]
+		},
+		{
+			"Id": 0,
+			"Level": 15,
+			"ActiveMoves": [
+				1,
+				14
+			]
+		}
 	]
 }
