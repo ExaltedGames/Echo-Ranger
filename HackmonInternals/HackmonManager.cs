@@ -9,8 +9,7 @@ namespace HackmonInternals;
 public static class HackmonManager
 {
 	public static Dictionary<int, HackmonMove> MoveRegistry { get; } = new();
-
-	// TODO: Make hackmon use IDs too
+	
 	public static Dictionary<int, HackmonData> HackmonRegistry { get; } = new();
 
 	public static Dictionary<HackmonType, Dictionary<HackmonType, float>> ElementInteractionsRegistry

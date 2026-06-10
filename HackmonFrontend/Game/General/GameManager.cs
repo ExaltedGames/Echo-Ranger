@@ -50,13 +50,18 @@ public partial class GameManager : Node
 
 		PlayerData = new();
 		var testOpponent = new TrainerData();
-		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[4], 99);
-		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
-		var playerTeam = new List<HackmonInstance> { playerMon };
-		var enemyTeam = new List<HackmonInstance> { enemyMon };
+		var playerMon1 = new HackmonInstance(HackmonManager.HackmonRegistry[4], 99);
+		var playerMon2 = new HackmonInstance(HackmonManager.HackmonRegistry[3], 99);
+		var enemyMon1 = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+		var enemyMon2 = new HackmonInstance(HackmonManager.HackmonRegistry[2], 15);
+		var playerTeam = new List<HackmonInstance> { playerMon1, playerMon2 };
+		var enemyTeam = new List<HackmonInstance> { enemyMon1, enemyMon2 };
 
 		PlayerData.CurrentParty = playerTeam;
+		playerMon1.Active = true;
 		testOpponent.CurrentParty = enemyTeam;
+		enemyMon1.Active = true;
+		
 
 		GD.Print("Now entering: test battle.");
 		EnterBattle(testOpponent);

@@ -71,6 +71,8 @@ public class HackmonInstance : IUnit
 	public int Stamina { get; set; }
 
 	public int Speed { get; set; }
+	
+	public bool Active { get; set; }
 
 	public List<IStatus> Statuses { get; set; } = [];
 
