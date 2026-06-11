@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://dbc7u3bjbjcae"]
+[gd_resource type="TileSet" format=3 uid="uid://dbc7u3bjbjcae"]
 
 [ext_resource type="Texture2D" uid="uid://ymr33v14vtpr" path="res://Assets/OverworldSprites/Tiles/BloomingMoor/DirtTile.png" id="1_2mepe"]
 [ext_resource type="Texture2D" uid="uid://pwe47l25hvfy" path="res://Assets/OverworldSprites/Tiles/BloomingMoor/GrassTile2.png" id="2_575af"]
