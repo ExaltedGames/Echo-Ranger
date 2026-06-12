@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dwewfc50wdfhn"]
 
+[ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_0dhdi"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="3_466x8"]
 [ext_resource type="Texture2D" uid="uid://b5luuh876squs" path="res://Assets/UI/EchoSummary.svg" id="6_n7rbu"]
+[ext_resource type="PackedScene" uid="uid://c33w73ns7f74g" path="res://Game/Battle/UI/AilmentNode.tscn" id="7_nhrpx"]
 [ext_resource type="Texture2D" uid="uid://dpebvug5abso8" path="res://Assets/UI/IconSocket.svg" id="8_5v8o4"]
 [ext_resource type="Texture2D" uid="uid://dwwrfr2n53mi2" path="res://Assets/UI/Icons/Type/BasicIcon.svg" id="8_ytub8"]
+[ext_resource type="Texture2D" uid="uid://dxrbn6rufp1dl" path="res://Assets/UI/Icons/Status/BurnIcon.svg" id="9_20mcj"]
 [ext_resource type="Texture2D" uid="uid://cbx17vxqdy447" path="res://Assets/UI/StaminaTexture2.svg" id="9_nhrpx"]
 [ext_resource type="Texture2D" uid="uid://dxju1qnf3rhc0" path="res://Assets/UI/HealthTexture2.svg" id="9_ytub8"]
+[ext_resource type="Texture2D" uid="uid://ds0am2wq56e2i" path="res://Assets/UI/Icons/Status/AtkUpIcon.svg" id="10_aqppo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
 
@@ -97,6 +101,34 @@ texture_filter = 1
 position = Vector2(73, 67.00001)
 scale = Vector2(0.7578125, 0.7578125)
 sprite_frames = SubResource("SpriteFrames_7c30h")
+
+[node name="Ailments" type="HBoxContainer" parent="Status" unique_id=2120286780]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -17.999985
+offset_right = 69.31201
+offset_bottom = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(90, 9)
+size_flags_stretch_ratio = 8.96
+
+[node name="Poison" parent="Status/Ailments" unique_id=1961704262 instance=ExtResource("7_nhrpx")]
+layout_mode = 2
+Sprite = ExtResource("2_0dhdi")
+
+[node name="Burn" parent="Status/Ailments" unique_id=1272220510 instance=ExtResource("7_nhrpx")]
+layout_mode = 2
+Sprite = ExtResource("9_20mcj")
+
+[node name="AttackUp" parent="Status/Ailments" unique_id=1610633545 instance=ExtResource("7_nhrpx")]
+layout_mode = 2
+Sprite = ExtResource("10_aqppo")
 
 [node name="SelectButton" type="Button" parent="." unique_id=42873972]
 visibility_layer = 0
