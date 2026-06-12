@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3jvobfj7072s"]
 
 [ext_resource type="Texture2D" uid="uid://csfc5hmhjnpck" path="res://Assets/UI/Border.svg" id="1_6rjyu"]
-[ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/Icons/BackButton.png" id="3_472rb"]
+[ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/BackButton.png" id="2_6rjyu"]
 [ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://Game/EchoSelect/UI/EchoSummary.tscn" id="3_686ov"]
 
 [node name="Node2D" type="Node2D" unique_id=476044375]
@@ -12,28 +12,37 @@ scale = Vector2(0.10796625, 0.10774859)
 texture = ExtResource("1_6rjyu")
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=2046526757]
+z_index = 2
 offset_left = 1002.0
 offset_top = 497.0
 offset_right = 1108.0
 offset_bottom = 603.0
-texture_normal = ExtResource("3_472rb")
+texture_normal = ExtResource("2_6rjyu")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="ItemList" type="HBoxContainer" parent="." unique_id=1729776373]
+[node name="EchoList" type="HBoxContainer" parent="." unique_id=1729776373]
 layout_direction = 1
+anchors_preset = -1
+offset_left = 49.0
+offset_top = 207.0
 offset_right = 1152.0
-offset_bottom = 420.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="EchoSummary" parent="ItemList" unique_id=512634472 instance=ExtResource("3_686ov")]
+[node name="EchoSummary" parent="EchoList" unique_id=512634472 instance=ExtResource("3_686ov")]
 layout_mode = 2
 
-[node name="EchoSummary2" parent="ItemList" unique_id=353189527 instance=ExtResource("3_686ov")]
+[node name="EchoSummary2" parent="EchoList" unique_id=353189527 instance=ExtResource("3_686ov")]
+visible = false
 layout_mode = 2
 
-[node name="EchoSummary3" parent="ItemList" unique_id=335883108 instance=ExtResource("3_686ov")]
+[node name="EchoSummary3" parent="EchoList" unique_id=335883108 instance=ExtResource("3_686ov")]
+visible = false
 layout_mode = 2
 
-[node name="EchoSummary4" parent="ItemList" unique_id=2127588571 instance=ExtResource("3_686ov")]
+[node name="EchoSummary4" parent="EchoList" unique_id=2127588571 instance=ExtResource("3_686ov")]
+visible = false
 layout_mode = 2

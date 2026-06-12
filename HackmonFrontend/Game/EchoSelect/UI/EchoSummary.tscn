@@ -1,10 +1,6 @@
 [gd_scene format=3 uid="uid://dwewfc50wdfhn"]
 
-[ext_resource type="Texture2D" uid="uid://douirje714rqq" path="res://Assets/UI/Icons/Status/PoisonIcon.svg" id="2_0dhdi"]
 [ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="3_466x8"]
-[ext_resource type="Texture2D" uid="uid://dab5uugs4xhwe" path="res://Assets/ProjectIcon.png" id="4_ted0x"]
-[ext_resource type="Texture2D" uid="uid://co0lkwwgsv26r" path="res://Assets/BattleSprites/Vroomba.png" id="5_j65ys"]
-[ext_resource type="Texture2D" uid="uid://dbktyp5fxi1ss" path="res://Assets/BattleSprites/Verma.png" id="6_7jrxv"]
 [ext_resource type="Texture2D" uid="uid://b5luuh876squs" path="res://Assets/UI/EchoSummary.svg" id="6_n7rbu"]
 [ext_resource type="Texture2D" uid="uid://dpebvug5abso8" path="res://Assets/UI/IconSocket.svg" id="8_5v8o4"]
 [ext_resource type="Texture2D" uid="uid://dwwrfr2n53mi2" path="res://Assets/UI/Icons/Type/BasicIcon.svg" id="8_ytub8"]
@@ -12,8 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dxju1qnf3rhc0" path="res://Assets/UI/HealthTexture2.svg" id="9_ytub8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm5n3"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5n0sp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7c30h"]
 resource_local_to_scene = true
@@ -29,8 +23,10 @@ animations = [{
 
 [node name="EchoSummary" type="Panel" unique_id=512634472]
 offset_top = 1.0
-offset_right = 313.0
+offset_right = 209.0
 offset_bottom = 153.0
+size_flags_horizontal = 6
+size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nm5n3")
 
 [node name="Status" type="Control" parent="." unique_id=851073600]
@@ -43,88 +39,6 @@ offset_right = -205.98401
 offset_bottom = -0.056015015
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Ailments" type="HBoxContainer" parent="Status" unique_id=179712840]
-custom_minimum_size = Vector2(0, 18)
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -20.999985
-offset_right = -91.0
-offset_bottom = -2.9999847
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_stretch_ratio = 8.96
-
-[node name="Poison" type="TextureRect" parent="Status/Ailments" unique_id=169111237]
-visible = false
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = ExtResource("2_0dhdi")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect2" type="TextureRect" parent="Status/Ailments" unique_id=2032235209]
-visible = false
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = ExtResource("3_466x8")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect3" type="TextureRect" parent="Status/Ailments" unique_id=1211324062]
-visible = false
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = ExtResource("4_ted0x")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect4" type="TextureRect" parent="Status/Ailments" unique_id=1990970374]
-visible = false
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = ExtResource("5_j65ys")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect5" type="TextureRect" parent="Status/Ailments" unique_id=1262863938]
-visible = false
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = ExtResource("6_7jrxv")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect6" type="TextureRect" parent="Status/Ailments" unique_id=188087294]
-visible = false
-modulate = Color(0.917647, 0.113725, 0, 1)
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = SubResource("PlaceholderTexture2D_5n0sp")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect7" type="TextureRect" parent="Status/Ailments" unique_id=2102624238]
-visible = false
-modulate = Color(0.917647, 0.113725, 0, 1)
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = SubResource("PlaceholderTexture2D_5n0sp")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="TextureRect8" type="TextureRect" parent="Status/Ailments" unique_id=1707011921]
-visible = false
-modulate = Color(0.917647, 0.113725, 0, 1)
-layout_mode = 2
-tooltip_text = "Poisoned."
-texture = SubResource("PlaceholderTexture2D_5n0sp")
-expand_mode = 3
-stretch_mode = 4
 
 [node name="EchoSummaryBar" type="Sprite2D" parent="Status" unique_id=2058958766]
 position = Vector2(81, 83)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://da67fsjnrbh8v"]
+[gd_scene format=3 uid="uid://da67fsjnrbh8v"]
 
 [ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_qvym7"]
 [ext_resource type="Script" uid="uid://32u1ps0vm2ia" path="res://Game/Battle/UI/BattlerStage.cs" id="1_veywt"]
@@ -16,17 +16,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BattlerStage" type="Node2D"]
+[node name="BattlerStage" type="Node2D" unique_id=735997619]
 scale = Vector2(2.40641, 2.40641)
 script = ExtResource("1_veywt")
 
-[node name="PodiumPlaceholder" type="Sprite2D" parent="."]
+[node name="PodiumPlaceholder" type="Sprite2D" parent="." unique_id=1213072497]
 z_index = -2
 texture_filter = 1
 position = Vector2(0, 9)
 texture = ExtResource("1_qvym7")
 
-[node name="BattlerSprite" type="AnimatedSprite2D" parent="."]
+[node name="BattlerSprite" type="AnimatedSprite2D" parent="." unique_id=1430156909]
 z_index = 1
 texture_filter = 1
 position = Vector2(0, -50.9201)
