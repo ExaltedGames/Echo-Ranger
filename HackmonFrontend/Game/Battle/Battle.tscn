@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dgnh5nicish3d"]
+[gd_scene format=3 uid="uid://dgnh5nicish3d"]
 
 [ext_resource type="Script" uid="uid://bokgfr8tytri2" path="res://Game/Battle/Battle.cs" id="1_w30jk"]
 [ext_resource type="PackedScene" uid="uid://dw1lrstaeowqs" path="res://Game/Battle/UI/BattlerUI.tscn" id="2_1nxov"]
@@ -7,28 +7,28 @@
 [ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUI.cs" id="4_layk2"]
 [ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/UI/Textbox.tscn" id="6_oyx74"]
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" unique_id=1910514971]
 script = ExtResource("1_w30jk")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=717899249]
 anchor_mode = 0
 
-[node name="OpponentOp" type="Node2D" parent="."]
+[node name="OpponentOp" type="Node2D" parent="." unique_id=1981456666]
 
-[node name="Sprite2D" type="Sprite2D" parent="OpponentOp"]
+[node name="Sprite2D" type="Sprite2D" parent="OpponentOp" unique_id=2092288135]
 position = Vector2(1009, 240)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_v5ddm")
 
-[node name="BattlerStage" parent="." instance=ExtResource("2_8ceye")]
+[node name="BattlerStage" parent="." unique_id=595777898 instance=ExtResource("2_8ceye")]
 position = Vector2(250, 360)
 scale = Vector2(2.5, 2.5)
 
-[node name="OpponentStage" parent="." instance=ExtResource("2_8ceye")]
+[node name="OpponentStage" parent="." unique_id=409795769 instance=ExtResource("2_8ceye")]
 position = Vector2(900, 360)
 scale = Vector2(2.5, 2.5)
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=812010144]
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -37,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ActionSelectUI" type="Control" parent="UI"]
+[node name="ActionSelectUI" type="Control" parent="UI" unique_id=800595601]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -47,9 +47,9 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("4_layk2")
 
-[node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI"]
+[node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI" unique_id=1364301912]
 layout_direction = 1
-layout_mode = 2
+layout_mode = 0
 offset_left = 383.0
 offset_top = 490.0
 offset_right = 507.0
@@ -57,37 +57,37 @@ offset_bottom = 556.0
 scale = Vector2(3, 2)
 alignment = 1
 
-[node name="TopMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
+[node name="TopMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1664580970]
 layout_mode = 2
 
-[node name="Move1" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
+[node name="Move1" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=639933754]
 layout_mode = 2
 text = "Move1"
 
-[node name="Move2" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
+[node name="Move2" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=2090613283]
 layout_mode = 2
 text = "Move2"
 
-[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves"]
+[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=1893220261]
 layout_mode = 2
 text = "Move3"
 
-[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList"]
+[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=236916594]
 layout_mode = 2
 
-[node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+[node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=1000282273]
 layout_mode = 2
 text = "Move4"
 
-[node name="Move5" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+[node name="Move5" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=941861764]
 layout_mode = 2
 text = "Move5"
 
-[node name="Move6" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves"]
+[node name="Move6" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=2087300005]
 layout_mode = 2
 text = "Move6"
 
-[node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI"]
+[node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI" unique_id=1859856003]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 486.0
@@ -102,11 +102,11 @@ shortcut_keys_enabled = false
 selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 wrap_mode = 1
+virtual_keyboard_enabled = false
 
-[node name="Button" type="Button" parent="UI/ActionSelectUI"]
+[node name="Button" type="Button" parent="UI/ActionSelectUI" unique_id=1883293802]
 layout_mode = 0
 offset_left = 973.0
 offset_top = 532.0
@@ -114,7 +114,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 text = "Switch Echo"
 
-[node name="BattlerUI" parent="UI" instance=ExtResource("2_1nxov")]
+[node name="BattlerUI" parent="UI" unique_id=2135987678 instance=ExtResource("2_1nxov")]
 layout_mode = 0
 offset_left = 48.0
 offset_top = -134.0
@@ -122,7 +122,7 @@ offset_right = 223.0
 offset_bottom = -48.0
 scale = Vector2(2, 2)
 
-[node name="OpponentUI" parent="UI" instance=ExtResource("2_1nxov")]
+[node name="OpponentUI" parent="UI" unique_id=653744668 instance=ExtResource("2_1nxov")]
 layout_mode = 0
 offset_left = 1104.0
 offset_top = -134.0
@@ -131,5 +131,5 @@ offset_bottom = -48.0
 scale = Vector2(-2, 2)
 Flipped = true
 
-[node name="Textbox" parent="UI" instance=ExtResource("6_oyx74")]
+[node name="Textbox" parent="UI" unique_id=112310197 instance=ExtResource("6_oyx74")]
 visible = false
