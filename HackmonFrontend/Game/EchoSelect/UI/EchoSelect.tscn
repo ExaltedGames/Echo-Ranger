@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://c15qb7tk3ikrw" path="res://Assets/UI/BackButton.png" id="2_6rjyu"]
 [ext_resource type="PackedScene" uid="uid://dwewfc50wdfhn" path="res://Game/EchoSelect/UI/EchoSummary.tscn" id="3_686ov"]
 
+[sub_resource type="Gradient" id="Gradient_6rjyu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f2ijo"]
+gradient = SubResource("Gradient_6rjyu")
+fill_from = Vector2(0.5090909, 0.3090909)
+fill_to = Vector2(0.52272725, 1)
+
 [node name="Node2D" type="Node2D" unique_id=476044375]
 
-[node name="Border" type="Sprite2D" parent="." unique_id=656633626]
-position = Vector2(576, 323.99997)
-scale = Vector2(0.10796625, 0.10774859)
-texture = ExtResource("1_6rjyu")
+[node name="Background" type="TextureRect" parent="." unique_id=954987439]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_f2ijo")
 
 [node name="BackButton" type="TextureButton" parent="." unique_id=2046526757]
 z_index = 2
@@ -20,6 +27,11 @@ offset_bottom = 603.0
 texture_normal = ExtResource("2_6rjyu")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="Border" type="Sprite2D" parent="." unique_id=656633626]
+position = Vector2(576, 323.99997)
+scale = Vector2(0.10796625, 0.10774859)
+texture = ExtResource("1_6rjyu")
 
 [node name="EchoList" type="HBoxContainer" parent="." unique_id=1729776373]
 layout_direction = 1
