@@ -10,8 +10,11 @@ by Exaltedgames.
 
 Overview
 --------
-Echo-Ranger uses a modular code design, the likes of which I am probably not qualified to explain, so I'll just leave
-this here for Sprocket to fill out later.
+Echo-Ranger uses a modular "plug & play" design, where brand new assets and characters can easily be inserted into the files and loaded with zero effort (save for creating the assets of course). This not only makes the game incredibly easy to mod for players, but it also allows players to easily custom-tailor their experience however they please. 
+
+All opponent teams, wild encounters, species, moves, and more, exist as seperate json files that define their stats and characteristics. Using the pre-existing files as a template, simply follow the format and create your own Echoranger!
+
+Specific enemy team too tough for you? Replace their entire team with level 1 rats. Want a challenge? design your ideal antagonist with a carefully tailored team that counters your own. Feel like the game could use new monsters? create your own with a single json file.
 
 # Structure:
 
