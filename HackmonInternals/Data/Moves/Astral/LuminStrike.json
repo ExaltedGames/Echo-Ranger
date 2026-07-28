@@ -1,0 +1,12 @@
+{
+	"Id": 79,
+	"MoveType": "Astral",
+	"Name": "Luminous Strike",
+	"Description": "The user imbues a part of its body with vibrant energy before striking its foe.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 25,
+	"UserStatuses": [],
+	"TargetStatuses": []
+}

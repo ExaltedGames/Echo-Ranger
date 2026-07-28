@@ -1,0 +1,12 @@
+{
+	"Id": 77,
+	"MoveType": "Astral",
+	"Name": "Comet",
+	"Description": "The user summons a crystal of condensed energy before hurtling it after its foe.",
+	"Damage": 50,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 40,
+	"UserStatuses": [],
+	"TargetStatuses": []
+}
