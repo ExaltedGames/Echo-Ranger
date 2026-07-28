@@ -1,0 +1,12 @@
+{
+	"Id": 78,
+	"MoveType": "Astral",
+	"Name": "Lunar Beam",
+	"Description": "The user unleashes a powerful torrent of astral energy upon its foe.",
+	"Damage": 80,
+	"AttackType": "Special",
+	"Target": "Single",
+	"StaminaCost": 75,
+	"UserStatuses": [],
+	"TargetStatuses": []
+}

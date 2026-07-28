@@ -1,0 +1,17 @@
+{
+	"Id": 81,
+	"MoveType": "Astral",
+	"Name": "Fae Fire",
+	"Description": "The user ignites its foe with enigmatic flames, leaving them with lingering burns.",
+	"Damage": 40,
+	"AttackType": "Physical",
+	"Target": "Special",
+	"StaminaCost": 25,
+	"UserStatuses": [],
+	"TargetStatuses": [
+		{
+			"Name": "Burn",
+			"Duration": 2
+		}
+	]
+}

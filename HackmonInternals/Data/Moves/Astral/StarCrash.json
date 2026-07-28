@@ -1,0 +1,12 @@
+{
+	"Id": 80,
+	"MoveType": "Astral",
+	"Name": "Star Crash",
+	"Description": "The user coats itself with luminous energy to resemble a star, before hurtling itself at its foe.",
+	"Damage": 65,
+	"AttackType": "Physical",
+	"Target": "Single",
+	"StaminaCost": 55,
+	"UserStatuses": [],
+	"TargetStatuses": []
+}
