@@ -15,17 +15,17 @@ public partial class ActionSelectUI : Control
 	public override void _Ready()
 	{
 		_infoBox = GetNode<TextEdit>("Infobox");
-		Buttons[0] = GetNode<Button>("MoveList/TopMoves/Move1");
+		Buttons[0] = GetNode<Button>("MoveList/Move1/MoveButton1");
 		Buttons[0].Pressed += () => OnMovePressed(0);
-		Buttons[1] = GetNode<Button>("MoveList/TopMoves/Move2");
+		Buttons[1] = GetNode<Button>("MoveList/Move2/MoveButton2");
 		Buttons[1].Pressed += () => OnMovePressed(1);
-		Buttons[2] = GetNode<Button>("MoveList/TopMoves/Move3");
+		Buttons[2] = GetNode<Button>("MoveList/Move3/MoveButton3");
 		Buttons[2].Pressed += () => OnMovePressed(2);
-		Buttons[3] = GetNode<Button>("MoveList/BottomMoves/Move4");
+		Buttons[3] = GetNode<Button>("MoveList/Move4/MoveButton4");
 		Buttons[3].Pressed += () => OnMovePressed(3);
-		Buttons[4] = GetNode<Button>("MoveList/BottomMoves/Move5");
+		Buttons[4] = GetNode<Button>("MoveList/Move5/MoveButton5");
 		Buttons[4].Pressed += () => OnMovePressed(4);
-		Buttons[5] = GetNode<Button>("MoveList/BottomMoves/Move6");
+		Buttons[5] = GetNode<Button>("MoveList/Move6/MoveButton6");
 		Buttons[5].Pressed += () => OnMovePressed(5);
 	}
 

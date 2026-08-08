@@ -50,8 +50,8 @@ public partial class GameManager : Node
 
 		PlayerData = new();
 		var testOpponent = new TrainerData();
-		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[4], 99);
-		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 1);
+		var playerMon = new HackmonInstance(HackmonManager.HackmonRegistry[1], 50);
+		var enemyMon = new HackmonInstance(HackmonManager.HackmonRegistry[0], 50);
 		var playerTeam = new List<HackmonInstance> { playerMon };
 		var enemyTeam = new List<HackmonInstance> { enemyMon };
 
