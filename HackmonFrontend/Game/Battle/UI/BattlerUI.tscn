@@ -85,6 +85,7 @@ scale = Vector2(0.055, 0.055)
 texture = ExtResource("9_amxat")
 
 [node name="PrimaryType" type="Sprite2D" parent="Status/PrimarySocket" unique_id=1337052461]
+scale = Vector2(22, 22)
 texture = ExtResource("8_amxat")
 
 [node name="SecondarySocket" type="Sprite2D" parent="Status" unique_id=2065065394]
@@ -96,6 +97,7 @@ texture = ExtResource("9_amxat")
 [node name="SecondaryType" type="Sprite2D" parent="Status/SecondarySocket" unique_id=1809380687]
 z_index = 1
 position = Vector2(2.43187e-05, -4.76837e-07)
+scale = Vector2(22, 22)
 texture = ExtResource("8_amxat")
 
 [node name="StaminaBar" type="TextureProgressBar" parent="Status" unique_id=1988237114]

@@ -59,76 +59,50 @@ metadata/_edit_group_ = true
 [node name="Move1" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1664580970]
 layout_mode = 2
 
-[node name="Type1" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move1" unique_id=1254438765]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton1" type="Button" parent="UI/ActionSelectUI/MoveList/Move1" unique_id=639933754]
 layout_mode = 2
 text = "Move1"
-icon_alignment = 1
-expand_icon = true
+icon = ExtResource("5_iqlce")
 
 [node name="Move2" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1191254475]
 layout_mode = 2
 
-[node name="Type2" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move2" unique_id=1080763888]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton2" type="Button" parent="UI/ActionSelectUI/MoveList/Move2" unique_id=912678610]
 layout_mode = 2
 text = "Move2"
+icon = ExtResource("5_iqlce")
 
 [node name="Move3" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1323431465]
 layout_mode = 2
 
-[node name="Type3" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move3" unique_id=2113723942]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton3" type="Button" parent="UI/ActionSelectUI/MoveList/Move3" unique_id=1855095890]
 layout_mode = 2
 text = "Move3"
+icon = ExtResource("5_iqlce")
 
 [node name="Move4" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=135492468]
 layout_mode = 2
 
-[node name="Type4" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move4" unique_id=1359520264]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton4" type="Button" parent="UI/ActionSelectUI/MoveList/Move4" unique_id=362968309]
 layout_mode = 2
 text = "Move4"
+icon = ExtResource("5_iqlce")
 
 [node name="Move5" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=2046765102]
 layout_mode = 2
 
-[node name="Type5" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move5" unique_id=1585363889]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton5" type="Button" parent="UI/ActionSelectUI/MoveList/Move5" unique_id=1740930748]
 layout_mode = 2
 text = "Move5"
+icon = ExtResource("5_iqlce")
 
 [node name="Move6" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=51836938]
 layout_mode = 2
 
-[node name="Type6" type="TextureRect" parent="UI/ActionSelectUI/MoveList/Move6" unique_id=217252997]
-layout_mode = 2
-texture = ExtResource("5_iqlce")
-expand_mode = 3
-
 [node name="MoveButton6" type="Button" parent="UI/ActionSelectUI/MoveList/Move6" unique_id=2126085108]
 layout_mode = 2
 text = "Move6"
+icon = ExtResource("5_iqlce")
 
 [node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI" unique_id=1859856003]
 layout_mode = 0

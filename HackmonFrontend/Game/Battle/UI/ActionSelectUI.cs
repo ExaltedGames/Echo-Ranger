@@ -7,7 +7,6 @@ public partial class ActionSelectUI : Control
 	public event ActionSelectHandler? OnActionSelected;
 
 	public Button[] Buttons = new Button[6];
-	public TextureRect[] Icons = new TextureRect[6];
 	public int CurrentSelection = -1;
 	public HackmonMove?[] SelectableActions = new HackmonMove[6];
 	private TextEdit _infoBox;
@@ -20,32 +19,26 @@ public partial class ActionSelectUI : Control
 		Buttons[0].Pressed += () => OnMovePressed(0);
 		Buttons[0].MouseEntered += () => OnMoveHovered(0);
 		Buttons[0].MouseExited += () => OnMoveHoverednt(0);
-		Icons[0] = GetNode<TextureRect>("MoveList/Move1/Type1");
 		Buttons[1] = GetNode<Button>("MoveList/Move2/MoveButton2");
 		Buttons[1].Pressed += () => OnMovePressed(1);
 		Buttons[1].MouseEntered += () => OnMoveHovered(1);
 		Buttons[1].MouseExited += () => OnMoveHoverednt(1);
-		Icons[1] = GetNode<TextureRect>("MoveList/Move2/Type2");
 		Buttons[2] = GetNode<Button>("MoveList/Move3/MoveButton3");
 		Buttons[2].Pressed += () => OnMovePressed(2);
 		Buttons[2].MouseEntered += () => OnMoveHovered(2);
 		Buttons[2].MouseExited += () => OnMoveHoverednt(2);
-		Icons[2] = GetNode<TextureRect>("MoveList/Move3/Type3");
 		Buttons[3] = GetNode<Button>("MoveList/Move4/MoveButton4");
 		Buttons[3].Pressed += () => OnMovePressed(3);
 		Buttons[3].MouseEntered += () => OnMoveHovered(3);
 		Buttons[3].MouseExited += () => OnMoveHoverednt(3);
-		Icons[3] = GetNode<TextureRect>("MoveList/Move4/Type4");
 		Buttons[4] = GetNode<Button>("MoveList/Move5/MoveButton5");
 		Buttons[4].Pressed += () => OnMovePressed(4);
 		Buttons[4].MouseEntered += () => OnMoveHovered(4);
 		Buttons[4].MouseExited += () => OnMoveHoverednt(4);
-		Icons[4] = GetNode<TextureRect>("MoveList/Move5/Type5");
 		Buttons[5] = GetNode<Button>("MoveList/Move6/MoveButton6");
 		Buttons[5].Pressed += () => OnMovePressed(5);
 		Buttons[5].MouseEntered += () => OnMoveHovered(5);
 		Buttons[5].MouseExited += () => OnMoveHoverednt(5);
-		Icons[5] = GetNode<TextureRect>("MoveList/Move6/Type6");
 	}
 
 	public void SetEnabled(bool enabled)
@@ -72,8 +65,8 @@ public partial class ActionSelectUI : Control
 
 			SelectableActions[i] = actions[i];
 			Buttons[i].Text = actions[i]!.Name;
-			Icons[i].Texture =
-				ResourceLoader.Load<Texture2D>($"res://Assets/UI/Icons/Type/{actions[i]!.MoveType}Icon.svg");
+			Buttons[i].Icon =
+				ResourceLoader.Load<DpiTexture>($"res://Assets/UI/Icons/Type/{actions[i]!.MoveType}Icon.svg");
 			Buttons[i].Disabled = false;
 			Buttons[i].Visible = true;
 			totalActions++;
