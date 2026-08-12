@@ -1,7 +1,7 @@
 ﻿{
 	"Id": 0,
 	"PrimaryType": "Basic",
-	"Name": "Test",
+	"Name": "Capratato",
 	"Family": "Construct",
 	"Description": "This creature should not exist in the world. If you have somehow encountered this creature, it is either through an unusual error or by your own deliberate actions.",
 	"MaxHp": {
