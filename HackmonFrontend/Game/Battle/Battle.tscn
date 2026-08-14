@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://da67fsjnrbh8v" path="res://Game/Battle/UI/BattlerStage.tscn" id="2_8ceye"]
 [ext_resource type="Texture2D" uid="uid://daeujqjowneim" path="res://Assets/OpponentSprites/FemOp1.png" id="2_v5ddm"]
 [ext_resource type="Script" uid="uid://c7w5w50bi163p" path="res://Game/Battle/UI/ActionSelectUI.cs" id="4_layk2"]
+[ext_resource type="Texture2D" uid="uid://dwwrfr2n53mi2" path="res://Assets/UI/Icons/Type/BasicIcon.svg" id="5_iqlce"]
 [ext_resource type="PackedScene" uid="uid://d1og1v2kwe872" path="res://Game/General/UI/Textbox.tscn" id="6_oyx74"]
 
 [node name="Battle" type="Node2D" unique_id=1910514971]
@@ -21,11 +22,11 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_v5ddm")
 
 [node name="BattlerStage" parent="." unique_id=595777898 instance=ExtResource("2_8ceye")]
-position = Vector2(250, 360)
+position = Vector2(316, 355.00003)
 scale = Vector2(2.5, 2.5)
 
 [node name="OpponentStage" parent="." unique_id=409795769 instance=ExtResource("2_8ceye")]
-position = Vector2(900, 360)
+position = Vector2(926, 355)
 scale = Vector2(2.5, 2.5)
 
 [node name="UI" type="Control" parent="." unique_id=812010144]
@@ -39,62 +40,80 @@ grow_vertical = 2
 
 [node name="ActionSelectUI" type="Control" parent="UI" unique_id=800595601]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("4_layk2")
 
 [node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI" unique_id=1364301912]
 layout_direction = 1
 layout_mode = 0
-offset_left = 383.0
-offset_top = 490.0
-offset_right = 507.0
-offset_bottom = 556.0
-scale = Vector2(3, 2)
-alignment = 1
+offset_left = 20.0
+offset_top = 105.00001
+offset_right = 115.0
+offset_bottom = 311.0
+scale = Vector2(1.9, 1.9)
+metadata/_edit_group_ = true
 
-[node name="TopMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1664580970]
+[node name="Move1" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1664580970]
 layout_mode = 2
 
-[node name="Move1" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=639933754]
+[node name="MoveButton1" type="Button" parent="UI/ActionSelectUI/MoveList/Move1" unique_id=639933754]
 layout_mode = 2
 text = "Move1"
+icon = ExtResource("5_iqlce")
 
-[node name="Move2" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=2090613283]
+[node name="Move2" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1191254475]
+layout_mode = 2
+
+[node name="MoveButton2" type="Button" parent="UI/ActionSelectUI/MoveList/Move2" unique_id=912678610]
 layout_mode = 2
 text = "Move2"
+icon = ExtResource("5_iqlce")
 
-[node name="Move3" type="Button" parent="UI/ActionSelectUI/MoveList/TopMoves" unique_id=1893220261]
+[node name="Move3" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1323431465]
+layout_mode = 2
+
+[node name="MoveButton3" type="Button" parent="UI/ActionSelectUI/MoveList/Move3" unique_id=1855095890]
 layout_mode = 2
 text = "Move3"
+icon = ExtResource("5_iqlce")
 
-[node name="BottomMoves" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=236916594]
+[node name="Move4" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=135492468]
 layout_mode = 2
 
-[node name="Move4" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=1000282273]
+[node name="MoveButton4" type="Button" parent="UI/ActionSelectUI/MoveList/Move4" unique_id=362968309]
 layout_mode = 2
 text = "Move4"
+icon = ExtResource("5_iqlce")
 
-[node name="Move5" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=941861764]
+[node name="Move5" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=2046765102]
+layout_mode = 2
+
+[node name="MoveButton5" type="Button" parent="UI/ActionSelectUI/MoveList/Move5" unique_id=1740930748]
 layout_mode = 2
 text = "Move5"
+icon = ExtResource("5_iqlce")
 
-[node name="Move6" type="Button" parent="UI/ActionSelectUI/MoveList/BottomMoves" unique_id=2087300005]
+[node name="Move6" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=51836938]
+layout_mode = 2
+
+[node name="MoveButton6" type="Button" parent="UI/ActionSelectUI/MoveList/Move6" unique_id=2126085108]
 layout_mode = 2
 text = "Move6"
+icon = ExtResource("5_iqlce")
 
 [node name="Infobox" type="TextEdit" parent="UI/ActionSelectUI" unique_id=1859856003]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 486.0
-offset_right = 377.0
-offset_bottom = 637.0
+offset_left = 2.0
+offset_top = 510.0
+offset_right = 378.0
+offset_bottom = 647.0
 mouse_force_pass_scroll_events = false
 mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/background_color = Color(0, 0, 0, 1)
 text = "Move information goes here."
 editable = false
 context_menu_enabled = false
