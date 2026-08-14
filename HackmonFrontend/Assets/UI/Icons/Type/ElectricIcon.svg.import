@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/ElectricIcon.svg-91b566cd01e8cbd725dadc990f7d
 
 [params]
 
-base_scale=0.045
+base_scale=0.23
 saturation=1.0
 color_map={}
 compress=true

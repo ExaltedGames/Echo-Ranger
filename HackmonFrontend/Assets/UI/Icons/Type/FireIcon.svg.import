@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/FireIcon.svg-45f293cf40ad88a99f95ff13c060294b
 
 [params]
 
-base_scale=0.045
+base_scale=0.23
 saturation=1.0
 color_map={}
 compress=true

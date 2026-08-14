@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/AstralIcon.svg-d57b687a04534e93cafbd558c68874
 
 [params]
 
-base_scale=0.045
+base_scale=0.23
 saturation=1.0
 color_map={}
 compress=true
