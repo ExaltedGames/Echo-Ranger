@@ -47,13 +47,13 @@ grow_vertical = 0
 script = ExtResource("4_layk2")
 
 [node name="MoveList" type="VBoxContainer" parent="UI/ActionSelectUI" unique_id=1364301912]
-layout_direction = 1
 layout_mode = 0
 offset_left = 20.0
 offset_top = 105.00001
 offset_right = 115.0
 offset_bottom = 311.0
 scale = Vector2(1.9, 1.9)
+layout_direction = 1
 metadata/_edit_group_ = true
 
 [node name="Move1" type="BoxContainer" parent="UI/ActionSelectUI/MoveList" unique_id=1664580970]

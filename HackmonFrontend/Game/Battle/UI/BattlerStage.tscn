@@ -2,16 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bekf7ifldendf" path="res://Assets/Podiums/PodiumPlaceholder.png" id="1_qvym7"]
 [ext_resource type="Script" uid="uid://32u1ps0vm2ia" path="res://Game/Battle/UI/BattlerStage.cs" id="1_veywt"]
-[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato.png" id="2_d5r1n"]
+[ext_resource type="Texture2D" uid="uid://cnobl41lkij5d" path="res://Assets/BattleSprites/Capratato/Capratato.png" id="2_d5r1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d6vus"]
 resource_local_to_scene = true
 animations = [{
+"frames": [],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_d5r1n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]

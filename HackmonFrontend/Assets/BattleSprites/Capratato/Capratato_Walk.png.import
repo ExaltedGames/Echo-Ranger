@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd1i0vnmrcodo"
-path="res://.godot/imported/Capratato_Walk_Animation.png-9dbfbd09e44d77bc37448d8e2117e543.ctex"
+uid="uid://cqg8fmg8isxmi"
+path="res://.godot/imported/Capratato_Walk.png-beb2d01e7238f8f17912729fbd1c83bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BattleSprites/Capratato/Capratato_Walk_Animation.png"
-dest_files=["res://.godot/imported/Capratato_Walk_Animation.png-9dbfbd09e44d77bc37448d8e2117e543.ctex"]
+source_file="res://Assets/BattleSprites/Capratato/Capratato_Walk.png"
+dest_files=["res://.godot/imported/Capratato_Walk.png-beb2d01e7238f8f17912729fbd1c83bc.ctex"]
 
 [params]
 
