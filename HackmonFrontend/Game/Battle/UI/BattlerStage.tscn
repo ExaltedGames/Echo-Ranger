@@ -707,7 +707,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p00w6")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_physical",
 "speed": 30.0
 }, {
@@ -802,7 +802,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pt0r6")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack_special",
 "speed": 30.0
 }, {
@@ -810,7 +810,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_d5r1n")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -908,7 +908,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1o3vx")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"defeat",
 "speed": 30.0
 }, {
@@ -1003,7 +1003,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l773v")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hurt",
 "speed": 30.0
 }, {
@@ -1116,6 +1116,9 @@ texture = ExtResource("1_qvym7")
 [node name="BattlerSprite" type="AnimatedSprite2D" parent="." unique_id=1430156909]
 z_index = 1
 texture_filter = 1
-position = Vector2(0.8311136, -27.011192)
+position = Vector2(-47.373474, -72.30688)
 sprite_frames = SubResource("SpriteFrames_d6vus")
-frame_progress = 0.8432244
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.7461471
+centered = false
