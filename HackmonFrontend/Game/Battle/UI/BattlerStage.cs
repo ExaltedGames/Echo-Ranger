@@ -12,7 +12,7 @@ public partial class BattlerStage : Node2D
 	public void LoadHackmon(string hackmonName, bool doFlip = false)
 	{
 		_hackmonSprite.SpriteFrames.ClearAll();
-		var newSprite = ResourceLoader.Load<Texture2D>($"Assets/BattleSprites/{hackmonName}.png");
+		var newSprite = ResourceLoader.Load<Texture2D>($"Assets/BattleSprites/{hackmonName}/{hackmonName}.png");
 		_hackmonSprite.FlipH = doFlip;
 		_hackmonSprite.SpriteFrames.AddFrame("default", newSprite);
 	}
