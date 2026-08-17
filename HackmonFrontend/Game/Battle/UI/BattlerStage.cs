@@ -79,6 +79,17 @@ public partial class BattlerStage : Node2D
 		_hackmonSprite.Play("idle");
 	}
 
+	public void LoadEchoAnimation(string animName)
+	{
+		_hackmonSprite.Play($"{animName}");
+		if (animName == "defeat")
+		{
+			
+		}
+		else
+			_hackmonSprite.AnimationLooped += () => _hackmonSprite.Play("idle");
+	}
+
 	public override void _Process(double delta)
 	{
 	}

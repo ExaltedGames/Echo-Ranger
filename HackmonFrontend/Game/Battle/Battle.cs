@@ -112,6 +112,8 @@ public partial class Battle : Node2D
 					GD.Print("adding message.");
 					eventStr =
 						$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
+					_trainerStage.LoadEchoAnimation("physical");
+					_enemyStage.LoadEchoAnimation("hurt");
 
 					_eventText?.QueueMessage(
 						eventStr,
