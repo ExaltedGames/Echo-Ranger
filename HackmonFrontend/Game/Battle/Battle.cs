@@ -112,8 +112,6 @@ public partial class Battle : Node2D
 					GD.Print("adding message.");
 					eventStr =
 						$"{hitEvent.Attacker.Name} uses {hitEvent.Attack.Name} on {hitEvent.Target.Name} for {hitEvent.Damage} damage.";
-					_trainerStage.LoadEchoAnimation("physical");
-					_enemyStage.LoadEchoAnimation("hurt");
 
 					_eventText?.QueueMessage(
 						eventStr,
@@ -121,7 +119,9 @@ public partial class Battle : Node2D
 						{
 							await Task.WhenAll(
 								GetUiForUnit(hitEvent.Attacker).DoStaminaAnim(hitEvent.Attack.StaminaCost),
-								GetUiForUnit(hitEvent.Attacker, true).DoDamageAnim(hitEvent.Damage)
+								GetUiForUnit(hitEvent.Attacker, true).DoDamageAnim(hitEvent.Damage),
+								GetAnimForUnit(hitEvent.Attacker, true).LoadEchoAnimation($"{hitEvent.Attack.AttackType}"),
+								GetAnimForUnit(hitEvent.Target, true).LoadEchoAnimation("hurt")
 							);
 						}
 					);
@@ -199,4 +199,6 @@ public partial class Battle : Node2D
 
 	private BattlerUI GetUiForUnit(HackmonInstance unit, bool inverse = false) =>
 		(unit == _activePlayerMon) ^ inverse ? _trainerUi : _enemyUi;
+	private BattlerStage GetAnimForUnit(HackmonInstance unit, bool inverse = false) =>
+		(unit == _activePlayerMon) ^ inverse ? _trainerStage : _enemyStage;
 }

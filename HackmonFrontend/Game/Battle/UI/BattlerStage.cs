@@ -3,6 +3,7 @@ namespace HackmonFrontend.Game.Battle.UI;
 public partial class BattlerStage : Node2D
 {
 	private AnimatedSprite2D _hackmonSprite = null!;
+	private TaskCompletionSource _animEvent = new();
 
 	public override void _Ready()
 	{
@@ -15,10 +16,11 @@ public partial class BattlerStage : Node2D
 		_hackmonSprite.SpriteFrames.ClearAll();
 		_hackmonSprite.SpriteFrames.AddAnimation("idle");
 		_hackmonSprite.SpriteFrames.SetAnimationSpeed("idle", 30);
-		_hackmonSprite.SpriteFrames.AddAnimation("physical");
-		_hackmonSprite.SpriteFrames.SetAnimationSpeed("physical", 30);
-		_hackmonSprite.SpriteFrames.AddAnimation("special");
-		_hackmonSprite.SpriteFrames.SetAnimationSpeed("special", 30);
+		//Note that special and physical are capitalized. I did this so that they are loaded correctly using the attack type data. Fix later.
+		_hackmonSprite.SpriteFrames.AddAnimation("Physical");
+		_hackmonSprite.SpriteFrames.SetAnimationSpeed("Physical", 30);
+		_hackmonSprite.SpriteFrames.AddAnimation("Special");
+		_hackmonSprite.SpriteFrames.SetAnimationSpeed("Special", 30);
 		_hackmonSprite.SpriteFrames.AddAnimation("hurt");
 		_hackmonSprite.SpriteFrames.SetAnimationSpeed("hurt", 30);
 		_hackmonSprite.SpriteFrames.AddAnimation("defeat");
@@ -48,7 +50,7 @@ public partial class BattlerStage : Node2D
 				var atlasTexture = new AtlasTexture();
 				atlasTexture.Atlas = physicalSprite;
 				atlasTexture.Region = frame;
-				_hackmonSprite.SpriteFrames.AddFrame("physical", atlasTexture);
+				_hackmonSprite.SpriteFrames.AddFrame("Physical", atlasTexture);
 			}
 			for (var h = 0; h < 6; h++)
 			{
@@ -56,7 +58,7 @@ public partial class BattlerStage : Node2D
 				var atlasTexture = new AtlasTexture();
 				atlasTexture.Atlas = specialSprite;
 				atlasTexture.Region = frame;
-				_hackmonSprite.SpriteFrames.AddFrame("special", atlasTexture);
+				_hackmonSprite.SpriteFrames.AddFrame("Special", atlasTexture);
 			}
 			for (var h = 0; h < 6; h++)
 			{
@@ -79,15 +81,11 @@ public partial class BattlerStage : Node2D
 		_hackmonSprite.Play("idle");
 	}
 
-	public void LoadEchoAnimation(string animName)
+	public Task LoadEchoAnimation(string animName)
 	{
 		_hackmonSprite.Play($"{animName}");
-		if (animName == "defeat")
-		{
-			
-		}
-		else
-			_hackmonSprite.AnimationLooped += () => _hackmonSprite.Play("idle");
+		_hackmonSprite.AnimationLooped += () => _hackmonSprite.Play("idle");
+		return Task.CompletedTask;
 	}
 
 	public override void _Process(double delta)
