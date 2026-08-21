@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/BasicIcon.svg-bf0a8180592e803656c51d4c16184ce
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true
