@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/PlantIcon.svg-f71f0b68232e417a03c1d2cdc4e2bbc
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

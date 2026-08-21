@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/ChemIcon.svg-9dd266e170d3ce1c4a47a443d6eb6f36
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

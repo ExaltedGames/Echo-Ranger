@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/FrostIcon.svg-ec5cee31e268c2a741508706220e011
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true
