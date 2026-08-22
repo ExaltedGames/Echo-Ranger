@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/SpiritIcon.svg-3a4bf20f1e12cd9abd8cf21879c5ce
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/MetalIcon.svg-849079ced73794a422a3d29be42ae45
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

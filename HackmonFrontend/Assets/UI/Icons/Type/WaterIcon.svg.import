@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/WaterIcon.svg-1003aaa8ec8e8118c275279d131b71e
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true

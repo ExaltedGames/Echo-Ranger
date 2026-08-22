@@ -15,4 +15,6 @@ dest_files=["res://.godot/imported/EarthIcon.svg-6660cdde95b3cfa6da66ded7c9a817e
 base_scale=0.23
 saturation=1.0
 color_map={}
+fix_alpha_border=false
+premult_alpha=false
 compress=true
