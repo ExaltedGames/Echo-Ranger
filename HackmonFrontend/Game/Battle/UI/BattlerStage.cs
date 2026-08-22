@@ -25,6 +25,7 @@ public partial class BattlerStage : Node2D
 		_hackmonSprite.SpriteFrames.SetAnimationSpeed("hurt", 30);
 		_hackmonSprite.SpriteFrames.AddAnimation("defeat");
 		_hackmonSprite.SpriteFrames.SetAnimationSpeed("defeat", 30);
+		_hackmonSprite.SpriteFrames.SetAnimationLoopMode("defeat", SpriteFrames.LoopMode.None);
 		var idleSprite = ResourceLoader.Load<Texture2D>($"Assets/BattleSprites/{hackmonName}/{hackmonName}_Idle.png");
 		var walkSprite = ResourceLoader.Load<Texture2D>($"Assets/BattleSprites/{hackmonName}/{hackmonName}_Walk.png");
 		var physicalSprite = ResourceLoader.Load<Texture2D>($"Assets/BattleSprites/{hackmonName}/{hackmonName}_Physical.png");

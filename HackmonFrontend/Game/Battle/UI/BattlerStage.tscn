@@ -1098,7 +1098,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rvtet")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"idle",
 "speed": 30.0
 }]
@@ -1118,7 +1118,6 @@ z_index = 1
 texture_filter = 1
 position = Vector2(-47.373474, -72.30688)
 sprite_frames = SubResource("SpriteFrames_d6vus")
-animation = &"idle"
+animation = &"attack_physical"
 autoplay = "idle"
-frame_progress = 0.7461471
 centered = false

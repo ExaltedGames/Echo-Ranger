@@ -3,7 +3,9 @@ using HackmonFrontend.Game.General;
 using HackmonFrontend.Game.General.UI;
 using HackmonInternals.Battle;
 using HackmonInternals.Events;
+using TurnBasedBattleSystem;
 using TurnBasedBattleSystem.Actions;
+using TurnBasedBattleSystem.Events;
 
 namespace HackmonFrontend.Game.Battle;
 
@@ -120,9 +122,13 @@ public partial class Battle : Node2D
 							await Task.WhenAll(
 								GetUiForUnit(hitEvent.Attacker).DoStaminaAnim(hitEvent.Attack.StaminaCost),
 								GetUiForUnit(hitEvent.Attacker, true).DoDamageAnim(hitEvent.Damage),
-								GetAnimForUnit(hitEvent.Attacker, true).LoadEchoAnimation($"{hitEvent.Attack.AttackType}"),
-								GetAnimForUnit(hitEvent.Target, true).LoadEchoAnimation("hurt")
+								GetAnimForUnit(hitEvent.Attacker).LoadEchoAnimation($"{hitEvent.Attack.AttackType}"),
+								GetAnimForUnit(hitEvent.Target).LoadEchoAnimation("hurt")
 							);
+							if (hitEvent.Target.IsDead)
+							{
+								GetAnimForUnit(hitEvent.Target).LoadEchoAnimation("defeat");
+							}
 						}
 					);
 
